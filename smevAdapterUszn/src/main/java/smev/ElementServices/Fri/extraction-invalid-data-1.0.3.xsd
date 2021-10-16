@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://kvs.fri.com/extraction-invalid-data/1.0.3" xmlns:smev="urn://x-artefacts-smev-gov-ru/supplementary/commons/1.0.1" xmlns:jxb="http://java.sun.com/xml/ns/jaxb" xmlns:ns1="http://kvs.fri.com/extraction-invalid-data/attachments/1.0.0" targetNamespace="http://kvs.fri.com/extraction-invalid-data/1.0.3" elementFormDefault="qualified" attributeFormDefault="unqualified" jxb:version="2.0">
+	<import namespace="urn://x-artefacts-smev-gov-ru/supplementary/commons/1.0.1" schemaLocation="commons/smev-supplementary-commons-1.0.1.xsd"/>
+	<import namespace="http://kvs.fri.com/extraction-invalid-data/attachments/1.0.0" schemaLocation="commons/extraction-invalid-data-attachments-1.0.0.xsd"/>
+	<element name="ExtractionInvalidDataRequest">
+		<annotation>
+			<documentation>Запрос выписки сведений об инвалиде</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="SNILS" type="smev:SNILSType" nillable="false">
+					<annotation>
+						<documentation>СНИЛС инвалида</documentation>
+					</annotation>
+				</element>
+				<element name="TypeOfExtraction">
+					<annotation>
+						<documentation>Статус сохранения пакета в ФГИС ФРИ</documentation>
+					</annotation>
+					<simpleType>
+						<restriction base="string">
+							<enumeration value="Stable"/>
+							<enumeration value="Flexible"/>
+						</restriction>
+					</simpleType>
+				</element>
+				<element name="ExtractionPeriod" type="tns:ExtractionPeriodType">
+					<annotation>
+						<documentation>За какой период составить выписку об инвалиде</documentation>
+					</annotation>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ExtractionInvalidDataResponse">
+		<annotation>
+			<documentation>Ответ на запрос выписки сведений об инвалиде</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="AttachmentsBlock" type="ns1:_AttachmentDescriptionType"/>
+			</sequence>
+		</complexType>
+	</element>
+	<complexType name="PeriodType">
+		<sequence>
+			<element name="DateFrom" type="date" nillable="false">
+				<annotation>
+					<documentation>Дата начала периода</documentation>
+				</annotation>
+			</element>
+			<element name="DateTo" type="date">
+				<annotation>
+					<documentation>Дата конца периода</documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+	<complexType name="ExtractionPeriodType">
+		<sequence>
+			<element name="DocumentsValidOnDate" type="date" minOccurs="0">
+				<annotation>
+					<documentation>Выписка по документам, действительным на дату</documentation>
+				</annotation>
+			</element>
+			<element name="DocumentsOnPeriod" type="tns:PeriodType" minOccurs="0">
+				<annotation>
+					<documentation>Выписка по документам за указанный период</documentation>
+				</annotation>
+			</element>
+		</sequence>
+	</complexType>
+</schema>

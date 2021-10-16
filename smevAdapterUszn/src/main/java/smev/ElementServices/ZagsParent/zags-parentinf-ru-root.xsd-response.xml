@@ -1,0 +1,403 @@
+<ns:PARENTINFResponse ИдЗапрос="string" ДатаСвед="2008-09-29" КолДок="100" ТипАГСЗапрос="04" xmlns:ns="urn://x-artefacts-zags-parentinf/root/112-56/4.0.0" xmlns:ns1="urn://x-artefacts-zags-parentinf/types/4.0.0">
+  <!--1 or more repetitions:-->
+  <ns:СведОтветАГС ИдДок="string" РезОбраб="1">
+    <!--Zero or more repetitions:-->
+    <ns:СведРегОтцов РазделЕГР="1" НомерЗаписЕГР="stringstringstringstr" НомАГССвид="string" НомерВерс="str" ДатаВерс="2006-08-19+04:00" КодСостСтат="stri">
+      <!--You have a CHOICE of the next 2 items at this level-->
+      <ns:ДатаЗаписДок>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns1:ПрДень>1</ns1:ПрДень>
+        <ns1:День>100</ns1:День>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns1:ПрМесяц>1</ns1:ПрМесяц>
+        <ns1:Месяц>100</ns1:Месяц>
+        <ns1:Год>2017+03:00</ns1:Год>
+      </ns:ДатаЗаписДок>
+      <ns:ДатаЗапис>2012-09-13+04:00</ns:ДатаЗапис>
+      <ns:ОрганЗАГС НаимЗАГС="string" КодЗАГС="stringst"/>
+      <!--Zero or more repetitions:-->
+      <ns:СвидетРегОтцов ТипСвидет="2">
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns1:ПрСерияСвидет>1</ns1:ПрСерияСвидет>
+        <ns1:СерияСвидет>string</ns1:СерияСвидет>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns1:ПрНомерСвидет>1</ns1:ПрНомерСвидет>
+        <ns1:НомерСвидет>string</ns1:НомерСвидет>
+        <!--You have a CHOICE of the next 3 items at this level-->
+        <ns1:ПрДатаВыдСвидет>1</ns1:ПрДатаВыдСвидет>
+        <ns1:ДатаВыдСвидет>2019-08-19</ns1:ДатаВыдСвидет>
+        <ns1:ДатаВыдСвидетДок>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:ПрДень>1</ns1:ПрДень>
+          <ns1:День>100</ns1:День>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:ПрМесяц>1</ns1:ПрМесяц>
+          <ns1:Месяц>100</ns1:Месяц>
+          <ns1:Год>2017+03:00</ns1:Год>
+        </ns1:ДатаВыдСвидетДок>
+      </ns:СвидетРегОтцов>
+      <ns:ПрдСведРег>
+        <ns:СведРебенок СНИЛС="stringstringst">
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns:ПрПол>1</ns:ПрПол>
+          <ns:Пол>2</ns:Пол>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns:ПрФИОДо>1</ns:ПрФИОДо>
+          <ns:ФИОДо>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:Фамилия>string</ns1:Фамилия>
+            <ns1:ПрФамилия>1</ns1:ПрФамилия>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:Имя>string</ns1:Имя>
+            <ns1:ПрИмя>1</ns1:ПрИмя>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:Отчество>string</ns1:Отчество>
+            <ns1:ПрОтчество>1</ns1:ПрОтчество>
+          </ns:ФИОДо>
+          <ns:ФИОПосле>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:Фамилия>string</ns1:Фамилия>
+            <ns1:ПрФамилия>1</ns1:ПрФамилия>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:Имя>string</ns1:Имя>
+            <ns1:ПрИмя>1</ns1:ПрИмя>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:Отчество>string</ns1:Отчество>
+            <ns1:ПрОтчество>1</ns1:ПрОтчество>
+          </ns:ФИОПосле>
+          <!--You have a CHOICE of the next 3 items at this level-->
+          <ns:ПрДатаРожд>1</ns:ПрДатаРожд>
+          <ns:ДатаРождКаленд>2017-08-17</ns:ДатаРождКаленд>
+          <ns:ДатаРождДок>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:ПрДень>1</ns1:ПрДень>
+            <ns1:День>100</ns1:День>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:ПрМесяц>1</ns1:ПрМесяц>
+            <ns1:Месяц>100</ns1:Месяц>
+            <ns1:Год>2008+04:00</ns1:Год>
+          </ns:ДатаРождДок>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns:ПрМестоРожден>1</ns:ПрМестоРожден>
+          <ns:МестоРожден ПризнМесто="1" МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string" ОКТМО="stringstrin"/>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns:ПрСведРегРожд>1</ns:ПрСведРегРожд>
+          <ns:СведРегРожд>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:ЗапАктОсн ТипАГС="01" НомерЗапис="string">
+              <!--You have a CHOICE of the next 3 items at this level-->
+              <ns1:ПрДатаЗапис>1</ns1:ПрДатаЗапис>
+              <ns1:ДатаЗапис>2018-07-19+03:00</ns1:ДатаЗапис>
+              <ns1:ДатаЗаписДок>
+                <!--You have a CHOICE of the next 2 items at this level-->
+                <ns1:ПрДень>1</ns1:ПрДень>
+                <ns1:День>100</ns1:День>
+                <!--You have a CHOICE of the next 2 items at this level-->
+                <ns1:ПрМесяц>1</ns1:ПрМесяц>
+                <ns1:Месяц>100</ns1:Месяц>
+                <ns1:Год>2011</ns1:Год>
+              </ns1:ДатаЗаписДок>
+              <ns1:ОрганЗАГС НаимЗАГС="string" КодЗАГС="stringst"/>
+            </ns1:ЗапАктОсн>
+            <ns1:ДокОсн>
+              <!--You have a CHOICE of the next 3 items at this level-->
+              <ns1:ПрДок>1</ns1:ПрДок>
+              <ns1:КодДок>strin</ns1:КодДок>
+              <ns1:НаимДок>string</ns1:НаимДок>
+              <!--You have a CHOICE of the next 2 items at this level-->
+              <ns1:ПрСерНомДок>1</ns1:ПрСерНомДок>
+              <ns1:СерНомДок>string</ns1:СерНомДок>
+              <!--You have a CHOICE of the next 3 items at this level-->
+              <ns1:ПрДатаДок>1</ns1:ПрДатаДок>
+              <ns1:ДатаДокКаленд>2005-02-02</ns1:ДатаДокКаленд>
+              <ns1:ДатаДокНеполн>
+                <!--You have a CHOICE of the next 2 items at this level-->
+                <ns1:ПрДень>1</ns1:ПрДень>
+                <ns1:День>100</ns1:День>
+                <!--You have a CHOICE of the next 2 items at this level-->
+                <ns1:ПрМесяц>1</ns1:ПрМесяц>
+                <ns1:Месяц>100</ns1:Месяц>
+                <ns1:Год>2018</ns1:Год>
+              </ns1:ДатаДокНеполн>
+              <!--You have a CHOICE of the next 2 items at this level-->
+              <ns1:ПрНаимОрг>1</ns1:ПрНаимОрг>
+              <ns1:НаимОрг>string</ns1:НаимОрг>
+            </ns1:ДокОсн>
+          </ns:СведРегРожд>
+        </ns:СведРебенок>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns:ПрСведМать>1</ns:ПрСведМать>
+        <ns:СведМать СНИЛС="stringstringst">
+          <!--You have a CHOICE of the next 3 items at this level-->
+          <ns1:ПрГражданство>1</ns1:ПрГражданство>
+          <ns1:ГраждТекст>string</ns1:ГраждТекст>
+          <ns1:ГраждОКСМ>str</ns1:ГраждОКСМ>
+          <ns1:ФИО>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:Фамилия>string</ns1:Фамилия>
+            <ns1:ПрФамилия>1</ns1:ПрФамилия>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:Имя>string</ns1:Имя>
+            <ns1:ПрИмя>1</ns1:ПрИмя>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:Отчество>string</ns1:Отчество>
+            <ns1:ПрОтчество>1</ns1:ПрОтчество>
+          </ns1:ФИО>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:ПрМестоРожден>1</ns1:ПрМестоРожден>
+          <ns1:МестоРожден ПризнМесто="1" МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string" ОКТМО="stringstrin"/>
+          <!--You have a CHOICE of the next 3 items at this level-->
+          <ns1:ПрДатаРожд>1</ns1:ПрДатаРожд>
+          <ns1:ДатаРождКаленд>2019-05-04</ns1:ДатаРождКаленд>
+          <ns1:ДатаРождДок>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:ПрДень>1</ns1:ПрДень>
+            <ns1:День>100</ns1:День>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:ПрМесяц>1</ns1:ПрМесяц>
+            <ns1:Месяц>100</ns1:Месяц>
+            <ns1:Год>2006+04:00</ns1:Год>
+          </ns1:ДатаРождДок>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:ПрУдЛичнФЛ>1</ns1:ПрУдЛичнФЛ>
+          <ns1:УдЛичнФЛ>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:ПрКодВидДок>1</ns1:ПрКодВидДок>
+            <ns1:КодВидДок>st</ns1:КодВидДок>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:ПрСерДок>1</ns1:ПрСерДок>
+            <ns1:СерДок>string</ns1:СерДок>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:ПрНомДок>1</ns1:ПрНомДок>
+            <ns1:НомДок>string</ns1:НомДок>
+            <!--You have a CHOICE of the next 3 items at this level-->
+            <ns1:ПрДатаДок>1</ns1:ПрДатаДок>
+            <ns1:ДатаДокКаленд>2014-01-10</ns1:ДатаДокКаленд>
+            <ns1:ДатаДокНеполн>
+              <!--You have a CHOICE of the next 2 items at this level-->
+              <ns1:ПрДень>1</ns1:ПрДень>
+              <ns1:День>100</ns1:День>
+              <!--You have a CHOICE of the next 2 items at this level-->
+              <ns1:ПрМесяц>1</ns1:ПрМесяц>
+              <ns1:Месяц>100</ns1:Месяц>
+              <ns1:Год>2004</ns1:Год>
+            </ns1:ДатаДокНеполн>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:ПрВыдДок>1</ns1:ПрВыдДок>
+            <ns1:ВыдДок>string</ns1:ВыдДок>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:ПрКодВыдДок>1</ns1:ПрКодВыдДок>
+            <ns1:КодВыдДок>strings</ns1:КодВыдДок>
+          </ns1:УдЛичнФЛ>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:ПрАдрМЖ>1</ns1:ПрАдрМЖ>
+          <ns1:АдрМЖ>
+            <!--You have a CHOICE of the next 3 items at this level-->
+            <ns1:АдрМЖРФ>
+              <!--You have a CHOICE of the next 3 items at this level-->
+              <ns1:АдрРФФИАС АдрТекст="string" ИдНом="string" ОКТМО="stringstrin" Индекс="string" КодРегион="st" НаимРегион="string" Район="string" Город="string" НаселПункт="string" Улица="string" Дом="string" Корпус="string" Кварт="string"/>
+              <ns1:АдрРФНеФИАС АдрТекст="string" ИдНом="string" ОКТМО="stringstrin" Индекс="string" КодРегион="st" НаимРегион="string" Район="string" Город="string" НаселПункт="string" Улица="string" Дом="string" Корпус="string" Кварт="string"/>
+              <ns1:АдрТекст>string</ns1:АдрТекст>
+            </ns1:АдрМЖРФ>
+            <ns1:АдрМЖИн>
+              <!--You have a CHOICE of the next 2 items at this level-->
+              <ns1:ПрОКСМ>1</ns1:ПрОКСМ>
+              <ns1:ОКСМ>str</ns1:ОКСМ>
+              <ns1:АдрТекст>string</ns1:АдрТекст>
+            </ns1:АдрМЖИн>
+            <ns1:АдрМЖКонв>string</ns1:АдрМЖКонв>
+          </ns1:АдрМЖ>
+        </ns:СведМать>
+        <ns:СведОтец СНИЛС="stringstringst">
+          <!--You have a CHOICE of the next 3 items at this level-->
+          <ns1:ПрГражданство>1</ns1:ПрГражданство>
+          <ns1:ГраждТекст>string</ns1:ГраждТекст>
+          <ns1:ГраждОКСМ>str</ns1:ГраждОКСМ>
+          <ns1:ФИО>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:Фамилия>string</ns1:Фамилия>
+            <ns1:ПрФамилия>1</ns1:ПрФамилия>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:Имя>string</ns1:Имя>
+            <ns1:ПрИмя>1</ns1:ПрИмя>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:Отчество>string</ns1:Отчество>
+            <ns1:ПрОтчество>1</ns1:ПрОтчество>
+          </ns1:ФИО>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:ПрМестоРожден>1</ns1:ПрМестоРожден>
+          <ns1:МестоРожден ПризнМесто="3" МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string" ОКТМО="stringstrin"/>
+          <!--You have a CHOICE of the next 3 items at this level-->
+          <ns1:ПрДатаРожд>1</ns1:ПрДатаРожд>
+          <ns1:ДатаРождКаленд>2008-12-01</ns1:ДатаРождКаленд>
+          <ns1:ДатаРождДок>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:ПрДень>1</ns1:ПрДень>
+            <ns1:День>100</ns1:День>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:ПрМесяц>1</ns1:ПрМесяц>
+            <ns1:Месяц>100</ns1:Месяц>
+            <ns1:Год>2016</ns1:Год>
+          </ns1:ДатаРождДок>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:ПрУдЛичнФЛ>1</ns1:ПрУдЛичнФЛ>
+          <ns1:УдЛичнФЛ>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:ПрКодВидДок>1</ns1:ПрКодВидДок>
+            <ns1:КодВидДок>st</ns1:КодВидДок>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:ПрСерДок>1</ns1:ПрСерДок>
+            <ns1:СерДок>string</ns1:СерДок>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:ПрНомДок>1</ns1:ПрНомДок>
+            <ns1:НомДок>string</ns1:НомДок>
+            <!--You have a CHOICE of the next 3 items at this level-->
+            <ns1:ПрДатаДок>1</ns1:ПрДатаДок>
+            <ns1:ДатаДокКаленд>2015-07-11</ns1:ДатаДокКаленд>
+            <ns1:ДатаДокНеполн>
+              <!--You have a CHOICE of the next 2 items at this level-->
+              <ns1:ПрДень>1</ns1:ПрДень>
+              <ns1:День>100</ns1:День>
+              <!--You have a CHOICE of the next 2 items at this level-->
+              <ns1:ПрМесяц>1</ns1:ПрМесяц>
+              <ns1:Месяц>100</ns1:Месяц>
+              <ns1:Год>2016</ns1:Год>
+            </ns1:ДатаДокНеполн>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:ПрВыдДок>1</ns1:ПрВыдДок>
+            <ns1:ВыдДок>string</ns1:ВыдДок>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:ПрКодВыдДок>1</ns1:ПрКодВыдДок>
+            <ns1:КодВыдДок>strings</ns1:КодВыдДок>
+          </ns1:УдЛичнФЛ>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:ПрАдрМЖ>1</ns1:ПрАдрМЖ>
+          <ns1:АдрМЖ>
+            <!--You have a CHOICE of the next 3 items at this level-->
+            <ns1:АдрМЖРФ>
+              <!--You have a CHOICE of the next 3 items at this level-->
+              <ns1:АдрРФФИАС АдрТекст="string" ИдНом="string" ОКТМО="stringstrin" Индекс="string" КодРегион="st" НаимРегион="string" Район="string" Город="string" НаселПункт="string" Улица="string" Дом="string" Корпус="string" Кварт="string"/>
+              <ns1:АдрРФНеФИАС АдрТекст="string" ИдНом="string" ОКТМО="stringstrin" Индекс="string" КодРегион="st" НаимРегион="string" Район="string" Город="string" НаселПункт="string" Улица="string" Дом="string" Корпус="string" Кварт="string"/>
+              <ns1:АдрТекст>string</ns1:АдрТекст>
+            </ns1:АдрМЖРФ>
+            <ns1:АдрМЖИн>
+              <!--You have a CHOICE of the next 2 items at this level-->
+              <ns1:ПрОКСМ>1</ns1:ПрОКСМ>
+              <ns1:ОКСМ>str</ns1:ОКСМ>
+              <ns1:АдрТекст>string</ns1:АдрТекст>
+            </ns1:АдрМЖИн>
+            <ns1:АдрМЖКонв>string</ns1:АдрМЖКонв>
+          </ns1:АдрМЖ>
+        </ns:СведОтец>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns:ПрСвДокОтцов>1</ns:ПрСвДокОтцов>
+        <ns:СвДокОтцов>
+          <!--You have a CHOICE of the next 3 items at this level-->
+          <ns1:ПрДок>1</ns1:ПрДок>
+          <ns1:КодДок>strin</ns1:КодДок>
+          <ns1:НаимДок>string</ns1:НаимДок>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:ПрСерНомДок>1</ns1:ПрСерНомДок>
+          <ns1:СерНомДок>string</ns1:СерНомДок>
+          <!--You have a CHOICE of the next 3 items at this level-->
+          <ns1:ПрДатаДок>1</ns1:ПрДатаДок>
+          <ns1:ДатаДокКаленд>2002-12-04+03:00</ns1:ДатаДокКаленд>
+          <ns1:ДатаДокНеполн>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:ПрДень>1</ns1:ПрДень>
+            <ns1:День>100</ns1:День>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:ПрМесяц>1</ns1:ПрМесяц>
+            <ns1:Месяц>100</ns1:Месяц>
+            <ns1:Год>2017+03:00</ns1:Год>
+          </ns1:ДатаДокНеполн>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:ПрНаимОрг>1</ns1:ПрНаимОрг>
+          <ns1:НаимОрг>string</ns1:НаимОрг>
+        </ns:СвДокОтцов>
+        <!--Optional:-->
+        <ns:СВедЕГРРазд2>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:ПрСвУведомл>1</ns1:ПрСвУведомл>
+          <ns1:СвУведомл СпоcПод="2" КолЛистДок="100">
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:ПрКодВидУвед>1</ns1:ПрКодВидУвед>
+            <ns1:КодВидУвед>strin</ns1:КодВидУвед>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:ПрДатаУвед>1</ns1:ПрДатаУвед>
+            <ns1:ДатаУвед>2006-02-20+03:00</ns1:ДатаУвед>
+            <ns1:СведЗАГСУвед ДатаПринят="2008-09-09+04:00" ДолжнОтв="string">
+              <ns1:ОрганЗАГС НаимЗАГС="string" КодЗАГС="stringst"/>
+              <!--You have a CHOICE of the next 2 items at this level-->
+              <ns1:ПрФИООтв>1</ns1:ПрФИООтв>
+              <ns1:ФИООтв>
+                <!--You have a CHOICE of the next 2 items at this level-->
+                <ns1:Фамилия>string</ns1:Фамилия>
+                <ns1:ПрФамилия>1</ns1:ПрФамилия>
+                <!--You have a CHOICE of the next 2 items at this level-->
+                <ns1:Имя>string</ns1:Имя>
+                <ns1:ПрИмя>1</ns1:ПрИмя>
+                <!--You have a CHOICE of the next 2 items at this level-->
+                <ns1:Отчество>string</ns1:Отчество>
+                <ns1:ПрОтчество>1</ns1:ПрОтчество>
+              </ns1:ФИООтв>
+            </ns1:СведЗАГСУвед>
+          </ns1:СвУведомл>
+          <ns1:СвДокИн>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:ПрКодОКСМ>1</ns1:ПрКодОКСМ>
+            <ns1:КодОКСМ>str</ns1:КодОКСМ>
+            <ns1:НаимСтраны>string</ns1:НаимСтраны>
+            <ns1:РеквизИнДок ТипДок="strin">
+              <!--You have a CHOICE of the next 2 items at this level-->
+              <ns1:ПрНаимДокТекст>1</ns1:ПрНаимДокТекст>
+              <ns1:НаимДокТекст>string</ns1:НаимДокТекст>
+              <!--You have a CHOICE of the next 2 items at this level-->
+              <ns1:ПрНомер>1</ns1:ПрНомер>
+              <ns1:Номер>string</ns1:Номер>
+              <!--You have a CHOICE of the next 3 items at this level-->
+              <ns1:ПрДата>1</ns1:ПрДата>
+              <ns1:ДатаКаленд>2008-05-12+04:00</ns1:ДатаКаленд>
+              <ns1:ДатаДок>
+                <!--You have a CHOICE of the next 2 items at this level-->
+                <ns1:ПрДень>1</ns1:ПрДень>
+                <ns1:День>100</ns1:День>
+                <!--You have a CHOICE of the next 2 items at this level-->
+                <ns1:ПрМесяц>1</ns1:ПрМесяц>
+                <ns1:Месяц>100</ns1:Месяц>
+                <ns1:Год>2018</ns1:Год>
+              </ns1:ДатаДок>
+              <!--You have a CHOICE of the next 2 items at this level-->
+              <ns1:ПрНаимОрган>1</ns1:ПрНаимОрган>
+              <ns1:НаимОрган>string</ns1:НаимОрган>
+            </ns1:РеквизИнДок>
+            <ns1:ЮрЗначДок КолЛистДок="100" СвОттискПеч="1" СвЛегал="1">
+              <!--You have a CHOICE of the next 2 items at this level-->
+              <ns1:ПрПодпИн>1</ns1:ПрПодпИн>
+              <ns1:СвПодпТекст>string</ns1:СвПодпТекст>
+              <!--You have a CHOICE of the next 2 items at this level-->
+              <ns1:ПрЗасвидДок>1</ns1:ПрЗасвидДок>
+              <ns1:ЗасвидДок РегНомРеестрНотар="string" ДатаНотарДейств="2013-11-20+04:00" ФИОНотар="string" ФИОПеревод="string" КолЛистДок="100"/>
+              <!--You have a CHOICE of the next 2 items at this level-->
+              <ns1:ПрЗасвидПеревод>1</ns1:ПрЗасвидПеревод>
+              <ns1:ЗасвидПеревод РегНомРеестрНотар="string" ДатаНотарДейств="2015-12-11" ФИОНотар="string" ФИОПеревод="string" КолЛистДок="100"/>
+              <!--You have a CHOICE of the next 2 items at this level-->
+              <ns1:СвОтказЛегализ>1</ns1:СвОтказЛегализ>
+              <ns1:Легализация>
+                <!--You have a CHOICE of the next 2 items at this level-->
+                <ns1:ПрОрганЛегал>1</ns1:ПрОрганЛегал>
+                <ns1:ОрганЛегал>string</ns1:ОрганЛегал>
+                <!--You have a CHOICE of the next 2 items at this level-->
+                <ns1:ПрДатаЛегал>1</ns1:ПрДатаЛегал>
+                <ns1:ДатаЛегал>2018-01-13+03:00</ns1:ДатаЛегал>
+                <!--You have a CHOICE of the next 2 items at this level-->
+                <ns1:ПрНомерЛегал>1</ns1:ПрНомерЛегал>
+                <ns1:НомерЛегал>string</ns1:НомерЛегал>
+              </ns1:Легализация>
+            </ns1:ЮрЗначДок>
+          </ns1:СвДокИн>
+        </ns:СВедЕГРРазд2>
+      </ns:ПрдСведРег>
+    </ns:СведРегОтцов>
+  </ns:СведОтветАГС>
+</ns:PARENTINFResponse>

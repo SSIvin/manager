@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportPrint xmlns:em="urn://egisso-ru/msg/10.05.I/1.0.6" xmlns:etlmsz="urn://egisso-ru/types/local-MSZ/1.0.5" xmlns:etplmsz="urn://egisso-ru/types/package-LMSZ/1.0.6" xmlns:ns1="urn://x-artefacts-fns-dohflna/root/260-18/4.0.1" xmlns:ns10="urn://x-artefacts-smev-gov-ru/services/service-adapter/types/faults" xmlns:ns12="urn://x-artefacts-zags-inform/root/112-11/4.0.4" xmlns:ns13="http://epgu.gosuslugi.ru/concentrator/familychildsub/1.0.0" xmlns:ns14="http://kvs.pfr.com/snils-by-additionalData/1.0.1" xmlns:ns15="http://common.kvs.pfr.com/1.0.0" xmlns:ns16="urn://egisso-ru/types/cls-request/1.0.2" xmlns:ns17="urn://egisso-ru/msg/10.02.I/1.0.2" xmlns:ns18="urn://x-artefacts-fns-dohflnasp/root/260-23/4.0.0" xmlns:ns19="urn://x-artefacts-fns-svviplfl/root/114-43/4.0.0" xmlns:ns2="urn://x-artefacts-fns-ndfl3doh/root/210-18/4.0.2" xmlns:ns20="urn://x-artefacts-fns-dohflna/types/4.0.1" xmlns:ns21="urn://x-artefacts-fns-ndipsr/types/4.0.0" xmlns:ns22="urn://x-artefacts-fns-inn-singular/root/270-18/4.0.1" xmlns:ns23="urn://x-artefacts-fns-inn/commons/4.0.0" xmlns:ns25="urn://x-artefacts-zags-inform/types/4.0.4" xmlns:ns26="urn://x-artefacts-zags-rogdinf/types/4.0.0" xmlns:ns27="urn://egisso-ru/msg/10.10.I/1.0.2" xmlns:ns28="urn://egisso-ru/msg/10.29.O/1.0.1" xmlns:ns29="urn://egisso-ru/types/death-reg/1.0.1" xmlns:ns3="urn://x-artefacts-fns-dohflnasp/types/4.0.0" xmlns:ns30="urn://egisso-ru/types/registers-response/1.0.1" xmlns:ns31="urn://egisso-ru/types/registers/1.0.1" xmlns:ns32="urn://egisso-ru/types/basic/1.0.7" xmlns:ns33="urn://egisso-ru/msg/10.26.I/1.0.1" xmlns:ns34="urn://egisso-ru/types/registers-request/1.0.1" xmlns:ns35="urn://egisso-ru/types/prsn-statement/1.0.3" xmlns:ns36="urn://egisso-ru/msg/10.13.I/1.0.3" xmlns:ns37="http://fri.pfr.ru" xmlns:ns38="http://kvs.fri.com/extraction-invalid-data/1.0.3" xmlns:ns39="http://kvs.fri.com/extraction-invalid-data/attachments/1.0.0" xmlns:ns40="http://kvs.fri.com/initiative-distribution/1.0.2" xmlns:ns41="urn://x-artefacts-gibdd-benefit489/data/1.0" xmlns:ns42="urn:dom.gosuslugi.ru/debt-requests/1.0.0" xmlns:ns43="urn:dom.gosuslugi.ru/debt-responses/1.0.0" xmlns:ns44="urn:dom.gosuslugi.ru/common/1.2.0" xmlns:ns45="urn:dom.gosuslugi.ru/rao-houses/1.0.0" xmlns:ns46="http://se2.data.service.smev.pfr.ru/SZN/1.0.1" xmlns:ns5="urn://x-artefacts-zags-rogdinf/root/112-51/4.0.0" xmlns:ns7="urn://x-artefacts-fns-ndipsr/root/210-17/4.0.0" xmlns:ns9="urn://x-artefacts-smev-gov-ru/supplementary/commons/1.0.1" xmlns:tns1="urn://x-artefacts-smev-gov-ru/services/service-adapter/types">
+    <reportRequest requestCreateDate="2021-06-01T14:40:49" requestId="47a9777f-8405-423a-b49e-078303b12e6f" userName="Ивин Сергей Сергеевич">
+        <MessagePrimaryContent>
+            <SZNRequest>
+                <RegionCode>45357000</RegionCode>
+                <LastName>ПЕТИНА</LastName>
+                <FirstName>ЕЛЕНА</FirstName>
+                <MiddleName>ВЛАДИМИРОВНА</MiddleName>
+                <Snils>02773319862</Snils>
+                <BirthDate>1966-09-12</BirthDate>
+                <ResidenceAddress>г. Москва ул. Сущевский вал д. 5 кв. 42</ResidenceAddress>
+                <DateQuery>2017-06-23</DateQuery>
+            </SZNRequest>
+        </MessagePrimaryContent>
+    </reportRequest>
+    <reportResponse responseCreateDate="2021-06-01T14:41:40" responseId="d66f2b54-0862-47c7-9ac6-1be65d8671b5">
+        <SZNResponse>
+            <LastName>ПЕТИНА</LastName>
+            <FirstName>ЕЛЕНА</FirstName>
+            <MiddleName>ВЛАДИМИРОВНА</MiddleName>
+            <Snils>02773319862</Snils>
+            <BirthDate>1966-09-12</BirthDate>
+            <ResidenceAddress>г. Москва ул. Сущевский вал д. 5 кв. 42</ResidenceAddress>
+            <DateQuery>2017-06-23</DateQuery>
+            <PresenceData>false</PresenceData>
+            <RegistrationAccountPeriods>
+                <RegistrationAccountPeriod>
+                    <AsTheUnemployed>
+                        <DateStart>2010-01-01</DateStart>
+                        <DateEnd>2010-01-20</DateEnd>
+                    </AsTheUnemployed>
+                    <AsSearchWork>
+                        <DateStart>2010-01-21</DateStart>
+                        <DateEnd>2010-01-28</DateEnd>
+                    </AsSearchWork>
+                </RegistrationAccountPeriod>
+                <RegistrationAccountPeriod>
+                    <AsTheUnemployed>
+                        <DateStart>2010-02-01</DateStart>
+                        <DateEnd>2010-02-15</DateEnd>
+                    </AsTheUnemployed>
+                    <AsSearchWork>
+                        <DateStart>2010-02-16</DateStart>
+                        <DateEnd>2010-02-25</DateEnd>
+                    </AsSearchWork>
+                </RegistrationAccountPeriod>
+            </RegistrationAccountPeriods>
+            <InfoPeriodsSeniority>
+                <PeriodReceptionUnemploymentBenefit>
+                    <DateStart>2013-03-01</DateStart>
+                    <DateEnd>2013-03-15</DateEnd>
+                </PeriodReceptionUnemploymentBenefit>
+                <PeriodReceptionUnemploymentBenefit>
+                    <DateStart>2013-03-16</DateStart>
+                    <DateEnd>2013-03-20</DateEnd>
+                </PeriodReceptionUnemploymentBenefit>
+                <PeriodParticipationPaidPublicWorks>
+                    <DateStart>2013-04-01</DateStart>
+                    <DateEnd>2013-04-15</DateEnd>
+                </PeriodParticipationPaidPublicWorks>
+                <PeriodParticipationPaidPublicWorks>
+                    <DateStart>2013-04-16</DateStart>
+                    <DateEnd>2013-04-20</DateEnd>
+                </PeriodParticipationPaidPublicWorks>
+                <PeriodMovingEmployment>
+                    <DateStart>2013-04-21</DateStart>
+                    <DateEnd>2013-04-25</DateEnd>
+                </PeriodMovingEmployment>
+                <PeriodMovingEmployment>
+                    <DateStart>2013-04-26</DateStart>
+                    <DateEnd>2013-04-28</DateEnd>
+                </PeriodMovingEmployment>
+            </InfoPeriodsSeniority>
+            <InclusionDataBases>
+                <InclusionDataBasis>
+                    <NumberPrivateAffair>999</NumberPrivateAffair>
+                    <!--<DatePrivateAffair>2013-09-30</DatePrivateAffair>-->
+                </InclusionDataBasis>
+                <InclusionDataBasis>
+                    <NumberPrivateAffair>123</NumberPrivateAffair>
+                    <DatePrivateAffair>2015-07-01</DatePrivateAffair>
+                </InclusionDataBasis>
+            </InclusionDataBases>
+            <NameOrgSZN>Орган Социальной Защиты Населения</NameOrgSZN>
+            <DateFormationData>2013-09-30</DateFormationData>
+        </SZNResponse>
+        <reportAttachmentData/>
+    </reportResponse>
+    <interactionStatus>
+        <statusReport statusDate="2021-06-01T14:41:15">
+            <code>0</code>
+            <desc>Сообщение отправлено в СМЭВ</desc>
+        </statusReport>
+    </interactionStatus>
+</ReportPrint>

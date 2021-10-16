@@ -1,0 +1,49 @@
+.data{
+    font-size: 14px;
+}
+.table2 {
+    border: none;
+    border-collapse: collapse;
+}
+.td2, .tr2 {
+    border: none;
+    padding: 5px; /* Поля в ячейках */
+}
+.td2 {
+    vertical-align: top; /* Выравнивание по верхнему краю ячеек */
+}
+.table1 {
+    width: 700px; /* Ширина таблицы */
+    border: 1px solid #CCC;
+    border-collapse: collapse; /* Убираем двойные линии между ячейками */
+}
+.td1, .th1, .tr1 {
+    padding: 4px; /* Поля в ячейках */
+    border: 1px solid #000080; /* Граница между ячейками */
+}
+.table2td{
+    padding: 1px; /* Поля в ячейках */
+    /*border: 1px solid #000080; !* Граница между ячейками *!*/
+    border: none !important;
+    font-size: 0.9em; /* Размер текста */
+}
+.th1 {
+    background: Khaki; /* Цвет фона строки заголовка */
+    text-align: left; /* Выравнивание по левому краю */
+    font-family: Arial, Helvetica, sans-serif; /* Выбор гарнитуры */
+    font-size: 0.9em; /* Размер текста */
+}
+.thMy1 {
+    background: lightsalmon; /* Цвет фона строки заголовка */
+    text-align: left; /* Выравнивание по левому краю */
+    font-family: Arial, Helvetica, sans-serif; /* Выбор гарнитуры */
+    font-size: 0.9em; /* Размер текста */
+    border: 1px solid #000080; /* Граница между ячейками */
+}
+.table2th {
+    background:#CCCCCC; /* Цвет фона строки заголовка */
+    text-align: left; /* Выравнивание по левому краю */
+    font-family: Arial, Helvetica, sans-serif; /* Выбор гарнитуры */
+    font-size: 0.7em; /* Размер текста */
+}
+summary{outline:none;} /*чтобы убрать бордер у текста "подробнее"*/

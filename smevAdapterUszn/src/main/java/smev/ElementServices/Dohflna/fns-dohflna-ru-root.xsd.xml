@@ -1,0 +1,34 @@
+<ns:DOHFLNAResponse ИдЗапрос="string" xmlns:ns="urn://x-artefacts-fns-dohflna/root/260-18/4.0.1">
+  <ns:ДохФЛ ОтчетГод="2008">
+    <!--1 or more repetitions:-->
+    <ns:ДохФЛ_НА>
+      <ns:ПолучДох ИННФЛ="stringstring" ДатаРожд="2014-09-19">
+        <ns:ФИО FamilyName="string" FirstName="string" Patronymic="string"/>
+        <ns:УдЛичнФЛ DocumentCode="st" SeriesNumber="string"/>
+      </ns:ПолучДох>
+      <ns:СвНА>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns:СвНАЮЛ НаимОрг="string" ИННЮЛ="stringstri" КПП="stringstr"/>
+        <ns:СвНАФЛ ИННФЛ="stringstring">
+          <ns:ФИО FamilyName="string" FirstName="string" Patronymic="string"/>
+        </ns:СвНАФЛ>
+      </ns:СвНА>
+      <!--You have a CHOICE of the next 2 items at this level-->
+      <!--1 or more repetitions:-->
+      <ns:СведДох_2НДФЛ Ставка="100">
+        <!--Optional:-->
+        <ns:ДохВыч>
+          <!--1 or more repetitions:-->
+          <ns:СвСумДох Месяц="03" КодДоход="stri" СумДоход="1000.0000000000"/>
+        </ns:ДохВыч>
+        <!--Optional:-->
+        <ns:СГДНалПер СумДохОбщ="1000.0000000000" НалБаза="1000.0000000000"/>
+      </ns:СведДох_2НДФЛ>
+      <!--1 or more repetitions:-->
+      <ns:СведДох_НДПриб>
+        <!--Optional:-->
+        <ns:ДохНалПер Ставка="100" СумДохОбщ="1000.0000000000000" НалБаза="1000.0000000000000"/>
+      </ns:СведДох_НДПриб>
+    </ns:ДохФЛ_НА>
+  </ns:ДохФЛ>
+</ns:DOHFLNAResponse>

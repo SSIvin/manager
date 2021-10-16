@@ -1,0 +1,721 @@
+<ns:informResponse ИдЗапрос="string" ТипЗапрос="2" ТипАГСЗапрос="6" НомерЗаписЗапрос="string" ДатаСвед="2013-11-23" РезОбраб="2" КодСтатус="02" xmlns:ns="urn://x-artefacts-zags-inform/root/112-11/4.0.4" xmlns:ns1="urn://x-artefacts-zags-inform/types/4.0.4">
+  <!--Optional:-->
+  <ns:СведРегРожд НомерЗапис="string" ДатаЗапис="2018-11-01+03:00">
+    <ns:ОрганЗАГС НаимЗАГС="string" КодЗАГС="stringst"/>
+    <ns:СтатусЗаписи ДатаНачСтатус="2013-05-22+04:00" КодСтатус="01" НаимСтатус="string"/>
+    <!--Zero or more repetitions:-->
+    <ns:СвидетРожд СерияСвидет="string" НомерСвидет="string" ДатаВыдСвидет="2013-12-21+04:00"/>
+    <ns:ПрдСведРег КолРодДетей="100">
+      <ns:СведРодившемся ЖивМертв="1" Пол="2">
+        <ns:ФИОРожд>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Фамилия>string</ns1:Фамилия>
+          <ns1:ПрФамилия>1</ns1:ПрФамилия>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Имя>string</ns1:Имя>
+          <ns1:ПрИмя>1</ns1:ПрИмя>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Отчество>string</ns1:Отчество>
+          <ns1:ПрОтчество>1</ns1:ПрОтчество>
+        </ns:ФИОРожд>
+        <!--You have a CHOICE of the next 3 items at this level-->
+        <ns:ДатаРожд>2019-08-19</ns:ДатаРожд>
+        <ns:МесГодРожд>2018-02+03:00</ns:МесГодРожд>
+        <ns:ГодРожд>2002+03:00</ns:ГодРожд>
+        <ns:МестоРожден МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string"/>
+      </ns:СведРодившемся>
+      <!--Optional:-->
+      <ns:СведМать ОКСМ="str" НаимСтраны="string">
+        <ns1:ФИО>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Фамилия>string</ns1:Фамилия>
+          <ns1:ПрФамилия>1</ns1:ПрФамилия>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Имя>string</ns1:Имя>
+          <ns1:ПрИмя>1</ns1:ПрИмя>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Отчество>string</ns1:Отчество>
+          <ns1:ПрОтчество>1</ns1:ПрОтчество>
+        </ns1:ФИО>
+        <!--Optional:-->
+        <ns1:МестоРожден МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string"/>
+        <!--You have a CHOICE of the next 3 items at this level-->
+        <!--Optional:-->
+        <ns1:ДатаРожд>2015-08-24</ns1:ДатаРожд>
+        <!--Optional:-->
+        <ns1:МесГодРожд>2015-06+03:00</ns1:МесГодРожд>
+        <!--Optional:-->
+        <ns1:ГодРожд>2000+04:00</ns1:ГодРожд>
+        <!--Optional:-->
+        <ns1:УдЛичнФЛ КодВидДок="st" НаимДок="string" СерНомДок="string" ДатаДок="2017-04-19+03:00" ВыдДок="string" КодВыдДок="strings"/>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <!--Optional:-->
+        <ns1:АдрМЖРФ АдрРФТекст="string">
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:АдрКЛАДР Индекс="string" КодРегион="st" НаимРегион="string" Район="string" Город="string" НаселПункт="string" Улица="string" Дом="string" Корпус="string" Кварт="string"/>
+          <ns1:АдрФИАС ИдНом="string" Индекс="string">
+            <ns1:Регион>st</ns1:Регион>
+            <ns1:МуниципРайон ВидКод="s" Наим="string"/>
+            <!--Optional:-->
+            <ns1:ГородСелПоселен ВидКод="s" Наим="string"/>
+            <!--Optional:-->
+            <ns1:НаселенПункт Вид="string" Наим="string"/>
+            <!--Optional:-->
+            <ns1:ЭлПланСтруктур Тип="string" Наим="string"/>
+            <!--Optional:-->
+            <ns1:ЭлУлДорСети Тип="string" Наим="string"/>
+            <!--Optional:-->
+            <ns1:ЗемелУчасток>string</ns1:ЗемелУчасток>
+            <!--Zero or more repetitions:-->
+            <ns1:Здание Тип="string" Номер="string"/>
+            <!--Optional:-->
+            <ns1:ПомещЗдания Тип="string" Номер="string"/>
+            <!--Optional:-->
+            <ns1:ПомещКвартиры Тип="string" Номер="string"/>
+          </ns1:АдрФИАС>
+        </ns1:АдрМЖРФ>
+        <!--Optional:-->
+        <ns1:АдрМЖИн ОКСМ="str" НаимСтраны="string" АдрТекст="string"/>
+      </ns:СведМать>
+      <!--Optional:-->
+      <ns:СведОтец ОКСМ="str" НаимСтраны="string">
+        <ns1:ФИО>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Фамилия>string</ns1:Фамилия>
+          <ns1:ПрФамилия>1</ns1:ПрФамилия>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Имя>string</ns1:Имя>
+          <ns1:ПрИмя>1</ns1:ПрИмя>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Отчество>string</ns1:Отчество>
+          <ns1:ПрОтчество>1</ns1:ПрОтчество>
+        </ns1:ФИО>
+        <!--Optional:-->
+        <ns1:МестоРожден МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string"/>
+        <!--You have a CHOICE of the next 3 items at this level-->
+        <!--Optional:-->
+        <ns1:ДатаРожд>2011-12-25</ns1:ДатаРожд>
+        <!--Optional:-->
+        <ns1:МесГодРожд>2015-10+03:00</ns1:МесГодРожд>
+        <!--Optional:-->
+        <ns1:ГодРожд>2018+03:00</ns1:ГодРожд>
+        <!--Optional:-->
+        <ns1:УдЛичнФЛ КодВидДок="st" НаимДок="string" СерНомДок="string" ДатаДок="2004-12-06+03:00" ВыдДок="string" КодВыдДок="strings"/>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <!--Optional:-->
+        <ns1:АдрМЖРФ АдрРФТекст="string">
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:АдрКЛАДР Индекс="string" КодРегион="st" НаимРегион="string" Район="string" Город="string" НаселПункт="string" Улица="string" Дом="string" Корпус="string" Кварт="string"/>
+          <ns1:АдрФИАС ИдНом="string" Индекс="string">
+            <ns1:Регион>st</ns1:Регион>
+            <ns1:МуниципРайон ВидКод="s" Наим="string"/>
+            <!--Optional:-->
+            <ns1:ГородСелПоселен ВидКод="s" Наим="string"/>
+            <!--Optional:-->
+            <ns1:НаселенПункт Вид="string" Наим="string"/>
+            <!--Optional:-->
+            <ns1:ЭлПланСтруктур Тип="string" Наим="string"/>
+            <!--Optional:-->
+            <ns1:ЭлУлДорСети Тип="string" Наим="string"/>
+            <!--Optional:-->
+            <ns1:ЗемелУчасток>string</ns1:ЗемелУчасток>
+            <!--Zero or more repetitions:-->
+            <ns1:Здание Тип="string" Номер="string"/>
+            <!--Optional:-->
+            <ns1:ПомещЗдания Тип="string" Номер="string"/>
+            <!--Optional:-->
+            <ns1:ПомещКвартиры Тип="string" Номер="string"/>
+          </ns1:АдрФИАС>
+        </ns1:АдрМЖРФ>
+        <!--Optional:-->
+        <ns1:АдрМЖИн ОКСМ="str" НаимСтраны="string" АдрТекст="string"/>
+      </ns:СведОтец>
+      <!--Optional:-->
+      <ns:СведДокРод КодДок="strin" НаимДок="string" СерНомДок="string" ДатаДок="2006-12-05">
+        <!--You have a CHOICE of the next 3 items at this level-->
+        <!--Optional:-->
+        <ns:НаимОрг>string</ns:НаимОрг>
+        <!--Optional:-->
+        <ns:ФИОИП>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Фамилия>string</ns1:Фамилия>
+          <ns1:ПрФамилия>1</ns1:ПрФамилия>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Имя>string</ns1:Имя>
+          <ns1:ПрИмя>1</ns1:ПрИмя>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Отчество>string</ns1:Отчество>
+          <ns1:ПрОтчество>1</ns1:ПрОтчество>
+        </ns:ФИОИП>
+        <!--Optional:-->
+        <ns:ФИОФЛ>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Фамилия>string</ns1:Фамилия>
+          <ns1:ПрФамилия>1</ns1:ПрФамилия>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Имя>string</ns1:Имя>
+          <ns1:ПрИмя>1</ns1:ПрИмя>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Отчество>string</ns1:Отчество>
+          <ns1:ПрОтчество>1</ns1:ПрОтчество>
+        </ns:ФИОФЛ>
+      </ns:СведДокРод>
+    </ns:ПрдСведРег>
+  </ns:СведРегРожд>
+  <!--Zero or more repetitions:-->
+  <ns:СведРегЗаклБрак НомерЗапис="string" ДатаЗапис="2016-10-07+03:00">
+    <ns:ОрганЗАГС НаимЗАГС="string" КодЗАГС="stringst"/>
+    <ns:СтатусЗаписи ДатаНачСтатус="2002-11-05" КодСтатус="02" НаимСтатус="string"/>
+    <!--Optional:-->
+    <ns:СведСвидет СерияСвидет="string" НомерСвидет="string" ДатаВыдСвидет="2001-07-26"/>
+    <ns:ПрдСведРег ПризСвед="1" ДатаЗаклБрак="2001-08-29+04:00">
+      <ns:СведЛицБрак>
+        <ns:Супруг ОКСМ="str" НаимСтраны="string">
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:ФамилияДо>string</ns1:ФамилияДо>
+          <ns1:ПрФамилияДо>1</ns1:ПрФамилияДо>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:ФамилияПосле>string</ns1:ФамилияПосле>
+          <ns1:ПрФамилияПосле>1</ns1:ПрФамилияПосле>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Имя>string</ns1:Имя>
+          <ns1:ПрИмя>1</ns1:ПрИмя>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Отчество>string</ns1:Отчество>
+          <ns1:ПрОтчество>1</ns1:ПрОтчество>
+          <!--You have a CHOICE of the next 3 items at this level-->
+          <!--Optional:-->
+          <ns1:ДатаРожд>2010-04-24+04:00</ns1:ДатаРожд>
+          <!--Optional:-->
+          <ns1:МесГодРожд>2014-07+04:00</ns1:МесГодРожд>
+          <!--Optional:-->
+          <ns1:ГодРожд>2005+04:00</ns1:ГодРожд>
+          <!--Optional:-->
+          <ns1:МестоРожден МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string"/>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <!--Optional:-->
+          <ns1:АдрМЖРФ АдрРФТекст="string">
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:АдрКЛАДР Индекс="string" КодРегион="st" НаимРегион="string" Район="string" Город="string" НаселПункт="string" Улица="string" Дом="string" Корпус="string" Кварт="string"/>
+            <ns1:АдрФИАС ИдНом="string" Индекс="string">
+              <ns1:Регион>st</ns1:Регион>
+              <ns1:МуниципРайон ВидКод="s" Наим="string"/>
+              <!--Optional:-->
+              <ns1:ГородСелПоселен ВидКод="s" Наим="string"/>
+              <!--Optional:-->
+              <ns1:НаселенПункт Вид="string" Наим="string"/>
+              <!--Optional:-->
+              <ns1:ЭлПланСтруктур Тип="string" Наим="string"/>
+              <!--Optional:-->
+              <ns1:ЭлУлДорСети Тип="string" Наим="string"/>
+              <!--Optional:-->
+              <ns1:ЗемелУчасток>string</ns1:ЗемелУчасток>
+              <!--Zero or more repetitions:-->
+              <ns1:Здание Тип="string" Номер="string"/>
+              <!--Optional:-->
+              <ns1:ПомещЗдания Тип="string" Номер="string"/>
+              <!--Optional:-->
+              <ns1:ПомещКвартиры Тип="string" Номер="string"/>
+            </ns1:АдрФИАС>
+          </ns1:АдрМЖРФ>
+          <!--Optional:-->
+          <ns1:АдрМЖИн ОКСМ="str" НаимСтраны="string" АдрТекст="string"/>
+          <!--Optional:-->
+          <ns1:УдЛичнФЛ КодВидДок="st" НаимДок="string" СерНомДок="string" ДатаДок="2016-06-29" ВыдДок="string" КодВыдДок="strings"/>
+          <!--You have a CHOICE of the next 0 items at this level-->
+        </ns:Супруг>
+        <ns:Супруга ОКСМ="str" НаимСтраны="string">
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:ФамилияДо>string</ns1:ФамилияДо>
+          <ns1:ПрФамилияДо>1</ns1:ПрФамилияДо>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:ФамилияПосле>string</ns1:ФамилияПосле>
+          <ns1:ПрФамилияПосле>1</ns1:ПрФамилияПосле>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Имя>string</ns1:Имя>
+          <ns1:ПрИмя>1</ns1:ПрИмя>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Отчество>string</ns1:Отчество>
+          <ns1:ПрОтчество>1</ns1:ПрОтчество>
+          <!--You have a CHOICE of the next 3 items at this level-->
+          <!--Optional:-->
+          <ns1:ДатаРожд>2004-09-11</ns1:ДатаРожд>
+          <!--Optional:-->
+          <ns1:МесГодРожд>2003-06</ns1:МесГодРожд>
+          <!--Optional:-->
+          <ns1:ГодРожд>2011</ns1:ГодРожд>
+          <!--Optional:-->
+          <ns1:МестоРожден МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string"/>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <!--Optional:-->
+          <ns1:АдрМЖРФ АдрРФТекст="string">
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:АдрКЛАДР Индекс="string" КодРегион="st" НаимРегион="string" Район="string" Город="string" НаселПункт="string" Улица="string" Дом="string" Корпус="string" Кварт="string"/>
+            <ns1:АдрФИАС ИдНом="string" Индекс="string">
+              <ns1:Регион>st</ns1:Регион>
+              <ns1:МуниципРайон ВидКод="s" Наим="string"/>
+              <!--Optional:-->
+              <ns1:ГородСелПоселен ВидКод="s" Наим="string"/>
+              <!--Optional:-->
+              <ns1:НаселенПункт Вид="string" Наим="string"/>
+              <!--Optional:-->
+              <ns1:ЭлПланСтруктур Тип="string" Наим="string"/>
+              <!--Optional:-->
+              <ns1:ЭлУлДорСети Тип="string" Наим="string"/>
+              <!--Optional:-->
+              <ns1:ЗемелУчасток>string</ns1:ЗемелУчасток>
+              <!--Zero or more repetitions:-->
+              <ns1:Здание Тип="string" Номер="string"/>
+              <!--Optional:-->
+              <ns1:ПомещЗдания Тип="string" Номер="string"/>
+              <!--Optional:-->
+              <ns1:ПомещКвартиры Тип="string" Номер="string"/>
+            </ns1:АдрФИАС>
+          </ns1:АдрМЖРФ>
+          <!--Optional:-->
+          <ns1:АдрМЖИн ОКСМ="str" НаимСтраны="string" АдрТекст="string"/>
+          <!--Optional:-->
+          <ns1:УдЛичнФЛ КодВидДок="st" НаимДок="string" СерНомДок="string" ДатаДок="2006-11-30+03:00" ВыдДок="string" КодВыдДок="strings"/>
+          <!--You have a CHOICE of the next 0 items at this level-->
+        </ns:Супруга>
+      </ns:СведЛицБрак>
+    </ns:ПрдСведРег>
+  </ns:СведРегЗаклБрак>
+  <!--Zero or more repetitions:-->
+  <ns:СведРегРстржБрак НомерЗапис="string" ДатаЗапис="2010-01-27">
+    <ns:ОрганЗАГС НаимЗАГС="string" КодЗАГС="stringst"/>
+    <ns:СтатусЗаписи ДатаНачСтатус="2003-03-06" КодСтатус="03" НаимСтатус="string"/>
+    <!--Zero or more repetitions:-->
+    <ns:СведСвидет СерияСвидет="string" НомерСвидет="string" ДатаВыдСвидет="2016-10-25+03:00"/>
+    <ns:ПрдСведРег ПризСвед="2" ДатаПрекрБрак="2019-03-27">
+      <ns:СведЛицБрак>
+        <ns:Супруг ОКСМ="str" НаимСтраны="string">
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:ФамилияДо>string</ns1:ФамилияДо>
+          <ns1:ПрФамилияДо>1</ns1:ПрФамилияДо>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:ФамилияПосле>string</ns1:ФамилияПосле>
+          <ns1:ПрФамилияПосле>1</ns1:ПрФамилияПосле>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Имя>string</ns1:Имя>
+          <ns1:ПрИмя>1</ns1:ПрИмя>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Отчество>string</ns1:Отчество>
+          <ns1:ПрОтчество>1</ns1:ПрОтчество>
+          <!--You have a CHOICE of the next 3 items at this level-->
+          <!--Optional:-->
+          <ns1:ДатаРожд>2004-06-16+04:00</ns1:ДатаРожд>
+          <!--Optional:-->
+          <ns1:МесГодРожд>2016-09+03:00</ns1:МесГодРожд>
+          <!--Optional:-->
+          <ns1:ГодРожд>2011</ns1:ГодРожд>
+          <!--Optional:-->
+          <ns1:МестоРожден МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string"/>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <!--Optional:-->
+          <ns1:АдрМЖРФ АдрРФТекст="string">
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:АдрКЛАДР Индекс="string" КодРегион="st" НаимРегион="string" Район="string" Город="string" НаселПункт="string" Улица="string" Дом="string" Корпус="string" Кварт="string"/>
+            <ns1:АдрФИАС ИдНом="string" Индекс="string">
+              <ns1:Регион>st</ns1:Регион>
+              <ns1:МуниципРайон ВидКод="s" Наим="string"/>
+              <!--Optional:-->
+              <ns1:ГородСелПоселен ВидКод="s" Наим="string"/>
+              <!--Optional:-->
+              <ns1:НаселенПункт Вид="string" Наим="string"/>
+              <!--Optional:-->
+              <ns1:ЭлПланСтруктур Тип="string" Наим="string"/>
+              <!--Optional:-->
+              <ns1:ЭлУлДорСети Тип="string" Наим="string"/>
+              <!--Optional:-->
+              <ns1:ЗемелУчасток>string</ns1:ЗемелУчасток>
+              <!--Zero or more repetitions:-->
+              <ns1:Здание Тип="string" Номер="string"/>
+              <!--Optional:-->
+              <ns1:ПомещЗдания Тип="string" Номер="string"/>
+              <!--Optional:-->
+              <ns1:ПомещКвартиры Тип="string" Номер="string"/>
+            </ns1:АдрФИАС>
+          </ns1:АдрМЖРФ>
+          <!--Optional:-->
+          <ns1:АдрМЖИн ОКСМ="str" НаимСтраны="string" АдрТекст="string"/>
+          <!--Optional:-->
+          <ns1:УдЛичнФЛ КодВидДок="st" НаимДок="string" СерНомДок="string" ДатаДок="2010-05-01+04:00" ВыдДок="string" КодВыдДок="strings"/>
+          <!--You have a CHOICE of the next 0 items at this level-->
+        </ns:Супруг>
+        <ns:Супруга ОКСМ="str" НаимСтраны="string">
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:ФамилияДо>string</ns1:ФамилияДо>
+          <ns1:ПрФамилияДо>1</ns1:ПрФамилияДо>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:ФамилияПосле>string</ns1:ФамилияПосле>
+          <ns1:ПрФамилияПосле>1</ns1:ПрФамилияПосле>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Имя>string</ns1:Имя>
+          <ns1:ПрИмя>1</ns1:ПрИмя>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Отчество>string</ns1:Отчество>
+          <ns1:ПрОтчество>1</ns1:ПрОтчество>
+          <!--You have a CHOICE of the next 3 items at this level-->
+          <!--Optional:-->
+          <ns1:ДатаРожд>2003-03-28+03:00</ns1:ДатаРожд>
+          <!--Optional:-->
+          <ns1:МесГодРожд>2015-12</ns1:МесГодРожд>
+          <!--Optional:-->
+          <ns1:ГодРожд>2007</ns1:ГодРожд>
+          <!--Optional:-->
+          <ns1:МестоРожден МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string"/>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <!--Optional:-->
+          <ns1:АдрМЖРФ АдрРФТекст="string">
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:АдрКЛАДР Индекс="string" КодРегион="st" НаимРегион="string" Район="string" Город="string" НаселПункт="string" Улица="string" Дом="string" Корпус="string" Кварт="string"/>
+            <ns1:АдрФИАС ИдНом="string" Индекс="string">
+              <ns1:Регион>st</ns1:Регион>
+              <ns1:МуниципРайон ВидКод="s" Наим="string"/>
+              <!--Optional:-->
+              <ns1:ГородСелПоселен ВидКод="s" Наим="string"/>
+              <!--Optional:-->
+              <ns1:НаселенПункт Вид="string" Наим="string"/>
+              <!--Optional:-->
+              <ns1:ЭлПланСтруктур Тип="string" Наим="string"/>
+              <!--Optional:-->
+              <ns1:ЭлУлДорСети Тип="string" Наим="string"/>
+              <!--Optional:-->
+              <ns1:ЗемелУчасток>string</ns1:ЗемелУчасток>
+              <!--Zero or more repetitions:-->
+              <ns1:Здание Тип="string" Номер="string"/>
+              <!--Optional:-->
+              <ns1:ПомещЗдания Тип="string" Номер="string"/>
+              <!--Optional:-->
+              <ns1:ПомещКвартиры Тип="string" Номер="string"/>
+            </ns1:АдрФИАС>
+          </ns1:АдрМЖРФ>
+          <!--Optional:-->
+          <ns1:АдрМЖИн ОКСМ="str" НаимСтраны="string" АдрТекст="string"/>
+          <!--Optional:-->
+          <ns1:УдЛичнФЛ КодВидДок="st" НаимДок="string" СерНомДок="string" ДатаДок="2016-07-25+03:00" ВыдДок="string" КодВыдДок="strings"/>
+          <!--You have a CHOICE of the next 0 items at this level-->
+        </ns:Супруга>
+      </ns:СведЛицБрак>
+    </ns:ПрдСведРег>
+  </ns:СведРегРстржБрак>
+  <!--Zero or more repetitions:-->
+  <ns:СвеРегОтцов НомерЗапис="string" ДатаЗапис="2003-05-15+04:00">
+    <ns:ОрганЗАГС НаимЗАГС="string" КодЗАГС="stringst"/>
+    <ns:СтатусЗаписи ДатаНачСтатус="2006-12-04+03:00" КодСтатус="07" НаимСтатус="string"/>
+    <!--Optional:-->
+    <ns:СведСвидет СерияСвидет="string" НомерСвидет="string" ДатаВыдСвидет="2008-03-26+03:00"/>
+    <ns:ПрдСведРег>
+      <ns:СведРебенок Пол="1">
+        <ns:ФИОДо>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Фамилия>string</ns1:Фамилия>
+          <ns1:ПрФамилия>1</ns1:ПрФамилия>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Имя>string</ns1:Имя>
+          <ns1:ПрИмя>1</ns1:ПрИмя>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Отчество>string</ns1:Отчество>
+          <ns1:ПрОтчество>1</ns1:ПрОтчество>
+        </ns:ФИОДо>
+        <ns:ФИОПосле>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Фамилия>string</ns1:Фамилия>
+          <ns1:ПрФамилия>1</ns1:ПрФамилия>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Имя>string</ns1:Имя>
+          <ns1:ПрИмя>1</ns1:ПрИмя>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Отчество>string</ns1:Отчество>
+          <ns1:ПрОтчество>1</ns1:ПрОтчество>
+        </ns:ФИОПосле>
+        <!--You have a CHOICE of the next 3 items at this level-->
+        <ns:ДатаРожд>2000-02-03</ns:ДатаРожд>
+        <ns:МесГодРожд>2018-07+03:00</ns:МесГодРожд>
+        <ns:ГодРожд>2009</ns:ГодРожд>
+        <ns:МестоРожден МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string"/>
+        <ns:СведРегРожд НомерЗапис="string" ДатаЗапис="2011-04-18+04:00">
+          <ns:ОрганЗАГСРожд НаимЗАГС="string" КодЗАГС="stringst"/>
+        </ns:СведРегРожд>
+        <!--Zero or more repetitions:-->
+        <ns:СведСвидетРожд СерияСвидет="string" НомерСвидет="string" ДатаВыдСвидет="2013-11-20+04:00"/>
+      </ns:СведРебенок>
+      <!--Optional:-->
+      <ns:СведМать ОКСМ="str" НаимСтраны="string">
+        <ns1:ФИО>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Фамилия>string</ns1:Фамилия>
+          <ns1:ПрФамилия>1</ns1:ПрФамилия>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Имя>string</ns1:Имя>
+          <ns1:ПрИмя>1</ns1:ПрИмя>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Отчество>string</ns1:Отчество>
+          <ns1:ПрОтчество>1</ns1:ПрОтчество>
+        </ns1:ФИО>
+        <!--Optional:-->
+        <ns1:МестоРожден МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string"/>
+        <!--You have a CHOICE of the next 3 items at this level-->
+        <!--Optional:-->
+        <ns1:ДатаРожд>2006-01-07+03:00</ns1:ДатаРожд>
+        <!--Optional:-->
+        <ns1:МесГодРожд>2003-09</ns1:МесГодРожд>
+        <!--Optional:-->
+        <ns1:ГодРожд>2007+03:00</ns1:ГодРожд>
+        <!--Optional:-->
+        <ns1:УдЛичнФЛ КодВидДок="st" НаимДок="string" СерНомДок="string" ДатаДок="2018-12-11+03:00" ВыдДок="string" КодВыдДок="strings"/>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <!--Optional:-->
+        <ns1:АдрМЖРФ АдрРФТекст="string">
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:АдрКЛАДР Индекс="string" КодРегион="st" НаимРегион="string" Район="string" Город="string" НаселПункт="string" Улица="string" Дом="string" Корпус="string" Кварт="string"/>
+          <ns1:АдрФИАС ИдНом="string" Индекс="string">
+            <ns1:Регион>st</ns1:Регион>
+            <ns1:МуниципРайон ВидКод="s" Наим="string"/>
+            <!--Optional:-->
+            <ns1:ГородСелПоселен ВидКод="s" Наим="string"/>
+            <!--Optional:-->
+            <ns1:НаселенПункт Вид="string" Наим="string"/>
+            <!--Optional:-->
+            <ns1:ЭлПланСтруктур Тип="string" Наим="string"/>
+            <!--Optional:-->
+            <ns1:ЭлУлДорСети Тип="string" Наим="string"/>
+            <!--Optional:-->
+            <ns1:ЗемелУчасток>string</ns1:ЗемелУчасток>
+            <!--Zero or more repetitions:-->
+            <ns1:Здание Тип="string" Номер="string"/>
+            <!--Optional:-->
+            <ns1:ПомещЗдания Тип="string" Номер="string"/>
+            <!--Optional:-->
+            <ns1:ПомещКвартиры Тип="string" Номер="string"/>
+          </ns1:АдрФИАС>
+        </ns1:АдрМЖРФ>
+        <!--Optional:-->
+        <ns1:АдрМЖИн ОКСМ="str" НаимСтраны="string" АдрТекст="string"/>
+      </ns:СведМать>
+      <ns:СведОтец ОКСМ="str" НаимСтраны="string">
+        <ns1:ФИО>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Фамилия>string</ns1:Фамилия>
+          <ns1:ПрФамилия>1</ns1:ПрФамилия>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Имя>string</ns1:Имя>
+          <ns1:ПрИмя>1</ns1:ПрИмя>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Отчество>string</ns1:Отчество>
+          <ns1:ПрОтчество>1</ns1:ПрОтчество>
+        </ns1:ФИО>
+        <!--Optional:-->
+        <ns1:МестоРожден МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string"/>
+        <!--You have a CHOICE of the next 3 items at this level-->
+        <!--Optional:-->
+        <ns1:ДатаРожд>2008-03-14+03:00</ns1:ДатаРожд>
+        <!--Optional:-->
+        <ns1:МесГодРожд>2003-08</ns1:МесГодРожд>
+        <!--Optional:-->
+        <ns1:ГодРожд>2014+04:00</ns1:ГодРожд>
+        <!--Optional:-->
+        <ns1:УдЛичнФЛ КодВидДок="st" НаимДок="string" СерНомДок="string" ДатаДок="2012-06-12+04:00" ВыдДок="string" КодВыдДок="strings"/>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <!--Optional:-->
+        <ns1:АдрМЖРФ АдрРФТекст="string">
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:АдрКЛАДР Индекс="string" КодРегион="st" НаимРегион="string" Район="string" Город="string" НаселПункт="string" Улица="string" Дом="string" Корпус="string" Кварт="string"/>
+          <ns1:АдрФИАС ИдНом="string" Индекс="string">
+            <ns1:Регион>st</ns1:Регион>
+            <ns1:МуниципРайон ВидКод="s" Наим="string"/>
+            <!--Optional:-->
+            <ns1:ГородСелПоселен ВидКод="s" Наим="string"/>
+            <!--Optional:-->
+            <ns1:НаселенПункт Вид="string" Наим="string"/>
+            <!--Optional:-->
+            <ns1:ЭлПланСтруктур Тип="string" Наим="string"/>
+            <!--Optional:-->
+            <ns1:ЭлУлДорСети Тип="string" Наим="string"/>
+            <!--Optional:-->
+            <ns1:ЗемелУчасток>string</ns1:ЗемелУчасток>
+            <!--Zero or more repetitions:-->
+            <ns1:Здание Тип="string" Номер="string"/>
+            <!--Optional:-->
+            <ns1:ПомещЗдания Тип="string" Номер="string"/>
+            <!--Optional:-->
+            <ns1:ПомещКвартиры Тип="string" Номер="string"/>
+          </ns1:АдрФИАС>
+        </ns1:АдрМЖРФ>
+        <!--Optional:-->
+        <ns1:АдрМЖИн ОКСМ="str" НаимСтраны="string" АдрТекст="string"/>
+      </ns:СведОтец>
+      <!--Optional:-->
+      <ns:СведДокОсн КодДок="strin" НаимДок="string" НаимСудРеш="string" СерНомДок="string" ДатаДок="2010-10-29+04:00"/>
+    </ns:ПрдСведРег>
+  </ns:СвеРегОтцов>
+  <!--Zero or more repetitions:-->
+  <ns:СведРегПерИмя НомерЗапис="string" ДатаЗапис="2008-12-13">
+    <ns:ОрганЗАГС НаимЗАГС="string" КодЗАГС="stringst"/>
+    <ns:СтатусЗаписи ДатаНачСтатус="2010-01-13" КодСтатус="07" НаимСтатус="string"/>
+    <!--Optional:-->
+    <ns:СведСвидет СерияСвидет="string" НомерСвидет="string" ДатаВыдСвидет="2019-09-15+03:00"/>
+    <ns:ПрдСведРег ОКСМ="str" НаимСтраны="string">
+      <ns:ФИОДо>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns1:Фамилия>string</ns1:Фамилия>
+        <ns1:ПрФамилия>1</ns1:ПрФамилия>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns1:Имя>string</ns1:Имя>
+        <ns1:ПрИмя>1</ns1:ПрИмя>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns1:Отчество>string</ns1:Отчество>
+        <ns1:ПрОтчество>1</ns1:ПрОтчество>
+      </ns:ФИОДо>
+      <ns:ФИОПосле>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns1:Фамилия>string</ns1:Фамилия>
+        <ns1:ПрФамилия>1</ns1:ПрФамилия>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns1:Имя>string</ns1:Имя>
+        <ns1:ПрИмя>1</ns1:ПрИмя>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns1:Отчество>string</ns1:Отчество>
+        <ns1:ПрОтчество>1</ns1:ПрОтчество>
+      </ns:ФИОПосле>
+      <!--You have a CHOICE of the next 3 items at this level-->
+      <ns:ДатаРожд>2008-03-10+03:00</ns:ДатаРожд>
+      <ns:МесГодРожд>2016-08+03:00</ns:МесГодРожд>
+      <ns:ГодРожд>2011+03:00</ns:ГодРожд>
+      <!--Optional:-->
+      <ns:МестоРожден МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string"/>
+      <!--You have a CHOICE of the next 2 items at this level-->
+      <!--Optional:-->
+      <ns:АдрМЖРФ АдрРФТекст="string">
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns1:АдрКЛАДР Индекс="string" КодРегион="st" НаимРегион="string" Район="string" Город="string" НаселПункт="string" Улица="string" Дом="string" Корпус="string" Кварт="string"/>
+        <ns1:АдрФИАС ИдНом="string" Индекс="string">
+          <ns1:Регион>st</ns1:Регион>
+          <ns1:МуниципРайон ВидКод="s" Наим="string"/>
+          <!--Optional:-->
+          <ns1:ГородСелПоселен ВидКод="s" Наим="string"/>
+          <!--Optional:-->
+          <ns1:НаселенПункт Вид="string" Наим="string"/>
+          <!--Optional:-->
+          <ns1:ЭлПланСтруктур Тип="string" Наим="string"/>
+          <!--Optional:-->
+          <ns1:ЭлУлДорСети Тип="string" Наим="string"/>
+          <!--Optional:-->
+          <ns1:ЗемелУчасток>string</ns1:ЗемелУчасток>
+          <!--Zero or more repetitions:-->
+          <ns1:Здание Тип="string" Номер="string"/>
+          <!--Optional:-->
+          <ns1:ПомещЗдания Тип="string" Номер="string"/>
+          <!--Optional:-->
+          <ns1:ПомещКвартиры Тип="string" Номер="string"/>
+        </ns1:АдрФИАС>
+      </ns:АдрМЖРФ>
+      <!--Optional:-->
+      <ns:АдрМЖИн ОКСМ="str" НаимСтраны="string" АдрТекст="string"/>
+      <!--Optional:-->
+      <ns:УдЛичнФЛ КодВидДок="st" НаимДок="string" СерНомДок="string" ДатаДок="2008-11-22+03:00" ВыдДок="string" КодВыдДок="strings"/>
+    </ns:ПрдСведРег>
+  </ns:СведРегПерИмя>
+
+  <!--Optional:-->
+  <ns:СведРегСмерт НомерЗапис="string" ДатаЗапис="2002-11-25+03:00">
+    <ns:ОрганЗАГС НаимЗАГС="string" КодЗАГС="stringst"/>
+    <ns:СтатусЗаписи ДатаНачСтатус="2005-02-18+03:00" КодСтатус="03" НаимСтатус="string"/>
+    <!--Optional:-->
+    <ns:СведСвидет СерияСвидет="string" НомерСвидет="string" ДатаВыдСвидет="2011-09-16+04:00"/>
+    <ns:ПрдСведРег>
+      <ns:СведУмер Пол="1" ОКСМ="str" НаимСтраны="string">
+        <!--Zero or more repetitions:-->
+        <ns:СведПричСмерт КодПричСмерт="string" ПричСмерт="string"/>
+        <ns:ФИОУмер>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Фамилия>string</ns1:Фамилия>
+          <ns1:ПрФамилия>1</ns1:ПрФамилия>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Имя>string</ns1:Имя>
+          <ns1:ПрИмя>1</ns1:ПрИмя>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Отчество>string</ns1:Отчество>
+          <ns1:ПрОтчество>1</ns1:ПрОтчество>
+        </ns:ФИОУмер>
+        <!--You have a CHOICE of the next 3 items at this level-->
+        <!--Optional:-->
+        <ns:ДатаРожд>2002-02-12</ns:ДатаРожд>
+        <!--Optional:-->
+        <ns:МесГодРожд>2013-11</ns:МесГодРожд>
+        <!--Optional:-->
+        <ns:ГодРожд>2003+03:00</ns:ГодРожд>
+        <!--Optional:-->
+        <ns:МестоРожден МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string"/>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <!--Optional:-->
+        <ns:МЖПослРФ АдрРФТекст="string">
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:АдрКЛАДР Индекс="string" КодРегион="st" НаимРегион="string" Район="string" Город="string" НаселПункт="string" Улица="string" Дом="string" Корпус="string" Кварт="string"/>
+          <ns1:АдрФИАС ИдНом="string" Индекс="string">
+            <ns1:Регион>st</ns1:Регион>
+            <ns1:МуниципРайон ВидКод="s" Наим="string"/>
+            <!--Optional:-->
+            <ns1:ГородСелПоселен ВидКод="s" Наим="string"/>
+            <!--Optional:-->
+            <ns1:НаселенПункт Вид="string" Наим="string"/>
+            <!--Optional:-->
+            <ns1:ЭлПланСтруктур Тип="string" Наим="string"/>
+            <!--Optional:-->
+            <ns1:ЭлУлДорСети Тип="string" Наим="string"/>
+            <!--Optional:-->
+            <ns1:ЗемелУчасток>string</ns1:ЗемелУчасток>
+            <!--Zero or more repetitions:-->
+            <ns1:Здание Тип="string" Номер="string"/>
+            <!--Optional:-->
+            <ns1:ПомещЗдания Тип="string" Номер="string"/>
+            <!--Optional:-->
+            <ns1:ПомещКвартиры Тип="string" Номер="string"/>
+          </ns1:АдрФИАС>
+        </ns:МЖПослРФ>
+        <!--Optional:-->
+        <ns:МЖПослИн ОКСМ="str" НаимСтраны="string" АдрТекст="string"/>
+        <!--Optional:-->
+        <ns:УдЛичнФЛ КодВидДок="st" НаимДок="string" СерНомДок="string" ДатаДок="2006-04-19+04:00" ВыдДок="string" КодВыдДок="strings"/>
+        <!--You have a CHOICE of the next 3 items at this level-->
+        <ns:ДатаСмерт>2001-04-01+04:00</ns:ДатаСмерт>
+        <ns:МесГодСмерт>2005-10</ns:МесГодСмерт>
+        <ns:ГодСмерт>2018+03:00</ns:ГодСмерт>
+        <ns:МестоСмерт МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string"/>
+      </ns:СведУмер>
+      <!--Optional:-->
+      <ns:СведДокСмерт КодДок="strin" НаимДок="string" СерНомДок="string" ДатаДок="2004-11-15+03:00">
+        <!--You have a CHOICE of the next 3 items at this level-->
+        <!--Optional:-->
+        <ns:НаимОрг>string</ns:НаимОрг>
+        <!--Optional:-->
+        <ns:ФИОИП>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Фамилия>string</ns1:Фамилия>
+          <ns1:ПрФамилия>1</ns1:ПрФамилия>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Имя>string</ns1:Имя>
+          <ns1:ПрИмя>1</ns1:ПрИмя>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Отчество>string</ns1:Отчество>
+          <ns1:ПрОтчество>1</ns1:ПрОтчество>
+        </ns:ФИОИП>
+        <!--Optional:-->
+        <ns:ФИОФЛ>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Фамилия>string</ns1:Фамилия>
+          <ns1:ПрФамилия>1</ns1:ПрФамилия>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Имя>string</ns1:Имя>
+          <ns1:ПрИмя>1</ns1:ПрИмя>
+          <!--You have a CHOICE of the next 2 items at this level-->
+          <ns1:Отчество>string</ns1:Отчество>
+          <ns1:ПрОтчество>1</ns1:ПрОтчество>
+        </ns:ФИОФЛ>
+      </ns:СведДокСмерт>
+    </ns:ПрдСведРег>
+  </ns:СведРегСмерт>
+
+
+</ns:informResponse>

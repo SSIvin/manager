@@ -1,0 +1,9 @@
+<ns:ExportRAOHousesRequest Id="string" xmlns:ns="urn:dom.gosuslugi.ru/rao-houses/1.0.0" xmlns:ns1="urn:dom.gosuslugi.ru/common/1.2.0">
+  <ns1:information-system-id>string</ns1:information-system-id>
+  <ns1:organization-id>string</ns1:organization-id>
+  <!--You have a CHOICE of the next 3 items at this level-->
+  <ns:rf-entity-code>st</ns:rf-entity-code>
+  <ns:oktmo include-child-codes="true">string</ns:oktmo>
+  <!--1 to 100 repetitions:-->
+  <ns:fias-house-guid>string</ns:fias-house-guid>
+</ns:ExportRAOHousesRequest>

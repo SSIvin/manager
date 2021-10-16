@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><ReportPrint xmlns:em="urn://egisso-ru/msg/10.05.I/1.0.6" xmlns:etlmsz="urn://egisso-ru/types/local-MSZ/1.0.5" xmlns:etplmsz="urn://egisso-ru/types/package-LMSZ/1.0.6" xmlns:ns1="urn://x-artefacts-fns-dohflna/root/260-18/4.0.1" xmlns:ns10="urn://x-artefacts-smev-gov-ru/services/service-adapter/types/faults" xmlns:ns12="urn://x-artefacts-zags-inform/root/112-11/4.0.4" xmlns:ns13="http://epgu.gosuslugi.ru/concentrator/familychildsub/1.0.0" xmlns:ns14="http://kvs.pfr.com/snils-by-additionalData/1.0.1" xmlns:ns15="http://common.kvs.pfr.com/1.0.0" xmlns:ns16="urn://egisso-ru/types/cls-request/1.0.2" xmlns:ns17="urn://egisso-ru/msg/10.02.I/1.0.2" xmlns:ns18="urn://x-artefacts-fns-dohflnasp/root/260-23/4.0.0" xmlns:ns19="urn://x-artefacts-fns-svviplfl/root/114-43/4.0.0" xmlns:ns2="urn://x-artefacts-fns-ndfl3doh/root/210-18/4.0.2" xmlns:ns20="urn://x-artefacts-fns-dohflna/types/4.0.1" xmlns:ns21="urn://x-artefacts-fns-ndipsr/types/4.0.0" xmlns:ns22="urn://x-artefacts-fns-inn-singular/root/270-18/4.0.1" xmlns:ns23="urn://x-artefacts-fns-inn/commons/4.0.0" xmlns:ns25="urn://x-artefacts-zags-inform/types/4.0.4" xmlns:ns26="urn://x-artefacts-zags-rogdinf/types/4.0.0" xmlns:ns27="urn://egisso-ru/msg/10.10.I/1.0.2" xmlns:ns28="urn://egisso-ru/msg/10.29.O/1.0.1" xmlns:ns29="urn://egisso-ru/types/death-reg/1.0.1" xmlns:ns3="urn://x-artefacts-fns-dohflnasp/types/4.0.0" xmlns:ns30="urn://egisso-ru/types/registers-request/1.0.1" xmlns:ns31="urn://egisso-ru/msg/10.26.I/1.0.1" xmlns:ns32="urn://egisso-ru/types/registers-response/1.0.1" xmlns:ns33="urn://egisso-ru/types/registers/1.0.1" xmlns:ns34="urn://egisso-ru/types/basic/1.0.7" xmlns:ns35="urn://egisso-ru/types/prsn-statement/1.0.3" xmlns:ns36="urn://egisso-ru/msg/10.13.I/1.0.3" xmlns:ns37="http://kvs.fri.com/extraction-invalid-data/attachments/1.0.0" xmlns:ns38="http://fri.pfr.ru" xmlns:ns39="http://kvs.fri.com/extraction-invalid-data/1.0.3" xmlns:ns40="http://kvs.fri.com/initiative-distribution/1.0.2" xmlns:ns5="urn://x-artefacts-zags-rogdinf/root/112-51/4.0.0" xmlns:ns7="urn://x-artefacts-fns-ndipsr/root/210-17/4.0.0" xmlns:ns9="urn://x-artefacts-smev-gov-ru/supplementary/commons/1.0.1" xmlns:tns1="urn://x-artefacts-smev-gov-ru/services/service-adapter/types"><reportRequest requestCreateDate="2021-01-22T09:47:56" requestId="e0b8f854-8c2a-45fa-91f4-5ba85a8f3758" userName="Ивин Сергей Сергеевич"><MessagePrimaryContent>
+  <informRequest ИдЗапрос="e0b8f854-8c2a-45fa-91f4-5ba85a8f3758" ТипАГС="6" ТипЗапрос="2">
+    <СведФЛ СНИЛС="129 747 992 23">
+      <ФИО>
+        <Фамилия>Антипенко</Фамилия>
+        <Имя>Наталина</Имя>
+        <Отчество>Александровна</Отчество>
+      </ФИО>
+      <ДатаРожд>1990-01-02Z</ДатаРожд>
+    </СведФЛ>
+  </informRequest>
+</MessagePrimaryContent></reportRequest><reportResponse responseCreateDate="2021-01-22T09:48:57" responseId="430273f2-1ac2-4087-bc29-f1dda58330c8"><informResponse ДатаСвед="2021-01-22" ИдЗапрос="e0b8f854-8c2a-45fa-91f4-5ba85a8f3758" КодСтатус="01" РезОбраб="1" ТипАГСЗапрос="6" ТипЗапрос="2">
+  <СведРегПерИмя ДатаЗапис="2021-01-16" НомерЗапис="160219340004300001008">
+    <ОрганЗАГС КодЗАГС="R3400043" НаимЗАГС="отдел ЗАГС администрации Краснооктябрьского района Волгограда"/>
+    <СтатусЗаписи ДатаНачСтатус="2021-01-16" КодСтатус="01" НаимСтатус="Запись акта первичная"/>
+    <СведСвидет ДатаВыдСвидет="2021-01-16" НомерСвидет="521079" СерияСвидет="I-РК"/>
+    <ПрдСведРег НаимСтраны="Российская Федерация" ОКСМ="643">
+      <ФИОДо>
+        <Фамилия>Антипенко</Фамилия>
+        <Имя>Ярослава</Имя>
+        <Отчество>Александровна</Отчество>
+      </ФИОДо>
+      <ФИОПосле>
+        <Фамилия>Антипенко</Фамилия>
+        <Имя>Наталина</Имя>
+        <Отчество>Александровна</Отчество>
+      </ФИОПосле>
+      <ДатаРожд>1990-01-02</ДатаРожд>
+      <МестоРожден МестоТекст="Волгоградская область, г. Дубовка"/>
+      <АдрМЖРФ АдрРФТекст="Российская Федерация, Волгоградская область, г. Волгоград, ул. им Репина, д.23, кв.59">
+        <АдрКЛАДР Дом="23" Кварт="59" КодРегион="34" НаимРегион="Нет данных"/>
+      </АдрМЖРФ>
+    </ПрдСведРег>
+  </СведРегПерИмя>
+  <СведРегПерИмя ДатаЗапис="2099-01-16" НомерЗапис="160219340004300001008">
+    <ОрганЗАГС КодЗАГС="R3400099" НаимЗАГС="99отдел ЗАГС администрации Краснооктябрьского района Волгограда"/>
+    <СтатусЗаписи ДатаНачСтатус="2099-01-16" КодСтатус="01" НаимСтатус="Запись акта первичная"/>
+    <СведСвидет ДатаВыдСвидет="2099-01-16" НомерСвидет="8888" СерияСвидет="I-РК"/>
+    <ПрдСведРег НаимСтраны="Российская Федераци9я" ОКСМ="643">
+      <ФИОДо>
+        <Фамилия>Антипенко1</Фамилия>
+        <Имя>Ярослава1</Имя>
+        <Отчество>Александровна1</Отчество>
+      </ФИОДо>
+      <ФИОПосле>
+        <Фамилия>Антипенко1</Фамилия>
+        <Имя>Наталина1</Имя>
+        <Отчество>Александровна1</Отчество>
+      </ФИОПосле>
+      <ДатаРожд>1990-01-02</ДатаРожд>
+      <МестоРожден МестоТекст="9Волгоградская область, г. Дубовка"/>
+      <АдрМЖРФ АдрРФТекст="9Российская Федерация, Волгоградская область, г. Волгоград, ул. им Репина, д.23, кв.59">
+        <АдрКЛАДР Дом="23" Кварт="59" КодРегион="34" НаимРегион="Нет данных"/>
+      </АдрМЖРФ>
+    </ПрдСведРег>
+  </СведРегПерИмя>
+</informResponse><reportAttachmentData/></reportResponse><interactionStatus><statusReport statusDate="2021-01-22T09:48:48"><code>0</code><desc>Сообщение отправлено в СМЭВ</desc></statusReport></interactionStatus></ReportPrint>

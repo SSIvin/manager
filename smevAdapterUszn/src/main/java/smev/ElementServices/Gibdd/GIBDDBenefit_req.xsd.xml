@@ -1,0 +1,7 @@
+<ns:RequestBenefit489 xmlns:ns="urn://x-artefacts-gibdd-benefit489/data/1.0">
+  <ns:OwnerLastName>string</ns:OwnerLastName>
+  <ns:OwnerFirstName>string</ns:OwnerFirstName>
+  <!--Optional:-->
+  <ns:OwnerMiddleName>string</ns:OwnerMiddleName>
+  <ns:OwnerBirthDate>2008-09-29</ns:OwnerBirthDate>
+</ns:RequestBenefit489>

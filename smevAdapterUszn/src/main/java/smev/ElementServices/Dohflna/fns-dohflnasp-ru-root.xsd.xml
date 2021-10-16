@@ -1,0 +1,6 @@
+<ns:DOHFLNASPRequest ИдЗапрос="string" ОтчетГод="1900" xmlns:ns="urn://x-artefacts-fns-dohflnasp/root/260-23/4.0.0">
+    <ns:СвФЛ ДатаРожд="1900-01-01" ИННФЛ="stringstring" СНИЛС="stringstrin" ИННЮЛ_НА="stringstri">
+        <ns:ФИОФЛ FamilyName="string" FirstName="string" Patronymic="string"/>
+        <ns:УдЛичн DocumentCode="st" SeriesNumber="string"/>
+    </ns:СвФЛ>
+</ns:DOHFLNASPRequest>

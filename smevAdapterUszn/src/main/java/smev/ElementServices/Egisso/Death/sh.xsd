@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns="urn://egisso-ru/msg/10.29.O/1.0.1" xmlns:tns="urn://egisso-ru/types/death-reg/1.0.1" targetNamespace="urn://egisso-ru/msg/10.29.O/1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<xs:import namespace="urn://egisso-ru/types/death-reg/1.0.1" schemaLocation="death-reg-1.0.1.xsd"/>
+
+	<xs:element name="FATALRequest">
+		<xs:annotation>
+			<xs:documentation>Сведения о записях актов о смерти</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="СведРегСмерт" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Сведения о государственной регистрации смерти</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ОрганЗАГС" type="tns:ОрганЗАГСТип">
+								<xs:annotation>
+									<xs:documentation>Сведения об органе ЗАГС, которым произведена государственная регистрация смерти</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="СтатусЗаписи">
+								<xs:annotation>
+									<xs:documentation>Сведения о статусе записи акта о смерти</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:attribute name="ДатаНачСтатус" type="xs:date" use="required">
+										<xs:annotation>
+											<xs:documentation>Дата начала действия статуса</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="КодСтатус" use="required">
+										<xs:annotation>
+											<xs:documentation>Код статуса</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="tns:digits-2">
+												<xs:enumeration value="01"/>
+												<xs:enumeration value="02"/>
+												<xs:enumeration value="03"/>
+												<xs:enumeration value="07"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="НаимСтатус" type="tns:string-255" use="required">
+										<xs:annotation>
+											<xs:documentation>Наименование статуса</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="СведСвидет" type="tns:СведСвидетТип" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Сведения о выданном Свидетельстве о смерти</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ПовтСвидет" type="tns:СведСвидетТип" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Сведения о повторно выданных Свидетельствах о смерти</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ПрдСведРег">
+								<xs:annotation>
+									<xs:documentation>Передаваемые сведения о государственной регистрации смерти</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="СведУмер">
+											<xs:annotation>
+												<xs:documentation>Сведения об умершем</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:choice>
+														<xs:element name="ПрГражданство">
+															<xs:annotation>
+																<xs:documentation>Признак отсутствия сведений о гражданстве</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="tns:string-1">
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="Гражданство" type="tns:ГражданствоТип">
+															<xs:annotation>
+																<xs:documentation>Сведения о гражданстве</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+													</xs:choice>
+													<xs:element name="ФИОУмер" type="tns:ФИОПрТип">
+														<xs:annotation>
+															<xs:documentation>Фамилия, имя, отчество умершего</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:choice>
+														<xs:element name="ПрДатаРожд">
+															<xs:annotation>
+																<xs:documentation>Признак отсутствия сведений о дате рождения умершего</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="tns:string-1">
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="ДатаРождКаленд" type="xs:date">
+															<xs:annotation>
+																<xs:documentation>Дата рождения (календарная дата)</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="ДатаРождДок" type="tns:ДатаДокТип">
+															<xs:annotation>
+																<xs:documentation>Дата рождения по представленным документам</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+													</xs:choice>
+													<xs:choice>
+														<xs:element name="ПрМестоРожден">
+															<xs:annotation>
+																<xs:documentation>Признак отсутствия сведений о месте рождения умершего</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="tns:string-1">
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="МестоРожден" type="tns:МестоТип">
+															<xs:annotation>
+																<xs:documentation>Место рождения</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+													</xs:choice>
+													<xs:choice>
+														<xs:element name="ПрМЖПосл">
+															<xs:annotation>
+																<xs:documentation>Признак отсутствия сведений о последнем месте жительства</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="tns:string-1">
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="МЖПосл" type="tns:МЖПослТип">
+															<xs:annotation>
+																<xs:documentation>Последнее место жительства</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+													</xs:choice>
+													<xs:choice>
+														<xs:element name="ПрУдЛичнФЛ">
+															<xs:annotation>
+																<xs:documentation>Признак отсутствия сведений о документе, удостоверяющем личность</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="tns:string-1">
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="УдЛичнФЛ" type="tns:УдЛичнФЛТип">
+															<xs:annotation>
+																<xs:documentation>Сведения о документе, удостоверяющем личность</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+													</xs:choice>
+													<xs:choice>
+														<xs:element name="ПрДатаСмерт">
+															<xs:annotation>
+																<xs:documentation>Признак отсутствия сведений о дате смерти умершего</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="tns:string-1">
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="ДатаСмертКаленд" type="xs:date">
+															<xs:annotation>
+																<xs:documentation>Дата смерти (календарная дата)</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="ДатаСмертДок" type="tns:ДатаДокТип">
+															<xs:annotation>
+																<xs:documentation>Дата смерти по представленным документам</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+													</xs:choice>
+													<xs:choice>
+														<xs:element name="ПрВремяСмерт">
+															<xs:annotation>
+																<xs:documentation>Признак отсутствия сведений о времени смерти умершего</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="tns:string-1">
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="ВремяСмерт" type="xs:time">
+															<xs:annotation>
+																<xs:documentation>Время смерти</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+													</xs:choice>
+													<xs:choice>
+														<xs:element name="ПрМестоСмерт">
+															<xs:annotation>
+																<xs:documentation>Признак отсутствия сведений о месте смерти умершего</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="tns:string-1">
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="МестоСмерт" type="tns:МестоТип">
+															<xs:annotation>
+																<xs:documentation>Место смерти</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+													</xs:choice>
+												</xs:sequence>
+												<xs:attribute name="ПрНеустанЛицо" use="optional">
+													<xs:annotation>
+														<xs:documentation>Признак умершего лица, личность которого не установлена</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="tns:digits-1">
+															<xs:enumeration value="1"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="Пол" use="optional">
+													<xs:annotation>
+														<xs:documentation>Пол</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="tns:digits-1">
+															<xs:enumeration value="1"/>
+															<xs:enumeration value="2"/>
+															<xs:enumeration value="3"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="СНИЛС" type="tns:СНИЛСТип" use="optional">
+													<xs:annotation>
+														<xs:documentation>СНИЛС</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="СведИспрАГС" type="tns:СведИзмАГСТип" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Сведения о внесенных исправлениях и изменениях в запись акта о смерти</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="СведВосстанАГС" type="tns:СведИзмАГСТип" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Сведения о восстановлении записи акта о смерти</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="СведАннулирАГС" type="tns:СведИзмАГСТип" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Сведения об аннулировании записи акта о смерти</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="НомерЗапис" type="tns:string-22" use="required">
+							<xs:annotation>
+								<xs:documentation>Номер записи акта о смерти</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ДатаЗапис" type="xs:date" use="required">
+							<xs:annotation>
+								<xs:documentation>Дата составления записи акта о смерти</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="НомерВерс" type="tns:string-1_3" use="required">
+							<xs:annotation>
+								<xs:documentation>Номер версии записи</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ДатаВерс" type="xs:date" use="required">
+							<xs:annotation>
+								<xs:documentation>Дата версии записи</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="ИдСвед" type="tns:ИдЗапросТип" use="required">
+				<xs:annotation>
+					<xs:documentation>Идентификатор сведений, сформированный поставщиком</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="ДатаСвед" type="xs:date" use="required">
+				<xs:annotation>
+					<xs:documentation>Дата, на которую сформированы сведения</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

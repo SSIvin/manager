@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jxb="http://java.sun.com/xml/ns/jaxb" xmlns:tns="urn://x-artefacts-gibdd-benefit489/types/1.0" targetNamespace="urn://x-artefacts-gibdd-benefit489/types/1.0" elementFormDefault="qualified" jxb:version="2.0">
+	<xs:annotation>
+		<xs:appinfo>
+			<jxb:schemaBindings>
+				<jxb:package name="ru.rtlabs.nsud.smev.metadata.data"/>
+			</jxb:schemaBindings>
+		</xs:appinfo>
+	</xs:annotation>
+	<xs:simpleType name="VINType">
+		<xs:annotation>
+			<xs:documentation>VIN номер</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="18"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SNILSType">
+		<xs:annotation>
+			<xs:documentation>СНИЛС</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="11"/>
+			<xs:pattern value="\d{11}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="INNType">
+		<xs:annotation>
+			<xs:documentation>ИНН</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+			<xs:pattern value="\d{20}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="OGRNType">
+		<xs:annotation>
+			<xs:documentation>ОГРН</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="KPPType">
+		<xs:annotation>
+			<xs:documentation>КПП</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="9"/>
+			<xs:pattern value="\d{9}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="GovRegNumType">
+		<xs:annotation>
+			<xs:documentation>Государственный номер (тип)</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="STSSeriesNumberType">
+		<xs:annotation>
+			<xs:documentation>Серия СТС</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PTSSeriesNumberType">
+		<xs:annotation>
+			<xs:documentation>Серия и номер ПТС</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="15"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="IDDocumentNumberSerType">
+		<xs:annotation>
+			<xs:documentation>Номер паспорта</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="15"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Status">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="OK"/>
+			<xs:enumeration value="ERROR"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,55 @@
+<configuration scan="true" scanPeriod="30 seconds">
+    <!-- Logging Properties -->
+    <property  name="LOG_PATTERN" value = "[%date] %highlight([%level]) [%logger{10} %file:%line] %msg%n"></property>
+    <property  name="APP_LOG_ROOT" value = "LOG"></property>
+
+
+    <statusListener class="ch.qos.logback.core.status.OnConsoleStatusListener" />
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!--<pattern>%cyan(%d{HH:mm:ss.SSS}) %gray([%thread]) %highlight(%-5level) %magenta(%logger{36}) - %msg%n</pattern>-->
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${APP_LOG_ROOT}/app.%d{yyyy-MM-dd}.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Daily rollover -->
+            <fileNamePattern>app.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- Keep 7 days' worth of history -->
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE2" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${APP_LOG_ROOT}/app2.%d{yyyy-MM-dd}.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Daily rollover -->
+            <fileNamePattern>app2.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- Keep 7 days' worth of history -->
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+
+    <logger name="deng" level="DEBUG"/>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE" />
+        <appender-ref ref="FILE2" />
+    </root>
+
+
+
+</configuration>

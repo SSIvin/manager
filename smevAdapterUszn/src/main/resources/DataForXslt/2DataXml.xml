@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportPrint>
+    <reportRequest requestCreateDate="2020-08-08T18:30:04" requestId="2fc66cf1-4982-4770-8f77-77947ac501b1">
+        <MessagePrimaryContent>
+            <DOHFLNARequest Id="PERSONAL_SIGNATURE" ИдЗапрос="000000000000000000000000000000000001" ОтчетГод="2015">
+                <СвФЛ ДатаРожд="1980-01-01Z" ИННФЛ="100000000074" СНИЛС="00000000000">
+                    <ФИОФЛ FamilyName="ИВАНОВ" FirstName="ИВАН" Patronymic="ИВАНОВИЧ"/>
+                    <УдЛичн DocumentCode="21" SeriesNumber="0000 000000"/>
+                </СвФЛ>
+            </DOHFLNARequest>
+        </MessagePrimaryContent>
+    </reportRequest>
+    <reportResponse responseCreateDate="2020-08-08T18:31:27" responseId="865a55b3-3337-4e6a-84f8-890fea4b9bfb">
+        <informResponse ИдЗапрос="string" ТипЗапрос="2" ТипАГСЗапрос="6" НомерЗаписЗапрос="string" ДатаСвед="2013-11-23" РезОбраб="2" КодСтатус="02">
+            <!--Optional:-->
+            <СведРегРожд НомерЗапис="string" ДатаЗапис="2018-11-01+04:00">
+                <ОрганЗАГС НаимЗАГС="string" КодЗАГС="stringst"/>
+                <СтатусЗаписи ДатаНачСтатус="2013-05-22+04:00" КодСтатус="01" НаимСтатус="string"/>
+                <!--Zero or more repetitio-->
+                <СвидетРожд СерияСвидет="0000000string" НомерСвидет="string" ДатаВыдСвидет="2013-12-21+04:00"/>
+                <ПрдСведРег КолРодДетей="100">
+                    <СведРодившемся ЖивМертв="1" Пол="2">
+                        <ФИОРожд>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Фамилия>stringsdfsd</Фамилия>
+                            <ПрФамилия>0</ПрФамилия>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Имя>sdfsd</Имя>
+                            <ПрИмя>0</ПрИмя>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Отчество>stringsfsdf</Отчество>
+                            <ПрОтчество>0</ПрОтчество>
+                        </ФИОРожд>
+                        <!--You have a CHOICE of the next 3 items at this level-->
+                        <ДатаРожд>2019-08-04</ДатаРожд>
+                        <!--<МесГодРожд>2018-02+04:00</МесГодРожд>-->
+                        <!--<ГодРожд>2002+04:00</ГодРожд>-->
+                        <МестоРожден МестоТекст="stringМестоТекст" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string"/>
+                    </СведРодившемся>
+                    <!--Optional:-->
+                    <СведМать ОКСМ="str" НаимСтраны="string">
+                        <ФИО>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Фамилия>string</Фамилия>
+                            <ПрФамилия>0</ПрФамилия>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Имя>string</Имя>
+                            <ПрИмя>0</ПрИмя>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Отчество>string</Отчество>
+                            <ПрОтчество>0</ПрОтчество>
+                        </ФИО>
+                        <!--Optional:-->
+                        <МестоРожден МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string"/>
+                        <!--You have a CHOICE of the next 3 items at this level-->
+                        <!--Optional:-->
+                        <ДатаРожд>2015-08-24</ДатаРожд>
+                        <!--Optional:-->
+                        <МесГодРожд>2015-06+04:00</МесГодРожд>
+                        <!--Optional:-->
+                        <ГодРожд>2000+05:00</ГодРожд>
+                        <!--Optional:-->
+                        <УдЛичнФЛ КодВидДок="st" НаимДок="string" СерНомДок="string" ДатаДок="2017-04-19+04:00" ВыдДок="string" КодВыдДок="strings"/>
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <!--Optional:-->
+                        <АдрМЖРФ АдрРФТекст="string">
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <АдрКЛАДР Индекс="string" КодРегион="st" НаимРегион="string" Район="string" Город="string" НаселПункт="string" Улица="string" Дом="string" Корпус="string" Кварт="string"/>
+                            <АдрФИАС ИдНом="string" Индекс="string">
+                                <Регион>st</Регион>
+                                <МуниципРайон ВидКод="s" Наим="string"/>
+                                <!--Optional:-->
+                                <ГородСелПоселен ВидКод="s" Наим="string"/>
+                                <!--Optional:-->
+                                <НаселенПункт Вид="string" Наим="string"/>
+                                <!--Optional:-->
+                                <ЭлПланСтруктур Тип="string" Наим="string"/>
+                                <!--Optional:-->
+                                <ЭлУлДорСети Тип="string" Наим="string"/>
+                                <!--Optional:-->
+                                <ЗемелУчасток>string</ЗемелУчасток>
+                                <!--Zero or more repetitio-->
+                                <Здание Тип="string" Номер="string"/>
+                                <!--Optional:-->
+                                <ПомещЗдания Тип="string" Номер="string"/>
+                                <!--Optional:-->
+                                <ПомещКвартиры Тип="string" Номер="string"/>
+                            </АдрФИАС>
+                        </АдрМЖРФ>
+                        <!--Optional:-->
+                        <АдрМЖИн ОКСМ="str" НаимСтраны="string" АдрТекст="string"/>
+                    </СведМать>
+                    <!--Optional:-->
+                    <СведОтец ОКСМ="str" НаимСтраны="string">
+                        <ФИО>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Фамилия>string</Фамилия>
+                            <ПрФамилия>1</ПрФамилия>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Имя>string</Имя>
+                            <ПрИмя>1</ПрИмя>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Отчество>string</Отчество>
+                            <ПрОтчество>1</ПрОтчество>
+                        </ФИО>
+                        <!--Optional:-->
+                        <МестоРожден МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string"/>
+                        <!--You have a CHOICE of the next 3 items at this level-->
+                        <!--Optional:-->
+                        <ДатаРожд>2011-12-25</ДатаРожд>
+                        <!--Optional:-->
+                        <МесГодРожд>2015-10+04:00</МесГодРожд>
+                        <!--Optional:-->
+                        <ГодРожд>2018+04:00</ГодРожд>
+                        <!--Optional:-->
+                        <УдЛичнФЛ КодВидДок="st" НаимДок="string" СерНомДок="string" ДатаДок="2004-12-06+04:00" ВыдДок="string" КодВыдДок="strings"/>
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <!--Optional:-->
+                        <АдрМЖРФ АдрРФТекст="string">
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <АдрКЛАДР Индекс="string" КодРегион="st" НаимРегион="string" Район="string" Город="string" НаселПункт="string" Улица="string" Дом="string" Корпус="string" Кварт="string"/>
+                            <АдрФИАС ИдНом="string" Индекс="string">
+                                <Регион>st</Регион>
+                                <МуниципРайон ВидКод="s" Наим="string"/>
+                                <!--Optional:-->
+                                <ГородСелПоселен ВидКод="s" Наим="string"/>
+                                <!--Optional:-->
+                                <НаселенПункт Вид="string" Наим="string"/>
+                                <!--Optional:-->
+                                <ЭлПланСтруктур Тип="string" Наим="string"/>
+                                <!--Optional:-->
+                                <ЭлУлДорСети Тип="string" Наим="string"/>
+                                <!--Optional:-->
+                                <ЗемелУчасток>string</ЗемелУчасток>
+                                <!--Zero or more repetitio-->
+                                <Здание Тип="string" Номер="string"/>
+                                <!--Optional:-->
+                                <ПомещЗдания Тип="string" Номер="string"/>
+                                <!--Optional:-->
+                                <ПомещКвартиры Тип="string" Номер="string"/>
+                            </АдрФИАС>
+                        </АдрМЖРФ>
+                        <!--Optional:-->
+                        <АдрМЖИн ОКСМ="str" НаимСтраны="string" АдрТекст="string"/>
+                    </СведОтец>
+                    <!--Optional:-->
+                    <СведДокРод КодДок="strin" НаимДок="string" СерНомДок="string" ДатаДок="2006-12-05">
+                        <!--You have a CHOICE of the next 3 items at this level-->
+                        <!--Optional:-->
+                        <НаимОрг>string</НаимОрг>
+                        <!--Optional:-->
+                        <ФИОИП>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Фамилия>string</Фамилия>
+                            <ПрФамилия>1</ПрФамилия>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Имя>string</Имя>
+                            <ПрИмя>1</ПрИмя>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Отчество>string</Отчество>
+                            <ПрОтчество>1</ПрОтчество>
+                        </ФИОИП>
+                        <!--Optional:-->
+                        <ФИОФЛ>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Фамилия>string</Фамилия>
+                            <ПрФамилия>1</ПрФамилия>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Имя>string</Имя>
+                            <ПрИмя>1</ПрИмя>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Отчество>string</Отчество>
+                            <ПрОтчество>1</ПрОтчество>
+                        </ФИОФЛ>
+                    </СведДокРод>
+                </ПрдСведРег>
+            </СведРегРожд>
+            <!--Zero or more repetitio-->
+            <СведРегЗаклБрак НомерЗапис="string" ДатаЗапис="2016-10-07+04:00">
+                <ОрганЗАГС НаимЗАГС="string" КодЗАГС="stringst"/>
+                <СтатусЗаписи ДатаНачСтатус="2002-11-05" КодСтатус="02" НаимСтатус="string"/>
+                <!--Optional:-->
+                <СведСвидет СерияСвидет="string" НомерСвидет="string" ДатаВыдСвидет="2001-07-26"/>
+                <ПрдСведРег ПризСвед="1" ДатаЗаклБрак="2001-08-29+05:00">
+                    <СведЛицБрак>
+                        <Супруг ОКСМ="str" НаимСтраны="string">
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ФамилияДо>string</ФамилияДо>
+                            <ПрФамилияДо>1</ПрФамилияДо>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ФамилияПосле>string</ФамилияПосле>
+                            <ПрФамилияПосле>1</ПрФамилияПосле>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Имя>string</Имя>
+                            <ПрИмя>1</ПрИмя>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Отчество>string</Отчество>
+                            <ПрОтчество>1</ПрОтчество>
+                            <!--You have a CHOICE of the next 3 items at this level-->
+                            <!--Optional:-->
+                            <ДатаРожд>2010-04-24+05:00</ДатаРожд>
+                            <!--Optional:-->
+                            <МесГодРожд>2014-07+04:00</МесГодРожд>
+                            <!--Optional:-->
+                            <ГодРожд>2005+05:00</ГодРожд>
+                            <!--Optional:-->
+                            <МестоРожден МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string"/>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <!--Optional:-->
+                            <АдрМЖРФ АдрРФТекст="string">
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <АдрКЛАДР Индекс="string" КодРегион="st" НаимРегион="string" Район="string" Город="string" НаселПункт="string" Улица="string" Дом="string" Корпус="string" Кварт="string"/>
+                                <АдрФИАС ИдНом="string" Индекс="string">
+                                    <Регион>st</Регион>
+                                    <МуниципРайон ВидКод="s" Наим="string"/>
+                                    <!--Optional:-->
+                                    <ГородСелПоселен ВидКод="s" Наим="string"/>
+                                    <!--Optional:-->
+                                    <НаселенПункт Вид="string" Наим="string"/>
+                                    <!--Optional:-->
+                                    <ЭлПланСтруктур Тип="string" Наим="string"/>
+                                    <!--Optional:-->
+                                    <ЭлУлДорСети Тип="string" Наим="string"/>
+                                    <!--Optional:-->
+                                    <ЗемелУчасток>string</ЗемелУчасток>
+                                    <!--Zero or more repetitio-->
+                                    <Здание Тип="string" Номер="string"/>
+                                    <!--Optional:-->
+                                    <ПомещЗдания Тип="string" Номер="string"/>
+                                    <!--Optional:-->
+                                    <ПомещКвартиры Тип="string" Номер="string"/>
+                                </АдрФИАС>
+                            </АдрМЖРФ>
+                            <!--Optional:-->
+                            <АдрМЖИн ОКСМ="str" НаимСтраны="string" АдрТекст="string"/>
+                            <!--Optional:-->
+                            <УдЛичнФЛ КодВидДок="st" НаимДок="string" СерНомДок="string" ДатаДок="2016-06-29" ВыдДок="string" КодВыдДок="strings"/>
+                            <!--You have a CHOICE of the next 0 items at this level-->
+                        </Супруг>
+                        <Супруга ОКСМ="str" НаимСтраны="string">
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ФамилияДо>string</ФамилияДо>
+                            <ПрФамилияДо>1</ПрФамилияДо>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ФамилияПосле>string</ФамилияПосле>
+                            <ПрФамилияПосле>1</ПрФамилияПосле>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Имя>string</Имя>
+                            <ПрИмя>1</ПрИмя>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Отчество>string</Отчество>
+                            <ПрОтчество>1</ПрОтчество>
+                            <!--You have a CHOICE of the next 3 items at this level-->
+                            <!--Optional:-->
+                            <ДатаРожд>2004-09-11</ДатаРожд>
+                            <!--Optional:-->
+                            <МесГодРожд>2003-06</МесГодРожд>
+                            <!--Optional:-->
+                            <ГодРожд>2011</ГодРожд>
+                            <!--Optional:-->
+                            <МестоРожден МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string"/>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <!--Optional:-->
+                            <АдрМЖРФ АдрРФТекст="string">
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <АдрКЛАДР Индекс="string" КодРегион="st" НаимРегион="string" Район="string" Город="string" НаселПункт="string" Улица="string" Дом="string" Корпус="string" Кварт="string"/>
+                                <АдрФИАС ИдНом="string" Индекс="string">
+                                    <Регион>st</Регион>
+                                    <МуниципРайон ВидКод="s" Наим="string"/>
+                                    <!--Optional:-->
+                                    <ГородСелПоселен ВидКод="s" Наим="string"/>
+                                    <!--Optional:-->
+                                    <НаселенПункт Вид="string" Наим="string"/>
+                                    <!--Optional:-->
+                                    <ЭлПланСтруктур Тип="string" Наим="string"/>
+                                    <!--Optional:-->
+                                    <ЭлУлДорСети Тип="string" Наим="string"/>
+                                    <!--Optional:-->
+                                    <ЗемелУчасток>string</ЗемелУчасток>
+                                    <!--Zero or more repetitio-->
+                                    <Здание Тип="string" Номер="string"/>
+                                    <!--Optional:-->
+                                    <ПомещЗдания Тип="string" Номер="string"/>
+                                    <!--Optional:-->
+                                    <ПомещКвартиры Тип="string" Номер="string"/>
+                                </АдрФИАС>
+                            </АдрМЖРФ>
+                            <!--Optional:-->
+                            <АдрМЖИн ОКСМ="str" НаимСтраны="string" АдрТекст="string"/>
+                            <!--Optional:-->
+                            <УдЛичнФЛ КодВидДок="st" НаимДок="string" СерНомДок="string" ДатаДок="2006-12-01+04:00" ВыдДок="string" КодВыдДок="strings"/>
+                            <!--You have a CHOICE of the next 0 items at this level-->
+                        </Супруга>
+                    </СведЛицБрак>
+                </ПрдСведРег>
+            </СведРегЗаклБрак>
+            <!--Zero or more repetitio-->
+            <СведРегРстржБрак НомерЗапис="string" ДатаЗапис="2010-01-27">
+                <ОрганЗАГС НаимЗАГС="string" КодЗАГС="stringst"/>
+                <СтатусЗаписи ДатаНачСтатус="2003-03-06" КодСтатус="03" НаимСтатус="string"/>
+                <!--Zero or more repetitio-->
+                <СведСвидет СерияСвидет="string" НомерСвидет="string" ДатаВыдСвидет="2016-10-25+04:00"/>
+                <ПрдСведРег ПризСвед="2" ДатаПрекрБрак="2019-03-27">
+                    <СведЛицБрак>
+                        <Супруг ОКСМ="str" НаимСтраны="string">
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ФамилияДо>string</ФамилияДо>
+                            <ПрФамилияДо>1</ПрФамилияДо>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ФамилияПосле>string</ФамилияПосле>
+                            <ПрФамилияПосле>1</ПрФамилияПосле>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Имя>string</Имя>
+                            <ПрИмя>1</ПрИмя>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Отчество>string</Отчество>
+                            <ПрОтчество>1</ПрОтчество>
+                            <!--You have a CHOICE of the next 3 items at this level-->
+                            <!--Optional:-->
+                            <ДатаРожд>2004-06-16+05:00</ДатаРожд>
+                            <!--Optional:-->
+                            <МесГодРожд>2016-09+04:00</МесГодРожд>
+                            <!--Optional:-->
+                            <ГодРожд>2011</ГодРожд>
+                            <!--Optional:-->
+                            <МестоРожден МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string"/>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <!--Optional:-->
+                            <АдрМЖРФ АдрРФТекст="string">
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <АдрКЛАДР Индекс="string" КодРегион="st" НаимРегион="string" Район="string" Город="string" НаселПункт="string" Улица="string" Дом="string" Корпус="string" Кварт="string"/>
+                                <АдрФИАС ИдНом="string" Индекс="string">
+                                    <Регион>st</Регион>
+                                    <МуниципРайон ВидКод="s" Наим="string"/>
+                                    <!--Optional:-->
+                                    <ГородСелПоселен ВидКод="s" Наим="string"/>
+                                    <!--Optional:-->
+                                    <НаселенПункт Вид="string" Наим="string"/>
+                                    <!--Optional:-->
+                                    <ЭлПланСтруктур Тип="string" Наим="string"/>
+                                    <!--Optional:-->
+                                    <ЭлУлДорСети Тип="string" Наим="string"/>
+                                    <!--Optional:-->
+                                    <ЗемелУчасток>string</ЗемелУчасток>
+                                    <!--Zero or more repetitio-->
+                                    <Здание Тип="string" Номер="string"/>
+                                    <!--Optional:-->
+                                    <ПомещЗдания Тип="string" Номер="string"/>
+                                    <!--Optional:-->
+                                    <ПомещКвартиры Тип="string" Номер="string"/>
+                                </АдрФИАС>
+                            </АдрМЖРФ>
+                            <!--Optional:-->
+                            <АдрМЖИн ОКСМ="str" НаимСтраны="string" АдрТекст="string"/>
+                            <!--Optional:-->
+                            <УдЛичнФЛ КодВидДок="st" НаимДок="string" СерНомДок="string" ДатаДок="2010-05-02+05:00" ВыдДок="string" КодВыдДок="strings"/>
+                            <!--You have a CHOICE of the next 0 items at this level-->
+                        </Супруг>
+                        <Супруга ОКСМ="str" НаимСтраны="string">
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ФамилияДо>string</ФамилияДо>
+                            <ПрФамилияДо>1</ПрФамилияДо>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ФамилияПосле>string</ФамилияПосле>
+                            <ПрФамилияПосле>1</ПрФамилияПосле>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Имя>string</Имя>
+                            <ПрИмя>1</ПрИмя>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Отчество>string</Отчество>
+                            <ПрОтчество>1</ПрОтчество>
+                            <!--You have a CHOICE of the next 3 items at this level-->
+                            <!--Optional:-->
+                            <ДатаРожд>2003-03-28+04:00</ДатаРожд>
+                            <!--Optional:-->
+                            <МесГодРожд>2015-12</МесГодРожд>
+                            <!--Optional:-->
+                            <ГодРожд>2007</ГодРожд>
+                            <!--Optional:-->
+                            <МестоРожден МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string"/>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <!--Optional:-->
+                            <АдрМЖРФ АдрРФТекст="string">
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <АдрКЛАДР Индекс="string" КодРегион="st" НаимРегион="string" Район="string" Город="string" НаселПункт="string" Улица="string" Дом="string" Корпус="string" Кварт="string"/>
+                                <АдрФИАС ИдНом="string" Индекс="string">
+                                    <Регион>st</Регион>
+                                    <МуниципРайон ВидКод="s" Наим="string"/>
+                                    <!--Optional:-->
+                                    <ГородСелПоселен ВидКод="s" Наим="string"/>
+                                    <!--Optional:-->
+                                    <НаселенПункт Вид="string" Наим="string"/>
+                                    <!--Optional:-->
+                                    <ЭлПланСтруктур Тип="string" Наим="string"/>
+                                    <!--Optional:-->
+                                    <ЭлУлДорСети Тип="string" Наим="string"/>
+                                    <!--Optional:-->
+                                    <ЗемелУчасток>string</ЗемелУчасток>
+                                    <!--Zero or more repetitio-->
+                                    <Здание Тип="string" Номер="string"/>
+                                    <!--Optional:-->
+                                    <ПомещЗдания Тип="string" Номер="string"/>
+                                    <!--Optional:-->
+                                    <ПомещКвартиры Тип="string" Номер="string"/>
+                                </АдрФИАС>
+                            </АдрМЖРФ>
+                            <!--Optional:-->
+                            <АдрМЖИн ОКСМ="str" НаимСтраны="string" АдрТекст="string"/>
+                            <!--Optional:-->
+                            <УдЛичнФЛ КодВидДок="st" НаимДок="string" СерНомДок="string" ДатаДок="2016-07-25+04:00" ВыдДок="string" КодВыдДок="strings"/>
+                            <!--You have a CHOICE of the next 0 items at this level-->
+                        </Супруга>
+                    </СведЛицБрак>
+                </ПрдСведРег>
+            </СведРегРстржБрак>
+            <!--Zero or more repetitio-->
+            <СвеРегОтцов НомерЗапис="string" ДатаЗапис="2003-05-16+05:00">
+                <ОрганЗАГС НаимЗАГС="string" КодЗАГС="stringst"/>
+                <СтатусЗаписи ДатаНачСтатус="2006-12-04+04:00" КодСтатус="07" НаимСтатус="string"/>
+                <!--Optional:-->
+                <СведСвидет СерияСвидет="string" НомерСвидет="string" ДатаВыдСвидет="2008-03-26+04:00"/>
+                <ПрдСведРег>
+                    <СведРебенок Пол="1">
+                        <ФИОДо>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Фамилия>string</Фамилия>
+                            <ПрФамилия>1</ПрФамилия>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Имя>string</Имя>
+                            <ПрИмя>1</ПрИмя>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Отчество>string</Отчество>
+                            <ПрОтчество>1</ПрОтчество>
+                        </ФИОДо>
+                        <ФИОПосле>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Фамилия>string</Фамилия>
+                            <ПрФамилия>1</ПрФамилия>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Имя>string</Имя>
+                            <ПрИмя>1</ПрИмя>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Отчество>string</Отчество>
+                            <ПрОтчество>1</ПрОтчество>
+                        </ФИОПосле>
+                        <!--You have a CHOICE of the next 3 items at this level-->
+                        <ДатаРожд>2000-02-03</ДатаРожд>
+                        <МесГодРожд>2018-07+04:00</МесГодРожд>
+                        <ГодРожд>2009</ГодРожд>
+                        <МестоРожден МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string"/>
+                        <СведРегРожд НомерЗапис="string" ДатаЗапис="2011-04-18+05:00">
+                            <ОрганЗАГСРожд НаимЗАГС="string" КодЗАГС="stringst"/>
+                        </СведРегРожд>
+                        <!--Zero or more repetitio-->
+                        <СведСвидетРожд СерияСвидет="string" НомерСвидет="string" ДатаВыдСвидет="2013-11-20+04:00"/>
+                    </СведРебенок>
+                    <!--Optional:-->
+                    <СведМать ОКСМ="str" НаимСтраны="string">
+                        <ФИО>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Фамилия>string</Фамилия>
+                            <ПрФамилия>1</ПрФамилия>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Имя>string</Имя>
+                            <ПрИмя>1</ПрИмя>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Отчество>string</Отчество>
+                            <ПрОтчество>1</ПрОтчество>
+                        </ФИО>
+                        <!--Optional:-->
+                        <МестоРожден МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string"/>
+                        <!--You have a CHOICE of the next 3 items at this level-->
+                        <!--Optional:-->
+                        <ДатаРожд>2006-01-07+04:00</ДатаРожд>
+                        <!--Optional:-->
+                        <МесГодРожд>2003-09</МесГодРожд>
+                        <!--Optional:-->
+                        <ГодРожд>2007+04:00</ГодРожд>
+                        <!--Optional:-->
+                        <УдЛичнФЛ КодВидДок="st" НаимДок="string" СерНомДок="string" ДатаДок="2018-12-11+04:00" ВыдДок="string" КодВыдДок="strings"/>
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <!--Optional:-->
+                        <АдрМЖРФ АдрРФТекст="string">
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <АдрКЛАДР Индекс="string" КодРегион="st" НаимРегион="string" Район="string" Город="string" НаселПункт="string" Улица="string" Дом="string" Корпус="string" Кварт="string"/>
+                            <АдрФИАС ИдНом="string" Индекс="string">
+                                <Регион>st</Регион>
+                                <МуниципРайон ВидКод="s" Наим="string"/>
+                                <!--Optional:-->
+                                <ГородСелПоселен ВидКод="s" Наим="string"/>
+                                <!--Optional:-->
+                                <НаселенПункт Вид="string" Наим="string"/>
+                                <!--Optional:-->
+                                <ЭлПланСтруктур Тип="string" Наим="string"/>
+                                <!--Optional:-->
+                                <ЭлУлДорСети Тип="string" Наим="string"/>
+                                <!--Optional:-->
+                                <ЗемелУчасток>string</ЗемелУчасток>
+                                <!--Zero or more repetitio-->
+                                <Здание Тип="string" Номер="string"/>
+                                <!--Optional:-->
+                                <ПомещЗдания Тип="string" Номер="string"/>
+                                <!--Optional:-->
+                                <ПомещКвартиры Тип="string" Номер="string"/>
+                            </АдрФИАС>
+                        </АдрМЖРФ>
+                        <!--Optional:-->
+                        <АдрМЖИн ОКСМ="str" НаимСтраны="string" АдрТекст="string"/>
+                    </СведМать>
+                    <СведОтец ОКСМ="str" НаимСтраны="string">
+                        <ФИО>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Фамилия>string</Фамилия>
+                            <ПрФамилия>1</ПрФамилия>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Имя>string</Имя>
+                            <ПрИмя>1</ПрИмя>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Отчество>string</Отчество>
+                            <ПрОтчество>1</ПрОтчество>
+                        </ФИО>
+                        <!--Optional:-->
+                        <МестоРожден МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string"/>
+                        <!--You have a CHOICE of the next 3 items at this level-->
+                        <!--Optional:-->
+                        <ДатаРожд>2008-03-14+04:00</ДатаРожд>
+                        <!--Optional:-->
+                        <МесГодРожд>2003-08</МесГодРожд>
+                        <!--Optional:-->
+                        <ГодРожд>2014+04:00</ГодРожд>
+                        <!--Optional:-->
+                        <УдЛичнФЛ КодВидДок="st" НаимДок="string" СерНомДок="string" ДатаДок="2012-06-12+04:00" ВыдДок="string" КодВыдДок="strings"/>
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <!--Optional:-->
+                        <АдрМЖРФ АдрРФТекст="string">
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <АдрКЛАДР Индекс="string" КодРегион="st" НаимРегион="string" Район="string" Город="string" НаселПункт="string" Улица="string" Дом="string" Корпус="string" Кварт="string"/>
+                            <АдрФИАС ИдНом="string" Индекс="string">
+                                <Регион>st</Регион>
+                                <МуниципРайон ВидКод="s" Наим="string"/>
+                                <!--Optional:-->
+                                <ГородСелПоселен ВидКод="s" Наим="string"/>
+                                <!--Optional:-->
+                                <НаселенПункт Вид="string" Наим="string"/>
+                                <!--Optional:-->
+                                <ЭлПланСтруктур Тип="string" Наим="string"/>
+                                <!--Optional:-->
+                                <ЭлУлДорСети Тип="string" Наим="string"/>
+                                <!--Optional:-->
+                                <ЗемелУчасток>string</ЗемелУчасток>
+                                <!--Zero or more repetitio-->
+                                <Здание Тип="string" Номер="string"/>
+                                <!--Optional:-->
+                                <ПомещЗдания Тип="string" Номер="string"/>
+                                <!--Optional:-->
+                                <ПомещКвартиры Тип="string" Номер="string"/>
+                            </АдрФИАС>
+                        </АдрМЖРФ>
+                        <!--Optional:-->
+                        <АдрМЖИн ОКСМ="str" НаимСтраны="string" АдрТекст="string"/>
+                    </СведОтец>
+                    <!--Optional:-->
+                    <СведДокОсн КодДок="strin" НаимДок="string" НаимСудРеш="string" СерНомДок="string" ДатаДок="2010-10-29+05:00"/>
+                </ПрдСведРег>
+            </СвеРегОтцов>
+            <!--Zero or more repetitio-->
+            <СведРегПерИмя НомерЗапис="string" ДатаЗапис="2008-12-13">
+                <ОрганЗАГС НаимЗАГС="string" КодЗАГС="stringst"/>
+                <СтатусЗаписи ДатаНачСтатус="2010-01-13" КодСтатус="07" НаимСтатус="string"/>
+                <!--Optional:-->
+                <СведСвидет СерияСвидет="string" НомерСвидет="string" ДатаВыдСвидет="2019-09-15+04:00"/>
+                <ПрдСведРег ОКСМ="str" НаимСтраны="string">
+                    <ФИОДо>
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <Фамилия>string</Фамилия>
+                        <ПрФамилия>1</ПрФамилия>
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <Имя>string</Имя>
+                        <ПрИмя>1</ПрИмя>
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <Отчество>string</Отчество>
+                        <ПрОтчество>1</ПрОтчество>
+                    </ФИОДо>
+                    <ФИОПосле>
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <Фамилия>string</Фамилия>
+                        <ПрФамилия>1</ПрФамилия>
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <Имя>string</Имя>
+                        <ПрИмя>1</ПрИмя>
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <Отчество>string</Отчество>
+                        <ПрОтчество>1</ПрОтчество>
+                    </ФИОПосле>
+                    <!--You have a CHOICE of the next 3 items at this level-->
+                    <ДатаРожд>2008-03-10+04:00</ДатаРожд>
+                    <МесГодРожд>2016-08+04:00</МесГодРожд>
+                    <ГодРожд>2011+04:00</ГодРожд>
+                    <!--Optional:-->
+                    <МестоРожден МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string"/>
+                    <!--You have a CHOICE of the next 2 items at this level-->
+                    <!--Optional:-->
+                    <АдрМЖРФ АдрРФТекст="string">
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <АдрКЛАДР Индекс="string" КодРегион="st" НаимРегион="string" Район="string" Город="string" НаселПункт="string" Улица="string" Дом="string" Корпус="string" Кварт="string"/>
+                        <АдрФИАС ИдНом="string" Индекс="string">
+                            <Регион>st</Регион>
+                            <МуниципРайон ВидКод="s" Наим="string"/>
+                            <!--Optional:-->
+                            <ГородСелПоселен ВидКод="s" Наим="string"/>
+                            <!--Optional:-->
+                            <НаселенПункт Вид="string" Наим="string"/>
+                            <!--Optional:-->
+                            <ЭлПланСтруктур Тип="string" Наим="string"/>
+                            <!--Optional:-->
+                            <ЭлУлДорСети Тип="string" Наим="string"/>
+                            <!--Optional:-->
+                            <ЗемелУчасток>string</ЗемелУчасток>
+                            <!--Zero or more repetitio-->
+                            <Здание Тип="string" Номер="string"/>
+                            <!--Optional:-->
+                            <ПомещЗдания Тип="string" Номер="string"/>
+                            <!--Optional:-->
+                            <ПомещКвартиры Тип="string" Номер="string"/>
+                        </АдрФИАС>
+                    </АдрМЖРФ>
+                    <!--Optional:-->
+                    <АдрМЖИн ОКСМ="str" НаимСтраны="string" АдрТекст="string"/>
+                    <!--Optional:-->
+                    <УдЛичнФЛ КодВидДок="st" НаимДок="string" СерНомДок="string" ДатаДок="2008-11-22+04:00" ВыдДок="string" КодВыдДок="strings"/>
+                </ПрдСведРег>
+            </СведРегПерИмя>
+            <!--Optional:-->
+            <СведРегСмерт НомерЗапис="string" ДатаЗапис="2002-11-25+04:00">
+                <ОрганЗАГС НаимЗАГС="string" КодЗАГС="stringst"/>
+                <СтатусЗаписи ДатаНачСтатус="2005-02-18+04:00" КодСтатус="03" НаимСтатус="string"/>
+                <!--Optional:-->
+                <СведСвидет СерияСвидет="string" НомерСвидет="string" ДатаВыдСвидет="2011-09-17+05:00"/>
+                <ПрдСведРег>
+                    <СведУмер Пол="1" ОКСМ="str" НаимСтраны="string">
+                        <!--Zero or more repetitio-->
+                        <СведПричСмерт КодПричСмерт="string" ПричСмерт="string"/>
+                        <ФИОУмер>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Фамилия>string</Фамилия>
+                            <ПрФамилия>1</ПрФамилия>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Имя>string</Имя>
+                            <ПрИмя>1</ПрИмя>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Отчество>string</Отчество>
+                            <ПрОтчество>1</ПрОтчество>
+                        </ФИОУмер>
+                        <!--You have a CHOICE of the next 3 items at this level-->
+                        <!--Optional:-->
+                        <ДатаРожд>2002-02-12</ДатаРожд>
+                        <!--Optional:-->
+                        <МесГодРожд>2013-11</МесГодРожд>
+                        <!--Optional:-->
+                        <ГодРожд>2003+04:00</ГодРожд>
+                        <!--Optional:-->
+                        <МестоРожден МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string"/>
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <!--Optional:-->
+                        <МЖПослРФ АдрРФТекст="string">
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <АдрКЛАДР Индекс="string" КодРегион="st" НаимРегион="string" Район="string" Город="string" НаселПункт="string" Улица="string" Дом="string" Корпус="string" Кварт="string"/>
+                            <АдрФИАС ИдНом="string" Индекс="string">
+                                <Регион>st</Регион>
+                                <МуниципРайон ВидКод="s" Наим="string"/>
+                                <!--Optional:-->
+                                <ГородСелПоселен ВидКод="s" Наим="string"/>
+                                <!--Optional:-->
+                                <НаселенПункт Вид="string" Наим="string"/>
+                                <!--Optional:-->
+                                <ЭлПланСтруктур Тип="string" Наим="string"/>
+                                <!--Optional:-->
+                                <ЭлУлДорСети Тип="string" Наим="string"/>
+                                <!--Optional:-->
+                                <ЗемелУчасток>string</ЗемелУчасток>
+                                <!--Zero or more repetitio-->
+                                <Здание Тип="string" Номер="string"/>
+                                <!--Optional:-->
+                                <ПомещЗдания Тип="string" Номер="string"/>
+                                <!--Optional:-->
+                                <ПомещКвартиры Тип="string" Номер="string"/>
+                            </АдрФИАС>
+                        </МЖПослРФ>
+                        <!--Optional:-->
+                        <МЖПослИн ОКСМ="str" НаимСтраны="string" АдрТекст="string"/>
+                        <!--Optional:-->
+                        <УдЛичнФЛ КодВидДок="st" НаимДок="string" СерНомДок="string" ДатаДок="2006-04-19+05:00" ВыдДок="string" КодВыдДок="strings"/>
+                        <!--You have a CHOICE of the next 3 items at this level-->
+                        <ДатаСмерт>2001-04-01+05:00</ДатаСмерт>
+                        <МесГодСмерт>2005-10</МесГодСмерт>
+                        <ГодСмерт>2018+04:00</ГодСмерт>
+                        <МестоСмерт МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string"/>
+                    </СведУмер>
+                    <!--Optional:-->
+                    <СведДокСмерт КодДок="strin" НаимДок="string" СерНомДок="string" ДатаДок="2004-11-15+04:00">
+                        <!--You have a CHOICE of the next 3 items at this level-->
+                        <!--Optional:-->
+                        <НаимОрг>string</НаимОрг>
+                        <!--Optional:-->
+                        <ФИОИП>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Фамилия>string</Фамилия>
+                            <ПрФамилия>1</ПрФамилия>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Имя>string</Имя>
+                            <ПрИмя>1</ПрИмя>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Отчество>string</Отчество>
+                            <ПрОтчество>1</ПрОтчество>
+                        </ФИОИП>
+                        <!--Optional:-->
+                        <ФИОФЛ>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Фамилия>string</Фамилия>
+                            <ПрФамилия>1</ПрФамилия>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Имя>string</Имя>
+                            <ПрИмя>1</ПрИмя>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <Отчество>string</Отчество>
+                            <ПрОтчество>1</ПрОтчество>
+                        </ФИОФЛ>
+                    </СведДокСмерт>
+                </ПрдСведРег>
+            </СведРегСмерт>
+        </informResponse>
+    </reportResponse>
+    <interactionStatus>
+        <statusReport statusDate="2020-08-08T18:31:18">
+            <code>0</code>
+            <desc>Сообщение отправлено в СМЭВ</desc>
+        </statusReport>
+    </interactionStatus>
+</ReportPrint>

@@ -1,0 +1,27 @@
+<ns:stayingPlaceRegistrationRequest xmlns:ns="urn://mvd/guvm/staying-place-registration/1.1.0" xmlns:ns1="urn://mvd/guvm/registration-commons/1.2.0" xmlns:ns2="urn://mvd/guvm/basic-types/1.2.0">
+  <ns1:personInfo>
+    <ns2:lastName>string</ns2:lastName>
+    <ns2:firstName>string</ns2:firstName>
+    <!--Optional:-->
+    <ns2:middleName>string</ns2:middleName>
+    <ns1:birthDate>2008-09-29</ns1:birthDate>
+  </ns1:personInfo>
+  <ns1:document>
+    <!--You have a CHOICE of the next 3 items at this level-->
+    <ns1:russianPassport>
+      <ns2:series>stri</ns2:series>
+      <ns2:number>string</ns2:number>
+      <ns2:issueDate>2014-09-19</ns2:issueDate>
+    </ns1:russianPassport>
+    <ns1:foreignPassport>
+      <ns2:series>st</ns2:series>
+      <ns2:number>strings</ns2:number>
+      <ns2:issueDate>2006-08-19+04:00</ns2:issueDate>
+    </ns1:foreignPassport>
+    <ns1:birthCertificate>
+      <ns2:series>string</ns2:series>
+      <ns2:number>string</ns2:number>
+      <ns2:issueDate>2009-05-16</ns2:issueDate>
+    </ns1:birthCertificate>
+  </ns1:document>
+</ns:stayingPlaceRegistrationRequest>

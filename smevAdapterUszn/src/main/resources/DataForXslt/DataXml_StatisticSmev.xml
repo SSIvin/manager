@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportStatSmev xmlns:em="urn://egisso-ru/msg/10.05.I/1.0.6" xmlns:etlmsz="urn://egisso-ru/types/local-MSZ/1.0.5"
+                xmlns:etplmsz="urn://egisso-ru/types/package-LMSZ/1.0.6"
+                xmlns:ns1="urn://x-artefacts-fns-dohflna/root/260-18/4.0.1"
+                xmlns:ns10="urn://x-artefacts-smev-gov-ru/services/service-adapter/types/faults"
+                xmlns:ns12="urn://x-artefacts-zags-inform/root/112-11/4.0.4"
+                xmlns:ns13="http://epgu.gosuslugi.ru/concentrator/familychildsub/1.0.0"
+                xmlns:ns14="http://kvs.pfr.com/snils-by-additionalData/1.0.1"
+                xmlns:ns15="http://common.kvs.pfr.com/1.0.0" xmlns:ns16="urn://egisso-ru/types/cls-request/1.0.2"
+                xmlns:ns17="urn://egisso-ru/msg/10.02.I/1.0.2"
+                xmlns:ns18="urn://x-artefacts-fns-dohflnasp/root/260-23/4.0.0"
+                xmlns:ns19="urn://x-artefacts-fns-svviplfl/root/114-43/4.0.0"
+                xmlns:ns2="urn://x-artefacts-fns-ndfl3doh/root/210-18/4.0.2"
+                xmlns:ns20="urn://x-artefacts-fns-dohflna/types/4.0.1"
+                xmlns:ns21="urn://x-artefacts-fns-ndipsr/types/4.0.0"
+                xmlns:ns22="urn://x-artefacts-fns-inn-singular/root/270-18/4.0.1"
+                xmlns:ns23="urn://x-artefacts-fns-inn/commons/4.0.0"
+                xmlns:ns25="urn://x-artefacts-zags-inform/types/4.0.4"
+                xmlns:ns26="urn://x-artefacts-zags-rogdinf/types/4.0.0" xmlns:ns27="urn://egisso-ru/msg/10.10.I/1.0.2"
+                xmlns:ns28="urn://egisso-ru/msg/10.29.O/1.0.1" xmlns:ns29="urn://egisso-ru/types/death-reg/1.0.1"
+                xmlns:ns3="urn://x-artefacts-fns-dohflnasp/types/4.0.0"
+                xmlns:ns30="urn://egisso-ru/types/registers-response/1.0.1"
+                xmlns:ns31="urn://egisso-ru/types/registers/1.0.1"
+                xmlns:ns32="urn://egisso-ru/types/registers-request/1.0.1"
+                xmlns:ns33="urn://egisso-ru/msg/10.26.I/1.0.1" xmlns:ns34="urn://egisso-ru/types/basic/1.0.7"
+                xmlns:ns35="urn://egisso-ru/types/prsn-statement/1.0.3" xmlns:ns36="urn://egisso-ru/msg/10.13.I/1.0.3"
+                xmlns:ns37="http://fri.pfr.ru" xmlns:ns38="http://kvs.fri.com/extraction-invalid-data/1.0.3"
+                xmlns:ns39="http://kvs.fri.com/extraction-invalid-data/attachments/1.0.0"
+                xmlns:ns40="http://kvs.fri.com/initiative-distribution/1.0.2"
+                xmlns:ns41="urn://x-artefacts-gibdd-benefit489/data/1.0"
+                xmlns:ns42="urn:dom.gosuslugi.ru/debt-requests/1.0.0"
+                xmlns:ns43="urn:dom.gosuslugi.ru/debt-responses/1.0.0" xmlns:ns44="urn:dom.gosuslugi.ru/common/1.2.0"
+                xmlns:ns45="urn:dom.gosuslugi.ru/rao-houses/1.0.0"
+                xmlns:ns46="http://se2.data.service.smev.pfr.ru/SZN/1.0.1"
+                xmlns:ns5="urn://x-artefacts-zags-rogdinf/root/112-51/4.0.0"
+                xmlns:ns7="urn://x-artefacts-fns-ndipsr/root/210-17/4.0.0"
+                xmlns:ns9="urn://x-artefacts-smev-gov-ru/supplementary/commons/1.0.1"
+                xmlns:tns1="urn://x-artefacts-smev-gov-ru/services/service-adapter/types">
+    <Data>
+        <rowStatSmev>
+            <kolReq>12150</kolReq>
+            <kolResp>5678</kolResp>
+            <nameQ>Выписка сведений об инвалиде</nameQ>
+        </rowStatSmev>
+        <rowStatSmev>
+            <kolReq>666</kolReq>
+            <kolResp>620</kolResp>
+            <nameQ>ГИС ЖКХ Создание запроса по задолжности ЖКУ</nameQ>
+        </rowStatSmev>
+        <rowStatSmev>
+            <kolReq>259</kolReq>
+            <kolResp>259</kolResp>
+            <nameQ>ГИС ЖКХ Запрос ответов по задолжности ЖКУ</nameQ>
+        </rowStatSmev>
+        <rowStatSmev>
+            <kolReq>6</kolReq>
+            <kolResp>4</kolResp>
+            <nameQ>ГИС ЖКХ справочник домов</nameQ>
+        </rowStatSmev>
+        <rowStatSmev>
+            <kolReq>1570</kolReq>
+            <kolResp>1505</kolResp>
+            <nameQ>ЕГР ЗАГС - рождение</nameQ>
+        </rowStatSmev>
+        <rowStatSmev>
+            <kolReq>107757</kolReq>
+            <kolResp>102527</kolResp>
+            <nameQ>О выплатах в пользу физических лиц</nameQ>
+        </rowStatSmev>
+        <rowStatSmev>
+            <kolReq>65989</kolReq>
+            <kolResp>65051</kolResp>
+            <nameQ>Получение ИНН</nameQ>
+        </rowStatSmev>
+        <rowStatSmev>
+            <kolReq>118453</kolReq>
+            <kolResp>114891</kolResp>
+            <nameQ>Получение сведений из реестра лиц</nameQ>
+        </rowStatSmev>
+        <rowStatSmev>
+            <kolReq>48080</kolReq>
+            <kolResp>38136</kolResp>
+            <nameQ>Получение СНИЛС</nameQ>
+        </rowStatSmev>
+        <rowStatSmev>
+            <kolReq>574473</kolReq>
+            <kolResp>544010</kolResp>
+            <nameQ>Сведения из ЕГР ЗАГС об актах гражданского состояния</nameQ>
+        </rowStatSmev>
+        <rowStatSmev>
+            <kolReq>178388</kolReq>
+            <kolResp>176419</kolResp>
+            <nameQ>Сведения из налоговых деклараций, представленных индивидуальными предпринимателями, применяющими
+                специальные налоговые режимы
+            </nameQ>
+        </rowStatSmev>
+        <rowStatSmev>
+            <kolReq>663</kolReq>
+            <kolResp>551</kolResp>
+            <nameQ>Сведения о доходах у конкретного налогового агента</nameQ>
+        </rowStatSmev>
+        <rowStatSmev>
+            <kolReq>9088</kolReq>
+            <kolResp>6905</kolResp>
+            <nameQ>Сведения о нахождении на регистрационном учете в органах власти содействия занятости</nameQ>
+        </rowStatSmev>
+        <rowStatSmev>
+            <kolReq>169746</kolReq>
+            <kolResp>156989</kolResp>
+            <nameQ>Сведения о транспортных средствах</nameQ>
+        </rowStatSmev>
+        <rowStatSmev>
+            <kolReq>222604</kolReq>
+            <kolResp>220074</kolResp>
+            <nameQ>Справка 2-НДФЛ</nameQ>
+        </rowStatSmev>
+        <rowStatSmev>
+            <kolReq>193414</kolReq>
+            <kolResp>190978</kolResp>
+            <nameQ>Справка 3-НДФЛ</nameQ>
+        </rowStatSmev>
+        <rowStatSmev>
+            <kolReq>740</kolReq>
+            <kolResp>669</kolResp>
+            <nameQ>Хранилище СМЭВ</nameQ>
+        </rowStatSmev>
+    </Data>
+    <OrgParam>
+        <idR>0</idR>
+    </OrgParam>
+    <dateBegin>2021-01-01</dateBegin>
+    <dateEnd>2021-07-02</dateEnd>
+</ReportStatSmev>

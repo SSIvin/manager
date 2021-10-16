@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://kvs.fri.com/initiative-distribution/1.0.2" xmlns:smev="urn://x-artefacts-smev-gov-ru/supplementary/commons/1.0.1" xmlns:jxb="http://java.sun.com/xml/ns/jaxb" xmlns:ns1="http://kvs.fri.com/initiative-distribution/attachments/1.0.0" targetNamespace="http://kvs.fri.com/initiative-distribution/1.0.2" elementFormDefault="qualified" attributeFormDefault="unqualified" jxb:version="2.0">
+	<import namespace="urn://x-artefacts-smev-gov-ru/supplementary/commons/1.0.1" schemaLocation="smev-supplementary-commons-1.0.1.xsd"/>
+	<import namespace="http://kvs.fri.com/initiative-distribution/attachments/1.0.0" schemaLocation="initiative-distribution-attachments-1.0.0.xsd"/>
+	<element name="InitiativeDistributionRequest">
+		<complexType>
+			<sequence>
+				<element name="DepartmentRecipient" type="tns:string-8" nillable="false"/>
+				<element name="AttachmentsBlock" type="ns1:_AttachmentDescriptionType"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="InitiativeDistributionResponse">
+		<complexType>
+			<sequence>
+				<element name="ResponseId" type="string" nillable="false"/>
+			</sequence>
+		</complexType>
+	</element>
+	<simpleType name="string-8">
+		<restriction base="string">
+			<maxLength value="8"/>
+		</restriction>
+	</simpleType>
+</schema>

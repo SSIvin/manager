@@ -1,0 +1,137 @@
+<ns:ExportDebtRequestsResponse xmlns:ns="urn:dom.gosuslugi.ru/debt-responses/1.0.0" xmlns:ns1="urn:dom.gosuslugi.ru/common/1.2.0">
+  <!--You have a CHOICE of the next 2 items at this level-->
+  <!--1 or more repetitions:-->
+  <ns:request-data>
+    <ns:request-id>string</ns:request-id>
+    <ns:request-number>stringstring</ns:request-number>
+    <ns:applicant-info>
+      <ns:firstname>string</ns:firstname>
+      <ns:lastname>string</ns:lastname>
+      <!--Optional:-->
+      <ns:middlename>string</ns:middlename>
+      <ns:snils>stringstrin</ns:snils>
+      <ns:document>
+        <ns:type>3</ns:type>
+        <ns:series>string</ns:series>
+        <ns:number>string</ns:number>
+      </ns:document>
+    </ns:applicant-info>
+    <ns:housing-fund-object>
+      <ns:house-id>string</ns:house-id>
+      <!--Optional:-->
+      <ns:address-details>string</ns:address-details>
+      <ns:fias-house-id>string</ns:fias-house-id>
+      <ns:address>string</ns:address>
+    </ns:housing-fund-object>
+    <!--Optional:-->
+    <ns:period>
+      <ns:start-date>2008-09-29</ns:start-date>
+      <ns:end-date>2014-09-19</ns:end-date>
+    </ns:period>
+    <ns:organization>
+      <ns:organization-root-id>string</ns:organization-root-id>
+      <ns:name>string</ns:name>
+      <!--Optional:-->
+      <ns:tel>string</ns:tel>
+    </ns:organization>
+    <ns:executor-info>
+      <ns:id>string</ns:id>
+      <ns:fio>string</ns:fio>
+    </ns:executor-info>
+    <ns:status>REVOKED</ns:status>
+    <ns:result>3</ns:result>
+    <ns:creation-date>2018-11-01+03:00</ns:creation-date>
+    <!--Optional:-->
+    <ns:sent-date>2013-05-22+04:00</ns:sent-date>
+    <!--Optional:-->
+    <ns:response-date>2002-11-05+03:00</ns:response-date>
+    <!--Zero or more repetitions:-->
+    <ns:subrequest>
+      <ns:organization>
+        <ns:organization-root-id>string</ns:organization-root-id>
+        <ns:name>string</ns:name>
+        <!--Optional:-->
+        <ns:tel>string</ns:tel>
+      </ns:organization>
+      <!--Optional:-->
+      <ns:response>
+        <ns:type>AUTO_GENERATED</ns:type>
+        <!--Optional:-->
+        <ns:has-debt>false</ns:has-debt>
+        <!--Zero or more repetitions:-->
+        <ns:debt-info>
+          <ns:person>
+            <ns:firstname>string</ns:firstname>
+            <ns:lastname>string</ns:lastname>
+            <!--Optional:-->
+            <ns:middlename>string</ns:middlename>
+            <!--Optional:-->
+            <ns:snils>stringstrin</ns:snils>
+            <!--Optional:-->
+            <ns:document>
+              <ns:type>3</ns:type>
+              <ns:series>string</ns:series>
+              <ns:number>string</ns:number>
+            </ns:document>
+          </ns:person>
+          <!--Zero or more repetitions:-->
+          <ns:document>
+            <ns:type>3</ns:type>
+            <ns:attachment>
+              <ns:metadata>
+                <ns1:guid>string</ns1:guid>
+                <ns1:name>string</ns1:name>
+                <!--Optional:-->
+                <ns1:description>string</ns1:description>
+                <!--Optional:-->
+                <ns1:hash>string</ns1:hash>
+              </ns:metadata>
+              <!--Optional:-->
+              <ns:smev-attachment-ref-guid>string</ns:smev-attachment-ref-guid>
+            </ns:attachment>
+          </ns:document>
+        </ns:debt-info>
+        <!--Zero or more repetitions:-->
+        <ns:additional-file>
+          <ns:metadata>
+            <ns1:guid>string</ns1:guid>
+            <ns1:name>string</ns1:name>
+            <!--Optional:-->
+            <ns1:description>string</ns1:description>
+            <!--Optional:-->
+            <ns1:hash>string</ns1:hash>
+          </ns:metadata>
+          <!--Optional:-->
+          <ns:smev-attachment-ref-guid>string</ns:smev-attachment-ref-guid>
+        </ns:additional-file>
+        <!--Optional:-->
+        <ns:description>string</ns:description>
+        <!--Optional:-->
+        <ns:executor-info>
+          <ns:id>string</ns:id>
+          <ns:fio>string</ns:fio>
+        </ns:executor-info>
+      </ns:response>
+    </ns:subrequest>
+  </ns:request-data>
+  <!--Optional:-->
+  <ns:not-found>
+    <!--You have a CHOICE of the next 2 items at this level-->
+    <!--1 or more repetitions:-->
+    <ns:request-id>string</ns:request-id>
+    <!--1 or more repetitions:-->
+    <ns:request-number>string</ns:request-number>
+  </ns:not-found>
+  <!--Optional:-->
+  <ns:paged-output>
+    <!--You have a CHOICE of the next 2 items at this level-->
+    <ns:next-request-id>string</ns:next-request-id>
+    <ns:last-page>false</ns:last-page>
+  </ns:paged-output>
+  <ns:error>
+    <ns1:error-code>string</ns1:error-code>
+    <ns1:description>string</ns1:description>
+    <!--Optional:-->
+    <ns1:stacktrace>string</ns1:stacktrace>
+  </ns:error>
+</ns:ExportDebtRequestsResponse>

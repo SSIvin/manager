@@ -1,0 +1,231 @@
+<configuration debug="true" scan="true" scanPeriod="30 seconds">
+    <!--Для подсказки тэгов-->
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <!-- Logging Properties -->
+    <property name="LOG_PATTERN_STDOUT"
+              value="[%date] %highlight([%level]) [%logger{10} %file:%line] %msg%n"></property>
+    <property name="LOG_PATTERN_FILE" value="[%date] [%thread] %-5level %logger{36} - %msg%n"></property>
+    <property name="APP_LOG_ROOT" value="LOG"></property>
+    <property name="APP_LOG_HISTORY" value="LOG_HISTORY/"></property>
+    <property name="error" value="error"></property>
+    <property name="debug" value="debug"></property>
+    <property name="warn" value="warn"></property>
+    <property name="info" value="info"></property>
+    <property name="log" value="log"></property>
+    <property name="thread" value="thread"></property>
+    <property name="gisJkh" value="gisJkh"></property>
+
+    <!--CONSOLE-->
+    <statusListener class="ch.qos.logback.core.status.OnConsoleStatusListener"/>
+    <!--<springProfile name="dev">-->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!--<pattern>%cyan(%d{HH:mm:ss.SSS}) %gray([%thread]) %highlight(%-5level) %magenta(%logger{36}) - %msg%n</pattern>-->
+            <pattern>${LOG_PATTERN_STDOUT}</pattern>
+        </encoder>
+    </appender>
+
+
+    <appender name="FILE-error" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${APP_LOG_ROOT}/${error}.log</file>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>5MB</maxFileSize>
+        </triggeringPolicy>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Daily rollover -->
+            <fileNamePattern>${APP_LOG_HISTORY}/${error}.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- Keep 7 days' worth of history -->
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${LOG_PATTERN_FILE}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE-debug" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${APP_LOG_ROOT}/${debug}.log</file>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>DEBUG</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>5MB</maxFileSize>
+        </triggeringPolicy>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Daily rollover -->
+            <fileNamePattern>${APP_LOG_HISTORY}/${debug}.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- Keep 7 days' worth of history -->
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${LOG_PATTERN_FILE}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE-warn" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${APP_LOG_ROOT}/${warn}.log</file>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>WARN</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>5MB</maxFileSize>
+        </triggeringPolicy>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Daily rollover -->
+            <fileNamePattern>${APP_LOG_HISTORY}/${warn}.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- Keep 7 days' worth of history -->
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${LOG_PATTERN_FILE}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE-info" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${APP_LOG_ROOT}/${info}.log</file>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>5MB</maxFileSize>
+        </triggeringPolicy>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Daily rollover -->
+            <fileNamePattern>${APP_LOG_HISTORY}/${info}.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- Keep 7 days' worth of history -->
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${LOG_PATTERN_FILE}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE-perf" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <charset>UTF-8</charset>
+            <outputPatternAsHeader>true</outputPatternAsHeader>
+            <pattern>[%thread] %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+        <file>${APP_LOG_ROOT}/${log}.log</file>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>5MB</maxFileSize>
+        </triggeringPolicy>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Daily rollover -->
+            <fileNamePattern>${APP_LOG_HISTORY}/${log}.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- Keep 7 days' worth of history -->
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${LOG_PATTERN_FILE}</pattern>
+        </encoder>
+    </appender>
+
+    <!--Thread-->
+    <appender name="FILE-thread" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${APP_LOG_ROOT}/${thread}.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Daily rollover -->
+            <fileNamePattern>${APP_LOG_HISTORY}/${thread}.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- Keep 7 days' worth of history -->
+            <maxHistory>1</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${LOG_PATTERN_FILE}</pattern>
+        </encoder>
+    </appender>
+
+    <!--gisJkh-->
+    <appender name="FILE-gisJkh" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${APP_LOG_ROOT}/${gisJkh}.log</file>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>5MB</maxFileSize>
+        </triggeringPolicy>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Daily rollover -->
+            <fileNamePattern>${APP_LOG_HISTORY}/${gisJkh}.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- Keep 7 days' worth of history -->
+            <maxHistory>1</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${LOG_PATTERN_FILE}</pattern>
+        </encoder>
+    </appender>
+
+    <!--<appender name="FILE2" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+    <!--<file>${APP_LOG_ROOT}/app2.%d{yyyy-MM-dd}.log</file>-->
+    <!--<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+    <!--&lt;!&ndash; Daily rollover &ndash;&gt;-->
+    <!--<fileNamePattern>app2.%d{yyyy-MM-dd}.log</fileNamePattern>-->
+    <!--&lt;!&ndash; Keep 7 days' worth of history &ndash;&gt;-->
+    <!--<maxHistory>7</maxHistory>-->
+    <!--</rollingPolicy>-->
+
+    <!--<encoder>-->
+    <!--<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>-->
+    <!--</encoder>-->
+    <!--</appender>-->
+
+
+    <!--<springProfile name="dev">-->
+    <!--<root level="info">-->
+    <!--<appender-ref ref="STDOUT"/>-->
+    <!--&lt;!&ndash;<appender-ref ref="FILE-error"/>&ndash;&gt;-->
+    <!--&lt;!&ndash;<appender-ref ref="FILE-debug"/>&ndash;&gt;-->
+    <!--&lt;!&ndash;<appender-ref ref="FILE-info"/>&ndash;&gt;-->
+    <!--&lt;!&ndash;<appender-ref ref="FILE-perf"/>&ndash;&gt;-->
+    <!--</root>-->
+    <!--<logger name="smev.Service.Impl.ThreadService" level="INFO" additivity="false">-->
+    <!--<appender-ref ref="STDOUT"/>-->
+    <!--<appender-ref ref="FILE-thread"/>-->
+    <!--</logger>-->
+    <!--</springProfile>-->
+
+
+    <!--<logger name="com.zaxxer.hikari" level="info" additivity="false">-->
+    <!--<appender-ref ref="STDOUT"/>-->
+    <!--</logger>-->
+
+    <springProfile name="dev">
+        <logger name="org.hibernate.SQL" level="DEBUG" />
+        <!--<logger name="org.hibernate.type" level="TRACE" />-->
+    </springProfile>
+
+
+    <springProfile name="prod,dev,prodBase">
+        <logger name="org.springframework.jdbc.datasource.DataSourceTransactionManager" level="WARN" additivity="false">
+            <!--<appender-ref ref="STDOUT"/>-->
+        </logger>
+        <!--<logger name="org.hibernate.SQL" level="DEBUG" />-->
+        <!--<logger name="org.hibernate.type" level="TRACE" />-->
+        <root level="info">
+            <!--<appender-ref ref="STDOUT"/>-->
+            <appender-ref ref="FILE-perf"/>
+            <appender-ref ref="FILE-error"/>
+            <!--<appender-ref ref="FILE-debug"/>-->
+            <!--<appender-ref ref="FILE-info"/>-->
+            <!--<appender-ref ref="FILE-perf"/>-->
+        </root>
+        <!--<logger name="smev.GisJkh" level="INFO" additivity="false">-->
+        <!--<appender-ref ref="STDOUT"/>-->
+        <!--<appender-ref ref="FILE-gisJkh"/>-->
+        <!--</logger>-->
+        <!--<logger name="com.zaxxer.hikari" level="info" additivity="false">-->
+        <!--<appender-ref ref="STDOUT"/>-->
+        <!--</logger>-->
+        <!--<logger name="com.mchange.v2.c3p0" level="debug" additivity="false">-->
+        <!--<appender-ref ref="STDOUT"/>-->
+        <!--</logger>-->
+    </springProfile>
+
+</configuration>

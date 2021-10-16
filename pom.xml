@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.4.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <properties>
+        <springframework.version></springframework.version>
+        <hikaricp.version>2.3.4.RELEASE</hikaricp.version>
+    </properties>
+
+    <groupId>ru.uszn.manger</groupId>
+    <artifactId>manager</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>smevAdapterUszn</module>
+    </modules>
+
+    <repositories>
+        <repository>
+            <id>localrep</id>
+            <name>local repository</name>
+            <url>file:${project.basedir}/src/main/resources/repo</url>
+        </repository>
+    </repositories>
+
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.apache.tika</groupId>
+            <artifactId>tika-core</artifactId>
+            <version>1.5</version>
+        </dependency>
+
+        <!--JPA-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+            <version>2.3.4.RELEASE</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.zaxxer</groupId>
+                    <artifactId>HikariCP</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <version>2.3.4.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>5.2.9.RELEASE</version>
+            <!--4.3.13.RELEASE - в этой версии именно для JdbcNamed нормально передается NULL как значение параметра в MapSqlParameterSource
+            в версиях выше происходит Exception-->
+            <!--вернул на 5.2.9.RELEASE потому что hibernate выдает ошибку - jpatransactionmanager setReadOnly-->
+        </dependency>
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>7.4.1.jre8</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <version>2.3.4.RELEASE</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>commons-logging</artifactId>
+                    <groupId>commons-logging</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-loader</artifactId>
+            <scope>provided</scope>
+            <version>2.2.5.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-test</artifactId>
+            <version>2.3.4.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.8.1</version>
+        </dependency>
+
+
+        <!--Google GSON-->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.6</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/info.hubbitus/xjc-documentation-annotation-plugin -->
+        <dependency>
+            <groupId>info.hubbitus</groupId>
+            <artifactId>xjc-documentation-annotation-plugin</artifactId>
+            <version>LATEST</version>
+        </dependency>
+
+
+
+
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.8.2</version>
+        </dependency>
+        <!--<dependency>-->
+        <!--<groupId>ru.uszn.demo</groupId>-->
+        <!--<artifactId>spring-boot-starter-parent</artifactId>-->
+        <!--<version>0.0.1-SNAPSHOT</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter</artifactId>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>axis</groupId>
+            <artifactId>axis</artifactId>
+            <version>1.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>16.0.3</version>
+            <scope>compile</scope>
+        </dependency>
+        <!--Spring Security-->
+        <!--<dependency>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-security</artifactId>-->
+        <!--</dependency>-->
+        <!--JDBC-->
+        <!--<dependency>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-jdbc</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>com.microsoft.sqlserver</groupId>-->
+        <!--<artifactId>mssql-jdbc</artifactId>-->
+        <!--<scope>runtime</scope>-->
+        <!--</dependency>-->
+
+        <!--POOLS-->
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>3.4.2</version>
+        </dependency>
+
+        <!--<dependency>-->
+            <!--<groupId>org.hibernate</groupId>-->
+            <!--<artifactId>hibernate-c3p0</artifactId>-->
+            <!--<version>5.3.6.Final</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>c3p0</groupId>-->
+            <!--<artifactId>c3p0</artifactId>-->
+            <!--<version>0.9.1.2</version>-->
+        <!--</dependency>-->
+
+        <!--Loombok-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.6</version>
+            <!--зависимость не попадет в итоговый пакет-->
+            <scope>provided</scope>
+        </dependency>
+
+        <!--JAXB-->
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>2.3.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>axis</groupId>
+            <artifactId>axis-jaxrpc</artifactId>
+            <version>1.3</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!--<dependency>-->
+        <!--<groupId>javax.servlet</groupId>-->
+        <!--<artifactId>javax.servlet-api</artifactId>-->
+        <!--<version>4.0.1</version>-->
+        <!--</dependency>-->
+
+
+        <!--<dependency>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-test</artifactId>-->
+        <!--<scope>test</scope>-->
+        <!--<exclusions>-->
+        <!--<exclusion>-->
+        <!--<groupId>org.junit.vintage</groupId>-->
+        <!--<artifactId>junit-vintage-engine</artifactId>-->
+        <!--</exclusion>-->
+        <!--</exclusions>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.6</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>1.5.20</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-common</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>1.2.0.Final</version>
+        </dependency>
+
+
+        <!--SAXON 9-->
+        <!--<dependency>-->
+        <!--<groupId>net.sf.saxon</groupId>-->
+        <!--<artifactId>saxon</artifactId>-->
+        <!--<version>8.7</version>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+        <!--<groupId>net.sf.saxon</groupId>-->
+        <!--<artifactId>Saxon-HE</artifactId>-->
+        <!--<version>10.2</version>-->
+        <!--</dependency>-->
+    </dependencies>
+
+
+    <build>
+        <finalName>manager</finalName>
+        <plugins>
+            <!--<plugin>-->
+            <!--<groupId>org.codehaus.mojo</groupId>-->
+            <!--<artifactId>exec-maven-plugin</artifactId>-->
+            <!--<version>1.4.0</version>-->
+            <!--<executions>-->
+            <!--<execution>-->
+            <!--<id>copy to remove server </id>-->
+            <!--<phase>package</phase>-->
+            <!--<goals>-->
+            <!--<goal>exec</goal>-->
+            <!--</goals>-->
+            <!--</execution>-->
+            <!--</executions>-->
+            <!--<configuration>-->
+            <!--&lt;!&ndash;<executable>run.bat</executable>&ndash;&gt;-->
+            <!--</configuration>-->
+            <!--</plugin>-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <!--<plugin>-->
+            <!--<configuration>-->
+            <!--<executable>true</executable>-->
+            <!--</configuration>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
+            <!--</plugin>-->
+        </plugins>
+    </build>
+
+</project>

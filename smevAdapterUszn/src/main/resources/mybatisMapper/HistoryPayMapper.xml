@@ -1,0 +1,450 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">-->
+<!--<mapper namespace="smev.Reestr.Dao.HistoryPayDao">-->
+  <!--<resultMap id="BaseResultMap" type="smev.Reestr.Entity.HistoryPay">-->
+    <!--<id column="ID_HISTORY_PAY" jdbcType="INTEGER" property="idHistoryPay" />-->
+    <!--<id column="ID_REGION" jdbcType="INTEGER" property="idR" />-->
+    <!--<result column="ID_SUBJECT" jdbcType="INTEGER" property="idSubject" />-->
+    <!--<result column="ID_TASK" jdbcType="SMALLINT" property="idTask" />-->
+    <!--<result column="ID_TYPE_PAY" jdbcType="SMALLINT" property="idTypePay" />-->
+    <!--<result column="SNAZN" jdbcType="NUMERIC" property="snazn" />-->
+    <!--<result column="UDERJ" jdbcType="NUMERIC" property="uderj" />-->
+    <!--<result column="DOPL" jdbcType="NUMERIC" property="dopl" />-->
+    <!--<result column="RDOPL" jdbcType="NUMERIC" property="rdopl" />-->
+    <!--<result column="SNEOPL" jdbcType="NUMERIC" property="sneopl" />-->
+    <!--<result column="KMES" jdbcType="SMALLINT" property="kmes" />-->
+    <!--<result column="SVPL" jdbcType="NUMERIC" property="svpl" />-->
+    <!--<result column="OTMVP" jdbcType="VARCHAR" property="otmvp" />-->
+    <!--<result column="DATZ" jdbcType="TIMESTAMP" property="datz" />-->
+    <!--<result column="DATF" jdbcType="TIMESTAMP" property="datf" />-->
+    <!--<result column="SPVPL" jdbcType="INTEGER" property="spvpl" />-->
+    <!--<result column="OTDSVZ" jdbcType="VARCHAR" property="otdsvz" />-->
+    <!--<result column="NCK" jdbcType="VARCHAR" property="nck" />-->
+    <!--<result column="NLC" jdbcType="VARCHAR" property="nlc" />-->
+    <!--<result column="DPL" jdbcType="VARCHAR" property="dpl" />-->
+    <!--<result column="DUCH" jdbcType="VARCHAR" property="duch" />-->
+    <!--<result column="ID_DECLARATION" jdbcType="INTEGER" property="idDeclaration" />-->
+    <!--<result column="FLAG_SVPL" jdbcType="INTEGER" property="flagSvpl" />-->
+    <!--<result column="FLAG_DOPL" jdbcType="INTEGER" property="flagDopl" />-->
+    <!--<result column="CATEGORY_EDV" jdbcType="SMALLINT" property="categoryEdv" />-->
+    <!--<result column="ID_RECIPIENT" jdbcType="INTEGER" property="idRecipient" />-->
+    <!--<result column="ORDER_BIRTH" jdbcType="SMALLINT" property="orderBirth" />-->
+    <!--<result column="DATE_BEGIN" jdbcType="TIMESTAMP" property="dateBegin" />-->
+    <!--<result column="DATE_END" jdbcType="TIMESTAMP" property="dateEnd" />-->
+    <!--<result column="KIND_OF_PAY" jdbcType="INTEGER" property="kindOfPay" />-->
+    <!--<result column="RETURN_FROM_BANK" jdbcType="NUMERIC" property="returnFromBank" />-->
+    <!--<result column="RRETURN_FROM_BANK" jdbcType="NUMERIC" property="rreturnFromBank" />-->
+    <!--<result column="ID_FAM_TYPE" jdbcType="SMALLINT" property="idFamType" />-->
+    <!--<result column="ID_R03" jdbcType="INTEGER" property="idR03" />-->
+    <!--<result column="LIMIT_FINANCE" jdbcType="BIT" property="limitFinance" />-->
+  <!--</resultMap>-->
+  <!--<sql id="Base_Column_List">-->
+    <!--ID_HISTORY_PAY, ID_REGION, ID_SUBJECT, ID_TASK, ID_TYPE_PAY, SNAZN, UDERJ, DOPL,-->
+    <!--RDOPL, SNEOPL, KMES, SVPL, OTMVP, DATZ, DATF, SPVPL, OTDSVZ, NCK, NLC, DPL, DUCH,-->
+    <!--ID_DECLARATION, FLAG_SVPL, FLAG_DOPL, CATEGORY_EDV, ID_RECIPIENT, ORDER_BIRTH, DATE_BEGIN,-->
+    <!--DATE_END, KIND_OF_PAY, RETURN_FROM_BANK, RRETURN_FROM_BANK, ID_FAM_TYPE, ID_R03,-->
+    <!--LIMIT_FINANCE-->
+  <!--</sql>-->
+  <!--<select id="selectByPrimaryKey" parameterType="smev.Reestr.Entity.HistoryPayKey" resultMap="BaseResultMap">-->
+    <!--select-->
+    <!--<include refid="Base_Column_List" />-->
+    <!--from T_HISTORY_PAY-->
+    <!--where ID_HISTORY_PAY = #{idHistoryPay,jdbcType=INTEGER}-->
+      <!--and ID_REGION = #{idR,jdbcType=INTEGER}-->
+  <!--</select>-->
+  <!--<select id="selectTop1ByidSubject"-->
+         <!--parameterType="smev.Reestr.Entity.HistoryPayKey" resultMap="BaseResultMap">-->
+    <!--select TOP(1)-->
+    <!--<include refid="Base_Column_List" />-->
+    <!--from T_HISTORY_PAY-->
+    <!--where-->
+    <!--ID_REGION = #{idR,jdbcType=INTEGER}-->
+    <!--and ID_SUBJECT = #{idSubject,jdbcType=INTEGER}-->
+  <!--</select>-->
+  <!--<delete id="deleteByPrimaryKey" parameterType="smev.Reestr.Entity.HistoryPayKey">-->
+    <!--delete from T_HISTORY_PAY-->
+    <!--where ID_HISTORY_PAY = #{idHistoryPay,jdbcType=INTEGER}-->
+      <!--and ID_REGION = #{idR,jdbcType=INTEGER}-->
+  <!--</delete>-->
+  <!--<insert id="insert" keyColumn="ID_HISTORY_PAY" keyProperty="idHistoryPay" parameterType="smev.Reestr.Entity.HistoryPay" useGeneratedKeys="true">-->
+    <!--insert into T_HISTORY_PAY (ID_REGION, ID_SUBJECT, ID_TASK,-->
+      <!--ID_TYPE_PAY, SNAZN, UDERJ,-->
+      <!--DOPL, RDOPL, SNEOPL,-->
+      <!--KMES, SVPL, OTMVP,-->
+      <!--DATZ, DATF, SPVPL,-->
+      <!--OTDSVZ, NCK, NLC, DPL,-->
+      <!--DUCH, ID_DECLARATION, FLAG_SVPL,-->
+      <!--FLAG_DOPL, CATEGORY_EDV, ID_RECIPIENT,-->
+      <!--ORDER_BIRTH, DATE_BEGIN, DATE_END,-->
+      <!--KIND_OF_PAY, RETURN_FROM_BANK, RRETURN_FROM_BANK,-->
+      <!--ID_FAM_TYPE, ID_R03, LIMIT_FINANCE-->
+      <!--)-->
+    <!--values (#{idR,jdbcType=INTEGER}, #{idSubject,jdbcType=INTEGER}, #{idTask,jdbcType=SMALLINT},-->
+      <!--#{idTypePay,jdbcType=SMALLINT}, #{snazn,jdbcType=NUMERIC}, #{uderj,jdbcType=NUMERIC},-->
+      <!--#{dopl,jdbcType=NUMERIC}, #{rdopl,jdbcType=NUMERIC}, #{sneopl,jdbcType=NUMERIC},-->
+      <!--#{kmes,jdbcType=SMALLINT}, #{svpl,jdbcType=NUMERIC}, #{otmvp,jdbcType=VARCHAR},-->
+      <!--#{datz,jdbcType=TIMESTAMP}, #{datf,jdbcType=TIMESTAMP}, #{spvpl,jdbcType=INTEGER},-->
+      <!--#{otdsvz,jdbcType=VARCHAR}, #{nck,jdbcType=VARCHAR}, #{nlc,jdbcType=VARCHAR}, #{dpl,jdbcType=VARCHAR},-->
+      <!--#{duch,jdbcType=VARCHAR}, #{idDeclaration,jdbcType=INTEGER}, #{flagSvpl,jdbcType=INTEGER},-->
+      <!--#{flagDopl,jdbcType=INTEGER}, #{categoryEdv,jdbcType=SMALLINT}, #{idRecipient,jdbcType=INTEGER},-->
+      <!--#{orderBirth,jdbcType=SMALLINT}, #{dateBegin,jdbcType=TIMESTAMP}, #{dateEnd,jdbcType=TIMESTAMP},-->
+      <!--#{kindOfPay,jdbcType=INTEGER}, #{returnFromBank,jdbcType=NUMERIC}, #{rreturnFromBank,jdbcType=NUMERIC},-->
+      <!--#{idFamType,jdbcType=SMALLINT}, #{idR03,jdbcType=INTEGER}, #{limitFinance,jdbcType=BIT}-->
+      <!--)-->
+  <!--</insert>-->
+  <!--<insert id="insertSelective" keyColumn="ID_HISTORY_PAY" keyProperty="idHistoryPay" parameterType="smev.Reestr.Entity.HistoryPay" useGeneratedKeys="true">-->
+    <!--insert into T_HISTORY_PAY-->
+    <!--<trim prefix="(" suffix=")" suffixOverrides=",">-->
+      <!--<if test="idR != null">-->
+        <!--ID_REGION,-->
+      <!--</if>-->
+      <!--<if test="idSubject != null">-->
+        <!--ID_SUBJECT,-->
+      <!--</if>-->
+      <!--<if test="idTask != null">-->
+        <!--ID_TASK,-->
+      <!--</if>-->
+      <!--<if test="idTypePay != null">-->
+        <!--ID_TYPE_PAY,-->
+      <!--</if>-->
+      <!--<if test="snazn != null">-->
+        <!--SNAZN,-->
+      <!--</if>-->
+      <!--<if test="uderj != null">-->
+        <!--UDERJ,-->
+      <!--</if>-->
+      <!--<if test="dopl != null">-->
+        <!--DOPL,-->
+      <!--</if>-->
+      <!--<if test="rdopl != null">-->
+        <!--RDOPL,-->
+      <!--</if>-->
+      <!--<if test="sneopl != null">-->
+        <!--SNEOPL,-->
+      <!--</if>-->
+      <!--<if test="kmes != null">-->
+        <!--KMES,-->
+      <!--</if>-->
+      <!--<if test="svpl != null">-->
+        <!--SVPL,-->
+      <!--</if>-->
+      <!--<if test="otmvp != null">-->
+        <!--OTMVP,-->
+      <!--</if>-->
+      <!--<if test="datz != null">-->
+        <!--DATZ,-->
+      <!--</if>-->
+      <!--<if test="datf != null">-->
+        <!--DATF,-->
+      <!--</if>-->
+      <!--<if test="spvpl != null">-->
+        <!--SPVPL,-->
+      <!--</if>-->
+      <!--<if test="otdsvz != null">-->
+        <!--OTDSVZ,-->
+      <!--</if>-->
+      <!--<if test="nck != null">-->
+        <!--NCK,-->
+      <!--</if>-->
+      <!--<if test="nlc != null">-->
+        <!--NLC,-->
+      <!--</if>-->
+      <!--<if test="dpl != null">-->
+        <!--DPL,-->
+      <!--</if>-->
+      <!--<if test="duch != null">-->
+        <!--DUCH,-->
+      <!--</if>-->
+      <!--<if test="idDeclaration != null">-->
+        <!--ID_DECLARATION,-->
+      <!--</if>-->
+      <!--<if test="flagSvpl != null">-->
+        <!--FLAG_SVPL,-->
+      <!--</if>-->
+      <!--<if test="flagDopl != null">-->
+        <!--FLAG_DOPL,-->
+      <!--</if>-->
+      <!--<if test="categoryEdv != null">-->
+        <!--CATEGORY_EDV,-->
+      <!--</if>-->
+      <!--<if test="idRecipient != null">-->
+        <!--ID_RECIPIENT,-->
+      <!--</if>-->
+      <!--<if test="orderBirth != null">-->
+        <!--ORDER_BIRTH,-->
+      <!--</if>-->
+      <!--<if test="dateBegin != null">-->
+        <!--DATE_BEGIN,-->
+      <!--</if>-->
+      <!--<if test="dateEnd != null">-->
+        <!--DATE_END,-->
+      <!--</if>-->
+      <!--<if test="kindOfPay != null">-->
+        <!--KIND_OF_PAY,-->
+      <!--</if>-->
+      <!--<if test="returnFromBank != null">-->
+        <!--RETURN_FROM_BANK,-->
+      <!--</if>-->
+      <!--<if test="rreturnFromBank != null">-->
+        <!--RRETURN_FROM_BANK,-->
+      <!--</if>-->
+      <!--<if test="idFamType != null">-->
+        <!--ID_FAM_TYPE,-->
+      <!--</if>-->
+      <!--<if test="idR03 != null">-->
+        <!--ID_R03,-->
+      <!--</if>-->
+      <!--<if test="limitFinance != null">-->
+        <!--LIMIT_FINANCE,-->
+      <!--</if>-->
+    <!--</trim>-->
+    <!--<trim prefix="values (" suffix=")" suffixOverrides=",">-->
+      <!--<if test="idR != null">-->
+        <!--#{idR,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="idSubject != null">-->
+        <!--#{idSubject,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="idTask != null">-->
+        <!--#{idTask,jdbcType=SMALLINT},-->
+      <!--</if>-->
+      <!--<if test="idTypePay != null">-->
+        <!--#{idTypePay,jdbcType=SMALLINT},-->
+      <!--</if>-->
+      <!--<if test="snazn != null">-->
+        <!--#{snazn,jdbcType=NUMERIC},-->
+      <!--</if>-->
+      <!--<if test="uderj != null">-->
+        <!--#{uderj,jdbcType=NUMERIC},-->
+      <!--</if>-->
+      <!--<if test="dopl != null">-->
+        <!--#{dopl,jdbcType=NUMERIC},-->
+      <!--</if>-->
+      <!--<if test="rdopl != null">-->
+        <!--#{rdopl,jdbcType=NUMERIC},-->
+      <!--</if>-->
+      <!--<if test="sneopl != null">-->
+        <!--#{sneopl,jdbcType=NUMERIC},-->
+      <!--</if>-->
+      <!--<if test="kmes != null">-->
+        <!--#{kmes,jdbcType=SMALLINT},-->
+      <!--</if>-->
+      <!--<if test="svpl != null">-->
+        <!--#{svpl,jdbcType=NUMERIC},-->
+      <!--</if>-->
+      <!--<if test="otmvp != null">-->
+        <!--#{otmvp,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="datz != null">-->
+        <!--#{datz,jdbcType=TIMESTAMP},-->
+      <!--</if>-->
+      <!--<if test="datf != null">-->
+        <!--#{datf,jdbcType=TIMESTAMP},-->
+      <!--</if>-->
+      <!--<if test="spvpl != null">-->
+        <!--#{spvpl,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="otdsvz != null">-->
+        <!--#{otdsvz,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="nck != null">-->
+        <!--#{nck,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="nlc != null">-->
+        <!--#{nlc,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="dpl != null">-->
+        <!--#{dpl,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="duch != null">-->
+        <!--#{duch,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="idDeclaration != null">-->
+        <!--#{idDeclaration,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="flagSvpl != null">-->
+        <!--#{flagSvpl,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="flagDopl != null">-->
+        <!--#{flagDopl,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="categoryEdv != null">-->
+        <!--#{categoryEdv,jdbcType=SMALLINT},-->
+      <!--</if>-->
+      <!--<if test="idRecipient != null">-->
+        <!--#{idRecipient,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="orderBirth != null">-->
+        <!--#{orderBirth,jdbcType=SMALLINT},-->
+      <!--</if>-->
+      <!--<if test="dateBegin != null">-->
+        <!--#{dateBegin,jdbcType=TIMESTAMP},-->
+      <!--</if>-->
+      <!--<if test="dateEnd != null">-->
+        <!--#{dateEnd,jdbcType=TIMESTAMP},-->
+      <!--</if>-->
+      <!--<if test="kindOfPay != null">-->
+        <!--#{kindOfPay,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="returnFromBank != null">-->
+        <!--#{returnFromBank,jdbcType=NUMERIC},-->
+      <!--</if>-->
+      <!--<if test="rreturnFromBank != null">-->
+        <!--#{rreturnFromBank,jdbcType=NUMERIC},-->
+      <!--</if>-->
+      <!--<if test="idFamType != null">-->
+        <!--#{idFamType,jdbcType=SMALLINT},-->
+      <!--</if>-->
+      <!--<if test="idR03 != null">-->
+        <!--#{idR03,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="limitFinance != null">-->
+        <!--#{limitFinance,jdbcType=BIT},-->
+      <!--</if>-->
+    <!--</trim>-->
+  <!--</insert>-->
+  <!--<update id="updateByPrimaryKeySelective" parameterType="smev.Reestr.Entity.HistoryPay">-->
+    <!--update T_HISTORY_PAY-->
+    <!--<set>-->
+      <!--<if test="idSubject != null">-->
+        <!--ID_SUBJECT = #{idSubject,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="idTask != null">-->
+        <!--ID_TASK = #{idTask,jdbcType=SMALLINT},-->
+      <!--</if>-->
+      <!--<if test="idTypePay != null">-->
+        <!--ID_TYPE_PAY = #{idTypePay,jdbcType=SMALLINT},-->
+      <!--</if>-->
+      <!--<if test="snazn != null">-->
+        <!--SNAZN = #{snazn,jdbcType=NUMERIC},-->
+      <!--</if>-->
+      <!--<if test="uderj != null">-->
+        <!--UDERJ = #{uderj,jdbcType=NUMERIC},-->
+      <!--</if>-->
+      <!--<if test="dopl != null">-->
+        <!--DOPL = #{dopl,jdbcType=NUMERIC},-->
+      <!--</if>-->
+      <!--<if test="rdopl != null">-->
+        <!--RDOPL = #{rdopl,jdbcType=NUMERIC},-->
+      <!--</if>-->
+      <!--<if test="sneopl != null">-->
+        <!--SNEOPL = #{sneopl,jdbcType=NUMERIC},-->
+      <!--</if>-->
+      <!--<if test="kmes != null">-->
+        <!--KMES = #{kmes,jdbcType=SMALLINT},-->
+      <!--</if>-->
+      <!--<if test="svpl != null">-->
+        <!--SVPL = #{svpl,jdbcType=NUMERIC},-->
+      <!--</if>-->
+      <!--<if test="otmvp != null">-->
+        <!--OTMVP = #{otmvp,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="datz != null">-->
+        <!--DATZ = #{datz,jdbcType=TIMESTAMP},-->
+      <!--</if>-->
+      <!--<if test="datf != null">-->
+        <!--DATF = #{datf,jdbcType=TIMESTAMP},-->
+      <!--</if>-->
+      <!--<if test="spvpl != null">-->
+        <!--SPVPL = #{spvpl,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="otdsvz != null">-->
+        <!--OTDSVZ = #{otdsvz,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="nck != null">-->
+        <!--NCK = #{nck,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="nlc != null">-->
+        <!--NLC = #{nlc,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="dpl != null">-->
+        <!--DPL = #{dpl,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="duch != null">-->
+        <!--DUCH = #{duch,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="idDeclaration != null">-->
+        <!--ID_DECLARATION = #{idDeclaration,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="flagSvpl != null">-->
+        <!--FLAG_SVPL = #{flagSvpl,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="flagDopl != null">-->
+        <!--FLAG_DOPL = #{flagDopl,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="categoryEdv != null">-->
+        <!--CATEGORY_EDV = #{categoryEdv,jdbcType=SMALLINT},-->
+      <!--</if>-->
+      <!--<if test="idRecipient != null">-->
+        <!--ID_RECIPIENT = #{idRecipient,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="orderBirth != null">-->
+        <!--ORDER_BIRTH = #{orderBirth,jdbcType=SMALLINT},-->
+      <!--</if>-->
+      <!--<if test="dateBegin != null">-->
+        <!--DATE_BEGIN = #{dateBegin,jdbcType=TIMESTAMP},-->
+      <!--</if>-->
+      <!--<if test="dateEnd != null">-->
+        <!--DATE_END = #{dateEnd,jdbcType=TIMESTAMP},-->
+      <!--</if>-->
+      <!--<if test="kindOfPay != null">-->
+        <!--KIND_OF_PAY = #{kindOfPay,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="returnFromBank != null">-->
+        <!--RETURN_FROM_BANK = #{returnFromBank,jdbcType=NUMERIC},-->
+      <!--</if>-->
+      <!--<if test="rreturnFromBank != null">-->
+        <!--RRETURN_FROM_BANK = #{rreturnFromBank,jdbcType=NUMERIC},-->
+      <!--</if>-->
+      <!--<if test="idFamType != null">-->
+        <!--ID_FAM_TYPE = #{idFamType,jdbcType=SMALLINT},-->
+      <!--</if>-->
+      <!--<if test="idR03 != null">-->
+        <!--ID_R03 = #{idR03,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="limitFinance != null">-->
+        <!--LIMIT_FINANCE = #{limitFinance,jdbcType=BIT},-->
+      <!--</if>-->
+    <!--</set>-->
+    <!--where ID_HISTORY_PAY = #{idHistoryPay,jdbcType=INTEGER}-->
+      <!--and ID_REGION = #{idR,jdbcType=INTEGER}-->
+  <!--</update>-->
+  <!--<update id="updateByPrimaryKey" parameterType="smev.Reestr.Entity.HistoryPay">-->
+    <!--update T_HISTORY_PAY-->
+    <!--set ID_SUBJECT = #{idSubject,jdbcType=INTEGER},-->
+      <!--ID_TASK = #{idTask,jdbcType=SMALLINT},-->
+      <!--ID_TYPE_PAY = #{idTypePay,jdbcType=SMALLINT},-->
+      <!--SNAZN = #{snazn,jdbcType=NUMERIC},-->
+      <!--UDERJ = #{uderj,jdbcType=NUMERIC},-->
+      <!--DOPL = #{dopl,jdbcType=NUMERIC},-->
+      <!--RDOPL = #{rdopl,jdbcType=NUMERIC},-->
+      <!--SNEOPL = #{sneopl,jdbcType=NUMERIC},-->
+      <!--KMES = #{kmes,jdbcType=SMALLINT},-->
+      <!--SVPL = #{svpl,jdbcType=NUMERIC},-->
+      <!--OTMVP = #{otmvp,jdbcType=VARCHAR},-->
+      <!--DATZ = #{datz,jdbcType=TIMESTAMP},-->
+      <!--DATF = #{datf,jdbcType=TIMESTAMP},-->
+      <!--SPVPL = #{spvpl,jdbcType=INTEGER},-->
+      <!--OTDSVZ = #{otdsvz,jdbcType=VARCHAR},-->
+      <!--NCK = #{nck,jdbcType=VARCHAR},-->
+      <!--NLC = #{nlc,jdbcType=VARCHAR},-->
+      <!--DPL = #{dpl,jdbcType=VARCHAR},-->
+      <!--DUCH = #{duch,jdbcType=VARCHAR},-->
+      <!--ID_DECLARATION = #{idDeclaration,jdbcType=INTEGER},-->
+      <!--FLAG_SVPL = #{flagSvpl,jdbcType=INTEGER},-->
+      <!--FLAG_DOPL = #{flagDopl,jdbcType=INTEGER},-->
+      <!--CATEGORY_EDV = #{categoryEdv,jdbcType=SMALLINT},-->
+      <!--ID_RECIPIENT = #{idRecipient,jdbcType=INTEGER},-->
+      <!--ORDER_BIRTH = #{orderBirth,jdbcType=SMALLINT},-->
+      <!--DATE_BEGIN = #{dateBegin,jdbcType=TIMESTAMP},-->
+      <!--DATE_END = #{dateEnd,jdbcType=TIMESTAMP},-->
+      <!--KIND_OF_PAY = #{kindOfPay,jdbcType=INTEGER},-->
+      <!--RETURN_FROM_BANK = #{returnFromBank,jdbcType=NUMERIC},-->
+      <!--RRETURN_FROM_BANK = #{rreturnFromBank,jdbcType=NUMERIC},-->
+      <!--ID_FAM_TYPE = #{idFamType,jdbcType=SMALLINT},-->
+      <!--ID_R03 = #{idR03,jdbcType=INTEGER},-->
+      <!--LIMIT_FINANCE = #{limitFinance,jdbcType=BIT}-->
+    <!--where ID_HISTORY_PAY = #{idHistoryPay,jdbcType=INTEGER}-->
+      <!--and ID_REGION = #{idR,jdbcType=INTEGER}-->
+  <!--</update>-->
+<!--</mapper>-->

@@ -1,0 +1,81 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">-->
+<!--<mapper namespace="smev.Reestr.Dao.SubjectReestrDao">-->
+    <!--<resultMap id="BaseResultMap" type="smev.Reestr.Entity.SubjectReestr">-->
+        <!--<id column="ID_REGION" jdbcType="SMALLINT" property="idR"/>-->
+        <!--<id column="ID_SUBJECT" jdbcType="INTEGER" property="idSubject"/>-->
+        <!--<result column="SUMMA" jdbcType="NUMERIC" property="summa"/>-->
+    <!--</resultMap>-->
+    <!--<sql id="Base_Column_List">-->
+        <!--ID_REGION, ID_SUBJECT, SUMMA-->
+    <!--</sql>-->
+    <!--<select id="selectAll" resultMap="BaseResultMap">-->
+        <!--select-->
+        <!--<include refid="Base_Column_List"/>-->
+        <!--from TEMP_test_insert_thread-->
+    <!--</select>-->
+    <!--<select id="selectByPrimaryKey" parameterType="smev.Reestr.Entity.SubjectReestr" resultMap="BaseResultMap">-->
+        <!--select-->
+        <!--<include refid="Base_Column_List"/>-->
+        <!--from TEMP_test_insert_thread-->
+        <!--where ID_REGION = #{idR,jdbcType=SMALLINT}-->
+        <!--and ID_SUBJECT = #{idSubject,jdbcType=INTEGER}-->
+    <!--</select>-->
+    <!--<delete id="deleteByPrimaryKey" parameterType="smev.Reestr.Entity.SubjectReestr">-->
+        <!--delete-->
+        <!--from TEMP_test_insert_thread-->
+        <!--where ID_REGION = #{idR,jdbcType=SMALLINT}-->
+          <!--and ID_SUBJECT = #{idSubject,jdbcType=INTEGER}-->
+    <!--</delete>-->
+    <!--<insert id="insert" keyColumn="ID_REGION" keyProperty="idR" parameterType="smev.Reestr.Entity.SubjectReestr"-->
+            <!--useGeneratedKeys="false">-->
+        <!--insert into TEMP_test_insert_thread (ID_REGION, ID_SUBJECT, SUMMA)-->
+        <!--values (#{idR,jdbcType=SMALLINT}, #{idSubject,jdbcType=INTEGER}, #{summa,jdbcType=NUMERIC})-->
+    <!--</insert>-->
+    <!--<insert id="Batchinsert" keyColumn="ID_REGION" keyProperty="idR"-->
+            <!--parameterType="smev.Reestr.Entity.SubjectReestr"-->
+            <!--useGeneratedKeys="false">-->
+        <!--insert into TEMP_test_insert_thread (ID_REGION, ID_SUBJECT, SUMMA)-->
+        <!--<foreach collection="list" item="model" index="Index" separator="UNION ALL">-->
+            <!--select #{model.idR,jdbcType=SMALLINT}, #{model.idSubject,jdbcType=INTEGER}, #{model.summa,jdbcType=NUMERIC}-->
+        <!--</foreach>-->
+    <!--</insert>-->
+
+
+    <!--<insert id="insertSelective" keyColumn="ID_REGION" keyProperty="idR"-->
+            <!--parameterType="smev.Reestr.Entity.SubjectReestr" useGeneratedKeys="true">-->
+        <!--insert into TEMP_test_insert_thread-->
+        <!--<trim prefix="(" suffix=")" suffixOverrides=",">-->
+            <!--<if test="idSubject != null">-->
+                <!--ID_SUBJECT,-->
+            <!--</if>-->
+            <!--<if test="summa != null">-->
+                <!--SUMMA,-->
+            <!--</if>-->
+        <!--</trim>-->
+        <!--<trim prefix="values (" suffix=")" suffixOverrides=",">-->
+            <!--<if test="idSubject != null">-->
+                <!--#{idSubject,jdbcType=INTEGER},-->
+            <!--</if>-->
+            <!--<if test="summa != null">-->
+                <!--#{summa,jdbcType=NUMERIC},-->
+            <!--</if>-->
+        <!--</trim>-->
+    <!--</insert>-->
+    <!--<update id="updateByPrimaryKeySelective" parameterType="smev.Reestr.Entity.SubjectReestr">-->
+        <!--update TEMP_test_insert_thread-->
+        <!--<set>-->
+            <!--<if test="summa != null">-->
+                <!--SUMMA = #{summa,jdbcType=NUMERIC},-->
+            <!--</if>-->
+        <!--</set>-->
+        <!--where ID_REGION = #{idR,jdbcType=SMALLINT}-->
+        <!--and ID_SUBJECT = #{idSubject,jdbcType=INTEGER}-->
+    <!--</update>-->
+    <!--<update id="updateByPrimaryKey" parameterType="smev.Reestr.Entity.SubjectReestr">-->
+        <!--update TEMP_test_insert_thread-->
+        <!--set SUMMA = #{summa,jdbcType=NUMERIC}-->
+        <!--where ID_REGION = #{idR,jdbcType=SMALLINT}-->
+          <!--and ID_SUBJECT = #{idSubject,jdbcType=INTEGER}-->
+    <!--</update>-->
+<!--</mapper>-->

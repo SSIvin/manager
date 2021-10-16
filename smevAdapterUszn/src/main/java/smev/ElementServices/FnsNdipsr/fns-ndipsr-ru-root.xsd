@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 sp1 (http://www.altova.com) by ﻿User (Company) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fnst="urn://x-artefacts-fns-ndipsr/types/4.0.0"
+           targetNamespace="urn://x-artefacts-fns-ndipsr/root/210-17/4.0.0" elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+	<xs:import namespace="urn://x-artefacts-fns-ndipsr/types/4.0.0" schemaLocation="fns-ndipsr-types.xsd"/>
+	<xs:element name="NDIPSRRequest">
+		<xs:annotation>
+			<xs:documentation>Запрос в Федеральную налоговую службу по сведениям из налоговых деклараций, представленных индивидуальными предпринимателями, применяющими специальные налоговые режимы</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="СведИП">
+					<xs:annotation>
+						<xs:documentation>Сведения об индивидуальном предпринимателе</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ФИО" type="fnst:PhysicalPersonNameType">
+								<xs:annotation>
+									<xs:documentation>Фамилия, имя, отчество</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="ИННФЛ" type="fnst:PhysicalPersonINNType" use="required">
+							<xs:annotation>
+								<xs:documentation>ИНН физического лица, зарегистрированного в качестве индивидуального предпринимателя</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ГодПериодОтч" type="xs:gYear" use="required">
+							<xs:annotation>
+								<xs:documentation>Отчетный год</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="ИдЗапрос" type="fnst:IDRequestType" use="optional">
+				<xs:annotation>
+					<xs:documentation>Идентификатор запроса, сформированный запрашивающей стороной</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NDIPSRResponse">
+		<xs:annotation>
+			<xs:documentation>Ответ Федеральной налоговой службы на запрос по сведениям из налоговых деклараций, представленных индивидуальными предпринимателями, применяющими специальные налоговые режимы</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="СвНДСпРеж" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Сведения из налоговых деклараций, представленных индивидуальными предпринимателями, применяющими специальные налоговые режимы</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="СведИП">
+								<xs:annotation>
+									<xs:documentation>Сведения о налогоплательщике - физическом лице, представившем налоговую декларацию</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ФИО" type="fnst:PhysicalPersonNameType">
+											<xs:annotation>
+												<xs:documentation>Фамилия, имя, отчество</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="ИННФЛ" type="fnst:PhysicalPersonINNType" use="required">
+										<xs:annotation>
+											<xs:documentation>ИНН физического лица, зарегистрированного в качестве индивидуального предпринимателя</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ЕСХН" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Сведения о доходах из налоговой декларации по единому сельскохозяйственному налогу (ЕСХН)</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:attribute name="ПериодОтч" use="required">
+										<xs:annotation>
+											<xs:documentation>Номер налогового периода</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="fnst:string-2">
+												<xs:enumeration value="30"/>
+												<xs:enumeration value="34"/>
+												<xs:enumeration value="50"/>
+												<xs:enumeration value="95"/>
+												<xs:enumeration value="96"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="ГодПериодОтч" type="xs:gYear" use="required">
+										<xs:annotation>
+											<xs:documentation>Отчетный год</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="СумДох" type="fnst:number-15" use="required">
+										<xs:annotation>
+											<xs:documentation>Сумма доходов за налоговый (отчетный) период, учитываемых при определении налоговой базы по единому сельскохозяйственному налогу</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="УСН" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Сведения о доходах из налоговой декларации по налогу, уплачиваемому в связи с применением упрощенной системы налогообложения (УСН)</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:choice>
+										<xs:element name="СвУпр3_00">
+											<xs:annotation>
+												<xs:documentation>Сведения, полученные по формату версии ниже 5.01 </xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:choice>
+													<xs:element name="Доходы" type="fnst:number-15">
+														<xs:annotation>
+															<xs:documentation>Доходы</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="ДохРасх" type="fnst:number-15">
+														<xs:annotation>
+															<xs:documentation>Доходы уменьшенные на величину расходов</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+												</xs:choice>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="СвУпр5_01">
+											<xs:annotation>
+												<xs:documentation>Сведения, полученные по формату версии 5.01</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="ОбНал" use="required">
+													<xs:annotation>
+														<xs:documentation>Объект налогообложения (1 - доходы, 2 - доходы, уменьшенные на величину расходов)</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="fnst:string-1">
+															<xs:enumeration value="1"/>
+															<xs:enumeration value="2"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="Доход" type="fnst:number-15" use="required">
+													<xs:annotation>
+														<xs:documentation>Сумма полученных доходов за налоговый период</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="Расход" type="fnst:number-15" use="optional">
+													<xs:annotation>
+														<xs:documentation>Сумма произведенных расходов за налоговый период</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="СвУпр5_04">
+											<xs:annotation>
+												<xs:documentation>Сведения, полученные по формату версии 5.04 и 5.05</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:choice>
+													<xs:element name="РасчНалДох">
+														<xs:annotation>
+															<xs:documentation>Расчет налога, уплачиваемого в связи с применением упрощенной системы налогообложения (объект налогообложения - доходы)</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="Доход" type="fnst:СумТип">
+																	<xs:annotation>
+																		<xs:documentation>Сумма полученных доходов</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+															</xs:sequence>
+															<xs:attribute name="ОбНал" use="optional">
+																<xs:annotation>
+																	<xs:documentation>Объект налогообложения (1 - доходы)</xs:documentation>
+																</xs:annotation>
+																<xs:simpleType>
+																	<xs:restriction base="fnst:string-1">
+																		<xs:enumeration value="1"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="РасчНалДохУм">
+														<xs:annotation>
+															<xs:documentation>Расчет налога, уплачиваемого в связи с применением упрощенной системы налогообложения (объект налогообложения - доходы, уменьшенные на величину расходов)</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="Доход" type="fnst:СумТип">
+																	<xs:annotation>
+																		<xs:documentation>Сумма полученных доходов</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="Расход" type="fnst:СумТип">
+																	<xs:annotation>
+																		<xs:documentation>Сумма произведенных расходов</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+															</xs:sequence>
+															<xs:attribute name="ОбНал" use="optional">
+																<xs:annotation>
+																	<xs:documentation>Объект налогообложения (2 - доходы, уменьшенные на величину расходов)</xs:documentation>
+																</xs:annotation>
+																<xs:simpleType>
+																	<xs:restriction base="fnst:string-1">
+																		<xs:enumeration value="2"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+												</xs:choice>
+											</xs:complexType>
+										</xs:element>
+									</xs:choice>
+									<xs:attribute name="ПериодОтч" use="required">
+										<xs:annotation>
+											<xs:documentation>Номер налогового периода</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="fnst:string-2">
+												<xs:enumeration value="20"/>
+												<xs:enumeration value="30"/>
+												<xs:enumeration value="33"/>
+												<xs:enumeration value="34"/>
+												<xs:enumeration value="50"/>
+												<xs:enumeration value="95"/>
+												<xs:enumeration value="96"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="ГодПериодОтч" type="xs:gYear" use="required">
+										<xs:annotation>
+											<xs:documentation>Отчетный год</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="ВерсФорм" type="fnst:string-5" use="required">
+										<xs:annotation>
+											<xs:documentation>Версия формата</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ЕНВД" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Сведения из налоговой декларации по единому налогу на вмененный доход для отдельных видов деятельности (ЕНВД)</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="НалБазаКВПД" minOccurs="0" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>Налоговая база по коду вида предпринимательской деятельности</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="КВПД" type="fnst:string-2" use="required">
+													<xs:annotation>
+														<xs:documentation>Код вида предпринимательской деятельности</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="НалБаза" type="fnst:number-15" use="required">
+													<xs:annotation>
+														<xs:documentation>Налоговая база</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="ПериодОтч" use="required">
+										<xs:annotation>
+											<xs:documentation>Номер налогового периода</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="fnst:string-2">
+												<xs:enumeration value="21"/>
+												<xs:enumeration value="22"/>
+												<xs:enumeration value="23"/>
+												<xs:enumeration value="24"/>
+												<xs:enumeration value="51"/>
+												<xs:enumeration value="54"/>
+												<xs:enumeration value="55"/>
+												<xs:enumeration value="56"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="ГодПериодОтч" type="xs:gYear" use="required">
+										<xs:annotation>
+											<xs:documentation>Отчетный год</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="ИдЗапрос" type="fnst:IDRequestType" use="optional">
+				<xs:annotation>
+					<xs:documentation>Идентификатор запроса, сформированный запрашивающей стороной</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

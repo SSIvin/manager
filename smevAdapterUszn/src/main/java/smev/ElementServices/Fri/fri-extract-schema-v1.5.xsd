@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+	Версия: 0.0.0.0
+-->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://fri.pfr.ru" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ВыпискаФРИ">
+    <xs:complexType>
+      <xs:sequence>
+
+	<xs:element type="xs:string" name="Идентификатор" minOccurs="0">
+	  <xs:annotation>
+            <xs:documentation>Уникальный идентификатор выписки ФГИС ФРИ</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element name="ТипВыписки" minOccurs="0">
+	  <xs:annotation>
+            <xs:documentation>Код типа выписки</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+	    <xs:restriction base="xs:string">
+	      <xs:enumeration value="FIXED"/>
+      	      <xs:enumeration value="FLEXIBLE"/>
+    	    </xs:restriction>
+	  </xs:simpleType>
+        </xs:element>
+
+	<xs:element type="xs:dateTime" name="ВремяФормирования" minOccurs="0">
+	  <xs:annotation>
+            <xs:documentation>Дата и время формирования выписки</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+	<xs:element type="xs:string" name="Потребитель" minOccurs="0">
+	  <xs:annotation>
+            <xs:documentation>Код потребителя выписки. Формируется как {sourceId}.{serviceId}. {sourceId} - код ведомтсва, запросившего выписки (по справочнику ФРИ), {serviceId} - код подсистемы/услуги ведомства, запросившего выписку (по справочнику ФРИ)</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+
+
+        <xs:element name="ПерсональныеДанные">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="СНИЛС">
+                <xs:annotation>
+                  <xs:documentation>СНИЛС инвалида</xs:documentation>
+                </xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:pattern value="[0-9]{3}-[0-9]{3}-[0-9]{3}\s[0-9]{2}"/>
+			</xs:restriction>
+		</xs:simpleType>
+              </xs:element>
+              <xs:element type="xs:string" name="Фамилия">
+                <xs:annotation>
+                  <xs:documentation>Фамилия инвалида. Указывается всегда прописными символами</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element type="xs:string" name="Имя">
+                <xs:annotation>
+                  <xs:documentation>Имя инвалида. Указывается всегда прописными символами</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element type="xs:string" name="Отчество">
+                <xs:annotation>
+                  <xs:documentation>Отчество инвалида. Указывается всегда прописными символами</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element type="xs:date" name="ДатаРождения">
+                <xs:annotation>
+                  <xs:documentation>Дата рождения инвалида</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="Пол">
+                <xs:annotation>
+                  <xs:documentation>Пол инвалида. Обозначается русскими прописными символами 'F' и 'M'</xs:documentation>
+                </xs:annotation>
+		<xs:simpleType>
+		    <xs:restriction base="xs:string">
+		      <xs:enumeration value="F"/>
+      		      <xs:enumeration value="M"/>
+      		      <xs:enumeration value=""/>
+    		    </xs:restriction>
+		</xs:simpleType>
+              </xs:element>
+
+	    <xs:element type="xs:dateTime" name="ДатаРегистрации">
+                <xs:annotation>
+                  <xs:documentation>Дата первичной регистрации сведений об инвалиде в реестре</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+
+	     <xs:element name="АктуальныеСведенияОбИнвалидности">
+	          <xs:complexType>
+            		<xs:sequence>
+				<xs:element type="xs:date" name="ДатаС" nillable="true"/>
+				<xs:element type="xs:date" name="ДатаПо" nillable="true"/>
+      				<xs:element type="xs:string" name="НомерАктаМСЭ" nillable="true"/>
+      				<xs:element type="xs:date" name="ДатаАктаМСЭ" nillable="true"/>
+      				<xs:element type="xs:string" name="СерияСправкиМСЭ" nillable="true"/>
+      				<xs:element type="xs:string" name="НомерСправкиМСЭ" nillable="true"/>
+      				<xs:element type="xs:date" name="ДатаСправкиМСЭ" nillable="true"/>
+      				<xs:element type="xs:boolean" name="ПервичнаяИнвалидность" nillable="true"/>
+      				<xs:element type="xs:date" name="ДатаПервичногоОсвидетельствования" nillable="true"/>
+      				<xs:element type="xs:date" name="ОчередноеОсвидетельствование" nillable="true"/>
+      				<xs:element type="xs:integer" name="ГруппаИнвалидности" nillable="true"/>
+      				<xs:element type="xs:boolean" name="Ребенок" nillable="true"/>
+      				<xs:element type="xs:boolean" name="ИнвалидПоЗрению" nillable="true"/>
+      				<xs:element type="xs:long" name="КодПричиныИнвалидности" nillable="true"/>
+      				<xs:element type="xs:string" name="НаименованиеПричиныИнвалидности" nillable="true"/>
+			</xs:sequence>
+	          </xs:complexType>
+	     </xs:element>
+
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ВсеДокументы">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Документ" maxOccurs="unbounded" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>Сведения из документа, поступившего в реестр</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="РеквизитыДокумента">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="ID">
+                            <xs:annotation>
+                              <xs:documentation>Идентификатор документа в объектом хранилище ФРИ</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                          <xs:element type="xs:string" name="Ключ">
+                            <xs:annotation>
+                              <xs:documentation>Внешний ключ документа. Используется для ссылок между документами</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                          <xs:element type="xs:string" name="РодительскийДокумент">
+                            <xs:annotation>
+                              <xs:documentation>Ссылка на родительский документ (если имеется)</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                          <xs:element name="Источник">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="Код">
+                                  <xs:annotation>
+                                    <xs:documentation>Код ведомства, от которого поступили сведения, содержащиеcя в документе</xs:documentation>
+                                  </xs:annotation>
+                                </xs:element>
+                                <xs:element type="xs:string" name="Наименование">
+                                  <xs:annotation>
+                                    <xs:documentation>Наименования ведомства, от которого поступили сведения, содержащиеcя в документе</xs:documentation>
+                                  </xs:annotation>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element type="xs:string" name="Номер">
+                            <xs:annotation>
+                              <xs:documentation>Номер документа</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                          <xs:element type="xs:date" name="Дата">
+                            <xs:annotation>
+                              <xs:documentation>Дата документа</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                          <xs:element type="xs:date" name="СрокДействия">
+                            <xs:annotation>
+                              <xs:documentation>Срок действия документа. Если срок действия документа не определен, то вовзращается дата 9999-12-31</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                          <xs:element type="xs:dateTime" name="ДатаРегистрации">
+                            <xs:annotation>
+                              <xs:documentation>Дата регистрации документа в реестре ФГИС ФРИ</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                          <xs:element name="ТипДокумента">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="КодВерсия">
+                                  <xs:annotation>
+                                    <xs:documentation>Идентификатор типа документа по классификатору ФРИ в формате [КОД]_[ВЕРСИЯ], где версия представлена датой YYYYMMDD</xs:documentation>
+                                  </xs:annotation>
+                                </xs:element>
+                                <xs:element type="xs:string" name="Код">
+                                  <xs:annotation>
+                                    <xs:documentation>Тип документа (код) по классификатору ФРИ</xs:documentation>
+                                  </xs:annotation>
+                                </xs:element>
+                                <xs:element type="xs:string" name="Наименование">
+                                  <xs:annotation>
+                                    <xs:documentation>Полное наименование типа документа</xs:documentation>
+                                  </xs:annotation>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element type="xs:boolean" name="ДокументОснование">
+                            <xs:annotation>
+                              <xs:documentation>Документ является основанием для исполнения. Значение true устанавливается для документов типа ИПР, ИПРА, ПРП и аналогичным им</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                          <xs:element type="xs:boolean" name="ДокументИсполнение">
+                            <xs:annotation>
+                              <xs:documentation>Документ является исполнением ИПР/ИПРА/ПРП. Устанавливается для документов, поступивших от ведомств, который являются исполнителем по ИПР/ИПРА/ПРП</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ВсеСведения">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Запись" maxOccurs="unbounded" minOccurs="0">
+                            <xs:annotation>
+                              <xs:documentation>Контейнер для передачи записи в документе. Запись - это совокупность объединенных общим смыслом полей</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:long" name="ИдентификаторОбъекта">
+                                  <xs:annotation>
+                                    <xs:documentation>Идентификатор объекта метаданных (уникальный идентификатор представления категории записи в документе данного типа)</xs:documentation>
+                                  </xs:annotation>
+                                </xs:element>
+                                <xs:element type="xs:string" name="Ключ">
+                                  <xs:annotation>
+                                    <xs:documentation>Ключ записи в документе. Используется для организации ссылок на записи между документами</xs:documentation>
+                                  </xs:annotation>
+                                </xs:element>
+                                <xs:element type="xs:string" name="Родитель">
+                                  <xs:annotation>
+                                    <xs:documentation>Ссылка на родительскую запись (если имеется)</xs:documentation>
+                                  </xs:annotation>
+                                </xs:element>
+                                <xs:element name="Категория">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:string" name="Код">
+                                        <xs:annotation>
+                                          <xs:documentation>Код категории записи по классификатору ФРИ</xs:documentation>
+                                        </xs:annotation>
+                                      </xs:element>
+                                      <xs:element type="xs:string" name="Наименование">
+                                        <xs:annotation>
+                                          <xs:documentation>Полное наименование категории записи</xs:documentation>
+                                        </xs:annotation>
+                                      </xs:element>
+                                      <xs:element type="xs:string" name="Назначение" nillable="true">
+                                        <xs:annotation>
+                                          <xs:documentation>Назначение записи по метаданным ФГИС ФРИ</xs:documentation>
+                                        </xs:annotation>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="ВсеАтрибуты">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Атрибут" maxOccurs="unbounded" minOccurs="0">
+                                        <xs:annotation>
+                                          <xs:documentation>Контейнер для передачи атрибутов (полей) записи документа</xs:documentation>
+                                        </xs:annotation>
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element type="xs:string" name="Код">
+                                              <xs:annotation>
+                                                <xs:documentation>Код поля</xs:documentation>
+                                              </xs:annotation>
+                                            </xs:element>
+                                            <xs:element type="xs:string" name="Наименование">
+                                              <xs:annotation>
+                                                <xs:documentation>Наименование поля</xs:documentation>
+                                              </xs:annotation>
+                                            </xs:element>
+                                            <xs:element type="xs:string" name="ТипДанных">
+                                              <xs:annotation>
+                                                <xs:documentation>Тип данных. Реестр поддерживает типы данных: NUMBER, STRING, DATE, TIMESTAMP и BOOLEAN. Состав поддерживаемых типов данных может расширяться.</xs:documentation>
+                                              </xs:annotation>
+                                            </xs:element>
+                                            <xs:element type="xs:string" name="Значение">
+                                              <xs:annotation>
+                                                <xs:documentation>Значение поля в формате, соответствующем типу данных. Даты указываются в формате xs:date, временные метки - xs:datetime, тип BOOLEAN - xs:boolean</xs:documentation>
+                                              </xs:annotation>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

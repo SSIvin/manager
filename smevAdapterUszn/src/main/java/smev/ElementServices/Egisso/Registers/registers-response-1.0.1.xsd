@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:egisso="urn://egisso-ru/types/basic/1.0.7" xmlns:smev="urn://x-artefacts-smev-gov-ru/supplementary/commons/1.0.1" xmlns:reg="urn://egisso-ru/types/registers/1.0.1" xmlns="urn://egisso-ru/types/registers-response/1.0.1" targetNamespace="urn://egisso-ru/types/registers-response/1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:import namespace="urn://egisso-ru/types/basic/1.0.7" schemaLocation="egisso-basic-types-1.0.7.xsd"/>
+	<xsd:import namespace="urn://x-artefacts-smev-gov-ru/supplementary/commons/1.0.1" schemaLocation="smev-supplementary-commons-1.0.1.xsd"/>
+	<xsd:import namespace="urn://egisso-ru/types/registers/1.0.1" schemaLocation="registers-1.0.1.xsd"/>
+	<!--
+  ****************************************************************************************************
+  Тип данных: Ответ со сведениями ЕГИССО о включенни или исключении лица или связанных лиц из реестра лиц, связанных с измененнием родительских прав, реестра лиц с измененной дееспособностью и реестра законных представителей
+  ****************************************************************************************************
+  -->
+	<xsd:element name="response" type="tResponseData">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="ru">Сообщение-ответ со сведениями ЕГИССО о включенни или исключении лица или связанных лиц из реестра лиц, связанных с измененнием родительских прав, реестра лиц с измененной дееспособностью и реестра законных представителей</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="tResponseData">
+		<xsd:annotation>
+			<xsd:documentation>Тип данных сообщения-ответа</xsd:documentation>
+		</xsd:annotation>
+		<xsd:choice>
+			<xsd:element name="statementData" type="tStatementData">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="ru">Сведения ЕГИССО о включенни или исключении лица или связанных лиц из реестра лиц, связанных с измененнием родительских прав, реестра лиц с измененной дееспособностью и реестра законных представителей</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="error" type="egisso:tError">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="ru">Сведения о наличие ошибок во входных параметрах запроса</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:complexType name="tStatementData">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="ru">Тип данных: Пакет записей со сведениями ЕГИССО о включенни или исключении лица или связанных лиц из реестра лиц, связанных с измененнием родительских прав, реестра лиц с измененной дееспособностью и реестра законных представителей</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="statusDate" type="xsd:date">
+				<xsd:annotation>
+					<xsd:documentation>Дата, на которую передоставляются данные об актуальном статусе нахождения лица или связанных лиц в реестре</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="rlirpRecord" type="tRegisterRecord" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Записи о статусе нахождения лица или связанных лиц в реестре лиц, связанных с изменением родительских прав</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="rlidRecord" type="tRegisterRecord" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Записи о статусе нахождения лица в реестре лиц с измененной дееспособностью</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="rzpRecord" type="tRegisterRecord" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Записи о статусе нахождения лица или связанных лиц в реестре законных представителей</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="tRegisterRecord">
+		<xsd:annotation>
+			<xsd:documentation>Тип выбора возвращаемых сведений о статусе нахождения гражданина в реестре</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="codePresenceStatus" type="reg:tPresenceStatusCode">
+				<xsd:annotation>
+					<xsd:documentation>Код статуса нахождения гражданина в реестре</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="legalStatus" type="smev:string-500" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Правовой статус лица</xsd:documentation>
+					<xsd:documentation>Опционален. Возвращается только, гражданин включен в реестр.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="dossierData" type="tDossierData" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Досье юридических событий (действий), повлиявших на статус нахождения гражданани в реестре</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="tDossierData">
+		<xsd:annotation>
+			<xsd:documentation>Тип данных вида внешнего или внутреннего события</xsd:documentation>
+		</xsd:annotation>
+		<xsd:choice maxOccurs="unbounded">
+			<xsd:element name="externalEvent" type="tExternalEvent">
+				<xsd:annotation>
+					<xsd:documentation>Запись юридического события (действия) предосставленная поставщиками информации</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="internalEvent" type="tInternalEvent">
+				<xsd:annotation>
+					<xsd:documentation>Запись юридического события (действия) зафиксированная ЕГИССО</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:complexType name="tExternalEvent">
+		<xsd:annotation>
+			<xsd:documentation>Тип данных по внешнему юридическому событию (действию), данные о котором были предоставлены поставщиком информации</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="codeEventType" type="reg:tEventTypeCode">
+				<xsd:annotation>
+					<xsd:documentation>Код вида юридического события (действия)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="infoProvider" type="reg:tInfoProvider">
+				<xsd:annotation>
+					<xsd:documentation>Поставщик информации о юридическом событии (действии)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="inclusionDate" type="xsd:dateTime">
+				<xsd:annotation>
+					<xsd:documentation>Дата получения данных от поставщика информации</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="effectiveDate" type="xsd:date">
+				<xsd:annotation>
+					<xsd:documentation>Дата вступления в силу юридического события (действия)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="reasonDocument" type="reg:tDefinedDocument">
+				<xsd:annotation>
+					<xsd:documentation>Документ основание юридического события (действия)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="person" type="reg:tPerson" maxOccurs="2">
+				<xsd:annotation>
+					<xsd:documentation>Лицо участвующее в  юридическом событии (действии)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="codeEventState" type="reg:tEventStateCode">
+				<xsd:annotation>
+					<xsd:documentation>Код состояния юридического события (действия)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="lifecycleRecords" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Записи аннулирования и восстановления юридического события (действия)</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:choice maxOccurs="unbounded">
+						<xsd:element name="annulRecord" type="tAnnulRecoveryRecord">
+							<xsd:annotation>
+								<xsd:documentation>Данные аннулирования  юридического события (действия)</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="recoveryRecord" type="tAnnulRecoveryRecord">
+							<xsd:annotation>
+								<xsd:documentation>Данные восстановления юридического события (действия)</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+					</xsd:choice>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="tInternalEvent">
+		<xsd:annotation>
+			<xsd:documentation>Тип данных по внутреннему событию юридического события (действия), которая была зафиксированная ЕГИССО</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="codeEventType" type="reg:tEventTypeCode">
+				<xsd:annotation>
+					<xsd:documentation>Код вида юридического события (действия)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="createDate" type="xsd:dateTime">
+				<xsd:annotation>
+					<xsd:documentation>Дата создания события в ЕГИССО</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="effectiveDate" type="xsd:date">
+				<xsd:annotation>
+					<xsd:documentation>Дата вступления в силу юридического события (действия)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="reasonDocument" type="reg:tUndefinedDocument" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Документ основание юридического события (действия)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="comment" type="egisso:string-1000" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Комментарий к внутреннему событию</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="person" type="reg:tPerson" maxOccurs="2">
+				<xsd:annotation>
+					<xsd:documentation>Лицо - участник юридического события (действия)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="tAnnulRecoveryRecord">
+		<xsd:annotation>
+			<xsd:documentation>Тип данных вида записи по аннулированию или восстановлению юридического события (действия)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="effectiveDate" type="xsd:date">
+				<xsd:annotation>
+					<xsd:documentation>Дата вступления в силу аннулирования или восстановления юридического события (действия)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="reasonDocument" type="reg:tUndefinedDocument">
+				<xsd:annotation>
+					<xsd:documentation>Документ основание для аннулировния или восстановления юридического события (действия)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="infoProvider" type="reg:tInfoProvider">
+				<xsd:annotation>
+					<xsd:documentation>Поставщик информации об аннулировании или восстановлении юридического события (действия)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

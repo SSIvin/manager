@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn://egisso-ru/types/registers-request/1.0.1" xmlns:egisso="urn://egisso-ru/types/basic/1.0.7" xmlns:smev="urn://x-artefacts-smev-gov-ru/supplementary/commons/1.0.1" targetNamespace="urn://egisso-ru/types/registers-request/1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:import namespace="urn://egisso-ru/types/basic/1.0.7" schemaLocation="egisso-basic-types-1.0.7.xsd"/>
+	<xsd:import namespace="urn://x-artefacts-smev-gov-ru/supplementary/commons/1.0.1" schemaLocation="smev-supplementary-commons-1.0.1.xsd"/>
+	<!--
+  ****************************************************************************************************
+  Тип данных: Запрос в ЕГИССО на получение сведений о включении или исключении лица или связанных лиц из реестра лиц, связанных с изменением родительских прав, реестра лиц с измененной дееспособностью и реестра законных представителей
+  ****************************************************************************************************
+	-->
+	<xsd:element name="request" type="tRequestData">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="ru">Сообщение-запрос с параметрами запрашиваемых сведений о включении или исключении лица или связанных лиц из реестра лиц, связанных с изменением родительских прав, реестра лиц с измененной дееспособностью и реестра законных представителей</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="tRequestData">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="ru">Тип данных: Запрашиваемые сведения о включении или исключении лица или связанных лиц из реестра лиц, связанных с изменением родительских прав, реестра лиц с измененной дееспособностью и реестра законных представителей</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<!--Включение в ответ сведений из реестра лиц, связанных с изменением родительских прав-->
+			<xsd:element name="rlirp" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Включение в ответ сведений из реестра лиц, связанных с изменением родительских прав</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:choice>
+						<xsd:element name="parentRequest">
+							<xsd:annotation>
+								<xsd:documentation>Предоставление сведений по СНИЛС родителя</xsd:documentation>
+							</xsd:annotation>
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="snils" type="smev:SNILSType">
+										<xsd:annotation>
+											<xsd:documentation>СНИЛС лица, в отношении которого были изменены родительские права</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="childRequest">
+							<xsd:annotation>
+								<xsd:documentation>Предоставление сведений по СНИЛС ребенка</xsd:documentation>
+							</xsd:annotation>
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="snils" type="smev:SNILSType">
+										<xsd:annotation>
+											<xsd:documentation>СНИЛС ребенка, применительно к которому были изменены родительские права</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="parentChildRequest">
+							<xsd:annotation>
+								<xsd:documentation>Предоставление сведений по СНИЛС родителя и ребенка</xsd:documentation>
+							</xsd:annotation>
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="parentSnils" type="smev:SNILSType">
+										<xsd:annotation>
+											<xsd:documentation>СНИЛС лица, в отношении которого были изменены родительские права</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									<xsd:element name="childSnils" type="smev:SNILSType">
+										<xsd:annotation>
+											<xsd:documentation>СНИЛС ребенка, применительно к которому были изменены родительские права</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:choice>
+				</xsd:complexType>
+			</xsd:element>
+			<!--Включение в ответ сведений из реестра лиц с измененной дееспособностью-->
+			<xsd:element name="rlid" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Включение в ответ сведений из реестра лиц с измененной дееспособностью</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="snils" type="smev:SNILSType">
+							<xsd:annotation>
+								<xsd:documentation>СНИЛС лица с измененной дееспособностью</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<!--Включение в ответ сведений из реестра законных представителей-->
+			<xsd:element name="rzp" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Включение в ответ сведений из реестра реестра законных представителей</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:choice>
+						<xsd:element name="representativeRequest" type="tRepresentativeRequestData">
+							<xsd:annotation>
+								<xsd:documentation>Предоставление сведений по законному представителю</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="representedPersonRequestSnils" type="smev:SNILSType">
+							<xsd:annotation>
+								<xsd:documentation>Предоставление сведений по СНИЛС представляемого лица</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="relationRequest">
+							<xsd:annotation>
+								<xsd:documentation>Предоставление сведений по данным законного представителя и СНИЛС представляемого лица</xsd:documentation>
+							</xsd:annotation>
+							<xsd:complexType>
+								<xsd:sequence>
+										<xsd:element name="representative" type="tRepresentativeRequestData">
+										<xsd:annotation>
+											<xsd:documentation>Данные представителя</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									<xsd:element name="representedPersonSnils" type="smev:SNILSType">
+										<xsd:annotation>
+											<xsd:documentation>СНИЛС представляемого лица</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:choice>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element name="statusOnDate" type="xsd:date" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Изменение в ответе даты с текущей на заданную</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<!--Включение в ответ досье юридических событий (действий) повлиявших на статус нахождения в реестре-->
+			<xsd:element name="withDossier" type="xsd:boolean" default="true" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Включение в ответ досье юридических событий (действий) повлиявших на статус нахождения в реестре</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="tRepresentativeRequestData">
+		<xsd:annotation>
+			<xsd:documentation>Выбор данных запроса по представителю</xsd:documentation>
+		</xsd:annotation>
+		<xsd:choice>
+			<xsd:element name="physicalPerson">
+				<xsd:annotation>
+					<xsd:documentation>Физическое лицо</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="snils" type="smev:SNILSType">
+							<xsd:annotation>
+								<xsd:documentation>СНИЛС представителя</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="legalPerson">
+				<xsd:annotation>
+					<xsd:documentation>Юридическое лицо</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:choice>
+						<xsd:element name="snils" type="smev:SNILSType">
+							<xsd:annotation>
+								<xsd:documentation>СНИЛС физического лица, предоставляющего юридическое лицо</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="inn" type="smev:LegalPersonINNType">
+							<xsd:annotation>
+								<xsd:documentation>ИНН юридического лица</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="ogrn" type="smev:OGRNCompanyType">
+							<xsd:annotation>
+								<xsd:documentation>ОГРН юридического лица</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+					</xsd:choice>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:choice>
+	</xsd:complexType>
+</xsd:schema>

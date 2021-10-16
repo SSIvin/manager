@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 sp2 (http://www.altova.com) by VI (GNIVC FNS RF) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn://x-artefacts-fns-dohflnasp/root/260-23/4.0.0" xmlns:fnst="urn://x-artefacts-fns-dohflnasp/types/4.0.0" targetNamespace="urn://x-artefacts-fns-dohflnasp/root/260-23/4.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="urn://x-artefacts-fns-dohflnasp/types/4.0.0" schemaLocation="fns-dohflnasp-types.xsd"/>
+	<xs:element name="DOHFLNASPRequest">
+		<xs:annotation>
+			<xs:documentation>Запрос о представлении сведений о доходах физических лиц у налогового агента</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="СвФЛ">
+					<xs:annotation>
+						<xs:documentation>Сведения о физическом лице</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ФИОФЛ" type="fnst:PhysicalPersonNameType">
+								<xs:annotation>
+									<xs:documentation>Фамилия, имя, отчество физического лица</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="УдЛичн" type="fnst:IdentityDocumentShortType">
+								<xs:annotation>
+									<xs:documentation>Сведения о документе, удостоверяющем личность физического лица</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="ДатаРожд" use="required">
+							<xs:annotation>
+								<xs:documentation>Дата рождения</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:date">
+									<xs:minInclusive value="1900-01-01"/>
+									<xs:maxInclusive value="2099-12-31"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="ИННФЛ" type="fnst:PhysicalPersonINNType" use="optional">
+							<xs:annotation>
+								<xs:documentation>ИНН физического лица</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="СНИЛС" type="fnst:SNILSType" use="optional">
+							<xs:annotation>
+								<xs:documentation>Страховой номер индивидуального лицевого счета</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ИННЮЛ_НА" type="fnst:LegalPersonINNType" use="required">
+							<xs:annotation>
+								<xs:documentation>ИНН налогового агента - юридического лица</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="ИдЗапрос" type="fnst:IDRequestType" use="required">
+				<xs:annotation>
+					<xs:documentation>Идентификатор запроса, сформированный запрашивающей стороной</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="ОтчетГод" use="required">
+				<xs:annotation>
+					<xs:documentation>Отчетный налоговый период</xs:documentation>
+					<xs:documentation>
+Год в формате ГГГГ</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:gYear">
+						<xs:minInclusive value="1900"/>
+						<xs:maxInclusive value="2099"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DOHFLNASPResponse">
+		<xs:annotation>
+			<xs:documentation>Ответ на запрос о представлении сведений о доходах физических лиц у налогового агента</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="ИдЗапрос" type="fnst:IDRequestType" use="required">
+				<xs:annotation>
+					<xs:documentation>Идентификатор запроса, сформированный запрашивающей стороной</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="КодОбраб" use="required">
+				<xs:annotation>
+					<xs:documentation>Код обработки запроса</xs:documentation>
+					<xs:documentation>
+Год в формате ГГГГ</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="fnst:string-1">
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

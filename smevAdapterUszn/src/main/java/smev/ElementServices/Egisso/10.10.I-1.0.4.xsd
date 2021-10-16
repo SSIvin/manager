@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns="urn://egisso-ru/msg/10.10.I/1.0.4"
+  targetNamespace="urn://egisso-ru/msg/10.10.I/1.0.4"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified"
+>
+
+  <!--
+  ****************************************************************************************************
+  Вид сведений СМЭВ: «10.10.I ИНФОРМАЦИЯ О ДАННЫХ В ХРАНИЛИЩЕ СМЭВ»
+  ****************************************************************************************************
+  -->
+
+  <!--==========================================  Элементы "Сообщение-запрос" и "Сообщение-ответ"  ==========================================-->
+  <xsd:element name="request">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="ru">
+        Сообщение-запрос
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="attachment" type="xsd:boolean" minOccurs="1" maxOccurs="1" fixed="true">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="ru">
+              Признак передачи данных через хранилище СМЭВ
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="response">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="ru">
+        Сообщение-ответ
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="attachment" type="xsd:boolean" minOccurs="1" maxOccurs="1" fixed="true">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="ru">
+              Признак передачи данных через хранилище СМЭВ
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+</xsd:schema>

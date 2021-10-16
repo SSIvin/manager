@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 sp2 (http://www.altova.com) by VI (GNIVC FNS RF) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fnst="urn://x-artefacts-fns-svviplfl/types/114-43/4.0.0"
+           targetNamespace="urn://x-artefacts-fns-svviplfl/root/114-43/4.0.0" elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+	<xs:import namespace="urn://x-artefacts-fns-svviplfl/types/114-43/4.0.0" schemaLocation="fns-svviplfl-types.xsd"/>
+	<xs:element name="SVVIPLFLRequest">
+		<xs:annotation>
+			<xs:documentation>Запрос сведений о выплатах, произведенных плательщиками страховых взносов в пользу физических лиц</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ФИО" type="fnst:ФИОТип">
+					<xs:annotation>
+						<xs:documentation>Фамилия, имя, отчество физического лица</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="ИдЗапрос" type="fnst:ИдЗапросТип" use="required">
+				<xs:annotation>
+					<xs:documentation>Идентификатор запроса, сформированный запрашивающей стороной</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="СНИЛС" type="fnst:СНИЛСТип" use="required">
+				<xs:annotation>
+					<xs:documentation>СНИЛС</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="ИННФЛ" type="fnst:ИННФЛТип" use="optional">
+				<xs:annotation>
+					<xs:documentation>ИНН физического лица</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="ДатаРожд" type="xs:date" use="required">
+				<xs:annotation>
+					<xs:documentation>Дата рождения</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="Период" use="required">
+				<xs:annotation>
+					<xs:documentation>Период (год)</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="fnst:string-1">
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+						<xs:enumeration value="3"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SVVIPLFLResponse">
+		<xs:annotation>
+			<xs:documentation>Ответ на запрос сведений о выплатах, произведенных плательщиками страховых взносов в пользу физических лиц</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ФИО" type="fnst:ФИОТип">
+					<xs:annotation>
+						<xs:documentation>Фамилия, имя, отчество физического лица</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="СведДох" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Сведения о доходах</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:choice>
+								<xs:element name="СведЮЛ">
+									<xs:annotation>
+										<xs:documentation>Сведения об организации, осуществившей выплаты</xs:documentation>
+									</xs:annotation>
+									<xs:complexType>
+										<xs:attribute name="НаимОрг" type="fnst:string-1000" use="required">
+											<xs:annotation>
+												<xs:documentation>Полное наименование организации</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+										<xs:attribute name="ИННЮЛ" type="fnst:ИННЮЛТип" use="required">
+											<xs:annotation>
+												<xs:documentation>ИНН организации</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+										<xs:attribute name="КПП" type="fnst:КППТип" use="required">
+											<xs:annotation>
+												<xs:documentation>КПП организации</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="СведФЛ">
+									<xs:annotation>
+										<xs:documentation>Сведения об индивидуальном предпринимателе, осуществившем выплаты или о физическом лице, осуществившем выплаты</xs:documentation>
+									</xs:annotation>
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="ФИО" type="fnst:ФИОТип">
+												<xs:annotation>
+													<xs:documentation>Фамилия, имя, отчество индивидуального предпринимателя, физического лица</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+										</xs:sequence>
+										<xs:attribute name="ИННФЛ" type="fnst:ИННФЛТип" use="required">
+											<xs:annotation>
+												<xs:documentation>ИНН физического лица</xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+									</xs:complexType>
+								</xs:element>
+							</xs:choice>
+							<xs:element name="СведВыпл" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Сведения о выплатах</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:attribute name="Год" type="xs:gYear" use="required">
+										<xs:annotation>
+											<xs:documentation>Год</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="Месяц" type="fnst:string-2" use="required">
+										<xs:annotation>
+											<xs:documentation>Номер месяца</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="СумДох" type="fnst:number_17.2" use="required">
+										<xs:annotation>
+											<xs:documentation>Сумма дохода</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="ИдЗапрос" type="fnst:ИдЗапросТип" use="required">
+				<xs:annotation>
+					<xs:documentation>Идентификатор запроса, сформированный запрашивающей стороной</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="ИдОтвет" type="fnst:ИдЗапросТип" use="required">
+				<xs:annotation>
+					<xs:documentation>Идентификатор ответа</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="СНИЛС" type="fnst:СНИЛСТип" use="required">
+				<xs:annotation>
+					<xs:documentation>СНИЛС</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="ИННФЛ" type="fnst:ИННФЛТип" use="optional">
+				<xs:annotation>
+					<xs:documentation>ИНН физического лица</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

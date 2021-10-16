@@ -1,0 +1,14 @@
+<ns:NDFL2Request Id="PERSONAL_SIGNATURE" ИдЗапрос="string" ТипЗапросП="1" ОтчетГод="2013" КодУслуги="stringstrin" xmlns:ns="urn://x-artefacts-fns-ndfl2/root/260-10/4.1.1">
+  <!--You have a CHOICE of the next 2 items at this level-->
+  <ns:СвНА>
+    <!--You have a CHOICE of the next 2 items at this level-->
+    <ns:СвНАЮЛ НаимОрг="string" ИННЮЛ="stringstri" КПП="stringstr"/>
+    <ns:СвНАФЛ ИННФЛ="stringstring" СНИЛС="stringstrin">
+      <ns:ФИО FamilyName="string" FirstName="string" Patronymic="string"/>
+    </ns:СвНАФЛ>
+  </ns:СвНА>
+  <ns:СвФЛ ДатаРожд="2014-06-09+04:00" ИННФЛ="stringstring" СНИЛС="stringstrin" НомЗаявФЛ="string" ДатаЗаявФЛ="2008-11-15">
+    <ns:ФИОФЛ FamilyName="string" FirstName="string" Patronymic="string"/>
+    <ns:УдЛичн DocumentCode="st" SeriesNumber="string"/>
+  </ns:СвФЛ>
+</ns:NDFL2Request>

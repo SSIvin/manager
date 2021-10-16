@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:dom.gosuslugi.ru/rao-houses/1.0.0" xmlns:common="urn:dom.gosuslugi.ru/common/1.2.0" targetNamespace="urn:dom.gosuslugi.ru/rao-houses/1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="urn:dom.gosuslugi.ru/common/1.2.0" schemaLocation="dom-gosuslugi-ru-smev3-common.xsd"/>
+	<xs:element name="ExportRAOHousesRequest">
+		<xs:annotation>
+			<xs:documentation>Корневой элемент запроса для получения данных о домах из реестра адресных объектов ГИС ЖКХ</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="common:BaseRequestType">
+					<xs:choice>
+						<xs:annotation>
+							<xs:documentation>Условия отбора объектов жилищного фонда (ОЖФ) из Реестра адресных объектов ГИС ЖКХ (РАО)</xs:documentation>
+						</xs:annotation>
+						<xs:element name="rf-entity-code" type="tns:RFEntityCodeType">
+							<xs:annotation>
+								<xs:documentation>Код Субъекта РФ</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="oktmo">
+							<xs:annotation>
+								<xs:documentation>Код ОКТМО</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:simpleContent>
+									<xs:extension base="common:OKTMOType">
+										<xs:attribute name="include-child-codes" type="xs:boolean" fixed="true">
+											<xs:annotation>
+												<xs:documentation>
+                                                    Признак необходимости выгрузки ОЖФ по дочерним кодам ОКТМО.
+
+                                                    Если атрибут не указан, то в выборку включаются все ОЖФ, имеющие в РАО заданный код ОКТМО.
+                                                    Если атрибут принимает значение true, то в выборку дополнительно включаются все ОЖФ, для которых в РАО указан дочерний код ОКТМО
+                                                </xs:documentation>
+											</xs:annotation>
+										</xs:attribute>
+									</xs:extension>
+								</xs:simpleContent>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="fias-house-guid" type="common:UUID" maxOccurs="100">
+							<xs:annotation>
+								<xs:documentation>Уникальный идентификатор дома по ФИАС</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:choice>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ExportRAOHousesResponse">
+		<xs:annotation>
+			<xs:documentation>Корневой элемент ответа для получения данных о домах из реестра адресных объектов ГИС ЖКХ</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice>
+				<xs:element name="exported-to-ftp" type="xs:boolean" fixed="true">
+					<xs:annotation>
+						<xs:documentation>Результат запроса выложен на FTP</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="rao-houses-package" type="tns:RaoHousesPackageType">
+					<xs:annotation>
+						<xs:documentation>Сведения о местонахождении дома из Реестра адресных объектов ГИС ЖКХ (РАО)</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="error" type="common:ErrorType" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Список ошибок, возникших при обработке запроса</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="RaoHousesPackageType">
+		<xs:annotation>
+			<xs:documentation>Тип выгрузки данных о домах, выгружаемый на FTP</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="create-date" type="xs:dateTime">
+				<xs:annotation>
+					<xs:documentation>Дата выгрузки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="version" type="xs:string" fixed="1.0">
+				<xs:annotation>
+					<xs:documentation>Версия формата выгрузки</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="house-location-info" type="tns:HouseLocationInfoType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Сведения о местонахождении дома из Реестра адресных объектов ГИС ЖКХ (РАО)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="RaoHousesPackage">
+		<xs:annotation>
+			<xs:documentation>Корневой элемент выгрузки данных о домах, выгружаемый на FTP</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tns:RaoHousesPackageType"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="HouseLocationInfoType">
+		<xs:annotation>
+			<xs:documentation>Сведения о местонахождении дома из Реестра адресных объектов ГИС ЖКХ (РАО)</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="house-guid" type="common:UUID">
+				<xs:annotation>
+					<xs:documentation>Уникальный идентификатор дома в РАО</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="fias-house-guid" type="common:UUID" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Уникальный идентификатор дома по ФИАС</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="address">
+				<xs:annotation>
+					<xs:documentation>Адрес дома в виде строки</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="2500"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="rf-entity-code" type="tns:RFEntityCodeType">
+				<xs:annotation>
+					<xs:documentation>Код Субъекта РФ местонахождения дома</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="oktmo" type="common:OKTMOType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Код ОКТМО местонахождения дома</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="house-number" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Номер дома</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="20"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="building-number" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Номер корпуса</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="10"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="structure-number" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Номер строения</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="10"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="estate-type" type="tns:EstateType">
+				<xs:annotation>
+					<xs:documentation>Тип владения.
+
+                        Возможные значения:
+                        0 – не определен;
+                        1 – владение;
+                        2 – дом;
+                        3 – домовладение;
+                        4 – участок;
+                        5 - здание;
+                    </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="structure-type" type="tns:StructureType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Тип строения.
+
+                        Возможные значения:
+                        0 – не определен;
+                        1 – строение;
+                        2 – сооружение;
+                        3 – литер
+                    </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="EstateType">
+		<xs:annotation>
+			<xs:documentation>
+                Тип владения. Возможные значения:
+                0 – не определен;
+                1 – владение;
+                2 – дом;
+                3 – домовладение;
+                4 – участок;
+                5 - здание;
+            </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:byte">
+			<xs:enumeration value="0"/>
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="4"/>
+			<xs:enumeration value="5"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="StructureType">
+		<xs:annotation>
+			<xs:documentation>
+                Тип строения. Возможные значения:
+                0 – не определен;
+                1 – строение;
+                2 – сооружение;
+                3 – литер
+            </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:byte">
+			<xs:enumeration value="0"/>
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RFEntityCodeType">
+		<xs:annotation>
+			<xs:documentation>Код Субъекта РФ</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+			<xs:pattern value="\d{2}"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

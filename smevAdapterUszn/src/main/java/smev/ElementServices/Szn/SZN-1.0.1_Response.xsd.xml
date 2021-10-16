@@ -1,0 +1,116 @@
+<ns:SZNResponse xmlns:ns="http://se2.data.service.smev.pfr.ru/SZN/1.0.1">
+  <ns:LastName>string</ns:LastName>
+  <ns:FirstName>string</ns:FirstName>
+  <!--Optional:-->
+  <ns:MiddleName>string</ns:MiddleName>
+  <ns:Snils>stringstrin</ns:Snils>
+  <!--Optional:-->
+  <ns:BirthDate>2008-09-29</ns:BirthDate>
+  <!--Optional:-->
+  <ns:ResidenceAddress>string</ns:ResidenceAddress>
+  <ns:DateQuery>2014-09-19</ns:DateQuery>
+  <ns:PresenceData>true</ns:PresenceData>
+
+  <!--Optional:-->
+  <ns:RegistrationAccountPeriods>
+    <!--1 or more repetitions:-->
+    <ns:RegistrationAccountPeriod>
+      <!--Optional:-->
+      <ns:AsTheUnemployed>
+        <!--Optional:-->
+        <ns:DateStart>2018-11-01+03:00</ns:DateStart>
+        <!--Optional:-->
+        <ns:DateEnd>2013-05-22+04:00</ns:DateEnd>
+      </ns:AsTheUnemployed>
+      <!--Optional:-->
+      <ns:AsSearchWork>
+        <!--Optional:-->
+        <ns:DateStart>2002-11-05+03:00</ns:DateStart>
+        <!--Optional:-->
+        <ns:DateEnd>2002-06-24+04:00</ns:DateEnd>
+      </ns:AsSearchWork>
+    </ns:RegistrationAccountPeriod>
+    <ns:RegistrationAccountPeriod>
+      <!--Optional:-->
+      <ns:AsTheUnemployed>
+        <!--Optional:-->
+        <ns:DateStart>2018-11-01+03:00</ns:DateStart>
+        <!--Optional:-->
+        <ns:DateEnd>2013-05-22+04:00</ns:DateEnd>
+      </ns:AsTheUnemployed>
+      <!--Optional:-->
+      <ns:AsSearchWork>
+        <!--Optional:-->
+        <ns:DateStart>2002-11-05+03:00</ns:DateStart>
+        <!--Optional:-->
+        <ns:DateEnd>2002-06-24+04:00</ns:DateEnd>
+      </ns:AsSearchWork>
+    </ns:RegistrationAccountPeriod>
+  </ns:RegistrationAccountPeriods>
+
+  <!--Optional:-->
+  <ns:InfoPeriodsSeniority>
+    <!--Zero or more repetitions:-->
+    <ns:PeriodReceptionUnemploymentBenefit>
+      <!--Optional:-->
+      <ns:DateStart>2016-02-20+03:00</ns:DateStart>
+      <!--Optional:-->
+      <ns:DateEnd>2019-08-19</ns:DateEnd>
+    </ns:PeriodReceptionUnemploymentBenefit>
+    <ns:PeriodReceptionUnemploymentBenefit>
+      <!--Optional:-->
+      <ns:DateStart>2016-02-20+03:00</ns:DateStart>
+      <!--Optional:-->
+      <ns:DateEnd>2019-08-19</ns:DateEnd>
+    </ns:PeriodReceptionUnemploymentBenefit>
+    <!--Zero or more repetitions:-->
+    <ns:PeriodParticipationPaidPublicWorks>
+      <!--Optional:-->
+      <ns:DateStart>2018-02-04+03:00</ns:DateStart>
+      <!--Optional:-->
+      <ns:DateEnd>2002-11-16+03:00</ns:DateEnd>
+    </ns:PeriodParticipationPaidPublicWorks>
+    <ns:PeriodParticipationPaidPublicWorks>
+      <!--Optional:-->
+      <ns:DateStart>2018-02-04+03:00</ns:DateStart>
+      <!--Optional:-->
+      <ns:DateEnd>2002-11-16+03:00</ns:DateEnd>
+    </ns:PeriodParticipationPaidPublicWorks>
+    <!--Zero or more repetitions:-->
+    <ns:PeriodMovingEmployment>
+      <!--Optional:-->
+      <ns:DateStart>2000-09-14</ns:DateStart>
+      <!--Optional:-->
+      <ns:DateEnd>2015-08-24</ns:DateEnd>
+    </ns:PeriodMovingEmployment>
+    <ns:PeriodMovingEmployment>
+      <!--Optional:-->
+      <ns:DateStart>2000-09-14</ns:DateStart>
+      <!--Optional:-->
+      <ns:DateEnd>2015-08-24</ns:DateEnd>
+    </ns:PeriodMovingEmployment>
+  </ns:InfoPeriodsSeniority>
+
+  <!--Optional:-->
+  <ns:InclusionDataBases>
+    <!--1 or more repetitions:-->
+    <ns:InclusionDataBasis>
+      <!--Optional:-->
+      <ns:NumberPrivateAffair>string</ns:NumberPrivateAffair>
+      <!--Optional:-->
+      <ns:DatePrivateAffair>2015-06-18+03:00</ns:DatePrivateAffair>
+    </ns:InclusionDataBasis>
+    <ns:InclusionDataBasis>
+      <!--Optional:-->
+      <ns:NumberPrivateAffair>string</ns:NumberPrivateAffair>
+      <!--Optional:-->
+      <ns:DatePrivateAffair>2015-06-18+03:00</ns:DatePrivateAffair>
+    </ns:InclusionDataBasis>
+  </ns:InclusionDataBases>
+
+  <!--Optional:-->
+  <ns:NameOrgSZN>string</ns:NameOrgSZN>
+
+  <!--Optional:-->
+  <ns:DateFormationData>2000-04-21+04:00</ns:DateFormationData>
+</ns:SZNResponse>

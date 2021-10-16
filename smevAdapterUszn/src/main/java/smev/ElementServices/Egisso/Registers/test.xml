@@ -1,0 +1,71 @@
+<rlidRecord>
+    <codePresenceStatus>st</codePresenceStatus>
+    <!--Optional:-->
+    <legalStatus>string</legalStatus>
+    <!--Optional:-->
+    <dossierData>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <externalEvent>
+            <codeEventType>str</codeEventType>
+            <infoProvider>
+                <name>string</name>
+                <inn>stringstri</inn>
+                <ogrn>stringstrings</ogrn>
+                <codeParticipant>string</codeParticipant>
+            </infoProvider>
+            <inclusionDate>2002-11-05T11:30:58</inclusionDate>
+            <effectiveDate>2011-11-03</effectiveDate>
+            <reasonDocument date="2008-08-28+04:00" effectiveDate="2008-11-07+03:00" validityEndDate="2019-05-04" number="string" series="string" codeType="stri" orgName="string"/>
+            <!--1 to 2 repetitio-->
+            <person>
+                <!--You have a CHOICE of the next 2 items at this level-->
+                <physicalPerson snils="stringstrin" lastName="string" firstName="string" middleName="string" gender="Female" citizenshipCode="str" birthDate="2017-08-26" codeRoleType="strin"/>
+                <legalPerson codeRoleType="strin" name="string" inn="stringstri" ogrn="stringstrings">
+                    <representative snils="stringstrin" lastName="string" firstName="string" middleName="string" gender="Male" citizenshipCode="str" birthDate="2013-07-07+04:00"/>
+                </legalPerson>
+            </person>
+            <codeEventState>st</codeEventState>
+            <!--Optional:-->
+            <lifecycleRecords>
+                <!--You have a CHOICE of the next 2 items at this level-->
+                <annulRecord>
+                    <effectiveDate>2001-01-03</effectiveDate>
+                    <reasonDocument date="2014-01-10" effectiveDate="2015-07-10" validityEndDate="2008-10-09" number="string" series="string" codeType="stri" orgName="string" name="string"/>
+                    <infoProvider>
+                        <name>string</name>
+                        <inn>stringstri</inn>
+                        <ogrn>stringstrings</ogrn>
+                        <codeParticipant>string</codeParticipant>
+                    </infoProvider>
+                </annulRecord>
+                <recoveryRecord>
+                    <effectiveDate>2007-04-22+04:00</effectiveDate>
+                    <reasonDocument date="2011-05-05" effectiveDate="2006-11-30+03:00" validityEndDate="2010-01-27" number="string" series="string" codeType="stri" orgName="string" name="string"/>
+                    <infoProvider>
+                        <name>string</name>
+                        <inn>stringstri</inn>
+                        <ogrn>stringstrings</ogrn>
+                        <codeParticipant>string</codeParticipant>
+                    </infoProvider>
+                </recoveryRecord>
+            </lifecycleRecords>
+        </externalEvent>
+        <internalEvent>
+            <codeEventType>str</codeEventType>
+            <createDate>2003-03-06T14:43:28</createDate>
+            <effectiveDate>2016-02-27</effectiveDate>
+            <!--Optional:-->
+            <reasonDocument date="2019-07-04" effectiveDate="2008-06-03" validityEndDate="2005-05-11+04:00" number="string" series="string" codeType="stri" orgName="string" name="string"/>
+            <!--Optional:-->
+            <comment>string</comment>
+            <!--1 to 2 repetitio-->
+            <person>
+                <!--You have a CHOICE of the next 2 items at this level-->
+                <physicalPerson snils="stringstrin" lastName="string" firstName="string" middleName="string" gender="Male" citizenshipCode="str" birthDate="2011-01-01+03:00" codeRoleType="strin"/>
+                <legalPerson codeRoleType="strin" name="string" inn="stringstri" ogrn="stringstrings">
+                    <representative snils="stringstrin" lastName="string" firstName="string" middleName="string" gender="Female" citizenshipCode="str" birthDate="2008-07-29"/>
+                </legalPerson>
+            </person>
+        </internalEvent>
+    </dossierData>
+</rlidRecord>

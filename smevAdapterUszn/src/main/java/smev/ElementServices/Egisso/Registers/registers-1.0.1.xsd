@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:smev="urn://x-artefacts-smev-gov-ru/supplementary/commons/1.0.1" xmlns:egisso="urn://egisso-ru/types/basic/1.0.7" xmlns="urn://egisso-ru/types/registers/1.0.1" targetNamespace="urn://egisso-ru/types/registers/1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!--
+  ****************************************************************************************************
+  Типы данных реестра лиц, связанных с изменением родительских прав, реестра лиц с измененной дееспособностью, и реестра законных представителей
+  ****************************************************************************************************
+  -->
+	<xsd:import namespace="urn://x-artefacts-smev-gov-ru/supplementary/commons/1.0.1" schemaLocation="smev-supplementary-commons-1.0.1.xsd"/>
+	<xsd:import namespace="urn://egisso-ru/types/basic/1.0.7" schemaLocation="egisso-basic-types-1.0.7.xsd"/>
+	<xsd:simpleType name="tRegisterTypeCode">
+		<xsd:annotation>
+			<xsd:documentation>Код вида реестра</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="2"/>
+			<xsd:pattern value="\d{2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tPresenceStatusCode">
+		<xsd:annotation>
+			<xsd:documentation>Код статуса нахождения лица в реестре</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="2"/>
+			<xsd:pattern value="\d{2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tEventTypeCode">
+		<xsd:annotation>
+			<xsd:documentation>Код вида юридического события (действия)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="3"/>
+			<xsd:pattern value="\d{3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tEventStateCode">
+		<xsd:annotation>
+			<xsd:documentation>Код состояния юридического события (действия)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="2"/>
+			<xsd:pattern value="\d{2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tRoleTypeCode">
+		<xsd:annotation>
+			<xsd:documentation>Код вида роли лица в юридичесокм событии (действии)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="5"/>
+			<xsd:pattern value="\d{5}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tDocumentTypeCode">
+		<xsd:annotation>
+			<xsd:documentation>Код вида документа</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="4"/>
+			<xsd:pattern value="\d{4}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="tPerson">
+		<xsd:annotation>
+			<xsd:documentation>Тип данных вида лица</xsd:documentation>
+		</xsd:annotation>
+		<xsd:choice>
+			<xsd:element name="physicalPerson" type="tPhysicalPersonWithRole">
+				<xsd:annotation>
+					<xsd:documentation>Физическое лицо</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="legalPerson" type="tLegalPerson">
+				<xsd:annotation>
+					<xsd:documentation>Юридичесое лицо</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:complexType name="tPhysicalPerson">
+		<xsd:annotation>
+			<xsd:documentation>Тип данных физического лица</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="snils" type="smev:SNILSType" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Страховой номер индивидуального лицевого счёта</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="lastName" type="smev:string-100" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Фамилия</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="firstName" type="smev:string-100" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Имя </xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="middleName" type="smev:string-100" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>Отчество</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="gender" type="smev:GenderType" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Пол</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="citizenshipCode" type="egisso:tOKSMCode" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Код страны гражданства</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="birthDate" type="xsd:date" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Дата рождения</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="tPhysicalPersonWithRole">
+		<xsd:annotation>
+			<xsd:documentation>Тип данных физического лица с ролью в юридическом событии (действии)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="tPhysicalPerson">
+				<xsd:attribute name="codeRoleType" type="tRoleTypeCode" use="required">
+					<xsd:annotation>
+						<xsd:documentation>Код типа роли лица</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="tLegalPerson">
+		<xsd:annotation>
+			<xsd:documentation>Тип данных юридического лица</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="representative" type="tPhysicalPerson">
+				<xsd:annotation>
+					<xsd:documentation>Представитель юридического лица</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="codeRoleType" type="tRoleTypeCode" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Код типа роли лица</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="name" type="egisso:string-1000" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Наименование</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="inn" type="smev:LegalPersonINNType" use="required">
+			<xsd:annotation>
+				<xsd:documentation>ИНН</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="ogrn" type="smev:OGRNCompanyType" use="required">
+			<xsd:annotation>
+				<xsd:documentation>ОГРН</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="tDefinedDocument">
+		<xsd:annotation>
+			<xsd:documentation>Тип данных идентифицированного документа</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="date" type="xsd:date" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Дата документа</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="effectiveDate" type="xsd:date" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Дата вступления в силу</xsd:documentation>
+				<xsd:documentation>Если даты вступления нет, то указывается дата документа</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="validityEndDate" type="xsd:date" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>Дата окончания периода действия документа</xsd:documentation>
+				<xsd:documentation>В случае наличия, указывается дата окончания периода действия</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="number" type="smev:string-50" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>Номер документа</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="series" type="smev:string-20" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>Серия документа</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="codeType" type="tDocumentTypeCode" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Код вида документа</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="orgName" type="egisso:string-1000" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Наименование организации (органа) выпустившего документ</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="tUndefinedDocument">
+		<xsd:annotation>
+			<xsd:documentation>Тип данных неидентифицированного документа</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="tDefinedDocument">
+				<xsd:attribute name="name" type="smev:string-500" use="optional">
+					<xsd:annotation>
+						<xsd:documentation>Наименование документа</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="tInfoProvider">
+		<xsd:annotation>
+			<xsd:documentation>Тип данных о поставщике информации</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="name" type="egisso:string-1000">
+				<xsd:annotation>
+					<xsd:documentation>Наименование организации</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="inn" type="smev:LegalPersonINNType">
+				<xsd:annotation>
+					<xsd:documentation>ИНН организации</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ogrn" type="smev:OGRNCompanyType">
+				<xsd:annotation>
+					<xsd:documentation>ОГРН организации</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="codeParticipant" type="egisso:tParticipantCode">
+				<xsd:annotation>
+					<xsd:documentation>Код участника ЕГИССО</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

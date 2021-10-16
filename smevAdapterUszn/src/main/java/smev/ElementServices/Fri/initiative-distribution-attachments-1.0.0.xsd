@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://kvs.fri.com/initiative-distribution/attachments/1.0.0" xmlns:smev="urn://x-artefacts-smev-gov-ru/supplementary/commons/1.0.1" xmlns:jxb="http://java.sun.com/xml/ns/jaxb" xmlns:ns7="urn://x-artefacts-smev-gov-ru/supplementary/commons/1.0.1" targetNamespace="http://kvs.fri.com/initiative-distribution/attachments/1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:import namespace="urn://x-artefacts-smev-gov-ru/supplementary/commons/1.0.1" schemaLocation="smev-supplementary-commons-1.0.1.xsd"/>
+	<!--
+    В собщении-запросе  небоходимо передать реестр документов.
+    Каждый документ состоит из заголовка и нескольких вложений.
+    Атрибутивный состав заголовка одинаков для всех документов.
+    Форматы вложений, прилагаемых к документам различны, но заранее предпопределены.
+     -->
+	<xsd:element name="RegistryExampleRequest">
+		<xsd:complexType>
+			<xsd:sequence>
+				<!-- В запросе может быть реестровый блок, для передачи однотипных сведений с вложениями и ЭП-->
+				<xsd:element name="RegistryBlock" type="tns:_RegistryBlockType" minOccurs="0"/>
+				<!-- Объявление блока вложений ко всему сообщению-->
+				<xsd:element name="AttachmentsBlock" type="tns:_AttachmentsBlockType" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType name="_RegistryBlockType">
+		<xsd:sequence>
+			<xsd:element name="RegistryRecord" type="tns:_RegistryRecordType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="_RegistryRecordType">
+		<xsd:sequence>
+			<!-- Объявление обязательного идентификатора реестровой записи-->
+			<xsd:element name="RegistryRecordID" type="xsd:string"/>
+			<!-- Объявление блока вложений для  реестровой записи-->
+			<xsd:element name="AttachmentsBlock" type="tns:_AttachmentsBlockType" minOccurs="0"/>
+			<!-- Описание элементов, описывающих реквизиты заголовков передаваемых документов - отражается любая ведомственная специфика-->
+			<xsd:element name="DocumentNumber" type="xsd:string"/>
+			<xsd:element name="DocumentDate" type="xsd:dateTime"/>
+			<xsd:element name="DocumentOriginator" type="xsd:string"/>
+			<xsd:element name="DocumentAttachmentsAmount" type="xsd:int"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- Блок описания вложений внутри бизнес-блока сообщения СМЭВ3
+        Может быть включен также в реестровую запись.
+    -->
+	<xsd:complexType name="_AttachmentsBlockType">
+		<xsd:sequence>
+			<xsd:element name="AttachmentDescription" type="tns:_AttachmentDescriptionType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="_AttachmentDescriptionType">
+		<xsd:sequence>
+			<!-- Указание способа передачи вложения: через ФХ или черзе  -->
+			<xsd:choice>
+				<!-- Ссылка на папку ФХ, в котором содержится передаваемое вложение-->
+				<xsd:element name="AttachmentFSLink" type="xsd:string"/>
+				<!--  Признак передачи вложения методом MTOM-->
+				<xsd:element name="IsMTOMAttachmentContent" type="xsd:boolean"/>
+			</xsd:choice>
+			<!-- Описание возможных форматов вложения -->
+			<xsd:sequence>
+				<xsd:element name="AttachmentFormat1" type="tns:_StructuredAttachmentFormatType1"/>
+			</xsd:sequence>
+			<!-- Блок передачи файла отсоединенной электронной подписи вложения -->
+			<xsd:element name="AttachmentSignatureFSLink" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="_StructuredAttachmentFormatType1">
+		<xsd:sequence>
+			<!-- Обязательное и явное указание: является ли формат структурированным или не является -->
+			<xsd:element name="IsUnstructuredFormat" type="xsd:boolean"/>
+			<!-- Обязательное и явное указание: будет ли содержимое вложения упаковываться Zip-алгоритмом -->
+			<xsd:element name="IsZippedPacket" type="xsd:boolean"/>
+			<!-- Если формат структурированный, то описываем его структуру -->
+			<xsd:element name="DocumentType" type="xsd:string">
+				<xsd:annotation>
+					<xsd:documentation>тип передаваемого документа "Выписка из ФГИС ФРИ"</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Snils" type="smev:SNILSType" nillable="false"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="_StructuredAttachmentFormatType2">
+		<xsd:sequence>
+			<!-- Явно указываем является ли формат структурированным или нет -->
+			<xsd:element name="IsUnstructuredFormat" type="xsd:boolean"/>
+			<!-- Обязательное и явное указание: будет ли содержимое вложения упаковываться Zip-алгоритмом -->
+			<xsd:element name="IsZippedPacket" type="xsd:boolean"/>
+			<!-- Если формат структурированный, то описываем его структуру -->
+			<xsd:element name="DocumentName" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

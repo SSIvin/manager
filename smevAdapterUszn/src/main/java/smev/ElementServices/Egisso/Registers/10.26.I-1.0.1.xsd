@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:reg-req="urn://egisso-ru/types/registers-request/1.0.1" xmlns:reg-res="urn://egisso-ru/types/registers-response/1.0.1" xmlns="urn://egisso-ru/msg/10.26.I/1.0.1" targetNamespace="urn://egisso-ru/msg/10.26.I/1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!--
+  ****************************************************************************************************
+  Вид сведений СМЭВ: «10.26.I ЗАПРОС В ЕГИССО НА ПОЛУЧЕНИЕ СВЕДЕНИЙ ИЗ РЕЕСТРА ЛИЦ, СВЯЗАННЫХ С ИЗМЕНЕНИЕМ РОДИТЕЛЬСКИХ ПРАВ, РЕЕСТРА ЛИЦ С ИЗМЕНЕННОЙ ДЕЕСПОСОБНОСТЬЮ И РЕЕСТРА ЗАКОННЫХ ПРЕДСТАВИТЕЛЕЙ»
+  ****************************************************************************************************
+	-->
+	<xsd:import namespace="urn://egisso-ru/types/registers-request/1.0.1" schemaLocation="registers-request-1.0.1.xsd"/>
+	<xsd:import namespace="urn://egisso-ru/types/registers-response/1.0.1" schemaLocation="registers-response-1.0.1.xsd"/>
+	<!--==========================================  Элементы "Сообщение-запрос" и "Сообщение-ответ"  ==========================================-->
+	<xsd:element name="request">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="ru">Сообщение-запрос</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="reg-req:request">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="ru">Запрос в ЕГИССО на получение сведений о включении или исключении лица или связанных лиц из реестра лиц, связанных с изменением родительских прав, реестра лиц с измененной дееспособностью и реестра законных представителей</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="response">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="ru">Сообщение-ответ</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="reg-res:response">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="ru">Ответ из ЕГИССО о сведениях включения или исключения лица или связанных лиц из реестра лиц, связанных с изменением родительских прав, реестра лиц с измененной дееспособностью и реестра законных представителей</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

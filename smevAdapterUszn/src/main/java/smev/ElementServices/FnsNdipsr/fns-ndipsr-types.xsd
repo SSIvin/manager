@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 sp2 (http://www.altova.com) by VI (GNIVC FNS RF) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fns="urn://x-artefacts-fns-ndipsr/types/4.0.0" targetNamespace="urn://x-artefacts-fns-ndipsr/types/4.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!--==========================================  Структурированные типы  ==========================================-->
+	<xs:complexType name="IdentityDocumentType">
+		<xs:annotation>
+			<xs:documentation>Сведения о документе, удостоверяющем личность физического лица</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="DocumentCode" type="fns:SPDULType" use="required">
+			<xs:annotation>
+				<xs:documentation>Код вида документа, удостоверяющего личность</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="SeriesNumber" type="fns:SPDULTemplateType" use="required">
+			<xs:annotation>
+				<xs:documentation>Серия и номер документа, удостоверяющего личность</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="IssuerDate" type="xs:date" use="optional">
+			<xs:annotation>
+				<xs:documentation>Дата выдачи документа, удостоверяющего личность</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Issuer" type="fns:string-255" use="optional">
+			<xs:annotation>
+				<xs:documentation>Наименование органа, выдавшего документ, удостоверяющий личность</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="IssuerCode" type="fns:string-7" use="optional">
+			<xs:annotation>
+				<xs:documentation>Код подразделения органа, выдавшего документ, удостоверяющий личность</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="IdentityDocumentShortType">
+		<xs:annotation>
+			<xs:documentation>Сведения (краткие) о документе, удостоверяющем личность физического лица</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="DocumentCode" type="fns:SPDULType" use="required">
+			<xs:annotation>
+				<xs:documentation>Код вида документа, удостоверяющего личность</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="SeriesNumber" type="fns:SPDULTemplateType" use="required">
+			<xs:annotation>
+				<xs:documentation>Серия и номер документа, удостоверяющего личность</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="PhysicalPersonDataType">
+		<xs:sequence>
+			<xs:element name="PhysicalPersonName" type="fns:PhysicalPersonNameType">
+				<xs:annotation>
+					<xs:documentation>Фамилия, имя, отчество физического лица</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IdentityDocument" type="fns:IdentityDocumentType">
+				<xs:annotation>
+					<xs:documentation>Сведения о документе, удостоверяющем личность физического лица</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="BirthDate" type="xs:date" use="required">
+			<xs:annotation>
+				<xs:documentation>Дата рождения</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="BirthPlace" type="fns:string-255" use="optional">
+			<xs:annotation>
+				<xs:documentation>Место рождения</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="PhysicalPersonNameType">
+		<xs:annotation>
+			<xs:documentation>Фамилия, имя, отчество физического лица</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="FamilyName" type="fns:string-60" use="required">
+			<xs:annotation>
+				<xs:documentation>Фамилия</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="FirstName" type="fns:string-60" use="required">
+			<xs:annotation>
+				<xs:documentation>Имя</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Patronymic" type="fns:string-60" use="optional">
+			<xs:annotation>
+				<xs:documentation>Отчество</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="СумТип">
+		<xs:annotation>
+			<xs:documentation>Сведения по суммам</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="СумКв" type="fns:number-15" use="optional">
+			<xs:annotation>
+				<xs:documentation>За первый квартал</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="СумПг" type="fns:number-15" use="optional">
+			<xs:annotation>
+				<xs:documentation>За полугодие</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Сум9м" type="fns:number-15" use="optional">
+			<xs:annotation>
+				<xs:documentation>За девять месяцев</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="СумНалПер" type="fns:number-15" use="required">
+			<xs:annotation>
+				<xs:documentation>За налоговый период</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:simpleType name="digits-11">
+		<xs:annotation>
+			<xs:documentation>Строка, состоящая из одиннадцати цифр. Например номер записи</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="11"/>
+			<xs:pattern value="\d{11}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="digits-6">
+		<xs:annotation>
+			<xs:documentation>Строка, состоящая из 6 цифр</xs:documentation>
+			<xs:documentation>Содержит только цифры</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="6"/>
+			<xs:pattern value="\d{6}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="digits-2">
+		<xs:annotation>
+			<xs:documentation>Строка, состоящая из 2 цифр</xs:documentation>
+			<xs:documentation>Содержит только цифры</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+			<xs:pattern value="\d{2}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="IDRequestType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="36"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="number-15">
+		<xs:annotation>
+			<xs:documentation>Число целое, содержащее до 15 разрядов</xs:documentation>
+			<xs:documentation>Содержит только цифры</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:totalDigits value="15"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="OKTMOType">
+		<xs:annotation>
+			<xs:documentation>Код Общероссийского классификатора территорий муниципальных образований</xs:documentation>
+			<xs:documentation>Содержит только цифры</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="8"/>
+			<xs:maxLength value="11"/>
+			<xs:pattern value="\d{8}"/>
+			<xs:pattern value="\d{11}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="OKATOType">
+		<xs:annotation>
+			<xs:documentation>Код Общероссийского классификатора объектов административно-территориального деления</xs:documentation>
+			<xs:documentation>Содержит только цифры</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="11"/>
+			<xs:pattern value="\d{11}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PhysicalPersonINNType">
+		<xs:annotation>
+			<xs:documentation>Идентификационный номер налогоплательщика - физического лица</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="12"/>
+			<xs:pattern value="([0-9]{1}[1-9]{1}|[1-9]{1}[0-9]{1})[0-9]{10}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SPDULTemplateType">
+		<xs:annotation>
+			<xs:documentation>Шаблон серии, номера из Справочника видов документов, удостоверяющих личность налогоплательщика</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="25"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SPDULType">
+		<xs:annotation>
+			<xs:documentation>Код Справочника видов документов, удостоверяющих личность налогоплательщика</xs:documentation>
+			<xs:documentation>Содержит только цифры</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+			<xs:pattern value="\d{2}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SSRFType">
+		<xs:annotation>
+			<xs:documentation>Код по Справочнику субъектов Российской Федерации</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="fns:digits-2"/>
+	</xs:simpleType>
+	<xs:simpleType name="string-255">
+		<xs:annotation>
+			<xs:documentation>Произвольный текст длиной от 1 до 255 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="255"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-100">
+		<xs:annotation>
+			<xs:documentation>Произвольный текст длиной от 1 до 100 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="100"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-60">
+		<xs:annotation>
+			<xs:documentation>Произвольный текст длиной от 1 до 60 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="60"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-50">
+		<xs:annotation>
+			<xs:documentation>Произвольный текст длиной от 1 до 50 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="50"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-36">
+		<xs:annotation>
+			<xs:documentation>Произвольный текст длиной от 1 до 36 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="36"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-25">
+		<xs:annotation>
+			<xs:documentation>Произвольный текст длиной от 1 до 25 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="25"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-20">
+		<xs:annotation>
+			<xs:documentation>Произвольный текст длиной от 1 до 20 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-12">
+		<xs:annotation>
+			<xs:documentation>Произвольный текст длиной от 1 до 12 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="12"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-10">
+		<xs:annotation>
+			<xs:documentation>Произвольный текст длиной от 1 до 10 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="10"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-7">
+		<xs:annotation>
+			<xs:documentation>Текст длиной ровно 7 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="7"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-5">
+		<xs:annotation>
+			<xs:documentation>Произвольный текст длиной от 1 до 5 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="5"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-3">
+		<xs:annotation>
+			<xs:documentation>Текст длиной ровно 3 символа</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-2">
+		<xs:annotation>
+			<xs:documentation>Текст длиной ровно 2 символа</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-1">
+		<xs:annotation>
+			<xs:documentation>Текст длиной ровно 1 символ</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

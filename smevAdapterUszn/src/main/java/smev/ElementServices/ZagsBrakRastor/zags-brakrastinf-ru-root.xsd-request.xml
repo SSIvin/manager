@@ -1,0 +1,55 @@
+<ns:BRAKRASTINFRequest ИдЗапрос="string" КолДок="100" ТипАГС="03" xmlns:ns="urn://x-artefacts-zags-brakrastinf/root/112-55/4.0.0" xmlns:ns1="urn://x-artefacts-zags-brakrastinf/types/4.0.0">
+  <ns:СведОсн КодНормОсн="st">
+    <!--You have a CHOICE of the next 2 items at this level-->
+    <ns:ПрСведДокОсн>1</ns:ПрСведДокОсн>
+    <ns:СведДокОсн>string</ns:СведДокОсн>
+  </ns:СведОсн>
+  <!--1 or more repetitions:-->
+  <ns:СведЗапрос ИдДок="string">
+    <!--Optional:-->
+    <ns:СведАГС НомерЗапис="string">
+      <!--You have a CHOICE of the next 2 items at this level-->
+      <ns:ДатаЗаписДок>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns1:ПрДень>1</ns1:ПрДень>
+        <ns1:День>100</ns1:День>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns1:ПрМесяц>1</ns1:ПрМесяц>
+        <ns1:Месяц>100</ns1:Месяц>
+        <ns1:Год>2004+03:00</ns1:Год>
+      </ns:ДатаЗаписДок>
+      <ns:ДатаЗапис>2008-11-15</ns:ДатаЗапис>
+      <ns:ОрганЗАГС НаимЗАГС="string" КодЗАГС="stringst"/>
+    </ns:СведАГС>
+    <ns:СведФЛ ИнфФИО="1" СНИЛС="stringstringst">
+      <ns:ФИО>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns1:Фамилия>string</ns1:Фамилия>
+        <ns1:ПрФамилия>1</ns1:ПрФамилия>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns1:Имя>string</ns1:Имя>
+        <ns1:ПрИмя>1</ns1:ПрИмя>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns1:Отчество>string</ns1:Отчество>
+        <ns1:ПрОтчество>1</ns1:ПрОтчество>
+      </ns:ФИО>
+      <!--You have a CHOICE of the next 3 items at this level-->
+      <ns:ПрДатаРожд>1</ns:ПрДатаРожд>
+      <ns:ДатаРождКаленд>2002-06-24+04:00</ns:ДатаРождКаленд>
+      <ns:ДатаРождДок>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns1:ПрДень>1</ns1:ПрДень>
+        <ns1:День>100</ns1:День>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns1:ПрМесяц>1</ns1:ПрМесяц>
+        <ns1:Месяц>100</ns1:Месяц>
+        <ns1:Год>2010</ns1:Год>
+      </ns:ДатаРождДок>
+      <!--Optional:-->
+      <ns:УдЛичнФЛ КодВидДок="st" СерДок="string" НомДок="string" ДатаДок="2018-02-04+03:00" ВыдДок="string" КодВыдДок="strings"/>
+    </ns:СведФЛ>
+    <!--You have a CHOICE of the next 2 items at this level-->
+    <ns:ПрРегионРегАГС>1</ns:ПрРегионРегАГС>
+    <ns:РегионРегАГС>st</ns:РегионРегАГС>
+  </ns:СведЗапрос>
+</ns:BRAKRASTINFRequest>

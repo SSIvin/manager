@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:tns="http://se2.data.service.smev.pfr.ru/SZN/1.0.1"
+        targetNamespace="http://se2.data.service.smev.pfr.ru/SZN/1.0.1" elementFormDefault="qualified">
+    <element name="SZNRequest">
+        <complexType>
+            <sequence>
+                <element name="RegionCode" type="tns:OKTMOType">
+                    <annotation>
+                        <documentation>Код региона по ОКТМО</documentation>
+                    </annotation>
+                    <!-- XPath для данного элемента: /*[local-name()='RequestData']/*[local-name()='RegionCode']/text() -->
+                </element>
+                <element name="LastName" type="xs:string"/>
+                <element name="FirstName" type="xs:string"/>
+                <element name="MiddleName" type="xs:string" minOccurs="0"/>
+                <element name="Snils" type="tns:SNILSType"/>
+                <element name="BirthDate" type="date" nillable="false" minOccurs="0"/>
+                <element name="ResidenceAddress" type="string" minOccurs="0">
+                    <annotation>
+                        <documentation>Адрес места жительства</documentation>
+                    </annotation>
+                </element>
+                <element name="DateQuery" type="date">
+                    <annotation>
+                        <documentation>Дата направления запроса</documentation>
+                    </annotation>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="SZNResponse">
+        <complexType>
+            <sequence>
+                <element name="LastName" type="xs:string"/>
+                <element name="FirstName" type="xs:string"/>
+                <element name="MiddleName" type="xs:string" minOccurs="0"/>
+                <element name="Snils" type="tns:SNILSType" nillable="false"/>
+                <element name="BirthDate" type="date" nillable="false" minOccurs="0"/>
+                <element name="ResidenceAddress" type="string" minOccurs="0"/>
+                <element name="DateQuery" type="date"/>
+                <element name="PresenceData" type="boolean"/>
+                <element name="RegistrationAccountPeriods" type="tns:RegistrationAccountPeriodsType" minOccurs="0"/>
+                <element name="InfoPeriodsSeniority" type="tns:InfoPeriodsSeniorityType" minOccurs="0"/>
+                <element name="InclusionDataBases" type="tns:InclusionDataBasesType" minOccurs="0"/>
+                <element name="NameOrgSZN" type="string" minOccurs="0"/>
+                <element name="DateFormationData" type="date" minOccurs="0"/>
+            </sequence>
+        </complexType>
+    </element>
+    <complexType name="RegistrationAccountPeriodsType">
+        <sequence>
+            <!--Период нахождения на регистрационном учете-->
+            <element name="RegistrationAccountPeriod" type="tns:RegistrationAccountPeriodType" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    <complexType name="RegistrationAccountPeriodType">
+        <sequence>
+            <!--В качестве безработного-->
+            <element name="AsTheUnemployed" type="tns:PeriodType" minOccurs="0"/>
+            <!--В целях поиска подходящей работы-->
+            <element name="AsSearchWork" type="tns:PeriodType" minOccurs="0"/>
+        </sequence>
+    </complexType>
+    <complexType name="InfoPeriodsSeniorityType">
+        <sequence>
+            <!--Период получения пособия по безработице-->
+            <element name="PeriodReceptionUnemploymentBenefit" type="tns:PeriodType" minOccurs="0"
+                     maxOccurs="unbounded"/>
+            <!--Период участия в оплачиваемых общественных работах-->
+            <element name="PeriodParticipationPaidPublicWorks" type="tns:PeriodType" minOccurs="0"
+                     maxOccurs="unbounded"/>
+            <!--Период переезда по направлению в другую местность для трудоустройства-->
+            <element name="PeriodMovingEmployment" type="tns:PeriodType" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    <complexType name="InclusionDataBasesType">
+        <sequence>
+            <!--Основание включения сведений-->
+            <element name="InclusionDataBasis" type="tns:InclusionDataBasisType" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    <complexType name="InclusionDataBasisType">
+        <sequence>
+            <!--Номер личного дела-->
+            <element name="NumberPrivateAffair" type="string" minOccurs="0"/>
+            <!--Дата личного дела-->
+            <element name="DatePrivateAffair" type="date" minOccurs="0"/>
+        </sequence>
+    </complexType>
+    <complexType name="PeriodType">
+        <sequence>
+            <!--Дата начала периода-->
+            <element name="DateStart" type="date" minOccurs="0"/>
+            <!--Дата конца периода-->
+            <element name="DateEnd" type="date" minOccurs="0"/>
+        </sequence>
+    </complexType>
+    <simpleType name="OKTMOType">
+        <annotation>
+            <documentation>Код ОКТМО</documentation>
+        </annotation>
+        <restriction base="string">
+            <maxLength value="11"/>
+        </restriction>
+    </simpleType>
+    <xs:simpleType name="SNILSType">
+        <xs:annotation>
+            <xs:documentation>СНИЛС</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:length value="11"/>
+            <xs:pattern value="\d{11}"/>
+        </xs:restriction>
+    </xs:simpleType>
+</schema>

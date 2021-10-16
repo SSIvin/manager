@@ -1,0 +1,1135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 sp2 (http://www.altova.com) by VI (GNIVC FNS RF) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fns="urn://x-artefacts-zags-inform/types/4.0.4" targetNamespace="urn://x-artefacts-zags-inform/types/4.0.4" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!--==========================================  Структурированные типы  ==========================================-->
+	<xs:simpleType name="GUID">
+		<xs:annotation>
+			<xs:documentation>Глобально уникальный идентификатор (GUID), ровно 36 знаков</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="36"/>
+			<xs:minLength value="1"/>
+			<xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ИдЗапросТип">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="36"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ОрганЗАГСТип">
+		<xs:annotation>
+			<xs:documentation>Сведения об органе ЗАГС</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="НаимЗАГС" type="fns:string-1000" use="required">
+			<xs:annotation>
+				<xs:documentation>Полное наименование органа ЗАГС, которым произведена государственная регистрация акта гражданского состояния</xs:documentation>
+				<xs:documentation>Принимает значение полного наименования по справочнику органов записи актов гражданского состояния (СОЗАГС)</xs:documentation>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/link">urn://x-artefacts-smev-gov-ru/link/esnsi2.0</xs:appinfo>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/name">СОЗАГС</xs:appinfo>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/field">Наименование</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="КодЗАГС" type="fns:string-8" use="required">
+			<xs:annotation>
+				<xs:documentation>Код органа ЗАГС</xs:documentation>
+				<xs:documentation>Принимает значение по справочнику органов записи актов гражданского состояния (СОЗАГС)</xs:documentation>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/link">urn://x-artefacts-smev-gov-ru/link/esnsi2.0</xs:appinfo>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/name">СОЗАГС</xs:appinfo>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/field">Код</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="СупругТип">
+		<xs:annotation>
+			<xs:documentation>Супруг</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="ФамилияДо" type="fns:string-60">
+					<xs:annotation>
+						<xs:documentation>Фамилия до заключения \ расторжения брака</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ПрФамилияДо">
+					<xs:annotation>
+						<xs:documentation>Признак отсутствия фамилии до заключения \ расторжения брака</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="fns:string-1">
+							<xs:enumeration value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:choice>
+			<xs:choice>
+				<xs:element name="ФамилияПосле" type="fns:string-60">
+					<xs:annotation>
+						<xs:documentation>Фамилия после заключения \ расторжения брака</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ПрФамилияПосле">
+					<xs:annotation>
+						<xs:documentation>Признак отсутствия фамилии после заключения \ расторжения брака</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="fns:string-1">
+							<xs:enumeration value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:choice>
+			<xs:choice>
+				<xs:element name="Имя" type="fns:string-60">
+					<xs:annotation>
+						<xs:documentation>Имя</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ПрИмя">
+					<xs:annotation>
+						<xs:documentation>Признак отсутствия имени</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="fns:string-1">
+							<xs:enumeration value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:choice>
+			<xs:choice>
+				<xs:element name="Отчество" type="fns:string-60">
+					<xs:annotation>
+						<xs:documentation>Отчество</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ПрОтчество">
+					<xs:annotation>
+						<xs:documentation>Признак отсутствия отчества</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="fns:string-1">
+							<xs:enumeration value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:choice>
+			<xs:choice>
+				<xs:element name="ДатаРожд" type="xs:date" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Дата рождения</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="МесГодРожд" type="xs:gYearMonth" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Месяц и год рождения</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ГодРожд" type="xs:gYear" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Год рождения</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+			<xs:element name="МестоРожден" type="fns:МестоТип" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Место рождения</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:choice>
+				<xs:element name="АдрМЖРФ" type="fns:АдрМЖРФТип" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Адрес места жительства на территории Российской Федерации</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="АдрМЖИн" type="fns:АдрМЖИнТип" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Адрес места жительства за пределами Российской Федерации</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+			<xs:element name="УдЛичнФЛ" type="fns:УдЛичнФЛТип" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Сведения о документе, удостоверяющем личность</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:choice/>
+		</xs:sequence>
+		<xs:attribute name="ОКСМ" type="fns:ОКСМТип" use="optional">
+			<xs:annotation>
+				<xs:documentation>Код страны гражданства</xs:documentation>
+				<xs:documentation>Принимает значение цифрового кода в соответствии с Общероссийским классификатором стран мира ОК 025-2001 (ОКСМ)</xs:documentation>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/link">urn://x-artefacts-smev-gov-ru/link/esnsi2.0</xs:appinfo>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/name">ОКСМ</xs:appinfo>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/field">Код</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="НаимСтраны" type="fns:string-255" use="optional">
+			<xs:annotation>
+				<xs:documentation>Полное наименование страны гражданства</xs:documentation>
+				<xs:documentation>Принимает значение в соответствии с Общероссийским классификатором стран мира ОК 025-2001 (ОКСМ)</xs:documentation>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/link">urn://x-artefacts-smev-gov-ru/link/esnsi2.0</xs:appinfo>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/name">ОКСМ</xs:appinfo>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/field">Полное наименование</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="СвРебенТип">
+		<xs:annotation>
+			<xs:documentation>Сведения о ребенке</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ФИО" type="fns:ФИОПрТип">
+				<xs:annotation>
+					<xs:documentation>Фамилия, имя, отчество ребенка</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:choice>
+				<xs:element name="ДатаРожд" type="xs:date">
+					<xs:annotation>
+						<xs:documentation>Дата рождения</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="МесГодРожд" type="xs:gYearMonth">
+					<xs:annotation>
+						<xs:documentation>Месяц и год рождения</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ГодРожд" type="xs:gYear">
+					<xs:annotation>
+						<xs:documentation>Год рождения</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+			<xs:element name="МестоРожден" type="fns:МестоТип">
+				<xs:annotation>
+					<xs:documentation>Место рождения</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="СведРодитТип">
+		<xs:annotation>
+			<xs:documentation>Сведения о родителе</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ФИО" type="fns:ФИОПрТип">
+				<xs:annotation>
+					<xs:documentation>Фамилия, имя, отчество</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="МестоРожден" type="fns:МестоТип" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Место рождения</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:choice>
+				<xs:element name="ДатаРожд" type="xs:date" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Дата рождения</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="МесГодРожд" type="xs:gYearMonth" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Месяц и год рождения</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ГодРожд" type="xs:gYear" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Год рождения</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+			<xs:element name="УдЛичнФЛ" type="fns:УдЛичнФЛТип" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Сведения о документе, удостоверяющем личность</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:choice>
+				<xs:element name="АдрМЖРФ" type="fns:АдрМЖРФТип" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Адрес места жительства на территории Российской Федерации</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="АдрМЖИн" type="fns:АдрМЖИнТип" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Адрес места жительства за пределами Российской Федерации</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="ОКСМ" type="fns:ОКСМТип" use="optional">
+			<xs:annotation>
+				<xs:documentation>Код страны гражданства</xs:documentation>
+				<xs:documentation>Принимает значение цифрового кода в соответствии с Общероссийским классификатором стран мира ОК 025-2001 (ОКСМ)</xs:documentation>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/link">urn://x-artefacts-smev-gov-ru/link/esnsi2.0</xs:appinfo>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/name">ОКСМ</xs:appinfo>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/field">Код</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="НаимСтраны" type="fns:string-255" use="optional">
+			<xs:annotation>
+				<xs:documentation>Полное наименование страны гражданства</xs:documentation>
+				<xs:documentation>Принимает значение в соответствии с Общероссийским классификатором стран мира ОК 025-2001 (ОКСМ)</xs:documentation>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/link">urn://x-artefacts-smev-gov-ru/link/esnsi2.0</xs:appinfo>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/name">ОКСМ</xs:appinfo>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/field">Полное наименование</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="СтатусЗаписиТип">
+		<xs:annotation>
+			<xs:documentation>Сведения о статусе записи акта</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="ДатаНачСтатус" type="xs:date" use="required">
+			<xs:annotation>
+				<xs:documentation>Дата начала действия статуса</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="КодСтатус" use="required">
+			<xs:annotation>
+				<xs:documentation>Код статуса</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="fns:digits-2">
+					<xs:enumeration value="01"/>
+					<xs:enumeration value="02"/>
+					<xs:enumeration value="03"/>
+					<xs:enumeration value="07"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="НаимСтатус" type="fns:string-255" use="required">
+			<xs:annotation>
+				<xs:documentation>Наименование статуса</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="СведСвидетТип">
+		<xs:annotation>
+			<xs:documentation>Сведения о выданном Свидетельстве</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="СерияСвидет" type="fns:string-2_8" use="required">
+			<xs:annotation>
+				<xs:documentation>Серия свидетельства</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="НомерСвидет" type="fns:string-6_8" use="required">
+			<xs:annotation>
+				<xs:documentation>Номер свидетельства</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="ДатаВыдСвидет" type="xs:date" use="required">
+			<xs:annotation>
+				<xs:documentation>Дата выдачи свидетельства</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="МестоТип">
+		<xs:annotation>
+			<xs:documentation>Место</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="МестоТекст" type="fns:string-512" use="required">
+			<xs:annotation>
+				<xs:documentation>Место (текстом)</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="КодСтраны" type="fns:ОКСМТип" use="optional">
+			<xs:annotation>
+				<xs:documentation>Код страны</xs:documentation>
+				<xs:documentation>Принимает значение цифрового кода в соответствии с Общероссийским классификатором стран мира ОК 025-2001 (ОКСМ)</xs:documentation>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/link">urn://x-artefacts-smev-gov-ru/link/esnsi2.0</xs:appinfo>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/name">ОКСМ</xs:appinfo>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/field">Код</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="НаимСтраны" type="fns:string-255" use="optional">
+			<xs:annotation>
+				<xs:documentation>Полное наименование страны</xs:documentation>
+				<xs:documentation>Принимает значение в соответствии с Общероссийским классификатором стран мира ОК 025-2001 (ОКСМ)</xs:documentation>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/link">urn://x-artefacts-smev-gov-ru/link/esnsi2.0</xs:appinfo>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/name">ОКСМ</xs:appinfo>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/field">Полное наименование</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Регион" type="fns:ССРФТип" use="optional">
+			<xs:annotation>
+				<xs:documentation>Код субъекта Российской Федерации</xs:documentation>
+				<xs:documentation>Принимает значения в соответствии со справочником «Коды субъектов Российской Федерации» (ССРФ)</xs:documentation>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/link">urn://x-artefacts-smev-gov-ru/link/esnsi2.0</xs:appinfo>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/name">ССРФ</xs:appinfo>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/field">Код</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="НаимСубъект" type="fns:string-50" use="optional">
+			<xs:annotation>
+				<xs:documentation>Наименование субъекта Российской Федерации</xs:documentation>
+				<xs:documentation>Принимает значения в соответствии со справочником «Коды субъектов Российской Федерации» (ССРФ)</xs:documentation>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/link">urn://x-artefacts-smev-gov-ru/link/esnsi2.0</xs:appinfo>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/name">ССРФ</xs:appinfo>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/field">Наименование</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Район" type="fns:string-50" use="optional">
+			<xs:annotation>
+				<xs:documentation>Наименование района</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Город" type="fns:string-50" use="optional">
+			<xs:annotation>
+				<xs:documentation>Наименование города</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="НаселПункт" type="fns:string-50" use="optional">
+			<xs:annotation>
+				<xs:documentation>Наименование населенного пункта</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="АдрМЖИнТип">
+		<xs:annotation>
+			<xs:documentation>Адрес места жительства за пределами Российской Федерации</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="ОКСМ" type="fns:ОКСМТип" use="required">
+			<xs:annotation>
+				<xs:documentation>Код страны</xs:documentation>
+				<xs:documentation>Принимает значение цифрового кода в соответствии с Общероссийским классификатором стран мира ОК 025-2001 (ОКСМ)</xs:documentation>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/link">urn://x-artefacts-smev-gov-ru/link/esnsi2.0</xs:appinfo>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/name">ОКСМ</xs:appinfo>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/field">Код</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="НаимСтраны" type="fns:string-255" use="required">
+			<xs:annotation>
+				<xs:documentation>Полное наименование страны</xs:documentation>
+				<xs:documentation>Принимает значение в соответствии с Общероссийским классификатором стран мира ОК 025-2001 (ОКСМ)</xs:documentation>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/link">urn://x-artefacts-smev-gov-ru/link/esnsi2.0</xs:appinfo>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/name">ОКСМ</xs:appinfo>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/field">Полное наименование</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="АдрТекст" type="fns:string-512" use="required">
+			<xs:annotation>
+				<xs:documentation>Адрес</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="АдрМЖРФТип">
+		<xs:annotation>
+			<xs:documentation>Адрес места жительства на территории Российской Федерации</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element name="АдрКЛАДР" type="fns:АдрКЛАДРТип">
+				<xs:annotation>
+					<xs:documentation>Адрес по КЛАДР</xs:documentation>
+					<xs:appinfo source="urn://x-artefacts-smev-gov-ru/link">https://www.nalog.ru/rn77/program/5961265/</xs:appinfo>
+					<xs:appinfo source="urn://x-artefacts-smev-gov-ru/name">КЛАДР</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="АдрФИАС" type="fns:АдрФИАСТип">
+				<xs:annotation>
+					<xs:documentation>Адрес по ФИАС</xs:documentation>
+					<xs:appinfo source="urn://x-artefacts-smev-gov-ru/link">http://fias.nalog.ru/Updates.aspx</xs:appinfo>
+					<xs:appinfo source="urn://x-artefacts-smev-gov-ru/name">ФИАС</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+		<xs:attribute name="АдрРФТекст" type="fns:string-512" use="required">
+			<xs:annotation>
+				<xs:documentation>Адрес места жительства  на территории Российской Федерации (текст)</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="АдрКЛАДРТип">
+		<xs:annotation>
+			<xs:documentation>Адрес в Российской Федерации</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Индекс" type="fns:digits-6" use="optional">
+			<xs:annotation>
+				<xs:documentation>Почтовый индекс</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="КодРегион" type="fns:ССРФТип" use="required">
+			<xs:annotation>
+				<xs:documentation>Код субъекта Российской Федерации</xs:documentation>
+				<xs:documentation>Принимает значения в соответствии со справочником «Коды субъектов Российской Федерации» (ССРФ)</xs:documentation>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/link">urn://x-artefacts-smev-gov-ru/link/esnsi2.0</xs:appinfo>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/name">ССРФ</xs:appinfo>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/field">Код</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="НаимРегион" type="fns:string-50" use="required">
+			<xs:annotation>
+				<xs:documentation>Наименование субъекта Российской Федерации</xs:documentation>
+				<xs:documentation>Принимает значения в соответствии со справочником «Коды субъектов Российской Федерации» (ССРФ)</xs:documentation>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/link">urn://x-artefacts-smev-gov-ru/link/esnsi2.0</xs:appinfo>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/name">ССРФ</xs:appinfo>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/field">Наименование</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Район" type="fns:string-50" use="optional">
+			<xs:annotation>
+				<xs:documentation>Район</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Город" type="fns:string-50" use="optional">
+			<xs:annotation>
+				<xs:documentation>Город</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="НаселПункт" type="fns:string-50" use="optional">
+			<xs:annotation>
+				<xs:documentation>Населенный пункт</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Улица" type="fns:string-50" use="optional">
+			<xs:annotation>
+				<xs:documentation>Улица</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Дом" type="fns:string-20" use="optional">
+			<xs:annotation>
+				<xs:documentation>Дом</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Корпус" type="fns:string-20" use="optional">
+			<xs:annotation>
+				<xs:documentation>Корпус</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Кварт" type="fns:string-20" use="optional">
+			<xs:annotation>
+				<xs:documentation>Квартира</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="АдрФИАСТип">
+		<xs:annotation>
+			<xs:documentation>Адрес по ФИАС</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Регион" type="fns:ССРФТип">
+				<xs:annotation>
+					<xs:documentation>Субъект Российской Федерации (код)</xs:documentation>
+					<xs:documentation>Принимает значения в соответствии со справочником «Коды субъектов Российской Федерации» (ССРФ)</xs:documentation>
+					<xs:appinfo source="urn://x-artefacts-smev-gov-ru/link">urn://x-artefacts-smev-gov-ru/link/esnsi2.0</xs:appinfo>
+					<xs:appinfo source="urn://x-artefacts-smev-gov-ru/name">ССРФ</xs:appinfo>
+					<xs:appinfo source="urn://x-artefacts-smev-gov-ru/field">Код</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="МуниципРайон" type="fns:ВидНаимКодТип">
+				<xs:annotation>
+					<xs:documentation>Муниципальный район/ городской округ/ внутригородская территория города федерального значения</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ГородСелПоселен" type="fns:ВидНаимКодТип" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Городское поселение / сельское поселение / межселенная территория в составе муниципального района / внутригородской район городского округа</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="НаселенПункт" type="fns:ВидНаимТип" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Населенный пункт (город, деревня, село и прочее)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ЭлПланСтруктур" type="fns:ТипНаимТип" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Элемент планировочной структуры</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ЭлУлДорСети" type="fns:ТипНаимТип" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Элемент улично-дорожной сети</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ЗемелУчасток" type="fns:string-50" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Земельный участок (номер)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Здание" type="fns:НомерТип" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Здание / сооружение / объект незавершенного строительства</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ПомещЗдания" type="fns:НомерТип" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Помещение в пределах здания, сооружения / машино-место</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ПомещКвартиры" type="fns:НомерТип" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Помещение в пределах квартиры</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="ИдНом" type="fns:string-36" use="required">
+			<xs:annotation>
+				<xs:documentation>Уникальный идентификационный номер</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Индекс" type="fns:digits-6" use="optional">
+			<xs:annotation>
+				<xs:documentation>Почтовый индекс</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ВидНаимКодТип">
+		<xs:annotation>
+			<xs:documentation>Сведения о виде (код) и наименовании адресного элемента</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="ВидКод" type="fns:string-1" use="required">
+			<xs:annotation>
+				<xs:documentation>Вид (код) элемента</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Наим" type="fns:string-255" use="required">
+			<xs:annotation>
+				<xs:documentation>Наименование элемента</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ВидНаимТип">
+		<xs:annotation>
+			<xs:documentation>Сведения о виде и наименовании адресного элемента</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Вид" type="fns:string-50" use="required">
+			<xs:annotation>
+				<xs:documentation>Вид элемента</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Наим" type="fns:string-255" use="required">
+			<xs:annotation>
+				<xs:documentation>Наименование элемента</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ТипНаимТип">
+		<xs:annotation>
+			<xs:documentation>Сведения о типе и наименовании адресного элемента</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Тип" type="fns:string-50" use="required">
+			<xs:annotation>
+				<xs:documentation>Тип элемента</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Наим" type="fns:string-255" use="required">
+			<xs:annotation>
+				<xs:documentation>Наименование элемента</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="НомерТип">
+		<xs:annotation>
+			<xs:documentation>Сведения о номере адресного элемента</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="Тип" type="fns:string-50" use="required">
+			<xs:annotation>
+				<xs:documentation>Тип элемента</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Номер" type="fns:string-255" use="required">
+			<xs:annotation>
+				<xs:documentation>Номер элемента</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="УдЛичнФЛТип">
+		<xs:annotation>
+			<xs:documentation>Сведения о документе, удостоверяющем личность физического лица</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="КодВидДок" type="fns:СПДУЛТип" use="required">
+			<xs:annotation>
+				<xs:documentation>Код вида документа, удостоверяющего личность</xs:documentation>
+				<xs:documentation>Принимает значение в соответствии со справочником «Виды документов, удостоверяющих личность налогоплательщика» (СПДУЛ)</xs:documentation>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/link">urn://x-artefacts-smev-gov-ru/link/esnsi2.0</xs:appinfo>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/name">СПДУЛ</xs:appinfo>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/field">Код</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="НаимДок" type="fns:string-120" use="required">
+			<xs:annotation>
+				<xs:documentation>Наименование документа, удостоверяющего личность</xs:documentation>
+				<xs:documentation>Принимает значение в соответствии со справочником «Виды документов, удостоверяющих личность налогоплательщика» (СПДУЛ)</xs:documentation>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/link">urn://x-artefacts-smev-gov-ru/link/esnsi2.0</xs:appinfo>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/name">СПДУЛ</xs:appinfo>
+				<xs:appinfo source="urn://x-artefacts-smev-gov-ru/field">Наименование</xs:appinfo>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="СерНомДок" type="fns:string-25" use="required">
+			<xs:annotation>
+				<xs:documentation>Серия и номер документа, удостоверяющего личность</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="ДатаДок" type="xs:date" use="optional">
+			<xs:annotation>
+				<xs:documentation>Дата выдачи документа, удостоверяющего личность</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="ВыдДок" type="fns:string-255" use="optional">
+			<xs:annotation>
+				<xs:documentation>Наименование органа, выдавшего документ, удостоверяющий личность</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="КодВыдДок" type="fns:string-7" use="optional">
+			<xs:annotation>
+				<xs:documentation>Код подразделения органа, выдавшего документ, удостоверяющий личность</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ФИОПрТип">
+		<xs:annotation>
+			<xs:documentation>Фамилия, имя, отчество физического лица (с признаком отсутствия)</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="Фамилия" type="fns:string-60">
+					<xs:annotation>
+						<xs:documentation>Фамилия</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ПрФамилия">
+					<xs:annotation>
+						<xs:documentation>Признак отсутствия фамилии</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="fns:string-1">
+							<xs:enumeration value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:choice>
+			<xs:choice>
+				<xs:element name="Имя" type="fns:string-60">
+					<xs:annotation>
+						<xs:documentation>Имя</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ПрИмя">
+					<xs:annotation>
+						<xs:documentation>Признак отсутствия имени</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="fns:string-1">
+							<xs:enumeration value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:choice>
+			<xs:choice>
+				<xs:element name="Отчество" type="fns:string-60">
+					<xs:annotation>
+						<xs:documentation>Отчество</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ПрОтчество">
+					<xs:annotation>
+						<xs:documentation>Признак отсутствия отчества</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="fns:string-1">
+							<xs:enumeration value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="СНИЛСТип">
+		<xs:annotation>
+			<xs:documentation>СНИЛС</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="14"/>
+			<xs:pattern value="\d{3}-\d{3}-\d{3}-\d{2}"/>
+			<xs:pattern value="\d{3}-\d{3}-\d{3} \d{2}"/>
+			<xs:pattern value="\d{3} \d{3} \d{3} \d{2}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ИННФЛТип">
+		<xs:annotation>
+			<xs:documentation>Идентификационный номер налогоплательщика - физического лица</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="12"/>
+			<xs:pattern value="([0-9]{1}[1-9]{1}|[1-9]{1}[0-9]{1})[0-9]{10}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="СПДУЛТип">
+		<xs:annotation>
+			<xs:documentation>Код Справочника видов документов, удостоверяющих личность налогоплательщика</xs:documentation>
+			<xs:documentation>Содержит только цифры</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+			<xs:pattern value="\d{2}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ССРФТип">
+		<xs:annotation>
+			<xs:documentation>Код по Справочнику субъектов Российской Федерации</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="fns:digits-2"/>
+	</xs:simpleType>
+	<xs:simpleType name="ОКСМТип">
+		<xs:annotation>
+			<xs:documentation>Код Общероссийского классификатора стран мира (3-разрядный, цифровой)</xs:documentation>
+			<xs:documentation>Содержит только цифры</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="3"/>
+			<xs:pattern value="\d{3}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ОКИНТип">
+		<xs:annotation>
+			<xs:documentation>Код Общероссийского классификатора информации о населении (3-разрядный, цифровой)</xs:documentation>
+			<xs:documentation>Содержит только цифры</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="3"/>
+			<xs:pattern value="\d{3}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="digits-6">
+		<xs:annotation>
+			<xs:documentation>Строка, состоящая из 6 цифр</xs:documentation>
+			<xs:documentation>Содержит только цифры</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="6"/>
+			<xs:pattern value="\d{6}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="digits-5">
+		<xs:annotation>
+			<xs:documentation>Строка, состоящая из 5 цифр</xs:documentation>
+			<xs:documentation>Содержит только цифры</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="5"/>
+			<xs:pattern value="\d{5}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="digits-4">
+		<xs:annotation>
+			<xs:documentation>Строка, состоящая из четырёх цифр</xs:documentation>
+			<xs:documentation>Содержит только цифры</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="4"/>
+			<xs:pattern value="\d{4}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="digits-3">
+		<xs:annotation>
+			<xs:documentation>Строка, состоящая из 3 цифр</xs:documentation>
+			<xs:documentation>Содержит только цифры</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="3"/>
+			<xs:pattern value="\d{3}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="digits-2">
+		<xs:annotation>
+			<xs:documentation>Строка, состоящая из 2 цифр</xs:documentation>
+			<xs:documentation>Содержит только цифры</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+			<xs:pattern value="\d{2}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="digits-1">
+		<xs:annotation>
+			<xs:documentation>Строка, состоящая из 1 цифр</xs:documentation>
+			<xs:documentation>Содержит только цифры</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="1"/>
+			<xs:pattern value="\d{1}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="number-12">
+		<xs:annotation>
+			<xs:documentation>Число целое, содержащее до 12 разрядов</xs:documentation>
+			<xs:documentation>Содержит только цифры</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:totalDigits value="12"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="number-9">
+		<xs:annotation>
+			<xs:documentation>Число целое, содержащее до 9 разрядов</xs:documentation>
+			<xs:documentation>Содержит только цифры</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:totalDigits value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="number-3">
+		<xs:annotation>
+			<xs:documentation>Число целое, содержащее до 3 разрядов</xs:documentation>
+			<xs:documentation>Содержит только цифры</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:totalDigits value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-512">
+		<xs:annotation>
+			<xs:documentation>Произвольный текст длиной от 1 до 512 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="512"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="number-2">
+		<xs:annotation>
+			<xs:documentation>Число целое, содержащее до 2 разрядов</xs:documentation>
+			<xs:documentation>Содержит только цифры</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:totalDigits value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="number-1">
+		<xs:annotation>
+			<xs:documentation>Число целое, содержащее 1 разряд</xs:documentation>
+			<xs:documentation>Содержит только цифры</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:totalDigits value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-1000">
+		<xs:annotation>
+			<xs:documentation>Произвольный текст длиной от 1 до 1000 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="1000"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-500">
+		<xs:annotation>
+			<xs:documentation>Произвольный текст длиной от 1 до 500 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="500"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-255">
+		<xs:annotation>
+			<xs:documentation>Произвольный текст длиной от 1 до 255 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="255"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-128">
+		<xs:annotation>
+			<xs:documentation>Произвольный текст длиной от 1 до 128 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="128"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-120">
+		<xs:annotation>
+			<xs:documentation>Произвольный текст длиной от 1 до 120 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="120"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-100">
+		<xs:annotation>
+			<xs:documentation>Произвольный текст длиной от 1 до 100 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="100"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-60">
+		<xs:annotation>
+			<xs:documentation>Произвольный текст длиной от 1 до 60 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="60"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-50">
+		<xs:annotation>
+			<xs:documentation>Произвольный текст длиной от 1 до 50 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="50"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-36">
+		<xs:annotation>
+			<xs:documentation>Произвольный текст длиной от 1 до 36 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="36"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-25">
+		<xs:annotation>
+			<xs:documentation>Произвольный текст длиной от 1 до 25 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="25"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-1_22">
+		<xs:annotation>
+			<xs:documentation>Произвольный текст длиной от 1 до 22 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="22"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-20">
+		<xs:annotation>
+			<xs:documentation>Произвольный текст длиной от 1 до 20 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string_19">
+		<xs:annotation>
+			<xs:documentation>Произвольный текст длиной от 1 до 19 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="19"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-17">
+		<xs:annotation>
+			<xs:documentation>Текст длиной ровно 17 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="17"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-12">
+		<xs:annotation>
+			<xs:documentation>Произвольный текст длиной от 1 до 12 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="12"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-10">
+		<xs:annotation>
+			<xs:documentation>Произвольный текст длиной от 1 до 10 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="10"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-8">
+		<xs:annotation>
+			<xs:documentation>Текст длиной ровно 8 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="8"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-7">
+		<xs:annotation>
+			<xs:documentation>Текст длиной ровно 7 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="7"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-6_7">
+		<xs:annotation>
+			<xs:documentation>Произвольный текст длиной от 6 до 7 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="7"/>
+			<xs:minLength value="6"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-6_8">
+		<xs:annotation>
+			<xs:documentation>Произвольный текст длиной от 6 до 8 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="8"/>
+			<xs:minLength value="6"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-2_8">
+		<xs:annotation>
+			<xs:documentation>Произвольный текст длиной от 2 до 8 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="8"/>
+			<xs:minLength value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-2_6">
+		<xs:annotation>
+			<xs:documentation>Произвольный текст длиной от 2 до 6 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="6"/>
+			<xs:minLength value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-5">
+		<xs:annotation>
+			<xs:documentation>Текст длиной ровно 5 символов</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="5"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-3">
+		<xs:annotation>
+			<xs:documentation>Текст длиной ровно 3 символа</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-2">
+		<xs:annotation>
+			<xs:documentation>Текст длиной ровно 2 символа</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string-1">
+		<xs:annotation>
+			<xs:documentation>Текст длиной ровно 1 символ</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:length value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

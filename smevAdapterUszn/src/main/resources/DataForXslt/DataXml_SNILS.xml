@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportPrint xmlns:em="urn://egisso-ru/msg/10.05.I/1.0.6" xmlns:etlmsz="urn://egisso-ru/types/local-MSZ/1.0.5" xmlns:etplmsz="urn://egisso-ru/types/package-LMSZ/1.0.6" xmlns:ns1="urn://x-artefacts-fns-dohflna/root/260-18/4.0.1" xmlns:ns10="urn://x-artefacts-smev-gov-ru/supplementary/commons/1.0.1" xmlns:ns11="urn://x-artefacts-smev-gov-ru/services/service-adapter/types/faults" xmlns:ns12="urn://x-artefacts-fns-ndfl2/types/4.1.1" xmlns:ns14="urn://x-artefacts-zags-inform/root/112-11/4.0.4" xmlns:ns15="http://epgu.gosuslugi.ru/concentrator/familychildsub/1.0.0" xmlns:ns16="http://kvs.pfr.com/snils-by-additionalData/1.0.1" xmlns:ns17="http://common.kvs.pfr.com/1.0.0" xmlns:ns18="http://rosreestr.ru/services/v0.18/TStatementRequestEGRN" xmlns:ns19="urn://egisso-ru/types/cls-request/1.0.2" xmlns:ns2="urn://x-artefacts-fns-ndfl3doh/root/210-18/4.0.2" xmlns:ns20="urn://egisso-ru/msg/10.02.I/1.0.2" xmlns:ns21="urn://x-artefacts-fns-dohflnasp/root/260-23/4.0.0" xmlns:ns22="urn://x-artefacts-fns-ndfl2/root/260-10/4.1.1" xmlns:ns23="urn://x-artefacts-fns-svviplfl/root/114-43/4.0.0" xmlns:ns24="urn://x-artefacts-fns-dohflna/types/4.0.1" xmlns:ns25="urn://x-artefacts-fns-ndipsr/types/4.0.0" xmlns:ns26="urn://x-artefacts-fns-inn-singular/root/270-18/4.0.1" xmlns:ns27="urn://x-artefacts-fns-inn/commons/4.0.0" xmlns:ns28="urn://x-artefacts-zags-inform/types/4.0.4" xmlns:ns29="urn://x-artefacts-zags-rogdinf/types/4.0.0" xmlns:ns3="urn://x-artefacts-fns-dohflnasp/types/4.0.0" xmlns:ns30="urn://x-artefacts-zags-brakrastinf/types/4.0.0" xmlns:ns31="urn://x-artefacts-zags-brakrastinf/root/112-55/4.0.0" xmlns:ns32="urn://x-artefacts-zags-brakzakinf/types/4.0.0" xmlns:ns33="urn://x-artefacts-zags-brakzakinf/root/112-54/4.0.0" xmlns:ns34="urn://egisso-ru/types/death-reg/1.0.1" xmlns:ns35="urn://x-artefacts-zags-fatalinf/root/112-52/4.0.1" xmlns:ns36="urn://x-artefacts-zags-fatalinf/types/4.0.1" xmlns:ns37="urn://x-artefacts-zags-parentinf/root/112-56/4.0.0" xmlns:ns38="urn://x-artefacts-zags-parentinf/types/4.0.0" xmlns:ns39="urn://x-artefacts-zags-pernameinf/root/112-53/4.0.0" xmlns:ns40="urn://x-artefacts-zags-pernameinf/types/4.0.0" xmlns:ns41="urn://x-artefacts-zags-rogdinf/root/112-51/4.0.1" xmlns:ns42="urn://x-artefacts-zags-rogdinf/types/4.0.1" xmlns:ns43="urn://egisso-ru/msg/10.10.I/1.0.2" xmlns:ns44="urn://egisso-ru/msg/10.29.O/1.0.1" xmlns:ns45="urn://egisso-ru/types/registers-response/1.0.1" xmlns:ns46="urn://egisso-ru/types/registers/1.0.1" xmlns:ns47="urn://egisso-ru/types/basic/1.0.7" xmlns:ns48="urn://egisso-ru/msg/10.26.I/1.0.1" xmlns:ns49="urn://egisso-ru/types/registers-request/1.0.1" xmlns:ns5="urn://x-artefacts-zags-rogdinf/root/112-51/4.0.0" xmlns:ns50="urn://egisso-ru/types/prsn-statement/1.0.3" xmlns:ns51="urn://egisso-ru/msg/10.13.I/1.0.3" xmlns:ns52="http://fri.pfr.ru" xmlns:ns53="http://kvs.fri.com/extraction-invalid-data/1.0.3" xmlns:ns54="http://kvs.fri.com/initiative-distribution/1.0.2" xmlns:ns55="http://kvs.fri.com/extraction-invalid-data/attachments/1.0.0" xmlns:ns56="urn://x-artefacts-gibdd-benefit489/data/1.0" xmlns:ns57="urn://mvd/guvm/registration-commons/1.2.0" xmlns:ns58="urn://mvd/guvm/basic-types/1.2.0" xmlns:ns59="urn://mvd/guvm/living-place-registration/1.1.0" xmlns:ns60="urn://mvd/guvm/staying-place-registration/1.1.0" xmlns:ns61="urn:dom.gosuslugi.ru/debt-responses/1.0.0" xmlns:ns62="urn:dom.gosuslugi.ru/common/1.2.0" xmlns:ns63="urn:dom.gosuslugi.ru/debt-requests/1.0.0" xmlns:ns64="urn:dom.gosuslugi.ru/rao-houses/1.0.0" xmlns:ns65="http://se2.data.service.smev.pfr.ru/SZN/1.0.1" xmlns:ns66="urn://x-artefacts-rosreestr-gov-ru/virtual-services/egrn-statement/1.1.2" xmlns:ns67="http://rosreestr.ru/services/v0.12/TRequest" xmlns:ns68="http://rosreestr.ru/services/v0.1/TStatementCommons" xmlns:ns69="http://rosreestr.ru/services/v0.1/commons/Documents" xmlns:ns7="urn://x-artefacts-fns-ndipsr/root/210-17/4.0.0" xmlns:ns70="http://rosreestr.ru/services/v0.1/commons/Commons" xmlns:ns71="http://rosreestr.ru/services/v0.1/commons/Subjects" xmlns:ns72="http://rosreestr.ru/services/v0.1/commons/Address" xmlns:tns1="urn://x-artefacts-smev-gov-ru/services/service-adapter/types">
+    <reportRequest requestCreateDate="2021-09-16T00:25:56" requestId="533f26f2-90f8-45ee-9ddb-cc6da5eb2419" userName="Интеграционная система">
+        <MessagePrimaryContent>
+            <SnilsByAdditionalDataRequest>
+                <FamilyName>Сенин</FamilyName>
+                <FirstName>Алексей</FirstName>
+                <Patronymic>Сергеевич</Patronymic>
+                <BirthDate>1989-06-30</BirthDate>
+                <Gender>Male</Gender>
+                <PassportRF>
+                    <Series>1809</Series>
+                    <Number>315895</Number>
+                    <IssueDate>2009-07-02</IssueDate>
+                    <Issuer>Отдел ЗАГС Администрации Киквидзенского муниципального района</Issuer>
+                </PassportRF>
+            </SnilsByAdditionalDataRequest>
+        </MessagePrimaryContent>
+    </reportRequest>
+    <reportResponse responseCreateDate="2021-09-16T00:26:12" responseId="d70c58bd-9a89-4094-ab91-73be0a52049c">
+        <SnilsByAdditionalDataResponse>
+            <FamilyName>СЕНИН</FamilyName>
+            <FirstName>АЛЕКСЕЙ</FirstName>
+            <Patronymic>СЕРГЕЕВИЧ</Patronymic>
+            <Snils>13297225463</Snils>
+            <BirthDate>1989-06-30</BirthDate>
+            <Gender>Male</Gender>
+            <PassportRF>
+                <Series>1809</Series>
+                <Number>315895</Number>
+                <IssueDate>0001-01-01</IssueDate>
+                <Issuer>Нет данных</Issuer>
+            </PassportRF>
+        </SnilsByAdditionalDataResponse>
+        <reportAttachmentData/>
+    </reportResponse>
+    <interactionStatus>
+        <statusReport statusDate="2021-09-16T00:26:41">
+            <code>0</code>
+            <desc>Сообщение отправлено в СМЭВ</desc>
+        </statusReport>
+    </interactionStatus>
+</ReportPrint>

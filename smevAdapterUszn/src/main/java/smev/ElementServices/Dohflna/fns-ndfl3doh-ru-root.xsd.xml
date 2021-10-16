@@ -1,0 +1,33 @@
+<ns:NDFL3DOHResponse ИдЗапрос="string" xmlns:ns="urn://x-artefacts-fns-ndfl3doh/root/210-18/4.0.2">
+  <!--1 or more repetitions:-->
+  <ns:СвНДФЛ3 ОтчетГод="2008" ДокПредст="750">
+    <ns:СвФЛ>
+      <ns:ФИОФЛ FamilyName="string" FirstName="string" Patronymic="string"/>
+      <!--You have a CHOICE of the next 2 items at this level-->
+      <ns:ИННФЛ>stringstring</ns:ИННФЛ>
+      <ns:СведФЛ ДатаРожд="2004-02-14" МестоРожд="string">
+        <ns:УдЛичн DocumentCode="st" SeriesNumber="string"/>
+      </ns:СведФЛ>
+    </ns:СвФЛ>
+    <ns:ИтогУплВозв>
+      <!--Zero or more repetitions:-->
+      <ns:НалБаза Ставка="100" ВидДоход="2" НалБазаИсчисл="1000.0000000000"/>
+      <!--Zero or more repetitions:-->
+      <ns:ДоходИстРФ Ставка="100" ВидДоход="09" Доход="1000.0000000000">
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns:ИстЮЛ Наим="string" ИННЮЛ="stringstri" КПП="stringstr"/>
+        <ns:ИстФЛИн ФИОИн="string" ИННФЛ="stringstring"/>
+      </ns:ДоходИстРФ>
+      <!--Zero or more repetitions:-->
+      <ns:ДоходИстИно Ставка="100">
+        <!--Zero or more repetitions:-->
+        <ns:РасчДохНалИно ОКСМ="str" КодВидДох="25" НаимИстДох="string" ДоходИноРуб="1000.0000000000" ДоходОсв60.217="1000.0000000000" ДоходОсв60.1.217="1000.0000000000" ДоходОсв66.217="1000.0000000000"/>
+      </ns:ДоходИстИно>
+      <!--Optional:-->
+      <ns:ДоходПредпр ДоходИт="1000.0000000000">
+        <!--Zero or more repetitions:-->
+        <ns:РасчВидДеят ВидДеят="08" ОКВЭД="string" Доход="1000.0000000000" РасхФакт="1000.0000000000"/>
+      </ns:ДоходПредпр>
+    </ns:ИтогУплВозв>
+  </ns:СвНДФЛ3>
+</ns:NDFL3DOHResponse>

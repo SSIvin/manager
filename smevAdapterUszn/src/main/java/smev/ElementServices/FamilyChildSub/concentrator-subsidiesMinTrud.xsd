@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 rel. 2 (http://www.altova.com) by TeaM DJiNN (TeaM DJiNN) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://epgu.gosuslugi.ru/concentrator/familychildsub/1.0.0" targetNamespace="http://epgu.gosuslugi.ru/concentrator/familychildsub/1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:simpleType name="stringNN-11">
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:minLength value="1"/>
+			<xsd:maxLength value="11"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="stringNN-20">
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:minLength value="1"/>
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="stringNN-50">
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:minLength value="1"/>
+			<xsd:maxLength value="50"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string-6">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="6"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string-9">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="9"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string-10">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="10"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string-11">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="11"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string-12">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="12"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string-14">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="14"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string-19">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="19"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string-20">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string-50">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="50"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string-256">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="256"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string-1024">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1024"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="string-2048">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="2048"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="GenderType">
+		<xsd:annotation>
+			<xsd:documentation>Пол</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Male"/>
+			<xsd:enumeration value="Female"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="EmailAddressType">
+		<xsd:annotation>
+			<xsd:documentation>Адрес электронной почты</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="256"/>
+			<xsd:pattern value="[0-9a-zA-Z_.\-]{2,50}[@]{1}[0-9a-zA-Z_./-]{2,50}[.]{1}[a-zA-Z]{2,5}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="DataElementType">
+		<xsd:simpleContent>
+			<xsd:extension base="tns:string-256">
+				<xsd:attribute name="code" type="tns:string-50" use="required"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="AddressType">
+		<xsd:annotation>
+			<xsd:documentation>
+                Адрес
+            </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="FullAddress" type="tns:string-1024"/>
+			<xsd:element name="Index" type="tns:string-6"/>
+			<xsd:element name="Region" type="tns:DataElementType"/>
+			<xsd:element name="Area" type="tns:DataElementType" minOccurs="0"/>
+			<xsd:element name="City" type="tns:DataElementType" minOccurs="0"/>
+			<xsd:element name="CityArea" type="tns:DataElementType" minOccurs="0"/>
+			<xsd:element name="Place" type="tns:DataElementType" minOccurs="0"/>
+			<xsd:element name="Street" type="tns:DataElementType" minOccurs="0"/>
+			<xsd:element name="AdditionalArea" type="tns:DataElementType" minOccurs="0"/>
+			<xsd:element name="AdditionalStreet" type="tns:DataElementType" minOccurs="0"/>
+			<xsd:element name="House" type="tns:DataElementType" minOccurs="0"/>
+			<xsd:element name="Building1" type="tns:string-50" minOccurs="0"/>
+			<xsd:element name="Building2" type="tns:string-50" minOccurs="0"/>
+			<xsd:element name="Apartment" type="tns:string-50" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="IncomeType">
+		<xsd:annotation>
+			<xsd:documentation>
+                Сведения о доходе
+            </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="IncomeType" type="tns:DataElementType"/>
+			<xsd:element name="IncomeSize" type="tns:string-256" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="IncomeInfoType">
+		<xsd:annotation>
+			<xsd:documentation>
+                Перечень доходов
+            </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="IncomeType" type="tns:IncomeType" maxOccurs="20"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PersonIdentityDocInfoType">
+		<xsd:annotation>
+			<xsd:documentation>
+                Данные ДУЛ
+            </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Type" type="tns:DataElementType"/>
+			<xsd:element name="Series" type="tns:string-10" minOccurs="0"/>
+			<xsd:element name="Number" type="tns:string-10"/>
+			<xsd:element name="IssueDate" type="xsd:date"/>
+			<xsd:element name="Issuer" type="tns:string-256"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="AddressInfoType">
+		<xsd:annotation>
+			<xsd:documentation>
+                Адресные данные  
+            </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="AdressRegistration" type="tns:AddressType"/>
+			<xsd:element name="AdressStay" type="tns:AddressType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PersonInfoType">
+		<xsd:annotation>
+			<xsd:documentation>
+                Сведения о заявителе 
+            </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Surname" type="tns:string-256"/>
+			<xsd:element name="FirstName" type="tns:string-256"/>
+			<xsd:element name="MiddleName" type="tns:string-256" minOccurs="0"/>
+			<xsd:element name="Bithday" type="xsd:date"/>
+			<xsd:element name="SNILS" type="tns:string-14"/>
+			<xsd:element name="Phone" type="tns:string-14" minOccurs="0"/>
+			<xsd:element name="Email" type="tns:string-256" minOccurs="0"/>
+			<xsd:element name="BirthPlace" type="tns:string-256"/>
+			<xsd:element name="Citizenship" type="tns:DataElementType" minOccurs="0"/>
+			<xsd:element name="AddressInfo" type="tns:AddressInfoType"/>
+			<xsd:element name="isGuardian" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="GuardDoc" type="tns:DocInfoType" minOccurs="0"/>
+			<xsd:element name="IdentityDocInfo" type="tns:PersonIdentityDocInfoType"/>
+			<xsd:element name="CheckIncome" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="IncomeInfo" type="tns:IncomeInfoType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="DocInfoType">
+		<xsd:annotation>
+			<xsd:documentation>
+				Реквизиты документа
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Number" type="tns:string-50"/>
+			<xsd:element name="Date" type="xsd:date"/>
+			<xsd:element name="Issued" type="tns:string-256"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FamilyInfoType">
+		<xsd:annotation>
+			<xsd:documentation>
+                Сведения о составе семьи
+            </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Surname" type="tns:string-256"/>
+			<xsd:element name="FirstName" type="tns:string-256"/>
+			<xsd:element name="MiddleName" type="tns:string-256" minOccurs="0"/>
+			<xsd:element name="Bithday" type="xsd:date"/>
+			<xsd:element name="SNILS" type="tns:string-14"/>
+			<xsd:element name="Relation" type="tns:DataElementType" minOccurs="0"/>
+			<xsd:element name="CheckChildGuard" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="CheckSubsidi" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="BirthDocAct" type="tns:DocInfoType" minOccurs="0"/>
+			<xsd:element name="MarriageDocAct" type="tns:DocInfoType" minOccurs="0"/>
+			<xsd:element name="BirthPlace" type="tns:string-256"/>
+			<xsd:element name="Citizenship" type="tns:DataElementType" minOccurs="0"/>
+			<xsd:element name="AddressInfo" type="tns:AddressInfoType"/>
+			<xsd:element name="IdentityDocInfo" type="tns:PersonIdentityDocInfoType"/>
+			<xsd:element name="CheckIncome" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="IncomeInfo" type="tns:IncomeInfoType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="RelativesInfoType">
+		<xsd:annotation>
+			<xsd:documentation>
+                Сведения о составе семьи 
+            </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="RelativeInfo" type="tns:FamilyInfoType" maxOccurs="20"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="BankInfoType">
+		<xsd:annotation>
+			<xsd:documentation>
+                Данные счета в банке
+            </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="BankName" type="tns:string-256"/>
+			<xsd:element name="BIK" type="tns:string-9"/>
+			<xsd:element name="INN" type="tns:string-10"/>
+			<xsd:element name="KPP" type="tns:string-9" minOccurs="0"/>
+			<xsd:element name="AccountNumber" type="tns:string-20"/>
+			<xsd:element name="CardNumber" type="tns:string-19" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PostInfoType">
+		<xsd:annotation>
+			<xsd:documentation>
+                Данные почтового отделения
+            </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="NumberPost" type="tns:string-256"/>
+			<xsd:element name="SubsidyAddress" type="tns:AddressType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="TransferInfoType">
+		<xsd:annotation>
+			<xsd:documentation>
+                Способ получения социальной поддержки
+            </xsd:documentation>
+		</xsd:annotation>
+		<xsd:choice>
+			<xsd:element name="BankInfo" type="tns:BankInfoType"/>
+			<xsd:element name="PostInfo" type="tns:PostInfoType"/>
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:complexType name="ApplicationInfoType">
+		<xsd:annotation>
+			<xsd:documentation>
+                Способ получения выплат
+            </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Radio" type="tns:DataElementType"/>
+			<xsd:element name="TransferInfo" type="tns:TransferInfoType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FormDataType">
+		<xsd:annotation>
+			<xsd:documentation>
+                Данные формы заявления «Назначение пособия детям 3-7 лет»
+            </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="additionalInfo" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="orderId" type="tns:stringNN-20"/>
+			<xsd:element name="RegionFinal" type="tns:string-256" minOccurs="0"/>
+			<xsd:element name="departmentId" type="tns:string-256" minOccurs="0"/>
+			<xsd:element name="serviceId" type="tns:string-256" minOccurs="0"/>
+			<xsd:element name="currentDate" type="xsd:date"/>
+			<xsd:element name="ApplicantInfo" type="tns:PersonInfoType"/>
+			<xsd:element name="FamilyInfo" type="tns:RelativesInfoType"/>
+			<xsd:element name="SubsidiesInfo" type="tns:ApplicationInfoType"/>
+		</xsd:sequence>
+		<xsd:attribute name="oktmo" type="tns:stringNN-11" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="orderIdType">
+		<xsd:sequence>
+			<xsd:annotation>
+				<xsd:documentation>
+                    Номер заявки в ЛК ЕПГУ
+                </xsd:documentation>
+			</xsd:annotation>
+			<xsd:element name="pguId" type="tns:stringNN-20"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="statusCodeType">
+		<xsd:annotation>
+			<xsd:documentation>
+                Новый статус заявления
+            </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="techCode" type="xsd:byte">
+				<xsd:annotation>
+					<xsd:documentation>
+                        Код статуса ЕПГУ
+                    </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="changeOrderInfoType">
+		<xsd:annotation>
+			<xsd:documentation>
+                Информация для изменения статуса заявления в ЛК ЕПГУ
+            </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="orderId" type="tns:orderIdType"/>
+			<xsd:element name="statusCode" type="tns:statusCodeType"/>
+			<xsd:element name="comment" type="tns:string-2048" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FormDataResponseType">
+		<xsd:annotation>
+			<xsd:documentation>
+                Ответ на подачу заявлени или запроса на отмену заявления или текстового сообщения от заявителя в ведомство
+            </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="changeOrderInfo" type="tns:changeOrderInfoType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="FormData" type="tns:FormDataType"/>
+	<xsd:element name="FormDataResponse" type="tns:FormDataResponseType"/>
+</xsd:schema>

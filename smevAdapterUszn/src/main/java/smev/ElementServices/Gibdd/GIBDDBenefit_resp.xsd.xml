@@ -1,0 +1,22 @@
+<ns:ResponseBenefit489 xmlns:ns="urn://x-artefacts-gibdd-benefit489/data/1.0">
+  <ns:status>ERROR</ns:status>
+  <!--Optional:-->
+  <ns:errorText>string</ns:errorText>
+  <!--Zero or more repetitions:-->
+  <ns:ResponseBenefitData>
+    <ns:UniqueRowNumber>string</ns:UniqueRowNumber>
+    <ns:GUID>string</ns:GUID>
+    <!--Optional:-->
+    <ns:OwnerBirthPlace>string</ns:OwnerBirthPlace>
+    <!--Optional:-->
+    <ns:ManufacturedYear>3</ns:ManufacturedYear>
+    <!--Optional:-->
+    <ns:EnginePowerHorse>1000.00</ns:EnginePowerHorse>
+    <!--Optional:-->
+    <ns:EnginePowerkVt>1000.00</ns:EnginePowerkVt>
+    <!--Optional:-->
+    <ns:Category>string</ns:Category>
+    <!--Optional:-->
+    <ns:RegDocSeriesNumber>string</ns:RegDocSeriesNumber>
+  </ns:ResponseBenefitData>
+</ns:ResponseBenefit489>

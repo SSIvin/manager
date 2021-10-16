@@ -1,0 +1,229 @@
+<ns:response xmlns:ns="urn://egisso-ru/types/registers-response/1.0.1" xmlns:ns1="urn://egisso-ru/types/registers/1.0.1" xmlns:ns2="urn://egisso-ru/types/basic/1.0.7">
+  <!--You have a CHOICE of the next 2 items at this level-->
+  <ns:statementData>
+    <ns:statusDate>2008-09-29</ns:statusDate>
+    <!--Zero or more repetitions:-->
+    <ns:rlirpRecord>
+      <ns:codePresenceStatus>st</ns:codePresenceStatus>
+      <!--Optional:-->
+      <ns:legalStatus>string</ns:legalStatus>
+      <!--Optional:-->
+      <ns:dossierData>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns:externalEvent>
+          <ns:codeEventType>str</ns:codeEventType>
+          <ns:infoProvider>
+            <ns1:name>string</ns1:name>
+            <ns1:inn>stringstri</ns1:inn>
+            <ns1:ogrn>stringstrings</ns1:ogrn>
+            <ns1:codeParticipant>string</ns1:codeParticipant>
+          </ns:infoProvider>
+          <ns:inclusionDate>2014-09-19T03:18:33</ns:inclusionDate>
+          <ns:effectiveDate>2006-08-19+04:00</ns:effectiveDate>
+          <ns:reasonDocument date="2009-05-16" effectiveDate="2003-08-09+04:00" validityEndDate="2012-09-13+04:00" number="string" series="string" codeType="stri" orgName="string"/>
+          <!--1 to 2 repetitions:-->
+          <ns:person>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:physicalPerson snils="stringstrin" lastName="string" firstName="string" middleName="string" gender="Female" citizenshipCode="str" birthDate="2016-02-20+03:00" codeRoleType="strin"/>
+            <ns1:legalPerson codeRoleType="strin" name="string" inn="stringstri" ogrn="stringstrings">
+              <ns1:representative snils="stringstrin" lastName="string" firstName="string" middleName="string" gender="Male" citizenshipCode="str" birthDate="2014-10-27"/>
+            </ns1:legalPerson>
+          </ns:person>
+          <ns:codeEventState>st</ns:codeEventState>
+          <!--Optional:-->
+          <ns:lifecycleRecords>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns:annulRecord>
+              <ns:effectiveDate>2013-06-17</ns:effectiveDate>
+              <ns:reasonDocument date="2005-09-12+04:00" effectiveDate="2006-11-29" validityEndDate="2009-11-03+03:00" number="string" series="string" codeType="stri" orgName="string" name="string"/>
+              <ns:infoProvider>
+                <ns1:name>string</ns1:name>
+                <ns1:inn>stringstri</ns1:inn>
+                <ns1:ogrn>stringstrings</ns1:ogrn>
+                <ns1:codeParticipant>string</ns1:codeParticipant>
+              </ns:infoProvider>
+            </ns:annulRecord>
+            <ns:recoveryRecord>
+              <ns:effectiveDate>2014-06-27+04:00</ns:effectiveDate>
+              <ns:reasonDocument date="2017-08-17" effectiveDate="2012-04-25+04:00" validityEndDate="2000-07-29+04:00" number="string" series="string" codeType="stri" orgName="string" name="string"/>
+              <ns:infoProvider>
+                <ns1:name>string</ns1:name>
+                <ns1:inn>stringstri</ns1:inn>
+                <ns1:ogrn>stringstrings</ns1:ogrn>
+                <ns1:codeParticipant>string</ns1:codeParticipant>
+              </ns:infoProvider>
+            </ns:recoveryRecord>
+          </ns:lifecycleRecords>
+        </ns:externalEvent>
+        <ns:internalEvent>
+          <ns:codeEventType>str</ns:codeEventType>
+          <ns:createDate>2013-08-23T03:50:52</ns:createDate>
+          <ns:effectiveDate>2016-02-07+03:00</ns:effectiveDate>
+          <!--Optional:-->
+          <ns:reasonDocument date="2009-04-10" effectiveDate="2000-08-23" validityEndDate="2003-07-23" number="string" series="string" codeType="stri" orgName="string" name="string"/>
+          <!--Optional:-->
+          <ns:comment>string</ns:comment>
+          <!--1 to 2 repetitions:-->
+          <ns:person>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:physicalPerson snils="stringstrin" lastName="string" firstName="string" middleName="string" gender="Female" citizenshipCode="str" birthDate="2014-12-08" codeRoleType="strin"/>
+            <ns1:legalPerson codeRoleType="strin" name="string" inn="stringstri" ogrn="stringstrings">
+              <ns1:representative snils="stringstrin" lastName="string" firstName="string" middleName="string" gender="Male" citizenshipCode="str" birthDate="2016-10-07+03:00"/>
+            </ns1:legalPerson>
+          </ns:person>
+        </ns:internalEvent>
+      </ns:dossierData>
+    </ns:rlirpRecord>
+    <!--Zero or more repetitions:-->
+    <ns:rlidRecord>
+      <ns:codePresenceStatus>st</ns:codePresenceStatus>
+      <!--Optional:-->
+      <ns:legalStatus>string</ns:legalStatus>
+      <!--Optional:-->
+      <ns:dossierData>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns:externalEvent>
+          <ns:codeEventType>str</ns:codeEventType>
+          <ns:infoProvider>
+            <ns1:name>string</ns1:name>
+            <ns1:inn>stringstri</ns1:inn>
+            <ns1:ogrn>stringstrings</ns1:ogrn>
+            <ns1:codeParticipant>string</ns1:codeParticipant>
+          </ns:infoProvider>
+          <ns:inclusionDate>2002-11-05T11:30:58</ns:inclusionDate>
+          <ns:effectiveDate>2011-11-03</ns:effectiveDate>
+          <ns:reasonDocument date="2008-08-28+04:00" effectiveDate="2008-11-07+03:00" validityEndDate="2019-05-04" number="string" series="string" codeType="stri" orgName="string"/>
+          <!--1 to 2 repetitions:-->
+          <ns:person>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:physicalPerson snils="stringstrin" lastName="string" firstName="string" middleName="string" gender="Female" citizenshipCode="str" birthDate="2017-08-26" codeRoleType="strin"/>
+            <ns1:legalPerson codeRoleType="strin" name="string" inn="stringstri" ogrn="stringstrings">
+              <ns1:representative snils="stringstrin" lastName="string" firstName="string" middleName="string" gender="Male" citizenshipCode="str" birthDate="2013-07-07+04:00"/>
+            </ns1:legalPerson>
+          </ns:person>
+          <ns:codeEventState>st</ns:codeEventState>
+          <!--Optional:-->
+          <ns:lifecycleRecords>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns:annulRecord>
+              <ns:effectiveDate>2001-01-03</ns:effectiveDate>
+              <ns:reasonDocument date="2014-01-10" effectiveDate="2015-07-10" validityEndDate="2008-10-09" number="string" series="string" codeType="stri" orgName="string" name="string"/>
+              <ns:infoProvider>
+                <ns1:name>string</ns1:name>
+                <ns1:inn>stringstri</ns1:inn>
+                <ns1:ogrn>stringstrings</ns1:ogrn>
+                <ns1:codeParticipant>string</ns1:codeParticipant>
+              </ns:infoProvider>
+            </ns:annulRecord>
+            <ns:recoveryRecord>
+              <ns:effectiveDate>2007-04-22+04:00</ns:effectiveDate>
+              <ns:reasonDocument date="2011-05-05" effectiveDate="2006-11-30+03:00" validityEndDate="2010-01-27" number="string" series="string" codeType="stri" orgName="string" name="string"/>
+              <ns:infoProvider>
+                <ns1:name>string</ns1:name>
+                <ns1:inn>stringstri</ns1:inn>
+                <ns1:ogrn>stringstrings</ns1:ogrn>
+                <ns1:codeParticipant>string</ns1:codeParticipant>
+              </ns:infoProvider>
+            </ns:recoveryRecord>
+          </ns:lifecycleRecords>
+        </ns:externalEvent>
+        <ns:internalEvent>
+          <ns:codeEventType>str</ns:codeEventType>
+          <ns:createDate>2003-03-06T14:43:28</ns:createDate>
+          <ns:effectiveDate>2016-02-27</ns:effectiveDate>
+          <!--Optional:-->
+          <ns:reasonDocument date="2019-07-04" effectiveDate="2008-06-03" validityEndDate="2005-05-11+04:00" number="string" series="string" codeType="stri" orgName="string" name="string"/>
+          <!--Optional:-->
+          <ns:comment>string</ns:comment>
+          <!--1 to 2 repetitions:-->
+          <ns:person>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:physicalPerson snils="stringstrin" lastName="string" firstName="string" middleName="string" gender="Male" citizenshipCode="str" birthDate="2011-01-01+03:00" codeRoleType="strin"/>
+            <ns1:legalPerson codeRoleType="strin" name="string" inn="stringstri" ogrn="stringstrings">
+              <ns1:representative snils="stringstrin" lastName="string" firstName="string" middleName="string" gender="Female" citizenshipCode="str" birthDate="2008-07-29"/>
+            </ns1:legalPerson>
+          </ns:person>
+        </ns:internalEvent>
+      </ns:dossierData>
+    </ns:rlidRecord>
+    <!--Zero or more repetitions:-->
+    <ns:rzpRecord>
+      <ns:codePresenceStatus>st</ns:codePresenceStatus>
+      <!--Optional:-->
+      <ns:legalStatus>string</ns:legalStatus>
+      <!--Optional:-->
+      <ns:dossierData>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns:externalEvent>
+          <ns:codeEventType>str</ns:codeEventType>
+          <ns:infoProvider>
+            <ns1:name>string</ns1:name>
+            <ns1:inn>stringstri</ns1:inn>
+            <ns1:ogrn>stringstrings</ns1:ogrn>
+            <ns1:codeParticipant>string</ns1:codeParticipant>
+          </ns:infoProvider>
+          <ns:inclusionDate>2003-02-11T10:09:22+03:00</ns:inclusionDate>
+          <ns:effectiveDate>2015-12-11</ns:effectiveDate>
+          <ns:reasonDocument date="2014-08-11+04:00" effectiveDate="2017-09-10+03:00" validityEndDate="2017-02-08" number="string" series="string" codeType="stri" orgName="string"/>
+          <!--1 to 2 repetitions:-->
+          <ns:person>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:physicalPerson snils="stringstrin" lastName="string" firstName="string" middleName="string" gender="Female" citizenshipCode="str" birthDate="2009-10-26+03:00" codeRoleType="strin"/>
+            <ns1:legalPerson codeRoleType="strin" name="string" inn="stringstri" ogrn="stringstrings">
+              <ns1:representative snils="stringstrin" lastName="string" firstName="string" middleName="string" gender="Female" citizenshipCode="str" birthDate="2003-05-15+04:00"/>
+            </ns1:legalPerson>
+          </ns:person>
+          <ns:codeEventState>st</ns:codeEventState>
+          <!--Optional:-->
+          <ns:lifecycleRecords>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns:annulRecord>
+              <ns:effectiveDate>2006-12-04+03:00</ns:effectiveDate>
+              <ns:reasonDocument date="2017-01-03" effectiveDate="2015-08-31+03:00" validityEndDate="2010-06-25+04:00" number="string" series="string" codeType="stri" orgName="string" name="string"/>
+              <ns:infoProvider>
+                <ns1:name>string</ns1:name>
+                <ns1:inn>stringstri</ns1:inn>
+                <ns1:ogrn>stringstrings</ns1:ogrn>
+                <ns1:codeParticipant>string</ns1:codeParticipant>
+              </ns:infoProvider>
+            </ns:annulRecord>
+            <ns:recoveryRecord>
+              <ns:effectiveDate>2008-05-12+04:00</ns:effectiveDate>
+              <ns:reasonDocument date="2015-08-29+03:00" effectiveDate="2006-12-27" validityEndDate="2002-02-01" number="string" series="string" codeType="stri" orgName="string" name="string"/>
+              <ns:infoProvider>
+                <ns1:name>string</ns1:name>
+                <ns1:inn>stringstri</ns1:inn>
+                <ns1:ogrn>stringstrings</ns1:ogrn>
+                <ns1:codeParticipant>string</ns1:codeParticipant>
+              </ns:infoProvider>
+            </ns:recoveryRecord>
+          </ns:lifecycleRecords>
+        </ns:externalEvent>
+        <ns:internalEvent>
+          <ns:codeEventType>str</ns:codeEventType>
+          <ns:createDate>2000-01-03T08:51:31</ns:createDate>
+          <ns:effectiveDate>2005-04-26+04:00</ns:effectiveDate>
+          <!--Optional:-->
+          <ns:reasonDocument date="2015-12-11" effectiveDate="2016-02-05+03:00" validityEndDate="2018-01-13+03:00" number="string" series="string" codeType="stri" orgName="string" name="string"/>
+          <!--Optional:-->
+          <ns:comment>string</ns:comment>
+          <!--1 to 2 repetitions:-->
+          <ns:person>
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <ns1:physicalPerson snils="stringstrin" lastName="string" firstName="string" middleName="string" gender="Male" citizenshipCode="str" birthDate="2017-10-29" codeRoleType="strin"/>
+            <ns1:legalPerson codeRoleType="strin" name="string" inn="stringstri" ogrn="stringstrings">
+              <ns1:representative snils="stringstrin" lastName="string" firstName="string" middleName="string" gender="Female" citizenshipCode="str" birthDate="2011-09-27"/>
+            </ns1:legalPerson>
+          </ns:person>
+        </ns:internalEvent>
+      </ns:dossierData>
+    </ns:rzpRecord>
+  </ns:statementData>
+  <ns:error>
+    <!--Optional:-->
+    <ns2:code>string</ns2:code>
+    <ns2:message>string</ns2:message>
+    <!--Optional:-->
+    <ns2:time>2008-03-14T14:09:39+03:00</ns2:time>
+  </ns:error>
+</ns:response>

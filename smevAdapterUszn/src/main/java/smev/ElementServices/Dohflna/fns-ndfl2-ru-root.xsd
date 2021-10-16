@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 sp2 (http://www.altova.com) by VI (GNIVC FNS RF) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn://x-artefacts-fns-ndfl2/root/260-10/4.1.1" xmlns:fnst="urn://x-artefacts-fns-ndfl2/types/4.1.1" targetNamespace="urn://x-artefacts-fns-ndfl2/root/260-10/4.1.1" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="urn://x-artefacts-fns-ndfl2/types/4.1.1" schemaLocation="fns-ndfl2-types.xsd"/>
+	<xs:element name="NDFL2Request">
+		<xs:annotation>
+			<xs:documentation>Запрос в Федеральную налоговую службу о представлении сведений по справкам о доходах физических лиц (по форме 2-НДФЛ)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice>
+				<xs:element name="СвНА">
+					<xs:annotation>
+						<xs:documentation>Сведения о налоговом агенте </xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:choice>
+							<xs:element name="СвНАЮЛ">
+								<xs:annotation>
+									<xs:documentation>Сведения о налоговом агенте - организации</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:attribute name="НаимОрг" type="fnst:string-1000" use="required">
+										<xs:annotation>
+											<xs:documentation>Наименование организации</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="ИННЮЛ" type="fnst:LegalPersonINNType" use="required">
+										<xs:annotation>
+											<xs:documentation>ИНН организации</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="КПП" type="fnst:KPPType" use="required">
+										<xs:annotation>
+											<xs:documentation>КПП</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="СвНАФЛ">
+								<xs:annotation>
+									<xs:documentation>Сведения о налоговом агенте - физическом лице</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ФИО" type="fnst:PhysicalPersonNameType">
+											<xs:annotation>
+												<xs:documentation>Фамилия, имя, отчество физического лица</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="ИННФЛ" type="fnst:PhysicalPersonINNType" use="required">
+										<xs:annotation>
+											<xs:documentation>ИНН физического лица</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="СНИЛС" type="fnst:SNILSType" use="optional">
+										<xs:annotation>
+											<xs:documentation>Страховой номер индивидуального лицевого счета</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:choice>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="СвФЛ">
+					<xs:annotation>
+						<xs:documentation>Сведения о физическом лице</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ФИОФЛ" type="fnst:PhysicalPersonNameType">
+								<xs:annotation>
+									<xs:documentation>Фамилия, имя, отчество физического лица</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="УдЛичн" type="fnst:IdentityDocumentShortType">
+								<xs:annotation>
+									<xs:documentation>Сведения о документе, удостоверяющем личность физического лица</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="ДатаРожд" type="xs:date" use="required">
+							<xs:annotation>
+								<xs:documentation>Дата рождения</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ИННФЛ" type="fnst:PhysicalPersonINNType" use="optional">
+							<xs:annotation>
+								<xs:documentation>ИНН физического лица</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="СНИЛС" type="fnst:SNILSType" use="optional">
+							<xs:annotation>
+								<xs:documentation>Страховой номер индивидуального лицевого счета</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="НомЗаявФЛ" type="fnst:string-25" use="required">
+							<xs:annotation>
+								<xs:documentation>Номер заявления физического лица</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ДатаЗаявФЛ" type="xs:date" use="required">
+							<xs:annotation>
+								<xs:documentation>Дата заявления физического лица</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+			<xs:attribute name="Id" use="required">
+				<xs:annotation>
+					<xs:documentation>Признак подписания запроса ЭП должностного лица (ЭП-СП)</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="fnst:string-25">
+						<xs:enumeration value="PERSONAL_SIGNATURE"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="ИдЗапрос" type="fnst:IDRequestType" use="optional">
+				<xs:annotation>
+					<xs:documentation>Идентификатор запроса, сформированный запрашивающей стороной</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="ТипЗапросП" use="required">
+				<xs:annotation>
+					<xs:documentation>Тип запроса</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="fnst:string-1">
+						<xs:enumeration value="1"/>
+						<xs:enumeration value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="ОтчетГод" type="xs:gYear" use="required">
+				<xs:annotation>
+					<xs:documentation>Отчетный налоговый период</xs:documentation>
+					<xs:documentation>
+Год в формате ГГГГ</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="КодУслуги" type="fnst:digits-11" use="optional">
+				<xs:annotation>
+					<xs:documentation>Код (идентификатор) государственной услуги</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NDFL2Response">
+		<xs:annotation>
+			<xs:documentation>Ответ Федеральной налоговой службы на запрос о представлении сведений по справкам о доходах физических лиц (по форме 2-НДФЛ)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice>
+				<xs:element name="КолДокНА">
+					<xs:annotation>
+						<xs:documentation>Сведения о количестве представленных налоговым агентом справок о доходах физических лиц по форме 2-НДФЛ</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="ОтчетГод" type="xs:gYear" use="required">
+							<xs:annotation>
+								<xs:documentation>Отчетный налоговый период</xs:documentation>
+								<xs:documentation>
+Год в формате ГГГГ</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="КолДок" type="fnst:number-9" use="required">
+							<xs:annotation>
+								<xs:documentation>Количество справок, представленных налоговым агентом за запрашиваемый налоговый период</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ДохФЛ">
+					<xs:annotation>
+						<xs:documentation>Сведения о доходах физического лица по справкам 2-НДФЛ</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ПолучДох">
+								<xs:annotation>
+									<xs:documentation>Данные о физическом лице - получателе дохода</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ФИО" type="fnst:PhysicalPersonNameType">
+											<xs:annotation>
+												<xs:documentation>Фамилия, имя, отчество</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="УдЛичнФЛ" type="fnst:IdentityDocumentShortType">
+											<xs:annotation>
+												<xs:documentation>Сведения о документе, удостоверяющем личность </xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="ИННФЛ" type="fnst:PhysicalPersonINNType" use="optional">
+										<xs:annotation>
+											<xs:documentation>ИНН  физического лица</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="ДатаРожд" type="xs:date" use="required">
+										<xs:annotation>
+											<xs:documentation>Дата рождения</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ДохФЛ_НА" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Сведения о доходах физического лица по справкам 2-НДФЛ по налоговому агенту</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="СвНА">
+											<xs:annotation>
+												<xs:documentation>Сведения о налоговом агенте </xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:choice>
+													<xs:element name="СвНАЮЛ">
+														<xs:annotation>
+															<xs:documentation>Сведения о налоговом агенте - организации</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:attribute name="НаимОрг" type="fnst:string-1000" use="required">
+																<xs:annotation>
+																	<xs:documentation>Наименование организации</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+															<xs:attribute name="ИННЮЛ" type="fnst:LegalPersonINNType" use="required">
+																<xs:annotation>
+																	<xs:documentation>ИНН организации</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+															<xs:attribute name="КПП" type="fnst:KPPType" use="required">
+																<xs:annotation>
+																	<xs:documentation>КПП</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="СвНАФЛ">
+														<xs:annotation>
+															<xs:documentation>Сведения о налоговом агенте - физическом лице</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="ФИО" type="fnst:PhysicalPersonNameType">
+																	<xs:annotation>
+																		<xs:documentation>Фамилия, имя, отчество физического лица</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+															</xs:sequence>
+															<xs:attribute name="ИННФЛ" type="fnst:PhysicalPersonINNType" use="required">
+																<xs:annotation>
+																	<xs:documentation>ИНН физического лица</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+															<xs:attribute name="СНИЛС" type="fnst:SNILSType" use="optional">
+																<xs:annotation>
+																	<xs:documentation>Страховой номер индивидуального лицевого счета</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+												</xs:choice>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="СведДох" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>Сведения о доходах физического лица</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="ДохВыч">
+														<xs:annotation>
+															<xs:documentation>Доходы, облагаемые по ставке</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="СвСумДох" maxOccurs="unbounded">
+																	<xs:annotation>
+																		<xs:documentation>Сведения о суммах дохода по месяцам и кодам дохода</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="СвСумВыч" type="fnst:СведВычТип" minOccurs="0" maxOccurs="unbounded">
+																				<xs:annotation>
+																					<xs:documentation>Сведения о суммах вычета</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																		</xs:sequence>
+																		<xs:attribute name="Месяц" use="required">
+																			<xs:annotation>
+																				<xs:documentation>Месяц</xs:documentation>
+																			</xs:annotation>
+																			<xs:simpleType>
+																				<xs:restriction base="fnst:digits-2">
+																					<xs:enumeration value="01"/>
+																					<xs:enumeration value="02"/>
+																					<xs:enumeration value="03"/>
+																					<xs:enumeration value="04"/>
+																					<xs:enumeration value="05"/>
+																					<xs:enumeration value="06"/>
+																					<xs:enumeration value="07"/>
+																					<xs:enumeration value="08"/>
+																					<xs:enumeration value="09"/>
+																					<xs:enumeration value="10"/>
+																					<xs:enumeration value="11"/>
+																					<xs:enumeration value="12"/>
+																				</xs:restriction>
+																			</xs:simpleType>
+																		</xs:attribute>
+																		<xs:attribute name="КодДоход" type="fnst:digits-4" use="required">
+																			<xs:annotation>
+																				<xs:documentation>Код дохода</xs:documentation>
+																			</xs:annotation>
+																		</xs:attribute>
+																		<xs:attribute name="СумДоход" type="fnst:number-14_2" use="required">
+																			<xs:annotation>
+																				<xs:documentation>Сумма дохода</xs:documentation>
+																			</xs:annotation>
+																		</xs:attribute>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="НалВычССИ" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Стандартные, социальные и имущественные налоговые вычеты</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="ПредВычССИ" type="fnst:СведВычТип" maxOccurs="unbounded">
+																	<xs:annotation>
+																		<xs:documentation>Суммы предоставленных налогоплательщику налоговых вычетов</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="УведИмущВыч" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Сведения об Уведомлении, подтверждающем право на имущественный налоговый вычет</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:attribute name="НомерУвед" type="fnst:string-20" use="required">
+																			<xs:annotation>
+																				<xs:documentation>Номер уведомления, подтверждающего право на имущественный налоговый вычет</xs:documentation>
+																			</xs:annotation>
+																		</xs:attribute>
+																		<xs:attribute name="ДатаУвед" type="xs:date" use="required">
+																			<xs:annotation>
+																				<xs:documentation>Дата выдачи уведомления</xs:documentation>
+																			</xs:annotation>
+																		</xs:attribute>
+																		<xs:attribute name="ИФНСУвед" type="fnst:SONOType" use="required">
+																			<xs:annotation>
+																				<xs:documentation>Код налогового органа, выдавшего уведомление</xs:documentation>
+																			</xs:annotation>
+																		</xs:attribute>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="СГДНалПер">
+														<xs:annotation>
+															<xs:documentation>Общие суммы дохода и налога по итогам налогового периода</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:attribute name="СумДохОбщ" type="fnst:number-14_2" use="required">
+																<xs:annotation>
+																	<xs:documentation>Общая сумма дохода</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+															<xs:attribute name="НалБаза" type="fnst:number-14_2" use="required">
+																<xs:annotation>
+																	<xs:documentation>Налоговая база</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+															<xs:attribute name="НалИсчисл" type="fnst:number-12" use="required">
+																<xs:annotation>
+																	<xs:documentation>Сумма налога исчисленная</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+															<xs:attribute name="НалУдерж" type="fnst:number-12" use="optional">
+																<xs:annotation>
+																	<xs:documentation>Сумма налога удержанная</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+															<xs:attribute name="НалПеречисл" type="fnst:number-12" use="optional">
+																<xs:annotation>
+																	<xs:documentation>Сумма налога перечисленная</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+															<xs:attribute name="НалУдержЛиш" type="fnst:number-12" use="optional">
+																<xs:annotation>
+																	<xs:documentation>Сумма налога, излишне удержанная налоговым агентом</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+															<xs:attribute name="НалНеУдерж" type="fnst:number-12" use="required">
+																<xs:annotation>
+																	<xs:documentation>Сумма налога, не удержанная налоговым агентом</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="Ставка" type="fnst:number-2" use="required">
+													<xs:annotation>
+														<xs:documentation>Ставка налога</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="ОтчетГод" type="xs:gYear" use="required">
+							<xs:annotation>
+								<xs:documentation>Отчетный налоговый период</xs:documentation>
+								<xs:documentation>
+Год в формате ГГГГ</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="КодОбраб">
+					<xs:annotation>
+						<xs:documentation>Код обработки запроса</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="fnst:digits-2"/>
+					</xs:simpleType>
+				</xs:element>
+			</xs:choice>
+			<xs:attribute name="ИдЗапрос" type="fnst:IDRequestType" use="optional">
+				<xs:annotation>
+					<xs:documentation>Идентификатор запроса, сформированный запрашивающей стороной</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2017 rel. 3 sp1 (x64) (http://www.altova.com) by lic@gnivc.ru (AO GNIVC) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn://x-artefacts-zags-rogdinf/root/112-51/4.0.1" xmlns:fnst="urn://x-artefacts-zags-rogdinf/types/4.0.1" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:usch="http://www.unisoftware.ru/schematron-extensions" xmlns:ns1="urn://x-artefacts-zags-rogdinf/root/112-51/4.0.1" targetNamespace="urn://x-artefacts-zags-rogdinf/root/112-51/4.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="urn://x-artefacts-zags-rogdinf/types/4.0.1" schemaLocation="zags-rogdinf-types.xsd"/>
+	<xs:element name="ROGDINFRequest">
+		<xs:annotation>
+			<xs:documentation>Запрос на предоставление сведений об актах гражданского состояния о рождении, содержащихся в Едином государственном реестре записей актов гражданского состояния</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="СведОсн">
+					<xs:annotation>
+						<xs:documentation>Сведения о нормативно-правовых основаниях запрашивающей стороны для получения сведений из ЕГР ЗАГС об актах гражданского состояния о рождении</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:choice>
+							<xs:element name="СведДокОсн" type="fnst:string-500">
+								<xs:annotation>
+									<xs:documentation>Сведения об организационно-распорядительном документе, подтверждающем основания для запроса сведений из ЕГР ЗАГС</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ПрСведДокОсн">
+								<xs:annotation>
+									<xs:documentation>Признак отсутствия сведений об организационно-распорядительном документе, подтверждающем основания для запроса сведений из ЕГР ЗАГС</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="fnst:string-1">
+										<xs:enumeration value="1"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:choice>
+						<xs:attribute name="КодНормОсн" type="fnst:string-2" use="required">
+							<xs:annotation>
+								<xs:documentation>Код нормативно-правового основания для получения сведений из ЕГР ЗАГС по справочнику СНПОСН</xs:documentation>
+								<xs:documentation>Принимает значение по справочнику нормативно-правового основания для получения сведений из ЕГР ЗАГС (СНПОСН)</xs:documentation>
+								<xs:appinfo source="urn://x-artefacts-smev-gov-ru/link">urn://x-artefacts-smev-gov-ru/link/esnsi2.0</xs:appinfo>
+								<xs:appinfo source="urn://x-artefacts-smev-gov-ru/name">СНПОСН</xs:appinfo>
+								<xs:appinfo source="urn://x-artefacts-smev-gov-ru/field">Код основания для запроса сведений</xs:appinfo>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="СведЗапрос" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Сведения, содержащиеся в запросе</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="СведАГС" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Сведения о государственной регистрации АГС о рождении, в отношении которого сформирован запрос</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:choice>
+											<xs:element name="ДатаЗаписДок" type="fnst:ДатаДокТип">
+												<xs:annotation>
+													<xs:documentation>Дата регистрации записи по представленным документам (неполная дата)</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+											<xs:element name="ДатаЗапис" type="xs:date">
+												<xs:annotation>
+													<xs:documentation>Дата составления записи акта гражданского состояния (календарная дата)</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+										</xs:choice>
+										<xs:element name="ОрганЗАГС" type="fnst:ОрганЗАГСНТип">
+											<xs:annotation>
+												<xs:documentation>Сведения об органе ЗАГС, которым произведена государственная регистрация акта гражданского состояния</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="НомерЗапис" type="fnst:string-22" use="required">
+										<xs:annotation>
+											<xs:documentation>Номер записи акта гражданского состояния</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="СведФЛ">
+								<xs:annotation>
+									<xs:documentation>Сведения о физическом лице, в отношении которого сформирован запрос</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ФИО" type="fnst:ФИОПрТип">
+											<xs:annotation>
+												<xs:documentation>Фамилия, имя, отчество</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:choice>
+											<xs:element name="ПрДатаРожд">
+												<xs:annotation>
+													<xs:documentation>Признак отсутствия сведений о дате рождения</xs:documentation>
+												</xs:annotation>
+												<xs:simpleType>
+													<xs:restriction base="fnst:string-1">
+														<xs:enumeration value="1"/>
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:element>
+											<xs:element name="ДатаРождКаленд" type="xs:date">
+												<xs:annotation>
+													<xs:documentation>Дата рождения (календарная дата)</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+											<xs:element name="ДатаРождДок" type="fnst:ДатаДокТип">
+												<xs:annotation>
+													<xs:documentation>Дата рождения по представленным документам (неполная дата)</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+										</xs:choice>
+										<xs:element name="УдЛичнФЛ" type="fnst:УдЛичнФЛСНТип" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Сведения о документе, удостоверяющем личность</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="ТипУчАЗ">
+										<xs:annotation>
+											<xs:documentation>Тип участника актовой записи</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="fnst:string-1">
+												<xs:enumeration value="1"/>
+												<xs:enumeration value="2"/>
+												<xs:enumeration value="3"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="СНИЛС" type="fnst:СНИЛСТип" use="optional">
+										<xs:annotation>
+											<xs:documentation>СНИЛС</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:choice>
+								<xs:element name="ПрРегионРегАГС">
+									<xs:annotation>
+										<xs:documentation>Признак отсутствия сведений о субъекте Российской Федерации, где зарегистрирован акт гражданского состояния</xs:documentation>
+									</xs:annotation>
+									<xs:simpleType>
+										<xs:restriction base="fnst:string-1">
+											<xs:enumeration value="1"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:element>
+								<xs:element name="РегионРегАГС" type="fnst:ССРФТип">
+									<xs:annotation>
+										<xs:documentation>Субъект Российской Федерации, где зарегистрирован акт гражданского состояния</xs:documentation>
+										<xs:appinfo source="urn://x-artefacts-smev-gov-ru/link">urn://x-artefacts-smev-gov-ru/link/esnsi2.0</xs:appinfo>
+										<xs:appinfo source="urn://x-artefacts-smev-gov-ru/name">ССРФ</xs:appinfo>
+										<xs:appinfo source="urn://x-artefacts-smev-gov-ru/field">Код субъекта Российской Федерации</xs:appinfo>
+									</xs:annotation>
+								</xs:element>
+							</xs:choice>
+						</xs:sequence>
+						<xs:attribute name="ИдДок" type="fnst:string-36" use="required">
+							<xs:annotation>
+								<xs:documentation>Идентификатор документа</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="ИдЗапрос" type="fnst:ИдЗапросТип" use="required">
+				<xs:annotation>
+					<xs:documentation>Идентификатор запроса, сформированный запрашивающей стороной</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="КолДок" type="fnst:number-2" use="required">
+				<xs:annotation>
+					<xs:documentation>Количество документов в представленном файле</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="ТипАГС" use="required">
+				<xs:simpleType>
+					<xs:restriction base="fnst:string-2">
+						<xs:enumeration value="01"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ROGDINFResponse">
+		<xs:annotation>
+			<xs:documentation>Ответ на запрос, сформированный участником взаимодействия СМЭВ на предоставление сведений об актах гражданского состояния о рождении, содержащихся в Едином государственном реестре записей актов гражданского состояния</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="СведОтветАГС" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Сведения ответа на запрос о государственной регистрации АГС о рождении</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="СведРегРожд" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Сведения о государственной регистрации рождения</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:choice>
+											<xs:element name="ДатаЗаписДок" type="fnst:ДатаДокТип">
+												<xs:annotation>
+													<xs:documentation>Дата составления актовой  записи акта о рождении по представленным документам (неполная дата)</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+											<xs:element name="ДатаЗапис" type="xs:date">
+												<xs:annotation>
+													<xs:documentation>Дата составления актовой  записи о рождении</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+										</xs:choice>
+										<xs:element name="ОрганЗАГС" type="fnst:ОрганЗАГСТип">
+											<xs:annotation>
+												<xs:documentation>Сведения об органе ЗАГС, которым произведена государственная регистрация акта гражданского состояния </xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="СвидетРожд" type="fnst:СведСвидетТип" minOccurs="0" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>Сведения о выданном Свидетельстве о рождении</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="ПрдСведРег">
+											<xs:annotation>
+												<xs:documentation>Передаваемые сведения о государственной регистрации рождения</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:choice>
+														<xs:element name="ПрСчетМатер">
+															<xs:annotation>
+																<xs:documentation>Признак отсутствия сведений о том, которым по счету ребенок был рожден у матери</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="fnst:string-1">
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="СчетМатер" type="fnst:number-2">
+															<xs:annotation>
+																<xs:documentation>Которым по счету ребенок был рожден у матери</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+													</xs:choice>
+													<xs:element name="СведРоды" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Сведения о родах, в результате которых родился ребенок</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="ЧислоРодДетей" type="fnst:number-2">
+																	<xs:annotation>
+																		<xs:documentation>Число родившихся детей при родах</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:choice>
+																	<xs:element name="ПрСчет">
+																		<xs:annotation>
+																			<xs:documentation>Признак отсутствия сведений о том, которым по счету был рожден ребенок </xs:documentation>
+																		</xs:annotation>
+																		<xs:simpleType>
+																			<xs:restriction base="fnst:string-1">
+																				<xs:enumeration value="1"/>
+																			</xs:restriction>
+																		</xs:simpleType>
+																	</xs:element>
+																	<xs:element name="Счет" type="fnst:number-2">
+																		<xs:annotation>
+																			<xs:documentation>Которым по счету был рожден ребенок</xs:documentation>
+																		</xs:annotation>
+																	</xs:element>
+																</xs:choice>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="СведРодившемся">
+														<xs:annotation>
+															<xs:documentation>Сведения о родившемся</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:choice>
+																	<xs:element name="ПрЖивМертв">
+																		<xs:annotation>
+																			<xs:documentation>Признак отсутствия сведений о рождении ребенка живым (мертвым)</xs:documentation>
+																		</xs:annotation>
+																		<xs:simpleType>
+																			<xs:restriction base="fnst:string-1">
+																				<xs:enumeration value="1"/>
+																			</xs:restriction>
+																		</xs:simpleType>
+																	</xs:element>
+																	<xs:element name="ЖивМертв">
+																		<xs:annotation>
+																			<xs:documentation>Живорожденный, мертворожденный</xs:documentation>
+																		</xs:annotation>
+																		<xs:simpleType>
+																			<xs:restriction base="fnst:string-1">
+																				<xs:enumeration value="0"/>
+																				<xs:enumeration value="1"/>
+																			</xs:restriction>
+																		</xs:simpleType>
+																	</xs:element>
+																</xs:choice>
+																<xs:choice>
+																	<xs:element name="ПрПол">
+																		<xs:annotation>
+																			<xs:documentation>Признак отсутствия сведений о половой принадлежности ребенка</xs:documentation>
+																		</xs:annotation>
+																		<xs:simpleType>
+																			<xs:restriction base="fnst:string-1">
+																				<xs:enumeration value="1"/>
+																			</xs:restriction>
+																		</xs:simpleType>
+																	</xs:element>
+																	<xs:element name="Пол">
+																		<xs:annotation>
+																			<xs:documentation>Пол</xs:documentation>
+																		</xs:annotation>
+																		<xs:simpleType>
+																			<xs:restriction base="fnst:string-1">
+																				<xs:enumeration value="1"/>
+																				<xs:enumeration value="2"/>
+																			</xs:restriction>
+																		</xs:simpleType>
+																	</xs:element>
+																</xs:choice>
+																<xs:element name="ФИОРожд" type="fnst:ФИОПрТип">
+																	<xs:annotation>
+																		<xs:documentation>Фамилия, имя, отчество рожденного ребенка</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:choice>
+																	<xs:element name="ПрДатаРожд">
+																		<xs:annotation>
+																			<xs:documentation>Признак отсутствия сведений о дате рождения ребенка</xs:documentation>
+																		</xs:annotation>
+																		<xs:simpleType>
+																			<xs:restriction base="fnst:string-1">
+																				<xs:enumeration value="1"/>
+																			</xs:restriction>
+																		</xs:simpleType>
+																	</xs:element>
+																	<xs:element name="ДатаРождКаленд" type="xs:date">
+																		<xs:annotation>
+																			<xs:documentation>Дата рождения (календарная дата)</xs:documentation>
+																		</xs:annotation>
+																	</xs:element>
+																	<xs:element name="ДатаРождДок" type="fnst:ДатаДокТип">
+																		<xs:annotation>
+																			<xs:documentation>Дата рождения по представленным документам (неполная дата)</xs:documentation>
+																		</xs:annotation>
+																	</xs:element>
+																</xs:choice>
+																<xs:choice>
+																	<xs:element name="ПрМестоРожден">
+																		<xs:annotation>
+																			<xs:documentation>Признак отсутствия сведений о месте рождения</xs:documentation>
+																		</xs:annotation>
+																		<xs:simpleType>
+																			<xs:restriction base="fnst:string-1">
+																				<xs:enumeration value="1"/>
+																			</xs:restriction>
+																		</xs:simpleType>
+																	</xs:element>
+																	<xs:element name="МестоРожден" type="fnst:МестоТип">
+																		<xs:annotation>
+																			<xs:documentation>Место рождения</xs:documentation>
+																		</xs:annotation>
+																	</xs:element>
+																</xs:choice>
+															</xs:sequence>
+															<xs:attribute name="СНИЛС" type="fnst:СНИЛСТип" use="optional">
+																<xs:annotation>
+																	<xs:documentation>СНИЛС</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+													<xs:choice>
+														<xs:element name="ПрМать">
+															<xs:annotation>
+																<xs:documentation>Признак отсутствия сведений о матери</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="fnst:string-1">
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="СведМать" type="fnst:СведРодитТип">
+															<xs:annotation>
+																<xs:documentation>Сведения о матери</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+													</xs:choice>
+													<xs:choice>
+														<xs:element name="ПрОтец">
+															<xs:annotation>
+																<xs:documentation>Признак отсутствия сведений об отце</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="fnst:string-1">
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="СведОтец" type="fnst:СведРодитТип">
+															<xs:annotation>
+																<xs:documentation>Сведения об отце</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+													</xs:choice>
+													<xs:choice>
+														<xs:element name="ПрСведДокОснОтец">
+															<xs:annotation>
+																<xs:documentation>Признак отсутствия сведений о документе, на основании которого указаны сведения об отце</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="fnst:string-1">
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="СведДокОснОтец" type="fnst:СведДокОснТип">
+															<xs:annotation>
+																<xs:documentation>Сведения о документе, на основании которого указаны сведения об отце</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+													</xs:choice>
+													<xs:choice>
+														<xs:element name="ПрСведДокРод">
+															<xs:annotation>
+																<xs:documentation>Признак отсутствия сведений о документе, подтверждающем факт рождения ребенка</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="fnst:string-1">
+																	<xs:enumeration value="1"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="СведДокРод" type="fnst:СведДокТип">
+															<xs:annotation>
+																<xs:documentation>Сведения о документе, подтверждающем факт рождения ребенка</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+													</xs:choice>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="СВедЕГРРазд2" type="fnst:СведЕГРРазд2Тип" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Сведения о внесении в ЕГР ЗАГС сведений о документе компетентного органа иностранного государства (Раздел 2)</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="РазделЕГР" use="required">
+										<xs:annotation>
+											<xs:documentation>Раздел ЕГР ЗАГС, в котором содержатся сведения о регистрации акта гражданского состояния</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="fnst:string-1">
+												<xs:enumeration value="1"/>
+												<xs:enumeration value="2"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="НомерЗаписЕГР" type="fnst:string-21" use="required">
+										<xs:annotation>
+											<xs:documentation>Номер актовой записи о рождении, содержащийся в ЕГР ЗАГС</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="НомАГССвид" type="fnst:string-10">
+										<xs:annotation>
+											<xs:documentation>Номер, указанный в свидетельстве о рождении</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="НомерВерс" type="fnst:string-1_3" use="required">
+										<xs:annotation>
+											<xs:documentation>Номер версии записи</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="ДатаВерс" type="xs:date" use="required">
+										<xs:annotation>
+											<xs:documentation>Дата версии записи</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="КодСостСтат" type="fnst:string-4" use="required">
+										<xs:annotation>
+											<xs:documentation>Код состояния и статуса записи акта о рождении по справочнику СОСТАГС</xs:documentation>
+											<xs:documentation>Принимает значение кода по Справочнику состояния и статуса записи акта гражданского состояния (СОСТАГС)</xs:documentation>
+											<xs:appinfo source="urn://x-artefacts-smev-gov-ru/link">urn://x-artefacts-smev-gov-ru/link/esnsi2.0</xs:appinfo>
+											<xs:appinfo source="urn://x-artefacts-smev-gov-ru/name">СОСТАГС</xs:appinfo>
+											<xs:appinfo source="urn://x-artefacts-smev-gov-ru/field">Код состояния и статуса АГС</xs:appinfo>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="ИдДок" type="fnst:string-36" use="required">
+							<xs:annotation>
+								<xs:documentation>Идентификатор документа</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="РезОбраб" use="required">
+							<xs:annotation>
+								<xs:documentation>Результат обработки поступившего запроса</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="fnst:string-1">
+									<xs:enumeration value="1"/>
+									<xs:enumeration value="2"/>
+									<xs:enumeration value="3"/>
+									<xs:enumeration value="4"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="ИдЗапрос" type="fnst:ИдЗапросТип" use="required">
+				<xs:annotation>
+					<xs:documentation>Идентификатор запроса, сформированный запрашивающей стороной</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="ДатаСвед" type="xs:date" use="required">
+				<xs:annotation>
+					<xs:documentation>Дата, на которую сформированы сведения по поступившему запросу</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="КолДок" type="fnst:number-2" use="required">
+				<xs:annotation>
+					<xs:documentation>Количество документов в представленном файле запроса</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="ТипАГСЗапрос" use="required">
+				<xs:annotation>
+					<xs:documentation>Тип акта гражданского состояния, в отношении которого сформирован запрос</xs:documentation>
+					<xs:documentation>Принимает значения в соответствии со справочником типов актов гражданского состояния (СТАГС)</xs:documentation>
+					<xs:appinfo source="urn://x-artefacts-smev-gov-ru/link">urn://x-artefacts-smev-gov-ru/link/esnsi2.0</xs:appinfo>
+					<xs:appinfo source="urn://x-artefacts-smev-gov-ru/name">СТАГС</xs:appinfo>
+					<xs:appinfo source="urn://x-artefacts-smev-gov-ru/field">Код типа АГС</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="fnst:string-2">
+						<xs:enumeration value="01"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

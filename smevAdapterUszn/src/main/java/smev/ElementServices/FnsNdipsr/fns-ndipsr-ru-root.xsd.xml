@@ -1,0 +1,35 @@
+<ns:NDIPSRResponse ИдЗапрос="string" xmlns:ns="urn://x-artefacts-fns-ndipsr/root/210-17/4.0.0">
+  <!--1 or more repetitions:-->
+  <ns:СвНДСпРеж>
+    <ns:СведИП ИННФЛ="stringstring">
+      <ns:ФИО FamilyName="string" FirstName="string" Patronymic="string"/>
+    </ns:СведИП>
+    <!--Zero or more repetitions:-->
+    <ns:ЕСХН ПериодОтч="30" ГодПериодОтч="2007" СумДох="100"/>
+    <!--Zero or more repetitions:-->
+    <ns:УСН ПериодОтч="96" ГодПериодОтч="2014+04:00" ВерсФорм="strin">
+      <!--You have a CHOICE of the next 3 items at this level-->
+      <ns:СвУпр3_00>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns:Доходы>100</ns:Доходы>
+        <ns:ДохРасх>100</ns:ДохРасх>
+      </ns:СвУпр3_00>
+      <ns:СвУпр5_01 ОбНал="2" Доход="100" Расход="100"/>
+      <ns:СвУпр5_04>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns:РасчНалДох ОбНал="1">
+          <ns:Доход СумКв="100" СумПг="100" Сум9м="100" СумНалПер="100"/>
+        </ns:РасчНалДох>
+        <ns:РасчНалДохУм ОбНал="2">
+          <ns:Доход СумКв="100" СумПг="100" Сум9м="100" СумНалПер="100"/>
+          <ns:Расход СумКв="100" СумПг="100" Сум9м="100" СумНалПер="100"/>
+        </ns:РасчНалДохУм>
+      </ns:СвУпр5_04>
+    </ns:УСН>
+    <!--Zero or more repetitions:-->
+    <ns:ЕНВД ПериодОтч="22" ГодПериодОтч="2003+05:00">
+      <!--Zero or more repetitions:-->
+      <ns:НалБазаКВПД КВПД="st" НалБаза="100"/>
+    </ns:ЕНВД>
+  </ns:СвНДСпРеж>
+</ns:NDIPSRResponse>

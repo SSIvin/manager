@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response>
+	<protocol>
+		<packageResult>
+			<packageID>abbc5b35-2939-4174-afac-dee57a71364e</packageID>
+			<packageType>Реестр ЛМСЗ</packageType>
+			<packageStatus>3</packageStatus>
+			<receivingTime>2018-07-10T14:35:37.696+03:00</receivingTime>
+			<startProcessTime>2018-07-10T14:35:37.697+03:00</startProcessTime>
+			<finishProcessTime>2018-07-10T14:35:37.871+03:00</finishProcessTime>
+			<recordNum>7</recordNum>
+		</packageResult>
+	</protocol>
+</response>

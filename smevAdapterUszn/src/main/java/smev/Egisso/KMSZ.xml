@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns3:response xmlns:ns6="urn://egisso-ru/types/package-result/1.0.4"
+              xmlns:ns4="urn://egisso-ru/types/package-protocol/1.0.4" xmlns:ns3="urn://egisso-ru/msg/10.05.I/1.0.6">
+	<ns4:protocol>
+		<ns4:packageResult>
+			<ns6:packageID>abbc5b35-2939-4174-afac-dee57a71364e</ns6:packageID>
+			<ns6:packageType>Реестр ЛМСЗ</ns6:packageType>
+			<ns6:packageStatus>3</ns6:packageStatus>
+			<ns6:receivingTime>2018-07-10T14:35:37.696+03:00</ns6:receivingTime>
+			<ns6:startProcessTime>2018-07-10T14:35:37.697+03:00</ns6:startProcessTime>
+			<ns6:finishProcessTime>2018-07-10T14:35:37.871+03:00</ns6:finishProcessTime>
+			<ns6:recordNum>7</ns6:recordNum>
+		</ns4:packageResult>
+	</ns4:protocol>
+</ns3:response>

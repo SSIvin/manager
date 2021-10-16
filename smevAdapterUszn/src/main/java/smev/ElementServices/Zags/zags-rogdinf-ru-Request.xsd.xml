@@ -1,0 +1,53 @@
+<ns:ROGDINFRequest ИдЗапрос="string" КолДок="100" ТипАГС="01" НаимТипЗаписЗапр="Рождение" xmlns:ns="urn://x-artefacts-zags-rogdinf/root/112-51/4.0.0" xmlns:ns1="urn://x-artefacts-zags-rogdinf/types/4.0.0">
+  <ns:СведОсн>
+    <ns:НормОсн КодНормОсн="st" НаимНормОсн="string"/>
+    <!--You have a CHOICE of the next 2 items at this level-->
+    <ns:СведДокОсн>string</ns:СведДокОсн>
+    <ns:ПрСведДокОсн>1</ns:ПрСведДокОсн>
+  </ns:СведОсн>
+  <!--1 or more repetitions:-->
+  <ns:СведЗапрос ИдДок="string">
+    <!--Optional:-->
+    <ns:СведАГС НомерЗапис="string">
+      <!--You have a CHOICE of the next 2 items at this level-->
+      <ns:ДатаЗаписДок>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns1:ПрДень>1</ns1:ПрДень>
+        <ns1:День>100</ns1:День>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns1:ПрМесяц>1</ns1:ПрМесяц>
+        <ns1:Месяц>100</ns1:Месяц>
+        <ns1:Год>2014+04:00</ns1:Год>
+      </ns:ДатаЗаписДок>
+      <ns:ДатаЗапис>2009-05-16</ns:ДатаЗапис>
+      <ns:ОрганЗАГС НаимЗАГС="string" КодЗАГС="stringst"/>
+    </ns:СведАГС>
+    <ns:СведФЛ СНИЛС="stringstringst">
+      <ns:ФИО>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns1:Фамилия>string</ns1:Фамилия>
+        <ns1:ПрФамилия>1</ns1:ПрФамилия>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns1:Имя>string</ns1:Имя>
+        <ns1:ПрИмя>1</ns1:ПрИмя>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns1:Отчество>string</ns1:Отчество>
+        <ns1:ПрОтчество>1</ns1:ПрОтчество>
+      </ns:ФИО>
+      <!--You have a CHOICE of the next 3 items at this level-->
+      <ns:ПрДатаРожд>1</ns:ПрДатаРожд>
+      <ns:ДатаРождКаленд>2002-06-24+05:00</ns:ДатаРождКаленд>
+      <ns:ДатаРождДок>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns1:ПрДень>1</ns1:ПрДень>
+        <ns1:День>100</ns1:День>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns1:ПрМесяц>1</ns1:ПрМесяц>
+        <ns1:Месяц>100</ns1:Месяц>
+        <ns1:Год>2010</ns1:Год>
+      </ns:ДатаРождДок>
+      <!--Optional:-->
+      <ns:УдЛичнФЛ КодВидДок="st" НаимДок="string" СерНомДок="string" ДатаДок="2018-02-04+04:00" ВыдДок="string" КодВыдДок="strings"/>
+    </ns:СведФЛ>
+  </ns:СведЗапрос>
+</ns:ROGDINFRequest>

@@ -1,0 +1,56 @@
+<ns:request xmlns:ns="urn://egisso-ru/types/registers-request/1.0.1">
+  <!--Optional:-->
+  <ns:rlirp>
+    <!--You have a CHOICE of the next 3 items at this level-->
+    <ns:parentRequest>
+      <ns:snils>stringstrin</ns:snils>
+    </ns:parentRequest>
+    <ns:childRequest>
+      <ns:snils>stringstrin</ns:snils>
+    </ns:childRequest>
+    <ns:parentChildRequest>
+      <ns:parentSnils>stringstrin</ns:parentSnils>
+      <ns:childSnils>stringstrin</ns:childSnils>
+    </ns:parentChildRequest>
+  </ns:rlirp>
+  <!--Optional:-->
+  <ns:rlid>
+    <ns:snils>stringstrin</ns:snils>
+  </ns:rlid>
+  <!--Optional:-->
+  <ns:rzp>
+    <!--You have a CHOICE of the next 3 items at this level-->
+    <ns:representativeRequest>
+      <!--You have a CHOICE of the next 2 items at this level-->
+      <ns:physicalPerson>
+        <ns:snils>stringstrin</ns:snils>
+      </ns:physicalPerson>
+      <ns:legalPerson>
+        <!--You have a CHOICE of the next 3 items at this level-->
+        <ns:snils>stringstrin</ns:snils>
+        <ns:inn>stringstri</ns:inn>
+        <ns:ogrn>stringstrings</ns:ogrn>
+      </ns:legalPerson>
+    </ns:representativeRequest>
+    <ns:representedPersonRequestSnils>stringstrin</ns:representedPersonRequestSnils>
+    <ns:relationRequest>
+      <ns:representative>
+        <!--You have a CHOICE of the next 2 items at this level-->
+        <ns:physicalPerson>
+          <ns:snils>stringstrin</ns:snils>
+        </ns:physicalPerson>
+        <ns:legalPerson>
+          <!--You have a CHOICE of the next 3 items at this level-->
+          <ns:snils>stringstrin</ns:snils>
+          <ns:inn>stringstri</ns:inn>
+          <ns:ogrn>stringstrings</ns:ogrn>
+        </ns:legalPerson>
+      </ns:representative>
+      <ns:representedPersonSnils>stringstrin</ns:representedPersonSnils>
+    </ns:relationRequest>
+  </ns:rzp>
+  <!--Optional:-->
+  <ns:statusOnDate>2008-09-29</ns:statusOnDate>
+  <!--Optional:-->
+  <ns:withDossier>true</ns:withDossier>
+</ns:request>

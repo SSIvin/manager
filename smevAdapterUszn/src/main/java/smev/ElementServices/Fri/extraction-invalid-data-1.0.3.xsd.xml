@@ -1,0 +1,13 @@
+<ns:ExtractionInvalidDataRequest xmlns:ns="http://kvs.fri.com/extraction-invalid-data/1.0.3">
+  <ns:SNILS>stringstrin</ns:SNILS>
+  <ns:TypeOfExtraction>Flexible</ns:TypeOfExtraction>
+  <ns:ExtractionPeriod>
+    <!--Optional:-->
+    <ns:DocumentsValidOnDate>2007-10-26</ns:DocumentsValidOnDate>
+    <!--Optional:-->
+    <ns:DocumentsOnPeriod>
+      <ns:DateFrom>2004-02-14</ns:DateFrom>
+      <ns:DateTo>2018-11-01+04:00</ns:DateTo>
+    </ns:DocumentsOnPeriod>
+  </ns:ExtractionPeriod>
+</ns:ExtractionInvalidDataRequest>

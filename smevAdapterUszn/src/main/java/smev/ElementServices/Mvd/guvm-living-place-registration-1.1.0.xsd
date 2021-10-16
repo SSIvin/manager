@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:rc="urn://mvd/guvm/registration-commons/1.2.0"
+            xmlns="urn://mvd/guvm/living-place-registration/1.1.0"
+            targetNamespace="urn://mvd/guvm/living-place-registration/1.1.0"
+            elementFormDefault="qualified">
+
+    <xsd:import namespace="urn://mvd/guvm/registration-commons/1.2.0"
+                schemaLocation="guvm-registration-commons-1.2.0.xsd"/>
+
+    <xsd:element name="livingPlaceRegistrationRequest" type="rc:RegistrationRequest">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="ru">
+                Параметры запроса регистрации по месту жительства
+            </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:element name="livingPlaceRegistrationResponse">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="ru">
+                Параметры ответа на запрос регистрации по месту жительства
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:choice>
+                <xsd:element name="registrationInfo"
+                             type="rc:RegistrationInfo">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="ru">Информация о регистрации
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="notFoundRegistration" type="rc:NotFoundRegistration">
+                    <xsd:annotation>
+                        <xsd:documentation xml:lang="ru">Информация о регистрации не найдена
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+            </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

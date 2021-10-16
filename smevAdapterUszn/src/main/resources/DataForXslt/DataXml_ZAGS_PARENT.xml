@@ -1,0 +1,847 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportPrint>
+    <reportRequest requestCreateDate="2021-01-22T09:47:56" requestId="e0b8f854-8c2a-45fa-91f4-5ba85a8f3758"
+                   userName="Ивин Сергей Сергеевич">
+        <MessagePrimaryContent>
+            <PARENTINFRequest ИдЗапрос="0bde2079-eded-11ea-952d-00155d01aa22" КолДок="1" ТипАГС="04">
+                <СведОсн КодНормОсн="01">
+                    <ПрСведДокОсн>1</ПрСведДокОсн>
+                </СведОсн>
+                <СведЗапрос ИдДок="0bde2079-eded-11ea-952d-00155d01aa21">
+                    <СведАГС НомерЗапис="140109060000401234123">
+                        <ДатаЗапис>2010-01-26</ДатаЗапис>
+                        <ОрганЗАГС НаимЗАГС="Отдел Государственной службы записи актов гражданского состояния Республики Ингушетия Джейрахского района" КодЗАГС="R0600004"/>
+                    </СведАГС>
+                    <СведФЛ ТипУчАЗ="1" >
+                        <ФИО>
+                            <Фамилия>Иванов</Фамилия>
+                            <Имя>Петр</Имя>
+                            <Отчество>Петрович</Отчество>
+                        </ФИО>
+                        <ДатаРождКаленд>1993-06-18</ДатаРождКаленд>
+                        <УдЛичнФЛ КодВидДок="21" СерДок="2457" НомДок="245685" ДатаДок="2008-08-13"/>
+                    </СведФЛ>
+                    <ПрРегионРегАГС>1</ПрРегионРегАГС>
+                </СведЗапрос>
+            </PARENTINFRequest>
+        </MessagePrimaryContent>
+    </reportRequest>
+    <reportResponse responseCreateDate="2021-01-22T09:48:57" responseId="430273f2-1ac2-4087-bc29-f1dda58330c8">
+        <PARENTINFResponse ИдЗапрос="string" ДатаСвед="2008-09-29" КолДок="100" ТипАГСЗапрос="04">
+            <!--1 or more repetitio-->
+            <СведОтветАГС ИдДок="string" РезОбраб="1">
+                <!--Zero or more repetitio-->
+                <СведРегОтцов РазделЕГР="1" НомерЗаписЕГР="77777777ngstringstr" НомАГССвид="1string" НомерВерс="str" ДатаВерс="2006-08-19+04:00" КодСостСтат="stri">
+                    <!--You have a CHOICE of the next 2 items at this level-->
+                    <ДатаЗаписДок>
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <ПрДень>1</ПрДень>
+                        <День>100</День>
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <ПрМесяц>1</ПрМесяц>
+                        <Месяц>100</Месяц>
+                        <Год>2017+03:00</Год>
+                    </ДатаЗаписДок>
+                    <ДатаЗапис>2012-09-13+04:00</ДатаЗапис>
+                    <ОрганЗАГС НаимЗАГС="string" КодЗАГС="stringst"/>
+                    <!--Zero or more repetitio-->
+                    <СвидетРегОтцов ТипСвидет="1">
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <ПрСерияСвидет>1</ПрСерияСвидет>
+                        <СерияСвидет>string</СерияСвидет>
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <ПрНомерСвидет>1</ПрНомерСвидет>
+                        <НомерСвидет>1111</НомерСвидет>
+                        <!--You have a CHOICE of the next 3 items at this level-->
+                        <ПрДатаВыдСвидет>1</ПрДатаВыдСвидет>
+                        <ДатаВыдСвидет>2019-08-19</ДатаВыдСвидет>
+                        <ДатаВыдСвидетДок>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ПрДень>1</ПрДень>
+                            <День>100</День>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ПрМесяц>1</ПрМесяц>
+                            <Месяц>100</Месяц>
+                            <Год>2017+03:00</Год>
+                        </ДатаВыдСвидетДок>
+                    </СвидетРегОтцов>
+                    <СвидетРегОтцов ТипСвидет="2">
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <ПрСерияСвидет>1</ПрСерияСвидет>
+                        <СерияСвидет>string</СерияСвидет>
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <ПрНомерСвидет>1</ПрНомерСвидет>
+                        <НомерСвидет>2222</НомерСвидет>
+                        <!--You have a CHOICE of the next 3 items at this level-->
+                        <ПрДатаВыдСвидет>1</ПрДатаВыдСвидет>
+                        <ДатаВыдСвидет>2019-08-19</ДатаВыдСвидет>
+                        <ДатаВыдСвидетДок>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ПрДень>1</ПрДень>
+                            <День>100</День>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ПрМесяц>1</ПрМесяц>
+                            <Месяц>100</Месяц>
+                            <Год>2017+03:00</Год>
+                        </ДатаВыдСвидетДок>
+                    </СвидетРегОтцов>
+                    <ПрдСведРег>
+                        <СведРебенок СНИЛС="stringstringst">
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ПрПол>1</ПрПол>
+                            <Пол>2</Пол>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+
+                            <ФИОДо>
+                                <Фамилия>string</Фамилия>
+                                <Имя>string</Имя>
+                                <Отчество>string</Отчество>
+                            </ФИОДо>
+                            <ФИОПосле>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <Фамилия>string</Фамилия>
+                                <ПрФамилия>1</ПрФамилия>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <Имя>string</Имя>
+                                <ПрИмя>1</ПрИмя>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <Отчество>string</Отчество>
+                                <ПрОтчество>1</ПрОтчество>
+                            </ФИОПосле>
+                            <ДатаРождКаленд>2017-08-17</ДатаРождКаленд>
+                            <ДатаРождДок>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрДень>1</ПрДень>
+                                <День>100</День>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрМесяц>1</ПрМесяц>
+                                <Месяц>100</Месяц>
+                                <Год>2008+04:00</Год>
+                            </ДатаРождДок>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ПрМестоРожден>1</ПрМестоРожден>
+                            <МестоРожден ПризнМесто="1" МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string" ОКТМО="stringstrin"/>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ПрСведРегРожд>1</ПрСведРегРожд>
+                            <СведРегРожд>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ЗапАктОсн ТипАГС="01" НомерЗапис="string0101010101">
+                                    <!--You have a CHOICE of the next 3 items at this level-->
+                                    <ДатаЗапис>2018-07-19+03:00</ДатаЗапис>
+                                    <ДатаЗаписДок>
+                                        <!--You have a CHOICE of the next 2 items at this level-->
+                                        <ПрДень>1</ПрДень>
+                                        <День>100</День>
+                                        <!--You have a CHOICE of the next 2 items at this level-->
+                                        <ПрМесяц>1</ПрМесяц>
+                                        <Месяц>100</Месяц>
+                                        <Год>2011</Год>
+                                    </ДатаЗаписДок>
+                                    <ОрганЗАГС НаимЗАГС="string" КодЗАГС="stringst"/>
+                                </ЗапАктОсн>
+                                <ДокОсн>
+                                    <!--You have a CHOICE of the next 3 items at this level-->
+                                    <ПрДок>1</ПрДок>
+                                    <КодДок>strin</КодДок>
+                                    <НаимДок>string</НаимДок>
+                                    <!--You have a CHOICE of the next 2 items at this level-->
+                                    <ПрСерНомДок>1</ПрСерНомДок>
+                                    <СерНомДок>string</СерНомДок>
+                                    <!--You have a CHOICE of the next 3 items at this level-->
+                                    <ПрДатаДок>1</ПрДатаДок>
+                                    <ДатаДокКаленд>2005-02-02</ДатаДокКаленд>
+                                    <ДатаДокНеполн>
+                                        <!--You have a CHOICE of the next 2 items at this level-->
+                                        <ПрДень>1</ПрДень>
+                                        <День>100</День>
+                                        <!--You have a CHOICE of the next 2 items at this level-->
+                                        <ПрМесяц>1</ПрМесяц>
+                                        <Месяц>100</Месяц>
+                                        <Год>2018</Год>
+                                    </ДатаДокНеполн>
+                                    <!--You have a CHOICE of the next 2 items at this level-->
+                                    <ПрНаимОрг>1</ПрНаимОрг>
+                                    <НаимОрг>string</НаимОрг>
+                                </ДокОсн>
+                            </СведРегРожд>
+                        </СведРебенок>
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <ПрСведМать>1</ПрСведМать>
+                        <СведМать СНИЛС="stringstringst">
+                            <!--You have a CHOICE of the next 3 items at this level-->
+                            <ПрГражданство>1</ПрГражданство>
+                            <ГраждТекст>string</ГраждТекст>
+                            <ГраждОКСМ>str</ГраждОКСМ>
+                            <ФИО>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <Фамилия>string</Фамилия>
+                                <ПрФамилия>1</ПрФамилия>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <Имя>string</Имя>
+                                <ПрИмя>1</ПрИмя>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <Отчество>string</Отчество>
+                                <ПрОтчество>1</ПрОтчество>
+                            </ФИО>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ПрМестоРожден>1</ПрМестоРожден>
+                            <МестоРожден ПризнМесто="1" МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string" ОКТМО="stringstrin"/>
+                            <!--You have a CHOICE of the next 3 items at this level-->
+                            <ПрДатаРожд>1</ПрДатаРожд>
+                            <ДатаРождКаленд>2019-05-04</ДатаРождКаленд>
+                            <ДатаРождДок>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрДень>1</ПрДень>
+                                <День>100</День>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрМесяц>1</ПрМесяц>
+                                <Месяц>100</Месяц>
+                                <Год>2006+04:00</Год>
+                            </ДатаРождДок>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ПрУдЛичнФЛ>1</ПрУдЛичнФЛ>
+                            <УдЛичнФЛ>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрКодВидДок>1</ПрКодВидДок>
+                                <КодВидДок>st</КодВидДок>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрСерДок>1</ПрСерДок>
+                                <СерДок>string</СерДок>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрНомДок>1</ПрНомДок>
+                                <НомДок>string</НомДок>
+                                <!--You have a CHOICE of the next 3 items at this level-->
+                                <ПрДатаДок>1</ПрДатаДок>
+                                <ДатаДокКаленд>2014-01-10</ДатаДокКаленд>
+                                <ДатаДокНеполн>
+                                    <!--You have a CHOICE of the next 2 items at this level-->
+                                    <ПрДень>1</ПрДень>
+                                    <День>100</День>
+                                    <!--You have a CHOICE of the next 2 items at this level-->
+                                    <ПрМесяц>1</ПрМесяц>
+                                    <Месяц>100</Месяц>
+                                    <Год>2004</Год>
+                                </ДатаДокНеполн>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрВыдДок>1</ПрВыдДок>
+                                <ВыдДок>string</ВыдДок>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрКодВыдДок>1</ПрКодВыдДок>
+                                <КодВыдДок>strings</КодВыдДок>
+                            </УдЛичнФЛ>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ПрАдрМЖ>1</ПрАдрМЖ>
+                            <АдрМЖ>
+                                <!--You have a CHOICE of the next 3 items at this level-->
+                                <АдрМЖРФ>
+                                    <!--You have a CHOICE of the next 3 items at this level-->
+                                    <АдрРФФИАС АдрТекст="string" ИдНом="string" ОКТМО="stringstrin" Индекс="string" КодРегион="st" НаимРегион="string" Район="string" Город="string" НаселПункт="string" Улица="string" Дом="string" Корпус="string" Кварт="string"/>
+                                    <АдрРФНеФИАС АдрТекст="string" ИдНом="string" ОКТМО="stringstrin" Индекс="string" КодРегион="st" НаимРегион="string" Район="string" Город="string" НаселПункт="string" Улица="string" Дом="string" Корпус="string" Кварт="string"/>
+                                    <АдрТекст>string</АдрТекст>
+                                </АдрМЖРФ>
+                                <АдрМЖИн>
+                                    <!--You have a CHOICE of the next 2 items at this level-->
+                                    <ПрОКСМ>1</ПрОКСМ>
+                                    <ОКСМ>str</ОКСМ>
+                                    <АдрТекст>string</АдрТекст>
+                                </АдрМЖИн>
+                                <АдрМЖКонв>string</АдрМЖКонв>
+                            </АдрМЖ>
+                        </СведМать>
+                        <СведОтец СНИЛС="stringstringst">
+                            <!--You have a CHOICE of the next 3 items at this level-->
+                            <ПрГражданство>1</ПрГражданство>
+                            <ГраждТекст>string</ГраждТекст>
+                            <ГраждОКСМ>str</ГраждОКСМ>
+                            <ФИО>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <Фамилия>string</Фамилия>
+                                <ПрФамилия>1</ПрФамилия>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <Имя>string</Имя>
+                                <ПрИмя>1</ПрИмя>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <Отчество>string</Отчество>
+                                <ПрОтчество>1</ПрОтчество>
+                            </ФИО>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ПрМестоРожден>1</ПрМестоРожден>
+                            <МестоРожден ПризнМесто="3" МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string" ОКТМО="stringstrin"/>
+                            <!--You have a CHOICE of the next 3 items at this level-->
+                            <ДатаРождКаленд>2008-12-01</ДатаРождКаленд>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ПрУдЛичнФЛ>1</ПрУдЛичнФЛ>
+                            <УдЛичнФЛ>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрКодВидДок>1</ПрКодВидДок>
+                                <КодВидДок>st</КодВидДок>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрСерДок>1</ПрСерДок>
+                                <СерДок>string</СерДок>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрНомДок>1</ПрНомДок>
+                                <НомДок>string</НомДок>
+                                <!--You have a CHOICE of the next 3 items at this level-->
+                                <ПрДатаДок>1</ПрДатаДок>
+                                <ДатаДокКаленд>2015-07-11</ДатаДокКаленд>
+                                <ДатаДокНеполн>
+                                    <!--You have a CHOICE of the next 2 items at this level-->
+                                    <ПрДень>1</ПрДень>
+                                    <День>100</День>
+                                    <!--You have a CHOICE of the next 2 items at this level-->
+                                    <ПрМесяц>1</ПрМесяц>
+                                    <Месяц>100</Месяц>
+                                    <Год>2016</Год>
+                                </ДатаДокНеполн>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрВыдДок>1</ПрВыдДок>
+                                <ВыдДок>string</ВыдДок>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрКодВыдДок>1</ПрКодВыдДок>
+                                <КодВыдДок>strings</КодВыдДок>
+                            </УдЛичнФЛ>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ПрАдрМЖ>1</ПрАдрМЖ>
+                            <АдрМЖ>
+                                <!--You have a CHOICE of the next 3 items at this level-->
+                                <АдрМЖРФ>
+                                    <!--You have a CHOICE of the next 3 items at this level-->
+                                    <АдрРФФИАС АдрТекст="string" ИдНом="string" ОКТМО="stringstrin" Индекс="string" КодРегион="st" НаимРегион="string" Район="string" Город="string" НаселПункт="string" Улица="string" Дом="string" Корпус="string" Кварт="string"/>
+                                    <АдрРФНеФИАС АдрТекст="string" ИдНом="string" ОКТМО="stringstrin" Индекс="string" КодРегион="st" НаимРегион="string" Район="string" Город="string" НаселПункт="string" Улица="string" Дом="string" Корпус="string" Кварт="string"/>
+                                    <АдрТекст>string</АдрТекст>
+                                </АдрМЖРФ>
+                                <АдрМЖИн>
+                                    <!--You have a CHOICE of the next 2 items at this level-->
+                                    <ПрОКСМ>1</ПрОКСМ>
+                                    <ОКСМ>str</ОКСМ>
+                                    <АдрТекст>string</АдрТекст>
+                                </АдрМЖИн>
+                                <АдрМЖКонв>string</АдрМЖКонв>
+                            </АдрМЖ>
+                        </СведОтец>
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <ПрСвДокОтцов>1</ПрСвДокОтцов>
+                        <СвДокОтцов>
+                            <!--You have a CHOICE of the next 3 items at this level-->
+                            <ПрДок>1</ПрДок>
+                            <КодДок>strin</КодДок>
+                            <НаимДок>string</НаимДок>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ПрСерНомДок>1</ПрСерНомДок>
+                            <СерНомДок>string</СерНомДок>
+                            <!--You have a CHOICE of the next 3 items at this level-->
+                            <ПрДатаДок>1</ПрДатаДок>
+                            <ДатаДокКаленд>2002-12-04+03:00</ДатаДокКаленд>
+                            <ДатаДокНеполн>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрДень>1</ПрДень>
+                                <День>100</День>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрМесяц>1</ПрМесяц>
+                                <Месяц>100</Месяц>
+                                <Год>2017+03:00</Год>
+                            </ДатаДокНеполн>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ПрНаимОрг>1</ПрНаимОрг>
+                            <НаимОрг>string</НаимОрг>
+                        </СвДокОтцов>
+                        <!--Optional:-->
+                        <СВедЕГРРазд2>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ПрСвУведомл>1</ПрСвУведомл>
+                            <СвУведомл СпоcПод="2" КолЛистДок="100">
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрКодВидУвед>1</ПрКодВидУвед>
+                                <КодВидУвед>strin</КодВидУвед>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрДатаУвед>1</ПрДатаУвед>
+                                <ДатаУвед>2006-02-20+03:00</ДатаУвед>
+                                <СведЗАГСУвед ДатаПринят="2008-09-09+04:00" ДолжнОтв="string">
+                                    <ОрганЗАГС НаимЗАГС="string" КодЗАГС="stringst"/>
+                                    <!--You have a CHOICE of the next 2 items at this level-->
+                                    <ПрФИООтв>1</ПрФИООтв>
+                                    <ФИООтв>
+                                        <!--You have a CHOICE of the next 2 items at this level-->
+                                        <Фамилия>string</Фамилия>
+                                        <ПрФамилия>1</ПрФамилия>
+                                        <!--You have a CHOICE of the next 2 items at this level-->
+                                        <Имя>string</Имя>
+                                        <ПрИмя>1</ПрИмя>
+                                        <!--You have a CHOICE of the next 2 items at this level-->
+                                        <Отчество>string</Отчество>
+                                        <ПрОтчество>1</ПрОтчество>
+                                    </ФИООтв>
+                                </СведЗАГСУвед>
+                            </СвУведомл>
+                            <СвДокИн>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрКодОКСМ>1</ПрКодОКСМ>
+                                <КодОКСМ>str</КодОКСМ>
+                                <НаимСтраны>string</НаимСтраны>
+                                <РеквизИнДок ТипДок="strin">
+                                    <!--You have a CHOICE of the next 2 items at this level-->
+                                    <ПрНаимДокТекст>1</ПрНаимДокТекст>
+                                    <НаимДокТекст>string</НаимДокТекст>
+                                    <!--You have a CHOICE of the next 2 items at this level-->
+                                    <ПрНомер>1</ПрНомер>
+                                    <Номер>string</Номер>
+                                    <!--You have a CHOICE of the next 3 items at this level-->
+                                    <ПрДата>1</ПрДата>
+                                    <ДатаКаленд>2008-05-12+04:00</ДатаКаленд>
+                                    <ДатаДок>
+                                        <!--You have a CHOICE of the next 2 items at this level-->
+                                        <ПрДень>1</ПрДень>
+                                        <День>100</День>
+                                        <!--You have a CHOICE of the next 2 items at this level-->
+                                        <ПрМесяц>1</ПрМесяц>
+                                        <Месяц>100</Месяц>
+                                        <Год>2018</Год>
+                                    </ДатаДок>
+                                    <!--You have a CHOICE of the next 2 items at this level-->
+                                    <ПрНаимОрган>1</ПрНаимОрган>
+                                    <НаимОрган>string</НаимОрган>
+                                </РеквизИнДок>
+                                <ЮрЗначДок КолЛистДок="100" СвОттискПеч="1" СвЛегал="1">
+                                    <!--You have a CHOICE of the next 2 items at this level-->
+                                    <ПрПодпИн>1</ПрПодпИн>
+                                    <СвПодпТекст>string</СвПодпТекст>
+                                    <!--You have a CHOICE of the next 2 items at this level-->
+                                    <ПрЗасвидДок>1</ПрЗасвидДок>
+                                    <ЗасвидДок РегНомРеестрНотар="string" ДатаНотарДейств="2013-11-20+04:00" ФИОНотар="string" ФИОПеревод="string" КолЛистДок="100"/>
+                                    <!--You have a CHOICE of the next 2 items at this level-->
+                                    <ПрЗасвидПеревод>1</ПрЗасвидПеревод>
+                                    <ЗасвидПеревод РегНомРеестрНотар="string" ДатаНотарДейств="2015-12-11" ФИОНотар="string" ФИОПеревод="string" КолЛистДок="100"/>
+                                    <!--You have a CHOICE of the next 2 items at this level-->
+                                    <СвОтказЛегализ>1</СвОтказЛегализ>
+                                    <Легализация>
+                                        <!--You have a CHOICE of the next 2 items at this level-->
+                                        <ПрОрганЛегал>1</ПрОрганЛегал>
+                                        <ОрганЛегал>string</ОрганЛегал>
+                                        <!--You have a CHOICE of the next 2 items at this level-->
+                                        <ПрДатаЛегал>1</ПрДатаЛегал>
+                                        <ДатаЛегал>2018-01-13+03:00</ДатаЛегал>
+                                        <!--You have a CHOICE of the next 2 items at this level-->
+                                        <ПрНомерЛегал>1</ПрНомерЛегал>
+                                        <НомерЛегал>string</НомерЛегал>
+                                    </Легализация>
+                                </ЮрЗначДок>
+                            </СвДокИн>
+                        </СВедЕГРРазд2>
+                    </ПрдСведРег>
+                </СведРегОтцов>
+                <СведРегОтцов РазделЕГР="2" НомерЗаписЕГР="8888888stringstr" НомАГССвид="2string" НомерВерс="str" ДатаВерс="2006-08-19+04:00" КодСостСтат="stri">
+                    <!--You have a CHOICE of the next 2 items at this level-->
+                    <ДатаЗаписДок>
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <ПрДень>1</ПрДень>
+                        <День>100</День>
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <ПрМесяц>1</ПрМесяц>
+                        <Месяц>100</Месяц>
+                        <Год>2017+03:00</Год>
+                    </ДатаЗаписДок>
+                    <ДатаЗапис>2012-09-13+04:00</ДатаЗапис>
+                    <ОрганЗАГС НаимЗАГС="string" КодЗАГС="stringst"/>
+                    <!--Zero or more repetitio-->
+                    <СвидетРегОтцов ТипСвидет="2">
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <ПрСерияСвидет>1</ПрСерияСвидет>
+                        <СерияСвидет>string</СерияСвидет>
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <ПрНомерСвидет>1</ПрНомерСвидет>
+                        <НомерСвидет>33333</НомерСвидет>
+                        <!--You have a CHOICE of the next 3 items at this level-->
+                        <ПрДатаВыдСвидет>1</ПрДатаВыдСвидет>
+                        <ДатаВыдСвидет>2019-08-19</ДатаВыдСвидет>
+                        <ДатаВыдСвидетДок>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ПрДень>1</ПрДень>
+                            <День>100</День>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ПрМесяц>1</ПрМесяц>
+                            <Месяц>100</Месяц>
+                            <Год>2017+03:00</Год>
+                        </ДатаВыдСвидетДок>
+                    </СвидетРегОтцов>
+                    <СвидетРегОтцов ТипСвидет="1">
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <ПрСерияСвидет>1</ПрСерияСвидет>
+                        <СерияСвидет>string</СерияСвидет>
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <ПрНомерСвидет>1</ПрНомерСвидет>
+                        <НомерСвидет>44444</НомерСвидет>
+                        <!--You have a CHOICE of the next 3 items at this level-->
+                        <ПрДатаВыдСвидет>1</ПрДатаВыдСвидет>
+                        <ДатаВыдСвидет>2019-08-19</ДатаВыдСвидет>
+                        <ДатаВыдСвидетДок>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ПрДень>1</ПрДень>
+                            <День>100</День>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ПрМесяц>1</ПрМесяц>
+                            <Месяц>100</Месяц>
+                            <Год>2017+03:00</Год>
+                        </ДатаВыдСвидетДок>
+                    </СвидетРегОтцов>
+                    <ПрдСведРег>
+                        <СведРебенок СНИЛС="stringstringst">
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ПрПол>1</ПрПол>
+                            <Пол>2</Пол>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ПрФИОДо>1</ПрФИОДо>
+                            <ФИОДо>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <Фамилия>string</Фамилия>
+                                <ПрФамилия>1</ПрФамилия>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <Имя>string</Имя>
+                                <ПрИмя>1</ПрИмя>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <Отчество>string</Отчество>
+                                <ПрОтчество>1</ПрОтчество>
+                            </ФИОДо>
+                            <ФИОПосле>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <Фамилия>string</Фамилия>
+                                <ПрФамилия>1</ПрФамилия>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <Имя>string</Имя>
+                                <ПрИмя>1</ПрИмя>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <Отчество>string</Отчество>
+                                <ПрОтчество>1</ПрОтчество>
+                            </ФИОПосле>
+                            <!--You have a CHOICE of the next 3 items at this level-->
+                            <ПрДатаРожд>1</ПрДатаРожд>
+                            <ДатаРождКаленд>2017-08-17</ДатаРождКаленд>
+                            <ДатаРождДок>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрДень>1</ПрДень>
+                                <День>100</День>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрМесяц>1</ПрМесяц>
+                                <Месяц>100</Месяц>
+                                <Год>2008+04:00</Год>
+                            </ДатаРождДок>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ПрМестоРожден>1</ПрМестоРожден>
+                            <МестоРожден ПризнМесто="1" МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string" ОКТМО="stringstrin"/>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ПрСведРегРожд>1</ПрСведРегРожд>
+                            <СведРегРожд>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ЗапАктОсн ТипАГС="01" НомерЗапис="020202022">
+                                    <!--You have a CHOICE of the next 3 items at this level-->
+                                    <ПрДатаЗапис>1</ПрДатаЗапис>
+                                    <ДатаЗапис>2018-07-19+03:00</ДатаЗапис>
+                                    <ДатаЗаписДок>
+                                        <!--You have a CHOICE of the next 2 items at this level-->
+                                        <ПрДень>1</ПрДень>
+                                        <День>100</День>
+                                        <!--You have a CHOICE of the next 2 items at this level-->
+                                        <ПрМесяц>1</ПрМесяц>
+                                        <Месяц>100</Месяц>
+                                        <Год>2011</Год>
+                                    </ДатаЗаписДок>
+                                    <ОрганЗАГС НаимЗАГС="string" КодЗАГС="stringst"/>
+                                </ЗапАктОсн>
+                                <ДокОсн>
+                                    <!--You have a CHOICE of the next 3 items at this level-->
+                                    <ПрДок>1</ПрДок>
+                                    <КодДок>strin</КодДок>
+                                    <НаимДок>string</НаимДок>
+                                    <!--You have a CHOICE of the next 2 items at this level-->
+                                    <ПрСерНомДок>1</ПрСерНомДок>
+                                    <СерНомДок>string</СерНомДок>
+                                    <!--You have a CHOICE of the next 3 items at this level-->
+                                    <ПрДатаДок>1</ПрДатаДок>
+                                    <ДатаДокКаленд>2005-02-02</ДатаДокКаленд>
+                                    <ДатаДокНеполн>
+                                        <!--You have a CHOICE of the next 2 items at this level-->
+                                        <ПрДень>1</ПрДень>
+                                        <День>100</День>
+                                        <!--You have a CHOICE of the next 2 items at this level-->
+                                        <ПрМесяц>1</ПрМесяц>
+                                        <Месяц>100</Месяц>
+                                        <Год>2018</Год>
+                                    </ДатаДокНеполн>
+                                    <!--You have a CHOICE of the next 2 items at this level-->
+                                    <ПрНаимОрг>1</ПрНаимОрг>
+                                    <НаимОрг>string</НаимОрг>
+                                </ДокОсн>
+                            </СведРегРожд>
+                        </СведРебенок>
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <ПрСведМать>1</ПрСведМать>
+                        <СведМать СНИЛС="stringstringst">
+                            <!--You have a CHOICE of the next 3 items at this level-->
+                            <ПрГражданство>1</ПрГражданство>
+                            <ГраждТекст>string</ГраждТекст>
+                            <ГраждОКСМ>str</ГраждОКСМ>
+                            <ФИО>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <Фамилия>string</Фамилия>
+                                <ПрФамилия>1</ПрФамилия>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <Имя>string</Имя>
+                                <ПрИмя>1</ПрИмя>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <Отчество>string</Отчество>
+                                <ПрОтчество>1</ПрОтчество>
+                            </ФИО>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ПрМестоРожден>1</ПрМестоРожден>
+                            <МестоРожден ПризнМесто="1" МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string" ОКТМО="stringstrin"/>
+                            <!--You have a CHOICE of the next 3 items at this level-->
+                            <ПрДатаРожд>1</ПрДатаРожд>
+                            <ДатаРождКаленд>2019-05-04</ДатаРождКаленд>
+                            <ДатаРождДок>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрДень>1</ПрДень>
+                                <День>100</День>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрМесяц>1</ПрМесяц>
+                                <Месяц>100</Месяц>
+                                <Год>2006+04:00</Год>
+                            </ДатаРождДок>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ПрУдЛичнФЛ>1</ПрУдЛичнФЛ>
+                            <УдЛичнФЛ>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрКодВидДок>1</ПрКодВидДок>
+                                <КодВидДок>st</КодВидДок>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрСерДок>1</ПрСерДок>
+                                <СерДок>string</СерДок>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрНомДок>1</ПрНомДок>
+                                <НомДок>string</НомДок>
+                                <!--You have a CHOICE of the next 3 items at this level-->
+                                <ПрДатаДок>1</ПрДатаДок>
+                                <ДатаДокКаленд>2014-01-10</ДатаДокКаленд>
+                                <ДатаДокНеполн>
+                                    <!--You have a CHOICE of the next 2 items at this level-->
+                                    <ПрДень>1</ПрДень>
+                                    <День>100</День>
+                                    <!--You have a CHOICE of the next 2 items at this level-->
+                                    <ПрМесяц>1</ПрМесяц>
+                                    <Месяц>100</Месяц>
+                                    <Год>2004</Год>
+                                </ДатаДокНеполн>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрВыдДок>1</ПрВыдДок>
+                                <ВыдДок>string</ВыдДок>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрКодВыдДок>1</ПрКодВыдДок>
+                                <КодВыдДок>strings</КодВыдДок>
+                            </УдЛичнФЛ>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ПрАдрМЖ>1</ПрАдрМЖ>
+                            <АдрМЖ>
+                                <!--You have a CHOICE of the next 3 items at this level-->
+                                <АдрМЖРФ>
+                                    <!--You have a CHOICE of the next 3 items at this level-->
+                                    <АдрРФФИАС АдрТекст="string" ИдНом="string" ОКТМО="stringstrin" Индекс="string" КодРегион="st" НаимРегион="string" Район="string" Город="string" НаселПункт="string" Улица="string" Дом="string" Корпус="string" Кварт="string"/>
+                                    <АдрРФНеФИАС АдрТекст="string" ИдНом="string" ОКТМО="stringstrin" Индекс="string" КодРегион="st" НаимРегион="string" Район="string" Город="string" НаселПункт="string" Улица="string" Дом="string" Корпус="string" Кварт="string"/>
+                                    <АдрТекст>string</АдрТекст>
+                                </АдрМЖРФ>
+                                <АдрМЖИн>
+                                    <!--You have a CHOICE of the next 2 items at this level-->
+                                    <ПрОКСМ>1</ПрОКСМ>
+                                    <ОКСМ>str</ОКСМ>
+                                    <АдрТекст>string</АдрТекст>
+                                </АдрМЖИн>
+                                <АдрМЖКонв>string</АдрМЖКонв>
+                            </АдрМЖ>
+                        </СведМать>
+                        <СведОтец СНИЛС="stringstringst">
+                            <!--You have a CHOICE of the next 3 items at this level-->
+                            <ПрГражданство>1</ПрГражданство>
+                            <ГраждТекст>string</ГраждТекст>
+                            <ГраждОКСМ>str</ГраждОКСМ>
+                            <ФИО>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <Фамилия>string</Фамилия>
+                                <ПрФамилия>1</ПрФамилия>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <Имя>string</Имя>
+                                <ПрИмя>1</ПрИмя>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <Отчество>string</Отчество>
+                                <ПрОтчество>1</ПрОтчество>
+                            </ФИО>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ПрМестоРожден>1</ПрМестоРожден>
+                            <МестоРожден ПризнМесто="3" МестоТекст="string" КодСтраны="str" НаимСтраны="string" Регион="st" НаимСубъект="string" Район="string" Город="string" НаселПункт="string" ОКТМО="stringstrin"/>
+                            <!--You have a CHOICE of the next 3 items at this level-->
+                            <ДатаРождКаленд>2008-12-01</ДатаРождКаленд>
+                            <УдЛичнФЛ>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрКодВидДок>1</ПрКодВидДок>
+                                <КодВидДок>st</КодВидДок>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрСерДок>1</ПрСерДок>
+                                <СерДок>string</СерДок>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрНомДок>1</ПрНомДок>
+                                <НомДок>string</НомДок>
+                                <!--You have a CHOICE of the next 3 items at this level-->
+                                <ПрДатаДок>1</ПрДатаДок>
+                                <ДатаДокКаленд>2015-07-11</ДатаДокКаленд>
+                                <ДатаДокНеполн>
+                                    <!--You have a CHOICE of the next 2 items at this level-->
+                                    <ПрДень>1</ПрДень>
+                                    <День>100</День>
+                                    <!--You have a CHOICE of the next 2 items at this level-->
+                                    <ПрМесяц>1</ПрМесяц>
+                                    <Месяц>100</Месяц>
+                                    <Год>2016</Год>
+                                </ДатаДокНеполн>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрВыдДок>1</ПрВыдДок>
+                                <ВыдДок>string</ВыдДок>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрКодВыдДок>1</ПрКодВыдДок>
+                                <КодВыдДок>strings</КодВыдДок>
+                            </УдЛичнФЛ>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ПрАдрМЖ>1</ПрАдрМЖ>
+                            <АдрМЖ>
+                                <!--You have a CHOICE of the next 3 items at this level-->
+                                <АдрМЖРФ>
+                                    <!--You have a CHOICE of the next 3 items at this level-->
+                                    <АдрРФФИАС АдрТекст="string" ИдНом="string" ОКТМО="stringstrin" Индекс="string" КодРегион="st" НаимРегион="string" Район="string" Город="string" НаселПункт="string" Улица="string" Дом="string" Корпус="string" Кварт="string"/>
+                                    <АдрРФНеФИАС АдрТекст="string" ИдНом="string" ОКТМО="stringstrin" Индекс="string" КодРегион="st" НаимРегион="string" Район="string" Город="string" НаселПункт="string" Улица="string" Дом="string" Корпус="string" Кварт="string"/>
+                                    <АдрТекст>string</АдрТекст>
+                                </АдрМЖРФ>
+                                <АдрМЖИн>
+                                    <!--You have a CHOICE of the next 2 items at this level-->
+                                    <ПрОКСМ>1</ПрОКСМ>
+                                    <ОКСМ>str</ОКСМ>
+                                    <АдрТекст>string</АдрТекст>
+                                </АдрМЖИн>
+                                <АдрМЖКонв>string</АдрМЖКонв>
+                            </АдрМЖ>
+                        </СведОтец>
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <ПрСвДокОтцов>1</ПрСвДокОтцов>
+                        <СвДокОтцов>
+                            <!--You have a CHOICE of the next 3 items at this level-->
+                            <ПрДок>1</ПрДок>
+                            <КодДок>strin</КодДок>
+                            <НаимДок>string</НаимДок>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ПрСерНомДок>1</ПрСерНомДок>
+                            <СерНомДок>string</СерНомДок>
+                            <!--You have a CHOICE of the next 3 items at this level-->
+                            <ПрДатаДок>1</ПрДатаДок>
+                            <ДатаДокКаленд>2002-12-04+03:00</ДатаДокКаленд>
+                            <ДатаДокНеполн>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрДень>1</ПрДень>
+                                <День>100</День>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрМесяц>1</ПрМесяц>
+                                <Месяц>100</Месяц>
+                                <Год>2017+03:00</Год>
+                            </ДатаДокНеполн>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ПрНаимОрг>1</ПрНаимОрг>
+                            <НаимОрг>string</НаимОрг>
+                        </СвДокОтцов>
+                        <!--Optional:-->
+                        <СВедЕГРРазд2>
+                            <!--You have a CHOICE of the next 2 items at this level-->
+                            <ПрСвУведомл>1</ПрСвУведомл>
+                            <СвУведомл СпоcПод="2" КолЛистДок="100">
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрКодВидУвед>1</ПрКодВидУвед>
+                                <КодВидУвед>strin</КодВидУвед>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрДатаУвед>1</ПрДатаУвед>
+                                <ДатаУвед>2006-02-20+03:00</ДатаУвед>
+                                <СведЗАГСУвед ДатаПринят="2008-09-09+04:00" ДолжнОтв="string">
+                                    <ОрганЗАГС НаимЗАГС="string" КодЗАГС="stringst"/>
+                                    <!--You have a CHOICE of the next 2 items at this level-->
+                                    <ПрФИООтв>1</ПрФИООтв>
+                                    <ФИООтв>
+                                        <!--You have a CHOICE of the next 2 items at this level-->
+                                        <Фамилия>string</Фамилия>
+                                        <ПрФамилия>1</ПрФамилия>
+                                        <!--You have a CHOICE of the next 2 items at this level-->
+                                        <Имя>string</Имя>
+                                        <ПрИмя>1</ПрИмя>
+                                        <!--You have a CHOICE of the next 2 items at this level-->
+                                        <Отчество>string</Отчество>
+                                        <ПрОтчество>1</ПрОтчество>
+                                    </ФИООтв>
+                                </СведЗАГСУвед>
+                            </СвУведомл>
+                            <СвДокИн>
+                                <!--You have a CHOICE of the next 2 items at this level-->
+                                <ПрКодОКСМ>1</ПрКодОКСМ>
+                                <КодОКСМ>str</КодОКСМ>
+                                <НаимСтраны>string</НаимСтраны>
+                                <РеквизИнДок ТипДок="strin">
+                                    <!--You have a CHOICE of the next 2 items at this level-->
+                                    <ПрНаимДокТекст>1</ПрНаимДокТекст>
+                                    <НаимДокТекст>string</НаимДокТекст>
+                                    <!--You have a CHOICE of the next 2 items at this level-->
+                                    <ПрНомер>1</ПрНомер>
+                                    <Номер>string</Номер>
+                                    <!--You have a CHOICE of the next 3 items at this level-->
+                                    <ПрДата>1</ПрДата>
+                                    <ДатаКаленд>2008-05-12+04:00</ДатаКаленд>
+                                    <ДатаДок>
+                                        <!--You have a CHOICE of the next 2 items at this level-->
+                                        <ПрДень>1</ПрДень>
+                                        <День>100</День>
+                                        <!--You have a CHOICE of the next 2 items at this level-->
+                                        <ПрМесяц>1</ПрМесяц>
+                                        <Месяц>100</Месяц>
+                                        <Год>2018</Год>
+                                    </ДатаДок>
+                                    <!--You have a CHOICE of the next 2 items at this level-->
+                                    <ПрНаимОрган>1</ПрНаимОрган>
+                                    <НаимОрган>string</НаимОрган>
+                                </РеквизИнДок>
+                                <ЮрЗначДок КолЛистДок="100" СвОттискПеч="1" СвЛегал="1">
+                                    <!--You have a CHOICE of the next 2 items at this level-->
+                                    <ПрПодпИн>1</ПрПодпИн>
+                                    <СвПодпТекст>string</СвПодпТекст>
+                                    <!--You have a CHOICE of the next 2 items at this level-->
+                                    <ПрЗасвидДок>1</ПрЗасвидДок>
+                                    <ЗасвидДок РегНомРеестрНотар="string" ДатаНотарДейств="2013-11-20+04:00" ФИОНотар="string" ФИОПеревод="string" КолЛистДок="100"/>
+                                    <!--You have a CHOICE of the next 2 items at this level-->
+                                    <ПрЗасвидПеревод>1</ПрЗасвидПеревод>
+                                    <ЗасвидПеревод РегНомРеестрНотар="string" ДатаНотарДейств="2015-12-11" ФИОНотар="string" ФИОПеревод="string" КолЛистДок="100"/>
+                                    <!--You have a CHOICE of the next 2 items at this level-->
+                                    <СвОтказЛегализ>1</СвОтказЛегализ>
+                                    <Легализация>
+                                        <!--You have a CHOICE of the next 2 items at this level-->
+                                        <ПрОрганЛегал>1</ПрОрганЛегал>
+                                        <ОрганЛегал>string</ОрганЛегал>
+                                        <!--You have a CHOICE of the next 2 items at this level-->
+                                        <ПрДатаЛегал>1</ПрДатаЛегал>
+                                        <ДатаЛегал>2018-01-13+03:00</ДатаЛегал>
+                                        <!--You have a CHOICE of the next 2 items at this level-->
+                                        <ПрНомерЛегал>1</ПрНомерЛегал>
+                                        <НомерЛегал>string</НомерЛегал>
+                                    </Легализация>
+                                </ЮрЗначДок>
+                            </СвДокИн>
+                        </СВедЕГРРазд2>
+                    </ПрдСведРег>
+                </СведРегОтцов>
+            </СведОтветАГС>
+        </PARENTINFResponse>
+        <reportAttachmentData/>
+    </reportResponse>
+    <interactionStatus>
+        <statusReport statusDate="2021-01-22T09:48:48">
+            <code>0</code>
+            <desc>Сообщение отправлено в СМЭВ</desc>
+        </statusReport>
+    </interactionStatus>
+</ReportPrint>

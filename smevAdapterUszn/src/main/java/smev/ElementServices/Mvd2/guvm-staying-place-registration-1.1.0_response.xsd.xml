@@ -1,0 +1,26 @@
+<ns:stayingPlaceRegistrationResponse xmlns:ns="urn://mvd/guvm/staying-place-registration/1.1.0" xmlns:ns1="urn://mvd/guvm/registration-commons/1.2.0">
+  <!--You have a CHOICE of the next 2 items at this level-->
+  <ns:registrationInfo>
+    <!--Optional:-->
+    <ns1:regionOktmo>string</ns1:regionOktmo>
+    <!--Optional:-->
+    <ns1:district>string</ns1:district>
+    <!--Optional:-->
+    <ns1:settlement>string</ns1:settlement>
+    <!--Optional:-->
+    <ns1:street>string</ns1:street>
+    <!--Optional:-->
+    <ns1:house>string</ns1:house>
+    <!--Optional:-->
+    <ns1:building>string</ns1:building>
+    <!--Optional:-->
+    <ns1:flat>string</ns1:flat>
+    <!--Optional:-->
+    <ns1:region>string</ns1:region>
+    <ns1:registrationDateFrom>2008-09-29</ns1:registrationDateFrom>
+    <!--Optional:-->
+    <ns1:unstructuredAddress>string</ns1:unstructuredAddress>
+    <ns:registrationDateTo>2014-09-19</ns:registrationDateTo>
+  </ns:registrationInfo>
+  <ns:notFoundRegistration/>
+</ns:stayingPlaceRegistrationResponse>
